@@ -1,0 +1,56 @@
+.container {
+  //   background-color: aqua;
+  height: 100vh;
+  padding: 32px;
+  background-color: #ececec;
+}
+
+.float-box {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+}
+
+.graph-box {
+  //   background-color: red;
+  width: 60%;
+  height: 100%;
+
+  .graph-title {
+    // background-color: red;
+    height: 20%;
+  }
+
+  .graph {
+    background-color: yellow;
+    height: 80%;
+  }
+}
+
+.vertical-line {
+  height: 100%;
+  border-left: 1px solid #b5b5b5;
+  margin: 0 24px;
+}
+
+.summary-box {
+  width: 40%;
+  height: 100%;
+  //   background-color: yellow;
+  .logo {
+    background-color: blue;
+    text-align: center;
+    height: 25%;
+    padding: 5px;
+  }
+
+  .summary-detail {
+    // background-color: green;
+    height: 75%;
+  }
+}
