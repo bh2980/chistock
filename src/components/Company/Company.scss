@@ -7,6 +7,7 @@
 .wrapper {
   height: 100%;
   display: flex;
+  font-size: 2vh;
 }
 
 .graph-box {
@@ -24,20 +25,22 @@
     .icon-container {
       margin: auto;
       background-color: #2e9bff;
+      padding: 1em;
     }
 
     .company-name {
-      font-size: 32px;
+      font-size: 4.5vmin;
       font-weight: bold;
     }
 
     .price {
-      font-size: 32px;
+      font-size: 4.5vmin;
       font-weight: bold;
     }
 
     .price-ratio {
       color: blue;
+      font-size: 1.45em;
     }
   }
 
@@ -124,5 +127,6 @@
   .summary-detail-detail {
     word-break: break-all;
     margin: 0px 24px;
+    font-size: 1.2em;
   }
 }

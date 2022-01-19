@@ -1,5 +1,6 @@
 import React from "react";
 import "./Company.scss";
+import { ReactComponent as TitleIcon } from "assets/Company/title-icon.svg";
 
 const Company = () => {
   return (
@@ -9,7 +10,7 @@ const Company = () => {
           <div className="graph-box">
             <div className="graph-title shadow-box">
               <div className="shadow-box icon-container">
-                <div className="icon">ICON</div>
+                <TitleIcon width="3em" height="3em" fill="white" />
               </div>
               <div className="company-name">Apple Inc. (APPL)</div>
               <div>
@@ -81,12 +82,12 @@ const Company = () => {
             <div className="summary-detail shadow-box">
               <div className="summary-title">회사 개요</div>
               <div className="summary-detail-detail">
-                나는 회사다나는 회사다나는 회사다나는 회사다나는 회사다나는
-                회사다나는 회사다나는 회사다나는 회사다나는 회사다나는
-                회사다나는 회사다나는 회사다나는 회사다나는 회사다나는
-                회사다나는 회사다나는 회사다나는 회사다나는 회사다나는
-                회사다나는 회사다나는 회사다나는 회사다나는 회사다나는
-                회사다나는 회사다나는 회사다나는 회사다
+                나는 회사다 나는 회사다 나는 회사다 나는 회사다 나는 회사다 나는
+                회사다 나는 회사다 나는 회사다 나는 회사다 나는 회사다 나는
+                회사다 나는 회사다 나는 회사다 나는 회사다 나는 회사다 나는
+                회사다 나는 회사다 나는 회사다 나는 회사다 나는 회사다 나는
+                회사다 나는 회사다 나는 회사다 나는 회사다 나는 회사다 나는
+                회사다 나는 회사다 나는 회사다 나는 회사다 나는 회사다
               </div>
             </div>
           </div>
