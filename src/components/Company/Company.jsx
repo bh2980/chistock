@@ -1,20 +1,19 @@
 import React from "react";
 import "./Company.scss";
-import { ReactComponent as TitleIcon } from "assets/Company/title-icon.svg";
+import { ReactComponent as TitleIcon } from "assets/icons/company-title-icon.svg";
 
 const Company = () => {
   return (
-    <>
       <div className="container">
         <div className="wrapper">
           <div className="left-box">
             <div className="left-title shadow-box">
-              <div className="icon shadow-box">
+              <div className="icon-box shadow-box">
                 <TitleIcon width="3em" height="3em" fill="white" />
               </div>
               <div className="company-name">Apple Inc. (APPL)</div>
               <div>
-                <div className="price">$ 177.27</div>
+                <div className="price">{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(number)}</div>
                 <div className="price-ratio">▼ -3.34 +1.14%</div>
               </div>
             </div>
@@ -72,13 +71,13 @@ const Company = () => {
               </div>
             </div>
           </div>
-          <div className="vertical-line"></div>
+          <div className="vertical-line"/>
           <div className="summary-box">
             <div className="summary-logo">
               <div className="logo-box shadow-box">
                 <img
+                alt="Apple Inc."
                   src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Apple-logo.png"
-                  alt="Apple Inc."
                 ></img>
               </div>
             </div>
@@ -96,7 +95,6 @@ const Company = () => {
           </div>
         </div>
       </div>
-    </>
   );
 };
 
