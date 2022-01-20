@@ -1,6 +1,6 @@
 import React from "react";
 import "./Company.scss";
-import { ReactComponent as TitleIcon } from "assets/Company/title-icon.svg";
+import { ReactComponent as TitleIcon } from "assets/icons/title-icon.svg";
 
 const Company = () => {
   return (
@@ -9,7 +9,7 @@ const Company = () => {
         <div className="wrapper">
           <div className="left-box">
             <div className="left-title shadow-box">
-              <div className="icon shadow-box">
+              <div className="icon-box shadow-box">
                 <TitleIcon width="3em" height="3em" fill="white" />
               </div>
               <div className="company-name">Apple Inc. (APPL)</div>
