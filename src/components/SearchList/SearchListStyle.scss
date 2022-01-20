@@ -29,12 +29,16 @@
     width: 100%;
     height: 15%;
     background-color: #fff;
-    display: grid;
+    display: flex;
     margin-top: 5vh;
-    flex-direction: column;
 
     .company-name{
-        
+        font-size: 2.3rem;
+        font-weight: bold;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        margin-left: 3vw;
     }
 }
 
@@ -43,7 +47,7 @@
     height: 80px;
     background-color: #2e9bff;
     display: grid;
-    margin: auto auto auto 2vw;
+    margin: auto 0 auto 2vw;
 
     h1{
         color: #fff;
@@ -51,5 +55,29 @@
         vertical-align: middle;
         line-height: 80px;
         font-size: 3rem;
+    }
+}
+
+.stock-numbers{
+    display: flex;
+    align-items: center;
+    margin: auto 8vw auto auto;
+    flex-direction: column;
+    .stock-price{
+        font-size: 2.3rem;
+        font-weight: bold;
+    }
+
+    .search-price{
+        display: flex;
+        color: #0038ff;
+        font-size: 1.25rem;
+        margin-left: 1vw;   
+        .revised-price{
+            margin-right: 1.5vw;
+        }
+        .percent{
+
+        }
     }
 }
