@@ -1,6 +1,6 @@
 import React from "react";
 import "./Company.scss";
-import { ReactComponent as TitleIcon } from "assets/icons/title-icon.svg";
+import { ReactComponent as TitleIcon } from "assets/icons/company-title-icon.svg";
 
 const Company = () => {
   return (
