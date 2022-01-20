@@ -7,9 +7,9 @@ const Company = () => {
     <>
       <div className="container">
         <div className="wrapper">
-          <div className="graph-box">
-            <div className="graph-title shadow-box">
-              <div className="shadow-box icon-container">
+          <div className="left-box">
+            <div className="left-title shadow-box">
+              <div className="icon shadow-box">
                 <TitleIcon width="3em" height="3em" fill="white" />
               </div>
               <div className="company-name">Apple Inc. (APPL)</div>
@@ -74,14 +74,17 @@ const Company = () => {
           </div>
           <div className="vertical-line"></div>
           <div className="summary-box">
-            <div className="logo">
-              <div className="shadow-box company-logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Apple-logo.png"></img>
+            <div className="summary-logo">
+              <div className="logo-box shadow-box">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Apple-logo.png"
+                  alt="Apple Inc."
+                ></img>
               </div>
             </div>
             <div className="summary-detail shadow-box">
               <div className="summary-title">회사 개요</div>
-              <div className="summary-detail-detail">
+              <div className="summary-content">
                 나는 회사다 나는 회사다 나는 회사다 나는 회사다 나는 회사다 나는
                 회사다 나는 회사다 나는 회사다 나는 회사다 나는 회사다 나는
                 회사다 나는 회사다 나는 회사다 나는 회사다 나는 회사다 나는
