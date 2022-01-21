@@ -1,0 +1,39 @@
+#root .haeder-wrap {
+  width: 100%;
+  height: 72px;
+  background-color: #2e9bff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 200px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#root .haeder-wrap .logo-image {
+  color: #fff;
+  font-size: 32px;
+}
+
+#root .haeder-wrap .input-box {
+  position: relative;
+}
+
+#root .haeder-wrap .input-box input.search-input {
+  width: 500px;
+  padding: 18px 60px 18px 40px;
+  border: none;
+}
+
+#root .haeder-wrap .input-box .search-icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 40px;
+  top: calc(50% - 12px);
+}
+/*# sourceMappingURL=index.css.map */
