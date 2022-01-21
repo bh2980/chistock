@@ -13,7 +13,7 @@ const Company = () => {
               </div>
               <div className="company-name">Apple Inc. (APPL)</div>
               <div>
-                <div className="price">{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(number)}</div>
+                <div className="price">{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(177.23)}</div>
                 <div className="price-ratio">▼ -3.34 +1.14%</div>
               </div>
             </div>
