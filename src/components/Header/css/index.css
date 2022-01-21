@@ -8,15 +8,15 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0 200px;
+  padding: 0 120px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-#root .haeder-wrap .logo-image {
-  color: #fff;
-  font-size: 32px;
+#root .haeder-wrap .logo-image .logo {
+  width: 200px;
+  height: 42px;
 }
 
 #root .haeder-wrap .input-box {

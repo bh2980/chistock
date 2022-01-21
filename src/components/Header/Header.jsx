@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './css/index.css';
 import { ReactComponent as SearchIcon } from 'assets/icons/search-icon.svg';
+import { ReactComponent as ChistockIcon } from 'assets/icons/chistock-icon.svg';
 
 const Header = () => {
 	return (
@@ -12,7 +13,7 @@ const Header = () => {
 						pathname: '/',
 					}}
 				>
-					stock
+					<ChistockIcon className="logo" />
 				</Link>
 			</div>
 			<div className="input-box shadow-box">

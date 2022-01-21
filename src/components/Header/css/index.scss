@@ -5,12 +5,14 @@
 		background-color: #2e9bff;
 		display: flex;
 		justify-content: space-between;
-		padding: 0 200px;
+		padding: 0 120px;
 		align-items: center;
 
 		.logo-image {
-			color: #fff;
-			font-size: 32px;
+			.logo {
+				width: 200px;
+				height: 42px;
+			}
 		}
 		.input-box {
 			position: relative;
