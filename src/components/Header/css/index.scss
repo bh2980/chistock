@@ -13,10 +13,19 @@
 			font-size: 32px;
 		}
 		.input-box {
+			position: relative;
+
 			input.search-input {
 				width: 500px;
-				padding: 18px 40px;
+				padding: 18px 60px 18px 40px;
 				border: none;
+			}
+			.search-icon {
+				width: 24px;
+				height: 24px;
+				position: absolute;
+				right: 40px;
+				top: calc(50% - 12px);
 			}
 		}
 	}

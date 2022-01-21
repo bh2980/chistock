@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './css/index.css';
+import { ReactComponent as SearchIcon } from 'assets/icons/search-icon.svg';
 
 const Header = () => {
 	return (
@@ -22,7 +23,7 @@ const Header = () => {
 						placeholder="종목명, 종목코드를 입력해 주세요"
 					/>
 				</form>
-				{/* 검색 아이콘 넣어야 함! */}
+				<SearchIcon className="search-icon" />
 			</div>
 		</div>
 	);
