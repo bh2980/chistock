@@ -115,16 +115,17 @@
   .summary-detail {
     background-color: white;
     height: 70%;
+    overflow: auto;
+    padding:24px;
 
     .summary-title {
       font-size: 1.5em;
       font-weight: bold;
-      padding: 24px;
+      padding-bottom: 24px;
     }
 
     .summary-content {
       word-break: break-all;
-      margin: 0px 24px;
       font-size: 1.2em;
     }
   }
