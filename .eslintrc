@@ -1,13 +1,15 @@
 {
-    "extends": ["plugin:prettier/recommended"],
-    "parser": "babel-eslint",
-    "parserOptions": {
-      "ecmaFeatures": {
-        "jsx": true
-      },
-      "ecmaVersion": 2018,
-      "sourceType": "module"
+  "extends": ["plugin:prettier/recommended"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "plugins": ["react", "import", "react-hooks"],
-    "ignorePatterns": ["node_modules/"]
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "import", "react-hooks"],
+  "rules": {     
+    "prettier/prettier": ["error", { "endOfLine": "auto" }]   
+  },
+  "ignorePatterns": ["node_modules/"]
 }
