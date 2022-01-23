@@ -38,8 +38,21 @@ const SearchList = () => {
 			<div className="stock-numbers">
 				<div className="stock-price">$ {company.stockPrice}</div>
 				<div className="search-price">
-					<div className="revised-price">▼ {company.revisedPrice}</div>
-					<div className="percent">{company.percent}%</div>
+					<div className="revised-price">
+						{company.revisedPrice > 0 ? (
+							<div className="up">
+								<span>▲</span>
+								<div className="percent">{company.percent}%</div>
+								{company.revisedPrice}
+							</div>
+						) : (
+							<div className="down">
+								<span>▼</span>
+								<div className="percent">{company.percent}%</div>
+								{company.revisedPrice}
+							</div>
+						)}
+					</div>
 				</div>
 			</div>
 		</div>

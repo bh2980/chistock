@@ -85,14 +85,24 @@
 
 	.search-price {
 		display: flex;
-		color: #0038ff;
 		font-size: 1.25rem;
 		margin-left: 1vw;
 		margin-top: 1vh;
+
+		.up {
+			color: #ff0000;
+			display: flex;
+		}
+		.down {
+			color: #0038ff;
+			display: flex;
+		}
+
 		.revised-price {
 			margin-right: 1.5vw;
 		}
 		.percent {
+			margin-right: 1vw;
 		}
 	}
 }
