@@ -1,0 +1,98 @@
+.wrapper {
+	height: 100%;
+	background-color: #ececec;
+}
+
+.contents {
+	width: 70%;
+	height: 100%;
+	margin: 0 auto;
+	padding-top: 5vh;
+}
+
+.search-result {
+	width: 45%;
+	height: 9vh;
+	background-color: #fff;
+	display: grid;
+	align-items: center;
+
+	.search-num-text {
+		margin-left: 3vw;
+	}
+
+	span {
+		display: inline;
+		align-items: center;
+		font-size: 2rem;
+		font-weight: bold;
+	}
+	.search-num {
+		color: #ff0000;
+	}
+}
+
+.search-item {
+	width: 100%;
+	height: 15vh;
+	background-color: #fff;
+	display: flex;
+	margin-top: 5vh;
+	&:hover {
+		cursor: pointer;
+		background-color: #b6b6b6;
+		transition: 0.2s ease-in-out;
+	}
+	&:last-child {
+		margin-bottom: 10vh;
+	}
+
+	.company-name {
+		font-size: 2.3rem;
+		font-weight: bold;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		margin-left: 3vw;
+	}
+}
+
+.number {
+	width: 80px;
+	height: 80px;
+	background-color: #2e9bff;
+	display: grid;
+	margin: auto 0 auto 2vw;
+
+	h1 {
+		color: #fff;
+		text-align: center;
+		vertical-align: middle;
+		line-height: 80px;
+		font-size: 3rem;
+	}
+}
+
+.stock-numbers {
+	display: flex;
+	align-items: center;
+	margin: auto 8vw auto auto;
+	flex-direction: column;
+	.stock-price {
+		font-size: 2.3rem;
+		font-weight: bold;
+	}
+
+	.search-price {
+		display: flex;
+		color: #0038ff;
+		font-size: 1.25rem;
+		margin-left: 1vw;
+		margin-top: 1vh;
+		.revised-price {
+			margin-right: 1.5vw;
+		}
+		.percent {
+		}
+	}
+}

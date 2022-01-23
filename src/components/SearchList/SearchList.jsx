@@ -1,46 +1,66 @@
-import React from 'react'
-import './SearchListStyle.scss'
+import React from 'react';
+import './styles/SearchListStyle.scss';
 
-const SearchList = () =>{
-    return (
-        <>
-            <div className="wrapper">
-                <div className="contents">
-                    <div className="search-result shadow-box">
-                          <h1>'APPLE' 검색 결과 6건</h1>
-                    </div>
-                    <div className="search-item shadow-box">
-                        <div className="number shadow-box">
-                            <h1>1</h1>
-                        </div>
-                        <div className="company-name">Apple Inc. (APPL)</div>
-                        <div className="stock-numbers">
-                            <div className="stock-price">$ 172.19</div>
-                            <div className="search-price">
-                                <div className="revised-price">▼ -3.34</div>
-                                <div className="percent">-1.41%</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="search-item shadow-box">
-                        <div className="number shadow-box">
-                            <h1>2</h1>
-                        </div>
-                    </div>
-                    <div className="search-item shadow-box">
-                        <div className="number shadow-box">
-                            <h1>3</h1>
-                        </div>
-                    </div>
-                    <div className="search-item shadow-box">
-                        <div className="number shadow-box">
-                            <h1>4</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </>
-    );
-}
+const SearchList = () => {
+	const companies = [
+		{
+			name: 'Apple Inc. (APPL)',
+			stockPrice: '172.19',
+			revisedPrice: '-3.34',
+			percent: '-1.41',
+		},
+		{
+			name: 'Maui Land & Pinea... (MLP)',
+			stockPrice: '10.08',
+			revisedPrice: '0.08',
+			percent: '+0.79',
+		},
+		{
+			name: 'Apple Hospitality... (APLE)',
+			stockPrice: '172.19',
+			revisedPrice: '0.12',
+			percent: '+0.72',
+		},
+		{
+			name: 'GCP Applied Tech... (GCP)',
+			stockPrice: '31.87',
+			revisedPrice: '-0.08',
+			percent: '-0.25',
+		},
+	];
+
+	const searchList = companies.map((company, index) => (
+		<div className="search-item shadow-box">
+			<div className="number shadow-box">
+				<h1>{index + 1}</h1>
+			</div>
+			<div className="company-name">{company.name}</div>
+			<div className="stock-numbers">
+				<div className="stock-price">$ {company.stockPrice}</div>
+				<div className="search-price">
+					<div className="revised-price">▼ {company.revisedPrice}</div>
+					<div className="percent">{company.percent}%</div>
+				</div>
+			</div>
+		</div>
+	));
+
+	return (
+		<>
+			<div className="wrapper">
+				<div className="contents">
+					<div className="search-result shadow-box">
+						<div className="search-num-text">
+							<span>'APPLE' 검색 결과 </span>
+							<span className="search-num">{companies.length}</span>
+							<span> 건</span>
+						</div>
+					</div>
+					<div>{searchList}</div>
+				</div>
+			</div>
+		</>
+	);
+};
 
 export default SearchList;
