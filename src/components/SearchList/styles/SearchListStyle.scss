@@ -76,7 +76,7 @@
 .stock-numbers {
 	display: flex;
 	align-items: center;
-	margin: auto 8vw auto auto;
+	margin: auto 6vw auto auto;
 	flex-direction: column;
 	.stock-price {
 		font-size: 2.3rem;
@@ -88,6 +88,10 @@
 		font-size: 1.25rem;
 		margin-left: 1vw;
 		margin-top: 1vh;
+
+		span {
+			margin-right: 5px;
+		}
 
 		.up {
 			color: #ff0000;
