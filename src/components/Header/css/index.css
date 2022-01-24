@@ -1,5 +1,8 @@
 #root .haeder-wrap {
   width: 100%;
+}
+
+#root .haeder-wrap .header-top {
   height: 72px;
   background-color: #2e9bff;
   display: -webkit-box;
@@ -14,26 +17,46 @@
           align-items: center;
 }
 
-#root .haeder-wrap .logo-image .logo {
+#root .haeder-wrap .header-top .logo-image .logo {
   width: 200px;
   height: 42px;
 }
 
-#root .haeder-wrap .input-box {
+#root .haeder-wrap .header-top .input-box {
   position: relative;
 }
 
-#root .haeder-wrap .input-box input.search-input {
+#root .haeder-wrap .header-top .input-box input.search-input {
   width: 500px;
   padding: 18px 60px 18px 40px;
   border: none;
 }
 
-#root .haeder-wrap .input-box .search-icon {
+#root .haeder-wrap .header-top .input-box input.search-input:focus {
+  outline: none;
+}
+
+#root .haeder-wrap .header-top .input-box .search-icon {
   width: 24px;
   height: 24px;
   position: absolute;
   right: 40px;
   top: calc(50% - 12px);
+}
+
+#root .haeder-wrap .header-bottom .banner-area {
+  width: 100%;
+  height: 40px;
+  padding-left: 18px;
+  line-height: 40px;
+  font-size: 18px;
+  background-color: #fff;
+  -webkit-box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+#root .haeder-wrap .header-bottom .banner-area .red-text {
+  margin: 0 12px 0 4px;
+  color: red;
 }
 /*# sourceMappingURL=index.css.map */
