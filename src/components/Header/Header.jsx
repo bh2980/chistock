@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './css/index.css';
+import './css/index.scss';
 import { ReactComponent as SearchIcon } from 'assets/icons/search-icon.svg';
 
 const Header = () => {
