@@ -1,8 +1,9 @@
 import React from 'react';
 import { ReactComponent as TitleIcon } from 'assets/icons/company-title-icon.svg';
 import StockChart from './StockChart';
+import './css/Company.scss';
 
-const ConpanyPresenter = () => {
+const CompanyPresenter = ({ profile, quote }) => {
   return (
     <div className="container">
       <div className="wrapper">
@@ -21,7 +22,7 @@ const ConpanyPresenter = () => {
                   currency: `${profile.currency}`,
                 }).format(`${quote.price}`)}
               </div>
-              <div className="price-ratio">
+              <div className={quote.change > 0 ? 'price-ratio-up' : 'price-ratio-down'}>
                 {quote.change > 0
                   ? `▲ ${quote.change.toFixed(2)} ${quote.changesPercentage.toFixed(2)}%`
                   : `▼ ${quote.change.toFixed(2)} ${quote.changesPercentage.toFixed(2)}%`}
@@ -30,13 +31,13 @@ const ConpanyPresenter = () => {
           </div>
           <div className="graph">
             <div className="btn-list">
-              <button className="shadow-box">1일</button>
+              <button className="shadow-box btn_select">1일</button>
               <button className="shadow-box">5일</button>
               <button className="shadow-box">1개월</button>
               <button className="shadow-box">1년</button>
             </div>
             <div className="graph-chart shadow-box">
-              <StockChart stockHistory={stockHistory} />
+              <StockChart />
             </div>
           </div>
         </div>
@@ -44,7 +45,7 @@ const ConpanyPresenter = () => {
         <div className="summary-box">
           <div className="summary-logo">
             <div className="logo-box shadow-box">
-              <img alt="Apple Inc." src={profile.image}></img>
+              <img alt={profile.companyName} src={profile.image}></img>
             </div>
           </div>
           <div className="summary-detail shadow-box">
