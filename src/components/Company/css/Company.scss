@@ -8,6 +8,7 @@
 	height: 100%;
 	display: flex;
 	font-size: 2vh;
+	margin:auto 80px;
 }
 
 .left-box {
@@ -53,26 +54,17 @@
 			display: flex;
 			align-items: center;
 
-			ul {
-				li {
-					float: left;
+			button{
+				background-color: #fff;
+				padding: 10px;
+				margin: 10px;
+			}
 
-					input {
-						display: none;
-					}
-
-					label {
-						background-color: white;
-						font-weight: bold;
-						padding: 8px;
-						margin: 8px;
-					}
-
-					input:checked + label {
-						background-color: #60b2ff;
-						color: white;
-					}
-				}
+			button:active{
+				background-color: #60b2ff;
+				color:#fff;
+				padding: 10px;
+				margin: 10px;
 			}
 		}
 
