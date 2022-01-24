@@ -30,10 +30,8 @@ const Header = () => {
 			</div>
 			<div className="header-bottom">
 				<div className="banner-area">
-					<marquee scroll>
-						FB 333.26 <span className="red-text">-1.1 -0.33%</span>
-						FB 333.26 <span className="red-text">-1.1 -0.33%</span>
-					</marquee>
+					FB 333.26 <span className="red-text">-1.1 -0.33%</span>
+					FB 333.26 <span className="red-text">-1.1 -0.33%</span>
 				</div>
 			</div>
 		</div>
