@@ -2,18 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './style/index.scss';
 import trending from 'assets/icons/trending_up.svg';
 import fire from 'assets/icons/fire.svg';
-
-import {
-	Chart as ChartJS,
-	CategoryScale,
-	LinearScale,
-	PointElement,
-	LineElement,
-	Title,
-	Tooltip,
-	Legend,
-} from 'chart.js';
-import { Line } from 'react-chartjs-2';
+import ReactApexChart from 'react-apexcharts';
 import StockItem from './components/StockItem';
 
 const NASDAQDummy = [
@@ -309,14 +298,41 @@ const currentPriceDummy = [
 	},
 ];
 
-const Home = () => {
-	ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+const chartOption = {
+	chart: {
+		type: 'candlestick',
+		height: 350,
+	},
+	title: {
+		text: 'CandleStick Chart',
+		align: 'left',
+	},
+	xaxis: {
+		type: 'datetime',
+	},
+	yaxis: {
+		tooltip: {
+			enabled: true,
+		},
+	},
+	plotOptions: {
+		candlestick: {
+			colors: {
+				upward: '#f00',
+				downward: '#00f',
+			},
+		},
+	},
+};
 
+const Home = () => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [buttonSelected, setButtonSelected] = useState(0);
 	const [NASDAQInfo, setNASDAQInfo] = useState([]);
 	const [NASDAQ100, setNASDAQ100] = useState([]);
-	const [NASDAQHistory, setNASDAQHistroy] = useState({});
+	const [NASDAQHistory, setNASDAQHistory] = useState({});
+
+	let series = [{ data: [{}] }];
 
 	const getNASDAQInfo = () => {
 		return NASDAQDummy;
@@ -340,9 +356,36 @@ const Home = () => {
 	useEffect(() => {
 		setNASDAQInfo(getNASDAQInfo());
 		setNASDAQ100(getNASDAQ100());
-		setNASDAQHistroy(getNASDAQHistory());
+		setNASDAQHistory(getNASDAQHistory());
 		setIsLoading(false);
 	}, []);
+
+	const testVal = [
+		{
+			data: [
+				{
+					x: new Date(2020, 0, 1),
+					y: [6629.81, 6650.5, 6623.04, 6633.33],
+				},
+				{
+					x: new Date(2020, 0, 2),
+					y: [6632.01, 6643.59, 6620, 6630.11],
+				},
+				{
+					x: new Date(2020, 0, 3),
+					y: [6630.71, 6648.95, 6623.34, 6635.65],
+				},
+				{
+					x: new Date(2020, 0, 4),
+					y: [6635.65, 6651, 6629.67, 6638.24],
+				},
+				{
+					x: new Date(2020, 0, 5),
+					y: [6636.65, 6655, 6629.68, 6639.24],
+				},
+			],
+		},
+	];
 
 	return (
 		<div className="home">
@@ -406,18 +449,33 @@ const Home = () => {
 									하루
 								</button>
 							</div>
-							<Line
-								data={{
-									labels: [1, 2, 3],
-									datasets: [
-										{
-											label: 'dataset 1',
-											data: [1, 2, 3],
-											borderColor: 'rgb(255,99,132)',
-											backgroundColor: 'rgba(255,99,132,0.5)',
-										},
+							{console.log('on Render', [
+								{
+									data: [
+										NASDAQHistory.historical.map(item => {
+											return {
+												x: new Date(item.date),
+												y: [item.open, item.high, item.low, item.close],
+											};
+										}),
 									],
-								}}
+								},
+							])}
+							{console.log('testVal', testVal)}
+							<ReactApexChart
+								type="candlestick"
+								options={chartOption}
+								series={[
+									{
+										data: NASDAQHistory.historical.map(item => {
+											return {
+												x: new Date(item.date),
+												y: [item.open, item.high, item.low, item.close],
+											};
+										}),
+									},
+								]}
+								height={500}
 							/>
 						</div>
 					</div>
