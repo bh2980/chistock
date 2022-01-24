@@ -29,17 +29,7 @@ const CompanyPresenter = ({ profile, quote }) => {
               </div>
             </div>
           </div>
-          <div className="graph">
-            <div className="btn-list">
-              <button className="shadow-box btn_select">1일</button>
-              <button className="shadow-box">5일</button>
-              <button className="shadow-box">1개월</button>
-              <button className="shadow-box">1년</button>
-            </div>
-            <div className="graph-chart shadow-box">
-              <StockChart />
-            </div>
-          </div>
+          <StockChart />
         </div>
         <div className="vertical-line" />
         <div className="summary-box">
