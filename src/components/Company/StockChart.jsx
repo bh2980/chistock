@@ -23,7 +23,7 @@ const StockChart = () => {
   };
 
   const candleInfo = stockHistory.map(({ date, open, low, high, close }) => ({
-    x: date,
+    x: new Date(date),
     y: [open, high, low, close],
   }));
 
@@ -63,7 +63,15 @@ const StockChart = () => {
       },
     },
     xaxis: {
-      type: 'category',
+      type: 'datetime',
+      labels: {
+        datetimeFormatter: {
+          year: 'yyyy',
+          month: "MMM 'yy",
+          day: 'dd MMM',
+          hour: 'HH:mm',
+        },
+      },
     },
     yaxis: {
       tooltip: {
