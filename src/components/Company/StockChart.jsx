@@ -27,11 +27,6 @@ const StockChart = () => {
     y: [open, high, low, close],
   }));
 
-  const lineInfo = stockHistory.map(({ date, close }) => ({
-    x: date,
-    y: close,
-  }));
-
   const candleSeries = [
     {
       data: candleInfo,
