@@ -326,11 +326,14 @@ const chartOption = {
 };
 
 const Home = () => {
-	const [isLoading, setIsLoading] = useState(true);
+	const [isChartLoading, setIsChartLoading] = useState(true);
+	const [isListLoading, setIsListLoading] = useState(false);
 	const [buttonSelected, setButtonSelected] = useState(0);
 	const [NASDAQInfo, setNASDAQInfo] = useState([]);
 	const [NASDAQ100, setNASDAQ100] = useState([]);
 	const [NASDAQHistory, setNASDAQHistory] = useState({});
+	const [itemList, setItemList] = useState([]);
+	const [target, setTarget] = useState(null);
 
 	const getNASDAQInfo = () => {
 		return NASDAQDummy;
@@ -351,16 +354,53 @@ const Home = () => {
 		setButtonSelected(idx);
 	};
 
+	const getMoreItem = async () => {
+		if (itemList.length === NASDAQ100.length) return;
+		setIsListLoading(true);
+		await new Promise(resolve => setTimeout(resolve, 1500));
+		let len = itemList.length;
+		for (let i = len; i < len + 5; i++) {
+			if (i >= NASDAQ100.length) break;
+			setItemList(prev =>
+				prev.concat({
+					symbol: NASDAQ100[i].symbol,
+					percentDelta: getPriceDelta(NASDAQ100[i].symbol),
+					price: getCurrentPrice(NASDAQ100[i].symbol),
+				}),
+			);
+		}
+		setIsListLoading(false);
+	};
+
+	const onIntersect = async ([entry], observer) => {
+		if (entry.isIntersecting && !isListLoading) {
+			observer.unobserve(entry.target);
+			await getMoreItem();
+			observer.observe(entry.target);
+		}
+	};
+
 	useEffect(() => {
 		setNASDAQInfo(getNASDAQInfo());
 		setNASDAQ100(getNASDAQ100());
 		setNASDAQHistory(getNASDAQHistory());
-		setIsLoading(false);
+		setIsChartLoading(false);
 	}, []);
+
+	useEffect(() => {
+		let observer;
+		if (target) {
+			observer = new IntersectionObserver(onIntersect, {
+				threshold: 0.4,
+			});
+			observer.observe(target);
+		}
+		return () => observer && observer.disconnect();
+	}, [target]);
 
 	return (
 		<div className="home">
-			{isLoading ? (
+			{isChartLoading ? (
 				<span>Loading</span>
 			) : (
 				<>
@@ -420,18 +460,6 @@ const Home = () => {
 									하루
 								</button>
 							</div>
-							{console.log('on Render', [
-								{
-									data: [
-										NASDAQHistory.historical.map(item => {
-											return {
-												x: new Date(item.date),
-												y: [item.open, item.high, item.low, item.close],
-											};
-										}),
-									],
-								},
-							])}
 							<ReactApexChart
 								type="candlestick"
 								options={chartOption}
@@ -460,15 +488,21 @@ const Home = () => {
 							</div>
 						</div>
 						<div className="stock-list shadow-box">
-							{NASDAQ100.map((item, idx) => (
-								<StockItem
-									key={idx}
-									idx={idx + 1}
-									code={item.symbol}
-									percentDelta={getPriceDelta(item.symbol)}
-									price={getCurrentPrice(item.symbol)}
-								/>
-							))}
+							{itemList.map(
+								//NASDAQ100에서 itemList 으로 변경 필요
+								(item, idx) => (
+									<StockItem
+										key={idx}
+										idx={idx + 1}
+										code={item.symbol}
+										percentDelta={item.percentDelta}
+										price={item.price}
+									/>
+								),
+							)}
+							<div ref={setTarget} className="loader">
+								{isListLoading && <span>⏰Loading...</span>}
+							</div>
 						</div>
 					</div>
 				</>
