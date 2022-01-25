@@ -19,8 +19,8 @@ const CompanyPresenter = ({ profile, quote }) => {
 							<div className="price">
 								{new Intl.NumberFormat('en-US', {
 									style: 'currency',
-									currency: `${profile.currency}`,
-								}).format(`${quote.price}`)}
+									currency: profile.currency,
+								}).format(quote.price)}
 							</div>
 							<div className={quote.change > 0 ? 'price-ratio-up' : 'price-ratio-down'}>
 								{quote.change > 0
@@ -35,7 +35,7 @@ const CompanyPresenter = ({ profile, quote }) => {
 				<div className="summary-box">
 					<div className="summary-logo">
 						<div className="logo-box shadow-box">
-							<img alt={profile.companyName} src={profile.image}></img>
+							<img alt={profile.companyName} src={profile.image} />
 						</div>
 					</div>
 					<div className="summary-detail shadow-box">

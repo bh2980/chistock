@@ -114,12 +114,14 @@ const StockChart = () => {
 					</label>
 				</li>
 				<li>
-					<input id="oneyear" type="radio" name="chart-date" value="1year" />
-					<label
-						className="shadow-box"
-						htmlFor="oneyear"
+					<input
+						id="oneyear"
+						type="radio"
+						name="chart-date"
+						value="1year"
 						onClick={() => chartChange(stockHistory1Year)}
-					>
+					/>
+					<label className="shadow-box" htmlFor="oneyear">
 						1년
 					</label>
 				</li>
