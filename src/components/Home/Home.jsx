@@ -318,8 +318,8 @@ const chartOption = {
 	plotOptions: {
 		candlestick: {
 			colors: {
-				upward: '#f00',
-				downward: '#00f',
+				upward: '#e64747',
+				downward: '#3861e8',
 			},
 		},
 	},
@@ -331,8 +331,6 @@ const Home = () => {
 	const [NASDAQInfo, setNASDAQInfo] = useState([]);
 	const [NASDAQ100, setNASDAQ100] = useState([]);
 	const [NASDAQHistory, setNASDAQHistory] = useState({});
-
-	let series = [{ data: [{}] }];
 
 	const getNASDAQInfo = () => {
 		return NASDAQDummy;
@@ -359,33 +357,6 @@ const Home = () => {
 		setNASDAQHistory(getNASDAQHistory());
 		setIsLoading(false);
 	}, []);
-
-	const testVal = [
-		{
-			data: [
-				{
-					x: new Date(2020, 0, 1),
-					y: [6629.81, 6650.5, 6623.04, 6633.33],
-				},
-				{
-					x: new Date(2020, 0, 2),
-					y: [6632.01, 6643.59, 6620, 6630.11],
-				},
-				{
-					x: new Date(2020, 0, 3),
-					y: [6630.71, 6648.95, 6623.34, 6635.65],
-				},
-				{
-					x: new Date(2020, 0, 4),
-					y: [6635.65, 6651, 6629.67, 6638.24],
-				},
-				{
-					x: new Date(2020, 0, 5),
-					y: [6636.65, 6655, 6629.68, 6639.24],
-				},
-			],
-		},
-	];
 
 	return (
 		<div className="home">
@@ -461,7 +432,6 @@ const Home = () => {
 									],
 								},
 							])}
-							{console.log('testVal', testVal)}
 							<ReactApexChart
 								type="candlestick"
 								options={chartOption}
