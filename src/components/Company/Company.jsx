@@ -1,8 +1,9 @@
 import React from 'react';
-import './Company.scss';
 import { ReactComponent as TitleIcon } from 'assets/icons/company-title-icon.svg';
+import StockChart from './StockChart';
+import './css/Company.scss';
 
-const Company = () => {
+const CompanyPresenter = ({ profile, quote }) => {
 	return (
 		<div className="container">
 			<div className="wrapper">
@@ -11,69 +12,35 @@ const Company = () => {
 						<div className="icon-box shadow-box">
 							<TitleIcon width="3em" height="3em" fill="white" />
 						</div>
-						<div className="company-name">Apple Inc. (APPL)</div>
+						<div className="company-name">
+							{profile.companyName} ({profile.symbol})
+						</div>
 						<div>
 							<div className="price">
-								{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(
-									177.23,
-								)}
+								{new Intl.NumberFormat('en-US', {
+									style: 'currency',
+									currency: profile.currency,
+								}).format(quote.price)}
 							</div>
-							<div className="price-ratio">▼ -3.34 +1.14%</div>
+							<div className={quote.change > 0 ? 'price-ratio-up' : 'price-ratio-down'}>
+								{quote.change > 0
+									? `▲ ${quote.change.toFixed(2)} ${quote.changesPercentage.toFixed(2)}%`
+									: `▼ ${quote.change.toFixed(2)} ${quote.changesPercentage.toFixed(2)}%`}
+							</div>
 						</div>
 					</div>
-					<div className="graph">
-						<div className="btn-list">
-							<ul>
-								<li>
-									<input type="radio" id="oneday" name="chart-date" value="1day" />
-									<label className="shadow-box" htmlFor="oneday">
-										1일
-									</label>
-								</li>
-								<li>
-									<input type="radio" id="fiveday" name="chart-date" value="5day" />
-									<label className="shadow-box" htmlFor="fiveday">
-										5일
-									</label>
-								</li>
-								<li>
-									<input id="onemonth" type="radio" name="chart-date" value="1month" />
-									<label className="shadow-box" htmlFor="onemonth">
-										1개월
-									</label>
-								</li>
-								<li>
-									<input id="oneyear" type="radio" name="chart-date" value="1year" />
-									<label className="shadow-box" htmlFor="oneyear">
-										1년
-									</label>
-								</li>
-							</ul>
-						</div>
-						<div className="graph-chart shadow-box">
-							<div>나는 그래프다</div>
-						</div>
-					</div>
+					<StockChart />
 				</div>
 				<div className="vertical-line" />
 				<div className="summary-box">
 					<div className="summary-logo">
 						<div className="logo-box shadow-box">
-							<img
-								alt="Apple Inc."
-								src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Apple-logo.png"
-							></img>
+							<img alt={profile.companyName} src={profile.image} />
 						</div>
 					</div>
 					<div className="summary-detail shadow-box">
 						<div className="summary-title">회사 개요</div>
-						<div className="summary-content">
-							나는 회사다 나는 회사다 나는 회사다 나는 회사다 나는 회사다 나는 회사다 나는 회사다
-							나는 회사다 나는 회사다 나는 회사다 나는 회사다 나는 회사다 나는 회사다 나는 회사다
-							나는 회사다 나는 회사다 나는 회사다 나는 회사다 나는 회사다 나는 회사다 나는 회사다
-							나는 회사다 나는 회사다 나는 회사다 나는 회사다 나는 회사다 나는 회사다 나는 회사다
-							나는 회사다 나는 회사다
-						</div>
+						<div className="summary-content">{profile.description}</div>
 					</div>
 				</div>
 			</div>
@@ -81,4 +48,4 @@ const Company = () => {
 	);
 };
 
-export default Company;
+export default CompanyPresenter;
