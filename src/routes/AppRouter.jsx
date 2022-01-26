@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from 'components/Home/Home';
 import SearchList from 'components/SearchList/SearchList';
-import Company from 'components/Company/Company';
+import Company from 'components/Company/CompanyContainer';
 import HeaderContainer from 'components/Header/containers/HeaderContainer';
 
 const AppRouter = () => {
@@ -12,7 +12,7 @@ const AppRouter = () => {
 			<Switch>
 				<Route path="/" exact component={Home} />
 				<Route path="/search-list" component={SearchList} />
-				<Route path="/company" component={Company} />
+				<Route path="/detail" component={Company} />
 			</Switch>
 		</Router>
 	);
