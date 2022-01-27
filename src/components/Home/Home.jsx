@@ -46,13 +46,12 @@ const Home = ({
 	const [timer, setTimer] = useState(0);
 
 	const onIntersect = async ([entry], observer) => {
-		if (entry.isIntersecting && !isListLoading) {
-			if (timer) clearTimeout(timer);
-			observer.unobserve(entry.target);
-			const newTimer = setTimeout(async () => await getMoreItem());
-			setTimer(newTimer);
-			observer.observe(entry.target);
-		}
+		if (!entry.isIntersecting || isListLoading) return;
+		if (timer) clearTimeout(timer);
+		observer.unobserve(entry.target);
+		const newTimer = setTimeout(async () => await getMoreItem());
+		setTimer(newTimer);
+		observer.observe(entry.target);
 	};
 
 	const observer = React.useMemo(

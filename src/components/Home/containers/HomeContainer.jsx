@@ -304,13 +304,13 @@ const HomeContainer = () => {
 	const [itemList, setItemList] = useState([]);
 
 	const getNASDAQInfo = () => {
-		return NASDAQDummy;
+		setNASDAQInfo(NASDAQDummy);
 	};
 	const getNASDAQ100 = () => {
-		return NASDAQ100Dummy;
+		setNASDAQ100(NASDAQ100Dummy);
 	};
 	const getNASDAQHistory = () => {
-		return NASDAQHistoryDummy;
+		setNASDAQHistory(NASDAQHistoryDummy);
 	};
 	const getPriceDelta = code => {
 		return priceHistoryDummy[0].historical[0].changePercent;
@@ -338,9 +338,9 @@ const HomeContainer = () => {
 	};
 
 	useEffect(() => {
-		setNASDAQInfo(getNASDAQInfo());
-		setNASDAQ100(getNASDAQ100());
-		setNASDAQHistory(getNASDAQHistory());
+		getNASDAQInfo();
+		getNASDAQ100();
+		getNASDAQHistory();
 		setIsChartLoading(false);
 	}, []);
 
