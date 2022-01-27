@@ -294,33 +294,6 @@ const currentPriceDummy = [
 	},
 ];
 
-const chartOption = {
-	chart: {
-		type: 'candlestick',
-		height: 350,
-	},
-	title: {
-		text: 'CandleStick Chart',
-		align: 'left',
-	},
-	xaxis: {
-		type: 'datetime',
-	},
-	yaxis: {
-		tooltip: {
-			enabled: true,
-		},
-	},
-	plotOptions: {
-		candlestick: {
-			colors: {
-				upward: '#e64747',
-				downward: '#3861e8',
-			},
-		},
-	},
-};
-
 const HomeContainer = () => {
 	const [isChartLoading, setIsChartLoading] = useState(true);
 	const [isListLoading, setIsListLoading] = useState(false);
@@ -345,26 +318,23 @@ const HomeContainer = () => {
 	const getCurrentPrice = code => {
 		return currentPriceDummy[0].price;
 	};
-	const buttonOnClick = idx => {
-		setButtonSelected(idx);
-	};
 
 	const getMoreItem = async () => {
-		if (itemList.length === NASDAQ100.length) return;
-		setIsListLoading(true);
+		if (itemList.length >= NASDAQ100.length || isListLoading) return;
+		console.log('itemList', itemList);
+		setIsListLoading(prev => !prev);
 		await new Promise(resolve => setTimeout(resolve, 1500));
-		let len = itemList.length;
-		for (let i = len; i < len + 5; i++) {
-			if (i >= NASDAQ100.length) break;
+		NASDAQ100.slice(itemList.length, itemList.length + 5).map(item => {
 			setItemList(prev =>
 				prev.concat({
-					symbol: NASDAQ100[i].symbol,
-					percentDelta: getPriceDelta(NASDAQ100[i].symbol),
-					price: getCurrentPrice(NASDAQ100[i].symbol),
+					symbol: item.symbol,
+					percentDelta: getPriceDelta(item.symbol),
+					price: getCurrentPrice(item.symbol),
 				}),
 			);
-		}
-		setIsListLoading(false);
+		});
+		console.log('nasdaq100', NASDAQ100);
+		setIsListLoading(prev => !prev);
 	};
 
 	useEffect(() => {
@@ -376,15 +346,15 @@ const HomeContainer = () => {
 
 	return (
 		<Home
-			buttonOnClick={buttonOnClick}
-			chartOption={chartOption}
 			isChartLoading={isChartLoading}
 			isListLoading={isListLoading}
 			buttonSelected={buttonSelected}
+			setButtonSelected={setButtonSelected}
 			NASDAQInfo={NASDAQInfo}
 			NASDAQHistory={NASDAQHistory}
 			itemList={itemList}
 			getMoreItem={getMoreItem}
+			setIsListLoading={setIsListLoading}
 		/>
 	);
 };

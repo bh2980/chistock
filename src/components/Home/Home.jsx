@@ -5,9 +5,35 @@ import fire from 'assets/icons/fire.svg';
 import ReactApexChart from 'react-apexcharts';
 import StockItem from './components/StockItem';
 
+const chartOption = {
+	chart: {
+		type: 'candlestick',
+		height: 350,
+	},
+	title: {
+		text: 'CandleStick Chart',
+		align: 'left',
+	},
+	xaxis: {
+		type: 'datetime',
+	},
+	yaxis: {
+		tooltip: {
+			enabled: true,
+		},
+	},
+	plotOptions: {
+		candlestick: {
+			colors: {
+				upward: '#e64747',
+				downward: '#3861e8',
+			},
+		},
+	},
+};
+
 const Home = ({
-	buttonOnClick,
-	chartOption,
+	setButtonSelected,
 	isChartLoading,
 	isListLoading,
 	buttonSelected,
@@ -17,25 +43,27 @@ const Home = ({
 	getMoreItem,
 }) => {
 	const [target, setTarget] = useState(null);
+	const [timer, setTimer] = useState(0);
 
 	const onIntersect = async ([entry], observer) => {
 		if (entry.isIntersecting && !isListLoading) {
+			if (timer) clearTimeout(timer);
 			observer.unobserve(entry.target);
-			await getMoreItem();
+			const newTimer = setTimeout(async () => await getMoreItem());
+			setTimer(newTimer);
 			observer.observe(entry.target);
 		}
 	};
 
+	const observer = React.useMemo(
+		() => new IntersectionObserver(onIntersect, { threshold: 0.4 }),
+		[onIntersect],
+	);
 	useEffect(() => {
-		let observer;
-		if (target) {
-			observer = new IntersectionObserver(onIntersect, {
-				threshold: 0.4,
-			});
-			observer.observe(target);
-		}
-		return () => observer && observer.disconnect();
-	}, [target]);
+		if (!target) return;
+		observer.observe(target);
+		return () => observer?.disconnect();
+	}, [target, onIntersect, observer]);
 
 	return (
 		<div className="home">
@@ -56,7 +84,7 @@ const Home = ({
 									className={`price-area ${NASDAQInfo[0].changesPercentage > 0 ? 'inc' : 'desc'}`}
 								>
 									<span className="current-price">{NASDAQInfo[0].price}</span>
-									<span className="price-delta">{`${NASDAQInfo[0].changesPercentage}%`}</span>
+									<span className="price-delta">{NASDAQInfo[0].changesPercentage}%</span>
 								</div>
 							</div>
 						</div>
@@ -64,37 +92,37 @@ const Home = ({
 							<div className="buttons">
 								<button
 									className={`shadow-box ${buttonSelected === 0 && 'clicked'}`}
-									onClick={() => buttonOnClick(0)}
+									onClick={() => setButtonSelected(0)}
 								>
 									1분
 								</button>
 								<button
 									className={`shadow-box ${buttonSelected === 1 && 'clicked'}`}
-									onClick={() => buttonOnClick(1)}
+									onClick={() => setButtonSelected(1)}
 								>
 									5분
 								</button>
 								<button
 									className={`shadow-box ${buttonSelected === 2 && 'clicked'}`}
-									onClick={() => buttonOnClick(2)}
+									onClick={() => setButtonSelected(2)}
 								>
 									15분
 								</button>
 								<button
 									className={`shadow-box ${buttonSelected === 3 && 'clicked'}`}
-									onClick={() => buttonOnClick(3)}
+									onClick={() => setButtonSelected(3)}
 								>
 									30분
 								</button>
 								<button
 									className={`shadow-box ${buttonSelected === 4 && 'clicked'}`}
-									onClick={() => buttonOnClick(4)}
+									onClick={() => setButtonSelected(4)}
 								>
 									4시간
 								</button>
 								<button
 									className={`shadow-box ${buttonSelected === 5 && 'clicked'}`}
-									onClick={() => buttonOnClick(5)}
+									onClick={() => setButtonSelected(5)}
 								>
 									하루
 								</button>
