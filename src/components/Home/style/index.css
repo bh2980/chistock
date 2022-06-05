@@ -1,0 +1,59 @@
+.home {
+  background-color: #ececec;
+  height: calc(100vh - 108px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 38px 120px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.home .title-text {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.home .inc {
+  color: red;
+}
+
+.home .desc {
+  color: blue;
+}
+
+.home .line {
+  width: 1px;
+  background-color: #b5b5b5;
+  margin: 20px;
+}
+
+.home .stock-list {
+  width: 40%;
+  height: 100%;
+  overflow-y: scroll;
+  font-size: 12px;
+}
+
+.home .stock-list .stock-item {
+  width: 100%;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+.home .stock-list .stock-item:hover {
+  background-color: #60b2ff;
+}
+
+.home .stock-list .loader {
+  font-size: 40pt;
+}
+/*# sourceMappingURL=index.css.map */

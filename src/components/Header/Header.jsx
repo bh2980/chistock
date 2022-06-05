@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './css/index.scss';
-import { ReactComponent as SearchIcon } from 'assets/icons/search-icon.svg';
-import { ReactComponent as ChistockIcon } from 'assets/icons/chistock-icon.svg';
+import images from 'assets/images.js';
 
-const Header = () => {
+const Header = ({ itemList }) => {
 	return (
 		<div className="haeder-wrap">
 			<div className="header-top">
@@ -14,24 +13,34 @@ const Header = () => {
 							pathname: '/',
 						}}
 					>
-						<ChistockIcon className="logo" />
+						<img className="logo" src={images.chistockIcon} alt="chistock" />
 					</Link>
 				</div>
-				<div className="input-box shadow-box">
+				<div className="input-box">
 					<form className="search">
 						<input
-							className="search-input shadow-box"
+							className="search-input"
 							type="text"
 							placeholder="종목명, 종목코드를 입력해 주세요"
 						/>
 					</form>
-					<SearchIcon className="search-icon" />
+					<img src={images.search} alt="Search" className="search-icon" />
 				</div>
 			</div>
 			<div className="header-bottom">
 				<div className="banner-area">
-					FB 333.26 <span className="red-text">-1.1 -0.33%</span>
-					FB 333.26 <span className="red-text">-1.1 -0.33%</span>
+					{itemList.map(item => (
+						<>
+							{item.symbol}
+							<span className={item.change > 0 ? 'red-text' : 'blue-text'}>
+								{item.change > 0 ? '+' : null}
+								{item.change.toFixed(2)}
+							</span>
+							<span className={item.change > 0 ? 'red-text' : 'blue-text'}>
+								{item.changesPercentage.toFixed(2)}%
+							</span>
+						</>
+					))}
 				</div>
 			</div>
 		</div>

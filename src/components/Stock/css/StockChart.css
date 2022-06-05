@@ -1,0 +1,47 @@
+.chart-container {
+  height: 85%;
+  background-color: white;
+}
+
+.chart-container .period-selector {
+  height: 50px;
+}
+
+.chart-container .period-selector ul {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.chart-container .period-selector ul li {
+  float: left;
+}
+
+.chart-container .period-selector ul li input {
+  display: none;
+}
+
+.chart-container .period-selector ul li label {
+  background-color: white;
+  font-weight: bold;
+  padding: 8px;
+  margin: 8px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.chart-container .period-selector ul li input:checked + label {
+  background-color: #60b2ff;
+  color: white;
+}
+
+.chart-container .chart {
+  width: 100%;
+  height: 90%;
+  padding: 20px;
+}
+/*# sourceMappingURL=StockChart.css.map */
