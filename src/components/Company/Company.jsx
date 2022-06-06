@@ -8,7 +8,6 @@ const Company = ({ profile, quote }) => {
 			<StockView quote={quote} />
 			<div className="vertical-line" />
 			<div className="summary shadow-box">
-				<div className="summary-title">회사 개요</div>
 				<div className="summary-detail">
 					<div className="logo"></div>
 					<table class="summary-table">

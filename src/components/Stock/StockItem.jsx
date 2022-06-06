@@ -11,7 +11,7 @@ const StockItem = ({ quote }) => {
 			<div className="price">
 				<div className={quote.change > 0 ? 'price-ratio-up' : 'price-ratio-down'}>
 					{quote.change > 0
-						? `▲ ${quote.change.toFixed(2)} ${quote.changesPercentage.toFixed(2)}%`
+						? `▲ +${quote.change.toFixed(2)} +${quote.changesPercentage.toFixed(2)}%`
 						: `▼ ${quote.change.toFixed(2)} ${quote.changesPercentage.toFixed(2)}%`}
 				</div>
 				<div>
