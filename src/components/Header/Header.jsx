@@ -28,15 +28,31 @@ const Header = ({ itemList }) => {
 				</div>
 			</div>
 			<div className="header-bottom">
-				<div className="banner-area">
+				<div className="banner">
 					{itemList.map(item => (
 						<>
-							{item.symbol}
+							<span className="banner-ticker">{item.symbol}</span>
 							<span className={item.change > 0 ? 'red-text' : 'blue-text'}>
 								{item.change > 0 ? '+' : null}
 								{item.change.toFixed(2)}
 							</span>
 							<span className={item.change > 0 ? 'red-text' : 'blue-text'}>
+								{item.change > 0 ? '+' : null}
+								{item.changesPercentage.toFixed(2)}%
+							</span>
+						</>
+					))}
+				</div>
+				<div className="banner2">
+					{itemList.map(item => (
+						<>
+							<span className="banner-ticker">{item.symbol}</span>
+							<span className={item.change > 0 ? 'red-text' : 'blue-text'}>
+								{item.change > 0 ? '+' : null}
+								{item.change.toFixed(2)}
+							</span>
+							<span className={item.change > 0 ? 'red-text' : 'blue-text'}>
+								{item.change > 0 ? '+' : null}
 								{item.changesPercentage.toFixed(2)}%
 							</span>
 						</>
