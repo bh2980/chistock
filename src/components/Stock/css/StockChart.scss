@@ -24,7 +24,6 @@
 					padding: 5px 10px;
 					cursor: pointer;
 					border-radius: 5px;
-					// border: 1px solid #60b2ff;
 					color: #4d4d4d;
 					font-weight: bold;
 				}
@@ -39,7 +38,7 @@
 
 	.chart {
 		width: 100%;
-		height: 90%;
+		height: calc(100% - 50px);
 		padding: 10px;
 	}
 }

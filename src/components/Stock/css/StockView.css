@@ -1,5 +1,77 @@
 .stock-view-box {
-  width: 60%;
+  width: 70%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media screen and (max-width: 820px) {
+  .stock-view-box {
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
+.stock-view-box .recommend-list {
+  width: 35%;
+  height: 100%;
+  font-size: 0.7vw;
+  margin-right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-y: auto;
+}
+
+@media screen and (max-width: 820px) {
+  .stock-view-box .recommend-list {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    overflow-x: auto;
+  }
+}
+
+.stock-view-box .recommend-list .title {
+  height: 20%;
+}
+
+@media screen and (max-width: 820px) {
+  .stock-view-box .recommend-list .title {
+    min-width: 200px;
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .stock-view-box .recommend-list .title .company-name {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .stock-view-box .recommend-list .title .price {
+    width: 50%;
+  }
+}
+
+.stock-view-box .stock-chart {
+  width: 65%;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11,7 +83,7 @@
 }
 
 @media screen and (max-width: 820px) {
-  .stock-view-box {
+  .stock-view-box .stock-chart {
     width: 100%;
   }
 }

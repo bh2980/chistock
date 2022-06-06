@@ -7,8 +7,17 @@ import './css/StockView.scss';
 const StockView = ({ quote }) => {
 	return (
 		<div className="stock-view-box">
-			<StockItem quote={quote} />
-			<StockChart />
+			<div className="recommend-list">
+				<StockItem quote={quote} />
+				<StockItem quote={quote} />
+				<StockItem quote={quote} />
+				<StockItem quote={quote} />
+				<StockItem quote={quote} />
+			</div>
+			<div className="stock-chart">
+				<StockItem quote={quote} />
+				<StockChart />
+			</div>
 		</div>
 	);
 };
