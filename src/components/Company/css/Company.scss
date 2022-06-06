@@ -14,9 +14,10 @@
 	}
 
 	.vertical-line {
-		width: 1px;
+		width: 3px;
 		background-color: #b5b5b5;
 		margin: 20px;
+		border-radius: 5px;
 
 		@media screen and (max-width: 820px) {
 			display: none;

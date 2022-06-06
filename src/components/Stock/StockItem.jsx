@@ -1,24 +1,32 @@
 import React from 'react';
 import './css/StockItem.scss';
 
-const StockItem = ({ quote }) => {
+const StockItem = ({ companyInfo }) => {
 	return (
 		<div className="title shadow-box">
 			<div className="company-name">
-				<span className="symbol">{quote.symbol}</span>
-				<span>{quote.name}</span>
+				<span className="symbol">{companyInfo.symbol}</span>
+				<span>{companyInfo.quoteType.shortName}</span>
 			</div>
 			<div className="price">
-				<div className={quote.change > 0 ? 'price-ratio-up' : 'price-ratio-down'}>
-					{quote.change > 0
-						? `▲ +${quote.change.toFixed(2)} +${quote.changesPercentage.toFixed(2)}%`
-						: `▼ ${quote.change.toFixed(2)} ${quote.changesPercentage.toFixed(2)}%`}
+				<div
+					className={
+						companyInfo.price.regularMarketChange.raw > 0 ? 'price-ratio-up' : 'price-ratio-down'
+					}
+				>
+					{companyInfo.price.regularMarketChange.raw > 0
+						? `▲ +${companyInfo.price.regularMarketChange.raw.toFixed(2)} +${
+								companyInfo.price.regularMarketChangePercent.fmt
+						  }`
+						: `▼ ${companyInfo.price.regularMarketChange.raw.toFixed(2)} ${
+								companyInfo.price.regularMarketChangePercent.fmt
+						  }`}
 				</div>
 				<div>
 					{new Intl.NumberFormat('en-US', {
 						type: 'currency',
 						currency: 'USD',
-					}).format(quote.price)}
+					}).format(companyInfo.price.regularMarketPrice.raw)}
 				</div>
 			</div>
 		</div>

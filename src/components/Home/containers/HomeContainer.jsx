@@ -4,7 +4,7 @@ import dummy from 'assets/dummy';
 
 const HomeContainer = () => {
 	const [isChartLoading, setIsChartLoading] = useState(true);
-	const [itemList, setItemList] = useState(dummy.MostActiveStock);
+	const [itemList, setItemList] = useState([dummy.SNPInfo]);
 
 	useEffect(() => {
 		setIsChartLoading(false);

@@ -12,17 +12,20 @@ const Home = ({ isChartLoading, itemList }) => {
 				<span>Loading</span>
 			) : (
 				<>
-					<StockView quote={dummy.NASDAQDummy} />
+					<StockView companyInfo={dummy.SNPInfo} />
 					<div className="line" />
-					<div className="right-area">
-						<div className="active-title">Most Active Stock</div>
+					<div className="right-area shadow-box">
+						<div className="active-title">Trending</div>
 						<div className="stock-list">
 							{itemList.map(item => (
-								<Link to={`/detail/${item.symbol}`}>
-									<button class="item-btn">
-										<StockItem quote={item} />
-									</button>
-								</Link>
+								<>
+									<Link to={`/detail/${item.quoteType.symbol}`}>
+										<button className="item-btn">
+											<StockItem className="item" companyInfo={item} />
+										</button>
+									</Link>
+									<div className="horizontal-divider"></div>
+								</>
 							))}
 						</div>
 					</div>

@@ -1,22 +1,32 @@
 import images from 'assets/images';
 import React from 'react';
 import StockItem from './StockItem';
-import StockChart from './StockChart';
+import StockChartContainer from './container/StockChartContainer';
 import './css/StockView.scss';
 
-const StockView = ({ quote }) => {
+const StockView = ({ companyInfo }) => {
 	return (
 		<div className="stock-view-box">
 			<div className="recommend-list">
-				<StockItem quote={quote} />
-				<StockItem quote={quote} />
-				<StockItem quote={quote} />
-				<StockItem quote={quote} />
-				<StockItem quote={quote} />
+				<button>
+					<StockItem companyInfo={companyInfo} />
+				</button>
+				<button>
+					<StockItem companyInfo={companyInfo} />
+				</button>
+				<button>
+					<StockItem companyInfo={companyInfo} />
+				</button>
+				<button>
+					<StockItem companyInfo={companyInfo} />
+				</button>
+				<button>
+					<StockItem companyInfo={companyInfo} />
+				</button>
 			</div>
 			<div className="stock-chart">
-				<StockItem quote={quote} />
-				<StockChart />
+				<StockItem companyInfo={companyInfo} />
+				<StockChartContainer />
 			</div>
 		</div>
 	);

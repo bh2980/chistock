@@ -24,7 +24,8 @@
   width: 35%;
   height: 100%;
   font-size: 0.7vw;
-  padding-right: 20px;
+  margin-right: 10px;
+  padding-right: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -42,30 +43,35 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    margin-top: 10px;
     overflow-x: auto;
   }
 }
 
-.stock-view-box .recommend-list .title {
-  height: 20%;
+.stock-view-box .recommend-list button {
+  height: 90%;
+  text-align: left;
 }
 
 @media screen and (max-width: 820px) {
-  .stock-view-box .recommend-list .title {
+  .stock-view-box .recommend-list button {
     min-width: 200px;
-    margin-top: 5px;
     margin-right: 5px;
   }
 }
 
+.stock-view-box .recommend-list button .title {
+  height: 90%;
+}
+
 @media screen and (max-width: 820px) {
-  .stock-view-box .recommend-list .title .company-name {
+  .stock-view-box .recommend-list button .title .company-name {
     width: 50%;
   }
 }
 
 @media screen and (max-width: 820px) {
-  .stock-view-box .recommend-list .title .price {
+  .stock-view-box .recommend-list button .title .price {
     width: 50%;
   }
 }

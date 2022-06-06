@@ -13,36 +13,41 @@
 		width: 35%;
 		height: 100%;
 		font-size: 0.7vw;
-		padding-right: 20px;
+		margin-right: 10px;
+		padding-right: 10px;
 		display: flex;
-		// justify-content: space-evenly;
 		flex-direction: column;
 		overflow-y: auto;
 
 		@media screen and (max-width: 820px) {
 			width: 100%;
 			flex-direction: row;
-			// margin-top: 5px;
+			margin-top: 10px;
 			overflow-x: auto;
 		}
 
-		.title {
-			height: 20%;
+		button {
+			height: 90%;
+			text-align: left;
+
 			@media screen and (max-width: 820px) {
 				min-width: 200px;
-				margin-top: 5px;
 				margin-right: 5px;
 			}
 
-			.company-name {
-				@media screen and (max-width: 820px) {
-					width: 50%;
-				}
-			}
+			.title {
+				height: 90%;
 
-			.price {
-				@media screen and (max-width: 820px) {
-					width: 50%;
+				.company-name {
+					@media screen and (max-width: 820px) {
+						width: 50%;
+					}
+				}
+
+				.price {
+					@media screen and (max-width: 820px) {
+						width: 50%;
+					}
 				}
 			}
 		}
