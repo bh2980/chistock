@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import StockChart from '../StockChart';
+import StockCandleChart from '../StockCandleChart';
 import dummy from 'assets/dummy';
 
 const getDummyChart = () => {
 	return dummy.SNPChart;
 };
 
-const StockChartContainer = () => {
+const StockCandleChartContainer = ({ chartData }) => {
 	const [updateDate, setUpdateDate] = useState(0);
 	const [minChart, setMinChart] = useState(0);
 	const [maxVolume, setMaxVolume] = useState(0);
@@ -14,8 +14,7 @@ const StockChartContainer = () => {
 	const [volumeInfo, setVolumeInfo] = useState([]);
 
 	const getChartData = () => {
-		const { chart } = getDummyChart();
-		const { meta, timestamp, indicators } = chart.result[0];
+		const { meta, timestamp, indicators } = getDummyChart();
 		const { volume, close, open, low, high } = indicators.quote[0];
 
 		const date = new Date(meta.regularMarketTime);
@@ -65,7 +64,18 @@ const StockChartContainer = () => {
 		chart: {
 			height: 350,
 			type: 'column',
-			stacked: false,
+			toolbar: {
+				show: false,
+				tools: {
+					download: false,
+					selection: false,
+					zoom: false,
+					zoomin: false,
+					zoomout: false,
+					pan: false,
+					reset: true,
+				},
+			},
 			animations: {
 				enabled: false,
 				easing: 'easeinout',
@@ -110,13 +120,16 @@ const StockChartContainer = () => {
 				max: maxVolume,
 			},
 		],
+		legend: {
+			show: false,
+		},
 	};
 
 	useEffect(() => {
 		getChartData();
 	}, []);
 
-	return <StockChart candleSeries={series} candleOptions={options} updatetime={updateDate} />;
+	return <StockCandleChart candleSeries={series} candleOptions={options} updatetime={updateDate} />;
 };
 
-export default StockChartContainer;
+export default StockCandleChartContainer;

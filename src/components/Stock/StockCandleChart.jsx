@@ -1,9 +1,9 @@
 import images from 'assets/images';
 import React, { useState } from 'react';
 import ReactApexChart from 'react-apexcharts';
-import './css/StockChart.scss';
+import './css/StockCandleChart.scss';
 
-const StockChart = ({ candleSeries, candleOptions, updatetime }) => {
+const StockCandleChart = ({ candleSeries, candleOptions, updatetime }) => {
 	return (
 		<div className="chart-container shadow-box">
 			<div className="period-selector">
@@ -46,4 +46,4 @@ const StockChart = ({ candleSeries, candleOptions, updatetime }) => {
 	);
 };
 
-export default StockChart;
+export default StockCandleChart;

@@ -16,7 +16,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 65%;
+  width: 60%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -33,7 +33,7 @@
 }
 
 .item-title .price {
-  width: 35%;
+  width: 60%;
   font-size: 2em;
   text-align: right;
   font-weight: bold;

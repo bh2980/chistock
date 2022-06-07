@@ -66,6 +66,7 @@
   .stock-view-box .recommend-list button {
     min-width: 200px;
     margin-right: 5px;
+    margin-top: 0px;
   }
 }
 

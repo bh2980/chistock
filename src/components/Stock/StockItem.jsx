@@ -6,27 +6,27 @@ const StockItem = ({ companyInfo }) => {
 		<div className="item-title">
 			<div className="company-name">
 				<span className="symbol">{companyInfo.symbol}</span>
-				<span>{companyInfo.quoteType.shortName}</span>
+				<span>
+					{companyInfo.shortName === undefined ? companyInfo.symbol : companyInfo.shortName}
+				</span>
 			</div>
 			<div className="price">
 				<div
-					className={
-						companyInfo.price.regularMarketChange.raw > 0 ? 'price-ratio-up' : 'price-ratio-down'
-					}
+					className={companyInfo.regularMarketChange > 0 ? 'price-ratio-up' : 'price-ratio-down'}
 				>
-					{companyInfo.price.regularMarketChange.raw > 0
-						? `▲ +${companyInfo.price.regularMarketChange.raw.toFixed(2)} (+${
-								companyInfo.price.regularMarketChangePercent.fmt
-						  })`
-						: `▼ ${companyInfo.price.regularMarketChange.raw.toFixed(2)} (${
-								companyInfo.price.regularMarketChangePercent.fmt
-						  })`}
+					{companyInfo.regularMarketChange > 0
+						? `▲ +${Math.round(companyInfo.regularMarketChange * 100) / 100} (+${
+								Math.round(companyInfo.regularMarketChangePercent * 100) / 100
+						  }%)`
+						: `▼ ${Math.round(companyInfo.regularMarketChange * 100) / 100} (${
+								Math.round(companyInfo.regularMarketChangePercent * 100) / 100
+						  }%)`}
 				</div>
 				<div>
 					{new Intl.NumberFormat('en-US', {
 						type: 'currency',
 						currency: 'USD',
-					}).format(companyInfo.price.regularMarketPrice.raw)}
+					}).format(companyInfo.regularMarketPrice)}
 				</div>
 			</div>
 		</div>

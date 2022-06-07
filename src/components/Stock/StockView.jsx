@@ -1,16 +1,17 @@
 import images from 'assets/images';
 import React from 'react';
 import StockItem from './StockItem';
-import StockChartContainer from './container/StockChartContainer';
+import StockCandleChartContainer from './container/StockCandleChartContainer';
+import StockLineChartContainer from './container/StockLineChartContainer';
 import './css/StockView.scss';
 
-const StockView = ({ companyInfo, recommendList }) => {
+const StockView = ({ companyInfo, chartData, recomViewList, onClickRecommend }) => {
 	return (
 		<div className="stock-view-box">
 			<div className="recommend-list">
-				{recommendList.map(recommend => (
-					<button className="shadow-box">
-						<StockItem companyInfo={recommend} />
+				{recomViewList.map((recommend, index) => (
+					<button key={index} className="shadow-box" onClick={index => onClickRecommend(index)}>
+						<StockItem companyInfo={recommend.data} />
 					</button>
 				))}
 			</div>
@@ -18,7 +19,11 @@ const StockView = ({ companyInfo, recommendList }) => {
 				<div className="chart-title shadow-box">
 					<StockItem companyInfo={companyInfo} />
 				</div>
-				<StockChartContainer />
+				{!chartData.open ? (
+					<StockLineChartContainer chartData={chartData} />
+				) : (
+					<StockCandleChartContainer chartData={chartData} />
+				)}
 			</div>
 		</div>
 	);

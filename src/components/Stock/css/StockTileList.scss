@@ -1,0 +1,38 @@
+.tile-list {
+	width: 35%;
+	height: 100%;
+	font-size: 0.7vw;
+	margin-right: 10px;
+	padding-right: 10px;
+	display: flex;
+	flex-direction: column;
+
+	@media screen and (max-width: 820px) {
+		width: 100%;
+		flex-direction: row;
+		margin-top: 10px;
+		overflow-x: auto;
+	}
+
+	button {
+		height: calc(100% / 5);
+		background-color: white;
+		text-align: left;
+		margin-top: 10px;
+
+		&:first-child {
+			margin-top: 0px;
+		}
+
+		&:hover {
+			background-color: rgb(227, 244, 253);
+		}
+
+		@media screen and (max-width: 820px) {
+			min-width: 200px;
+			margin-right: 5px;
+
+			margin-top: 0px;
+		}
+	}
+}
