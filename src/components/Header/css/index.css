@@ -3,7 +3,7 @@
 }
 
 #root .haeder-wrap .header-top {
-  height: 72px;
+  height: 64px;
   background-color: #0084ff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -39,8 +39,8 @@
 }
 
 #root .haeder-wrap .header-top .input-box input.search-input {
-  width: 33vw;
-  padding: 18px 60px 18px 20px;
+  width: 30vw;
+  padding: 12px 60px 12px 20px;
   border: none;
   border-radius: 8px;
 }
@@ -50,8 +50,8 @@
 }
 
 @media screen and (max-width: 820px) {
-  #root .haeder-wrap .header-top .input-box {
-    display: none;
+  #root .haeder-wrap .header-top .input-box input.search-input {
+    padding: 8px 40px 8px 10px;
   }
 }
 
@@ -63,9 +63,18 @@
   top: calc(50% - 12px);
 }
 
+@media screen and (max-width: 820px) {
+  #root .haeder-wrap .header-top .input-box .search-icon {
+    width: 16px;
+    height: 16px;
+    right: 10px;
+    top: calc(50% - 8px);
+  }
+}
+
 #root .haeder-wrap .header-bottom {
   width: 100%;
-  height: 36px;
+  height: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -83,14 +92,14 @@
 
 #root .haeder-wrap .header-bottom .banner {
   top: 0;
-  height: 36px;
+  height: 24px;
+  line-height: 24px;
   background-color: inherit;
-  line-height: 36px;
-  font-size: 18px;
-  -webkit-animation: moveLeft 90s linear infinite;
-          animation: moveLeft 90s linear infinite;
+  font-size: 16px;
   white-space: nowrap;
   color: white;
+  -webkit-animation: moveLeft 90s linear infinite;
+          animation: moveLeft 90s linear infinite;
 }
 
 @media screen and (max-width: 820px) {
@@ -118,14 +127,14 @@
 
 #root .haeder-wrap .header-bottom .banner2 {
   top: 0;
-  height: 36px;
+  height: 24px;
+  line-height: 24px;
   background-color: inherit;
-  line-height: 36px;
-  font-size: 18px;
+  color: white;
+  font-size: 16px;
+  white-space: nowrap;
   -webkit-animation: moveLeft2 90s linear infinite;
           animation: moveLeft2 90s linear infinite;
-  white-space: nowrap;
-  color: white;
 }
 
 @media screen and (max-width: 820px) {

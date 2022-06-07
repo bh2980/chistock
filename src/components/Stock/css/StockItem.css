@@ -14,6 +14,10 @@
   margin-bottom: 10px;
 }
 
+.title:hover {
+  background-color: #e3f4fd;
+}
+
 .title .company-name {
   display: -webkit-box;
   display: -ms-flexbox;
