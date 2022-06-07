@@ -18,11 +18,7 @@ const Header = ({ itemList }) => {
 				</div>
 				<div className="input-box">
 					<form className="search">
-						<input
-							className="search-input"
-							type="text"
-							placeholder="종목명, 종목코드를 입력해 주세요"
-						/>
+						<input className="search-input shadow-box" type="text" placeholder="종목 검색" />
 					</form>
 					<img src={images.search} alt="Search" className="search-icon" />
 				</div>
