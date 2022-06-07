@@ -5,6 +5,7 @@ const images = {
 	fire: '/assets/icons/fire.svg',
 	search: '/assets/icons/search-icon.svg',
 	trendingUp: '/assets/icons/trending_up.svg',
+	sync: '/assets/icons/sync.svg',
 };
 
 export default images;

@@ -4,6 +4,8 @@
 
 	.period-selector {
 		height: 50px;
+		display: flex;
+		justify-content: space-between;
 
 		ul {
 			height: 50px;
@@ -32,6 +34,28 @@
 					background-color: #60b2ff;
 					color: white;
 				}
+			}
+		}
+
+		.update-time {
+			height: 100%;
+			line-height: 50px;
+			padding-right: 20px;
+
+			img {
+				width: 17px;
+				height: 17px;
+				vertical-align: middle;
+				background-color: #dbdbdb;
+				border-radius: 17px;
+				padding: 2px;
+				border: 1px solid #dbdbdb;
+			}
+
+			span {
+				color: #999999;
+				vertical-align: middle;
+				font-size: 12px;
 			}
 		}
 	}

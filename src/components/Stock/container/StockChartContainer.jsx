@@ -9,13 +9,25 @@ const getDummyChart = () => {
 const StockChartContainer = () => {
 	const makeCandleData = () => {
 		const { chart } = getDummyChart();
-		const { timestamp, indicators } = chart.result[0];
+		const { meta, timestamp, indicators } = chart.result[0];
 		const { volume, close, open, low, high } = indicators.quote[0];
 
-		return { timestamp, open, high, low, close, volume };
+		return { meta, timestamp, open, high, low, close, volume };
 	};
 
-	const { timestamp, open, high, low, close, volume } = makeCandleData();
+	const { meta, timestamp, open, high, low, close, volume } = makeCandleData();
+
+	const date = new Date(meta.regularMarketTime);
+	const updatedate =
+		// date.getFullYear() +
+		// '/' +
+		// (date.getMonth() + 1) +
+		// '/' +
+		// date.getDate() +
+		// ' ' +
+		date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+
+	console.log(updatedate);
 
 	const candleInfo = timestamp.map((ts, index) => ({
 		x: ts,
@@ -75,7 +87,9 @@ const StockChartContainer = () => {
 		},
 	};
 
-	return <StockChart candleSeries={candleSeries} candleOptions={candleOptions} />;
+	return (
+		<StockChart candleSeries={candleSeries} candleOptions={candleOptions} updatetime={updatedate} />
+	);
 };
 
 export default StockChartContainer;
