@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import StockChart from '../StockChart';
 import dummy from 'assets/dummy';
 
@@ -7,40 +7,50 @@ const getDummyChart = () => {
 };
 
 const StockChartContainer = () => {
-	const makeCandleData = () => {
+	const [updateDate, setUpdateDate] = useState(0);
+	const [minChart, setMinChart] = useState(0);
+	const [maxVolume, setMaxVolume] = useState(0);
+	const [candleInfo, setCandleInfo] = useState([]);
+	const [volumeInfo, setVolumeInfo] = useState([]);
+
+	const getChartData = () => {
 		const { chart } = getDummyChart();
 		const { meta, timestamp, indicators } = chart.result[0];
 		const { volume, close, open, low, high } = indicators.quote[0];
 
-		return { meta, timestamp, open, high, low, close, volume };
+		const date = new Date(meta.regularMarketTime);
+		const uDate = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+		const newCandle = timestamp.map((ts, index) => ({
+			x: ts,
+			y: [open[index], high[index], low[index], close[index]],
+		}));
+
+		const newVolume = timestamp.map((ts, index) => ({
+			x: ts,
+			y: volume[index],
+		}));
+
+		setUpdateDate(uDate);
+		setMinChart(Math.min(...low));
+		setMaxVolume(Math.max(...volume) * 3);
+		setCandleInfo(newCandle);
+		setVolumeInfo(newVolume);
 	};
 
-	const { meta, timestamp, open, high, low, close, volume } = makeCandleData();
-
-	const date = new Date(meta.regularMarketTime);
-	const updatedate =
-		// date.getFullYear() +
-		// '/' +
-		// (date.getMonth() + 1) +
-		// '/' +
-		// date.getDate() +
-		// ' ' +
-		date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
-
-	console.log(updatedate);
-
-	const candleInfo = timestamp.map((ts, index) => ({
-		x: ts,
-		y: [open[index], high[index], low[index], close[index]],
-	}));
-
-	const candleSeries = [
+	const series = [
 		{
+			name: 'candle',
+			type: 'candlestick',
 			data: candleInfo,
+		},
+		{
+			name: 'volume',
+			type: 'column',
+			data: volumeInfo,
 		},
 	];
 
-	const candleOptions = {
+	const options = {
 		plotOptions: {
 			candlestick: {
 				colors: {
@@ -53,16 +63,21 @@ const StockChartContainer = () => {
 			},
 		},
 		chart: {
-			type: 'candlestick',
+			height: 350,
+			type: 'column',
+			stacked: false,
 			animations: {
-				enabled: true,
+				enabled: false,
 				easing: 'easeinout',
-				speed: 150,
+				speed: 200,
 				dynamicAnimation: {
-					enabled: true,
+					enabled: false,
 					speed: 150,
 				},
 			},
+		},
+		dataLabels: {
+			enabled: false,
 		},
 		xaxis: {
 			type: 'datetime',
@@ -75,21 +90,33 @@ const StockChartContainer = () => {
 				},
 			},
 		},
-		yaxis: {
-			tooltip: {
-				enabled: true,
-			},
-			labels: {
-				formatter: function (value) {
-					return value + '.0';
+		yaxis: [
+			{
+				seriesName: 'candle',
+				min: minChart,
+				opposite: true,
+				tooltip: {
+					enabled: true,
+				},
+				labels: {
+					formatter: function (value) {
+						return Math.round(value * 100) / 100;
+					},
 				},
 			},
-		},
+			{
+				seriesName: 'column',
+				show: false,
+				max: maxVolume,
+			},
+		],
 	};
 
-	return (
-		<StockChart candleSeries={candleSeries} candleOptions={candleOptions} updatetime={updatedate} />
-	);
+	useEffect(() => {
+		getChartData();
+	}, []);
+
+	return <StockChart candleSeries={series} candleOptions={options} updatetime={updateDate} />;
 };
 
 export default StockChartContainer;

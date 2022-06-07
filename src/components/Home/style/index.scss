@@ -37,7 +37,7 @@
 		}
 
 		.active-title {
-			font-size: 2em;
+			font-size: 1.2em;
 			font-weight: bold;
 
 			@media screen and (max-width: 820px) {
@@ -47,7 +47,7 @@
 
 		.stock-list {
 			height: 100%;
-			overflow-y: scroll;
+			overflow-y: hidden;
 			font-size: 0.75em;
 			margin-top: 10px;
 			padding-right: 10x;
@@ -58,24 +58,30 @@
 			}
 
 			a {
-				display: block;
-			}
-
-			.item-btn {
-				width: 100%;
 				display: flex;
-				text-align: left;
+				align-items: center;
+				height: calc(100% / 5);
+				border-bottom: 1px solid #cecece;
 
-				div {
-					background-color: none;
-					box-shadow: none;
+				&:first-child {
+					border-top: 1px solid #cecece;
+				}
+
+				&:hover {
+					background-color: rgb(227, 244, 253);
 				}
 			}
 
-			.horizontal-divider {
+			.trending-item {
 				width: 100%;
-				border-top: 1px solid #cecece;
+				display: flex;
+				text-align: left;
 			}
+
+			// .horizontal-divider {
+			// 	width: 100%;
+			// 	border-top: ;
+			// }
 
 			.loader {
 				font-size: 40pt;

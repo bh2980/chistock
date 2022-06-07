@@ -4,28 +4,20 @@ import StockItem from './StockItem';
 import StockChartContainer from './container/StockChartContainer';
 import './css/StockView.scss';
 
-const StockView = ({ companyInfo }) => {
+const StockView = ({ companyInfo, recommendList }) => {
 	return (
 		<div className="stock-view-box">
 			<div className="recommend-list">
-				<button>
-					<StockItem companyInfo={companyInfo} />
-				</button>
-				<button>
-					<StockItem companyInfo={companyInfo} />
-				</button>
-				<button>
-					<StockItem companyInfo={companyInfo} />
-				</button>
-				<button>
-					<StockItem companyInfo={companyInfo} />
-				</button>
-				<button>
-					<StockItem companyInfo={companyInfo} />
-				</button>
+				{recommendList.map(recommend => (
+					<button className="shadow-box">
+						<StockItem companyInfo={recommend} />
+					</button>
+				))}
 			</div>
 			<div className="stock-chart">
-				<StockItem companyInfo={companyInfo} />
+				<div className="chart-title shadow-box">
+					<StockItem companyInfo={companyInfo} />
+				</div>
 				<StockChartContainer />
 			</div>
 		</div>

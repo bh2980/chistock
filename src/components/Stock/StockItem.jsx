@@ -3,7 +3,7 @@ import './css/StockItem.scss';
 
 const StockItem = ({ companyInfo }) => {
 	return (
-		<div className="title shadow-box">
+		<div className="item-title">
 			<div className="company-name">
 				<span className="symbol">{companyInfo.symbol}</span>
 				<span>{companyInfo.quoteType.shortName}</span>
@@ -15,12 +15,12 @@ const StockItem = ({ companyInfo }) => {
 					}
 				>
 					{companyInfo.price.regularMarketChange.raw > 0
-						? `▲ +${companyInfo.price.regularMarketChange.raw.toFixed(2)} +${
+						? `▲ +${companyInfo.price.regularMarketChange.raw.toFixed(2)} (+${
 								companyInfo.price.regularMarketChangePercent.fmt
-						  }`
-						: `▼ ${companyInfo.price.regularMarketChange.raw.toFixed(2)} ${
+						  })`
+						: `▼ ${companyInfo.price.regularMarketChange.raw.toFixed(2)} (${
 								companyInfo.price.regularMarketChangePercent.fmt
-						  }`}
+						  })`}
 				</div>
 				<div>
 					{new Intl.NumberFormat('en-US', {

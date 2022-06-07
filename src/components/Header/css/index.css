@@ -74,7 +74,7 @@
 
 #root .haeder-wrap .header-bottom {
   width: 100%;
-  height: 24px;
+  height: 32px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -92,8 +92,8 @@
 
 #root .haeder-wrap .header-bottom .banner {
   top: 0;
-  height: 24px;
-  line-height: 24px;
+  height: 32px;
+  line-height: 32px;
   background-color: inherit;
   font-size: 16px;
   white-space: nowrap;
@@ -127,8 +127,8 @@
 
 #root .haeder-wrap .header-bottom .banner2 {
   top: 0;
-  height: 24px;
-  line-height: 24px;
+  height: 32px;
+  line-height: 32px;
   background-color: inherit;
   color: white;
   font-size: 16px;

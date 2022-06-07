@@ -1,4 +1,4 @@
-.title {
+.item-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8,21 +8,15 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: white;
   width: 100%;
   padding: 15px;
-  margin-bottom: 10px;
 }
 
-.title:hover {
-  background-color: #e3f4fd;
-}
-
-.title .company-name {
+.item-title .company-name {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 60%;
+  width: 65%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -33,24 +27,25 @@
   overflow-x: auto;
 }
 
-.title .company-name .symbol {
+.item-title .company-name .symbol {
   color: #2e9bff;
   font-size: 0.5em;
 }
 
-.title .price {
-  width: 40%;
+.item-title .price {
+  width: 35%;
   font-size: 2em;
   text-align: right;
+  font-weight: bold;
 }
 
-.title .price .price-ratio-up {
-  color: red;
+.item-title .price .price-ratio-up {
+  color: #ff4141;
   font-size: 0.5em;
 }
 
-.title .price .price-ratio-down {
-  color: blue;
+.item-title .price .price-ratio-down {
+  color: #0084ff;
   font-size: 0.5em;
 }
 /*# sourceMappingURL=StockItem.css.map */

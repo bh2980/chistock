@@ -29,7 +29,7 @@ const StockChart = ({ candleSeries, candleOptions, updatetime }) => {
 				</div>
 				<div className="update-time">
 					<button>
-						<img class="update-icon" src={images.sync} />
+						<img className="update-icon" src={images.sync} />
 						<span> {updatetime} 업데이트</span>
 					</button>
 				</div>

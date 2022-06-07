@@ -1,6 +1,6 @@
 .home {
   background-color: #ececec;
-  height: calc(100vh - 88px);
+  height: calc(100vh - 96px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,7 +59,7 @@
 }
 
 .home .right-area .active-title {
-  font-size: 2em;
+  font-size: 1.2em;
   font-weight: bold;
 }
 
@@ -71,7 +71,7 @@
 
 .home .right-area .stock-list {
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: hidden;
   font-size: 0.75em;
   margin-top: 10px;
   padding-right: 10x;
@@ -85,26 +85,30 @@
 }
 
 .home .right-area .stock-list a {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: calc(100% / 5);
+  border-bottom: 1px solid #cecece;
 }
 
-.home .right-area .stock-list .item-btn {
+.home .right-area .stock-list a:first-child {
+  border-top: 1px solid #cecece;
+}
+
+.home .right-area .stock-list a:hover {
+  background-color: #e3f4fd;
+}
+
+.home .right-area .stock-list .trending-item {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   text-align: left;
-}
-
-.home .right-area .stock-list .item-btn div {
-  background-color: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.home .right-area .stock-list .horizontal-divider {
-  width: 100%;
-  border-top: 1px solid #cecece;
 }
 
 .home .right-area .stock-list .loader {
