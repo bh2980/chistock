@@ -4,8 +4,9 @@ import './css/Company.scss';
 import RecommendListContainer from './container/RecommendListContainer';
 import StockItem from 'components/Stock/StockItem';
 import StockLineChartContainer from 'components/Stock/container/StockLineChartContainer';
+import StockCandleChartContainer from 'components/Stock/container/StockCandleChartContainer';
 
-const Company = ({ isLoad, companyInfo, recommendList }) => {
+const Company = ({ isLoad, companyInfo, recommendList, chartStyle }) => {
 	return isLoad ? null : (
 		<div className="container">
 			<div className="company-chart-view">
@@ -14,7 +15,11 @@ const Company = ({ isLoad, companyInfo, recommendList }) => {
 					<div className="company-title shadow-box">
 						<StockItem companyInfo={companyInfo.data} />
 					</div>
-					<StockLineChartContainer chartData={companyInfo.chart} />
+					{chartStyle === 'line' ? (
+						<StockLineChartContainer chartData={companyInfo.chart} />
+					) : (
+						<StockCandleChartContainer chartData={companyInfo.chart} />
+					)}
 				</div>
 			</div>
 			<div className="vertical-line" />

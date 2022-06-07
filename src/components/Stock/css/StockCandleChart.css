@@ -47,6 +47,24 @@
   color: white;
 }
 
+.chart-container .period-selector ul li button {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.chart-container .period-selector ul li button svg {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  fill: white;
+}
+
+.chart-container .period-selector ul li button svg svg {
+  fill: white;
+}
+
 .chart-container .period-selector .update-time {
   height: 100%;
   line-height: 50px;

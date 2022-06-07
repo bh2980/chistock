@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import StockCandleChart from '../StockCandleChart';
-import dummy from 'assets/dummy';
-
-const getDummyChart = () => {
-	return dummy.SNPChart;
-};
 
 const StockCandleChartContainer = ({ chartData }) => {
+	console.log(chartData);
 	const [updateDate, setUpdateDate] = useState(0);
 	const [minChart, setMinChart] = useState(0);
 	const [maxVolume, setMaxVolume] = useState(0);
@@ -14,10 +10,9 @@ const StockCandleChartContainer = ({ chartData }) => {
 	const [volumeInfo, setVolumeInfo] = useState([]);
 
 	const getChartData = () => {
-		const { meta, timestamp, indicators } = getDummyChart();
-		const { volume, close, open, low, high } = indicators.quote[0];
+		const { timestamp, open, high, low, close, volume, regularMarketTime } = chartData;
 
-		const date = new Date(meta.regularMarketTime);
+		const date = new Date(regularMarketTime);
 		const uDate = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
 		const newCandle = timestamp.map((ts, index) => ({
 			x: ts,
@@ -129,7 +124,7 @@ const StockCandleChartContainer = ({ chartData }) => {
 		getChartData();
 	}, []);
 
-	return <StockCandleChart candleSeries={series} candleOptions={options} updatetime={updateDate} />;
+	return <StockCandleChart series={series} options={options} updatetime={updateDate} />;
 };
 
 export default StockCandleChartContainer;

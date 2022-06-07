@@ -34,6 +34,24 @@
 					background-color: #60b2ff;
 					color: white;
 				}
+
+				button {
+					width: 30px;
+					height: 30px;
+					margin-left: 10px;
+					border-radius: 5px;
+
+					svg {
+						width: 20px;
+						height: 20px;
+						vertical-align: middle;
+						fill: white;
+
+						svg {
+							fill: white;
+						}
+					}
+				}
 			}
 		}
 

@@ -26,14 +26,12 @@ const Home = ({ isChartLoading, viewStock, setViewStock, marketSummary, trending
 					<div className="right-area shadow-box">
 						<div className="trending-title">Trending</div>
 						<div className="stock-list">
-							{trendingList.map(trendingItem => (
-								<>
-									<Link to={`/detail/${trendingItem.symbol}`}>
-										<button className="trending-item">
-											<StockItem companyInfo={trendingItem} />
-										</button>
-									</Link>
-								</>
+							{trendingList.map((trendingItem, index) => (
+								<Link key={index} to={`/detail/${trendingItem.symbol}`}>
+									<button key={index} className="trending-item">
+										<StockItem companyInfo={trendingItem} />
+									</button>
+								</Link>
 							))}
 						</div>
 					</div>

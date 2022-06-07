@@ -6,6 +6,8 @@ const images = {
 	search: '/assets/icons/search-icon.svg',
 	trendingUp: '/assets/icons/trending_up.svg',
 	sync: '/assets/icons/sync.svg',
+	candleStick: '/assets/icons/candle.svg',
+	line: '/assets/icons/line.svg',
 };
 
 export default images;

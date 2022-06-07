@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import ReactApexChart from 'react-apexcharts';
 import './css/StockCandleChart.scss';
 
-const StockCandleChart = ({ candleSeries, candleOptions, updatetime }) => {
+const StockCandleChart = ({ series, options, updatetime }) => {
 	return (
 		<div className="chart-container shadow-box">
 			<div className="period-selector">
@@ -35,12 +35,7 @@ const StockCandleChart = ({ candleSeries, candleOptions, updatetime }) => {
 				</div>
 			</div>
 			<div className="chart">
-				<ReactApexChart
-					options={candleOptions}
-					series={candleSeries}
-					type="candlestick"
-					height={'100%'}
-				/>
+				<ReactApexChart options={options} series={series} type="candlestick" height={'100%'} />
 			</div>
 		</div>
 	);
