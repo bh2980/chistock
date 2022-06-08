@@ -1,12 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import './style/index.scss';
-import dummy from 'assets/dummy.js';
 import StockItem from 'components/Stock/StockItem';
 import { Link } from 'react-router-dom';
 import StockLineChartContainer from 'components/Stock/container/StockLineChartContainer';
 import IndexListContainer from './containers/IndexListContainer';
 
-const Home = ({ isChartLoading, viewStock, setViewStock, marketSummary, trendingList }) => {
+const Home = ({
+	isChartLoading,
+	viewStock,
+	setViewStock,
+	marketSummary,
+	trendingList,
+	news,
+	selectedSide,
+	onSideClick,
+}) => {
 	return (
 		<div className="home">
 			{isChartLoading ? (
@@ -24,15 +32,52 @@ const Home = ({ isChartLoading, viewStock, setViewStock, marketSummary, trending
 					</div>
 					<div className="line" />
 					<div className="right-area shadow-box">
-						<div className="trending-title">Trending</div>
+						<div className="side-title">
+							<button
+								className={selectedSide === 'Trending' ? 'selected' : null}
+								onClick={onSideClick}
+							>
+								Trending
+							</button>
+							<button
+								className={selectedSide !== 'Trending' ? 'selected' : null}
+								onClick={onSideClick}
+							>
+								News
+							</button>
+						</div>
 						<div className="stock-list">
-							{trendingList.map((trendingItem, index) => (
-								<Link key={index} to={`/detail/${trendingItem.symbol}`}>
-									<button key={index} className="trending-item">
-										<StockItem companyInfo={trendingItem} />
-									</button>
-								</Link>
-							))}
+							{selectedSide !== 'Trending'
+								? news.map(anews => (
+										<a
+											key={anews.id}
+											href={
+												anews.content.clickThroughUrl ? anews.content.clickThroughUrl.url : null
+											}
+										>
+											<button className="news-item">
+												<div>
+													<span className="news-title">{anews.content.title}</span>
+													<div className="news-date">
+														{anews.content.provider.displayName} / {anews.content.pubDate}
+													</div>
+												</div>
+												{anews.content.thumbnail ? (
+													<img
+														src={anews.content.thumbnail.resolutions[0].url}
+														alt={anews.content.title}
+													/>
+												) : null}
+											</button>
+										</a>
+								  ))
+								: trendingList.map((trendingItem, index) => (
+										<Link key={index} to={`/detail/${trendingItem.symbol}`}>
+											<button key={index} className="trending-item">
+												<StockItem companyInfo={trendingItem} />
+											</button>
+										</Link>
+								  ))}
 						</div>
 					</div>
 				</>

@@ -5,10 +5,38 @@ import dummy from 'assets/dummy';
 const HomeContainer = () => {
 	const [isChartLoading, setIsChartLoading] = useState(true);
 	const [marketSummary, setMarketSummary] = useState(null);
-	const [trendingList, setTrendingList] = useState(dummy.TrendingStock[0].quotes);
+	const [trendingList, setTrendingList] = useState(null);
 	const [viewStock, setViewStock] = useState(null);
+	const [selectedSide, setSelectedSide] = useState('Trending');
+	const [news, setNews] = useState([]);
 
-	const makeMarketItem = () => {
+	const onSideClick = e => {
+		setSelectedSide(e.currentTarget.textContent);
+	};
+
+	const getTrending = () => {
+		const newTrending = dummy.TrendingStock[0].quotes;
+		setTrendingList(newTrending);
+	};
+
+	const getNews = () => {
+		const newNews = dummy.News.stream.map(anews => {
+			const { content } = anews;
+			const { pubDate, title } = content;
+			return {
+				...anews,
+				content: {
+					...content,
+					pubDate: pubDate.replace('T', ' ').replace('Z', ''),
+					title: title.length > 70 ? title.slice(0, 50) + '...' : title,
+				},
+			};
+		});
+
+		setNews(newNews);
+	};
+
+	const getMarketItem = () => {
 		const marketSum = dummy.MarketSummary;
 		const newMarketSum = marketSum.map(marketItem => {
 			const { symbol, shortName, spark } = marketItem;
@@ -34,7 +62,9 @@ const HomeContainer = () => {
 	};
 
 	useEffect(() => {
-		makeMarketItem();
+		getMarketItem();
+		getTrending();
+		getNews();
 		setIsChartLoading(false);
 	}, []);
 
@@ -45,6 +75,9 @@ const HomeContainer = () => {
 			setViewStock={setViewStock}
 			marketSummary={marketSummary}
 			trendingList={trendingList}
+			news={news}
+			selectedSide={selectedSide}
+			onSideClick={onSideClick}
 		/>
 	);
 };
