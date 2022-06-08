@@ -58,11 +58,24 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 820px) {
+  .home .home-chart-view .main-chart {
+    margin-left: 0px;
+  }
 }
 
 .home .home-chart-view .main-chart .main-title {
   background-color: white;
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 820px) {
+  .home .home-chart-view .main-chart .main-title {
+    font-size: 2em;
+  }
 }
 
 @media screen and (max-width: 820px) {
@@ -95,6 +108,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: white;
+  margin-top: 10px;
   padding: 20px;
 }
 
@@ -109,8 +123,17 @@
   font-size: 1.2em;
 }
 
+@media screen and (max-width: 820px) {
+  .home .right-area .side-title button {
+    font-size: 3em;
+  }
+}
+
 .home .right-area .side-title .selected {
-  font-size: 1.7em;
+  background-color: #0084ff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
   font-weight: bold;
 }
 
@@ -154,6 +177,12 @@
   display: -ms-flexbox;
   display: flex;
   text-align: left;
+}
+
+@media screen and (max-width: 820px) {
+  .home .right-area .stock-list .trending-item {
+    font-size: 2.2em;
+  }
 }
 
 .home .right-area .stock-list .news-item {

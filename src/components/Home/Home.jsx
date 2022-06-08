@@ -27,7 +27,7 @@ const Home = ({
 							<div className="main-title shadow-box">
 								<StockItem companyInfo={viewStock.data} />
 							</div>
-							<StockLineChartContainer chartData={viewStock.chart} />
+							<StockLineChartContainer chartData={viewStock.chart} canCandle={false} />
 						</div>
 					</div>
 					<div className="line" />

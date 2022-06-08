@@ -43,8 +43,9 @@
 }
 
 .chart-container .period-selector ul li input:checked + label {
-  background-color: #60b2ff;
+  background-color: #0084ff;
   color: white;
+  font-weight: bold;
 }
 
 .chart-container .period-selector ul li button {
@@ -58,11 +59,7 @@
   width: 20px;
   height: 20px;
   vertical-align: middle;
-  fill: white;
-}
-
-.chart-container .period-selector ul li button svg svg {
-  fill: white;
+  fill: #0084ff;
 }
 
 .chart-container .period-selector .update-time {
@@ -92,4 +89,13 @@
   height: calc(100% - 50px);
   padding: 10px;
 }
-/*# sourceMappingURL=StockCandleChart.css.map */
+
+.chart-container .chart .tooltip-box {
+  background-color: white;
+  padding: 10px;
+}
+
+.chart-container .chart .tooltip-box span {
+  font-weight: bold;
+}
+/*# sourceMappingURL=StockDetailChart.css.map */

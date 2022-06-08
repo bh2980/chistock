@@ -7,12 +7,11 @@ const CompanyContainer = () => {
 	const { ticker } = useParams();
 	const [companyInfo, setCompanyInfo] = useState(null);
 	const [recommendList, setRecommendList] = useState([]);
-	const [chartStyle, setChartStyle] = useState('line');
 	const [isLoad, setIsLoad] = useState(true);
 
 	const getCompanyInfo = ticker => {
 		console.log(ticker);
-		const { price, quoteType, summaryProfile } = dummy.AppleSummary;
+		const { price, quoteType, summaryProfile, recommendationTrend, earnings } = dummy.AppleSummary;
 		const { sector, longBusinessSummary, website, industry, country } = summaryProfile;
 		const { shortName, symbol } = quoteType;
 		const {
@@ -39,6 +38,8 @@ const CompanyContainer = () => {
 				industry,
 				country,
 				exchangeName,
+				recommendationTrend,
+				earnings,
 			},
 			chart: {
 				shortName,
@@ -83,14 +84,7 @@ const CompanyContainer = () => {
 		setIsLoad(false);
 	}, []);
 
-	return (
-		<Company
-			isLoad={isLoad}
-			companyInfo={companyInfo}
-			recommendList={recommendList}
-			chartStyle={chartStyle}
-		/>
-	);
+	return <Company isLoad={isLoad} companyInfo={companyInfo} recommendList={recommendList} />;
 };
 
 export default CompanyContainer;

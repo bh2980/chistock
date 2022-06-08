@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import StockLineChart from '../StockLineChart';
 
-const StockLineChartContainer = ({ chartData }) => {
+const StockLineChartContainer = ({ chartData, setIsLineChart, canCandle }) => {
 	const [updateDate, setUpdateDate] = useState(0);
 	const [lineInfo, setLineInfo] = useState([]);
 
@@ -30,7 +30,7 @@ const StockLineChartContainer = ({ chartData }) => {
 	const options = {
 		chart: {
 			height: 350,
-			type: 'column',
+			type: 'line',
 			toolbar: {
 				show: false,
 				tools: {
@@ -88,10 +88,8 @@ const StockLineChartContainer = ({ chartData }) => {
 		stroke: {
 			show: true,
 			curve: 'smooth',
-			lineCap: 'butt',
-			colors: undefined,
-			width: 3,
-			dashArray: 0,
+			lineCap: 'round',
+			colors: '#0084ff',
 		},
 	};
 
@@ -99,7 +97,19 @@ const StockLineChartContainer = ({ chartData }) => {
 		getChartData();
 	}, [chartData]);
 
-	return <StockLineChart series={series} options={options} updatetime={updateDate} />;
+	return (
+		<StockLineChart
+			series={series}
+			options={options}
+			updatetime={updateDate}
+			setIsLineChart={setIsLineChart}
+			canCandle={canCandle}
+		/>
+	);
+};
+
+StockLineChartContainer.defaultProps = {
+	canCandle: true,
 };
 
 export default StockLineChartContainer;

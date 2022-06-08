@@ -31,8 +31,9 @@
 				}
 
 				input:checked + label {
-					background-color: #60b2ff;
+					background-color: #0084ff;
 					color: white;
+					font-weight: bold;
 				}
 
 				button {
@@ -45,11 +46,7 @@
 						width: 20px;
 						height: 20px;
 						vertical-align: middle;
-						fill: white;
-
-						svg {
-							fill: white;
-						}
+						fill: #0084ff;
 					}
 				}
 			}
@@ -82,5 +79,14 @@
 		width: 100%;
 		height: calc(100% - 50px);
 		padding: 10px;
+
+		.tooltip-box {
+			background-color: white;
+			padding: 10px;
+
+			span {
+				font-weight: bold;
+			}
+		}
 	}
 }

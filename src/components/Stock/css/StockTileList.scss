@@ -2,7 +2,6 @@
 	width: 35%;
 	height: 100%;
 	font-size: 0.7vw;
-	padding-right: 10px;
 	display: flex;
 	flex-direction: column;
 
@@ -10,6 +9,7 @@
 		width: 100%;
 		flex-direction: row;
 		margin-top: 10px;
+		padding-bottom: 10px;
 		overflow-x: auto;
 	}
 
