@@ -4,16 +4,9 @@ import './css/StockItem.scss';
 const StockItem = ({ companyInfo }) => {
 	return (
 		<div className="item-title">
-			<div className="company-name">
+			<div className="symbol-change">
 				<span className="symbol">{companyInfo.symbol}</span>
-				<span>
-					{companyInfo.shortName === undefined ? companyInfo.symbol : companyInfo.shortName}
-				</span>
-			</div>
-			<div className="price">
-				<div
-					className={companyInfo.regularMarketChange > 0 ? 'price-ratio-up' : 'price-ratio-down'}
-				>
+				<span className={companyInfo.regularMarketChange > 0 ? 'change-up' : 'change-down'}>
 					{companyInfo.regularMarketChange > 0
 						? `▲ +${Math.round(companyInfo.regularMarketChange * 100) / 100} (+${
 								Math.round(companyInfo.regularMarketChangePercent * 100) / 100
@@ -21,7 +14,12 @@ const StockItem = ({ companyInfo }) => {
 						: `▼ ${Math.round(companyInfo.regularMarketChange * 100) / 100} (${
 								Math.round(companyInfo.regularMarketChangePercent * 100) / 100
 						  }%)`}
-				</div>
+				</span>
+			</div>
+			<div className="name-price">
+				<span>
+					{companyInfo.shortName === undefined ? companyInfo.symbol : companyInfo.shortName}
+				</span>
 				<div>
 					{new Intl.NumberFormat('en-US', {
 						type: 'currency',

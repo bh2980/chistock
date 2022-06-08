@@ -1,39 +1,39 @@
 .item-title {
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
 	padding: 15px;
 
-	.company-name {
+	.symbol-change {
 		display: flex;
-		width: 60%;
-		flex-direction: column;
-		font-size: 2em;
+		justify-content: space-between;
+		width: 100%;
+		font-size: 0.5em;
 		font-weight: bold;
-		white-space: break-spaces;
-		overflow-x: auto;
+		white-space: pre-line;
 
 		.symbol {
 			color: #2e9bff;
-			font-size: 0.5em;
 		}
-	}
 
-	.price {
-		width: 60%;
-		font-size: 2em;
-		text-align: right;
-		font-weight: bold;
-
-		.price-ratio-up {
+		.change-up {
 			color: rgb(255, 65, 65);
 			font-size: 0.5em;
 		}
 
-		.price-ratio-down {
+		.change-down {
 			color: #0084ff;
 			font-size: 0.5em;
 		}
+	}
+
+	.name-price {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		font-size: 2em;
+		font-weight: bold;
 	}
 }
