@@ -1,0 +1,57 @@
+.item-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 15px;
+}
+
+.item-title .symbol-change {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  font-size: 0.5em;
+  font-weight: bold;
+  white-space: pre-line;
+}
+
+.item-title .symbol-change .symbol {
+  color: #2e9bff;
+}
+
+.item-title .symbol-change .change-up {
+  color: #ff4141;
+  font-size: 0.5em;
+}
+
+.item-title .symbol-change .change-down {
+  color: #0084ff;
+  font-size: 0.5em;
+}
+
+.item-title .name-price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  font-size: 2.1em;
+  font-weight: bold;
+}
+/*# sourceMappingURL=StockItem.css.map */

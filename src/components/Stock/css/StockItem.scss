@@ -1,0 +1,39 @@
+.item-title {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 15px;
+
+	.symbol-change {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		font-size: 0.5em;
+		font-weight: bold;
+		white-space: pre-line;
+
+		.symbol {
+			color: #2e9bff;
+		}
+
+		.change-up {
+			color: rgb(255, 65, 65);
+			font-size: 0.5em;
+		}
+
+		.change-down {
+			color: #0084ff;
+			font-size: 0.5em;
+		}
+	}
+
+	.name-price {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		font-size: 2.1em;
+		font-weight: bold;
+	}
+}

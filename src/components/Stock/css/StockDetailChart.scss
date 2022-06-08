@@ -1,0 +1,92 @@
+.chart-container {
+	height: 100%;
+	background-color: white;
+
+	.period-selector {
+		height: 50px;
+		display: flex;
+		justify-content: space-between;
+
+		ul {
+			height: 50px;
+			display: flex;
+			align-items: center;
+
+			li {
+				float: left;
+
+				input {
+					display: none;
+				}
+
+				label {
+					background-color: white;
+					margin: 5px 5px;
+					margin-left: 10px;
+					padding: 5px 10px;
+					cursor: pointer;
+					border-radius: 5px;
+					color: #4d4d4d;
+					font-weight: bold;
+				}
+
+				input:checked + label {
+					background-color: #0084ff;
+					color: white;
+					font-weight: bold;
+				}
+
+				button {
+					width: 30px;
+					height: 30px;
+					margin-left: 10px;
+					border-radius: 5px;
+
+					svg {
+						width: 20px;
+						height: 20px;
+						vertical-align: middle;
+						fill: #0084ff;
+					}
+				}
+			}
+		}
+
+		.update-time {
+			height: 100%;
+			line-height: 50px;
+			padding-right: 20px;
+
+			img {
+				width: 17px;
+				height: 17px;
+				vertical-align: middle;
+				background-color: #dbdbdb;
+				border-radius: 17px;
+				padding: 2px;
+				border: 1px solid #dbdbdb;
+			}
+
+			span {
+				color: #999999;
+				vertical-align: middle;
+				font-size: 12px;
+			}
+		}
+	}
+
+	.chart {
+		width: 100%;
+		height: calc(100% - 50px);
+		padding: 10px;
+
+		.tooltip-box {
+			background-color: white;
+			padding: 10px;
+
+			span {
+				font-weight: bold;
+			}
+		}
+	}
+}

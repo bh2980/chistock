@@ -1,139 +1,57 @@
 .container {
-	height: 100vh;
-	padding: 32px;
 	background-color: #ececec;
-}
-
-.wrapper {
-	height: 100%;
+	height: calc(100vh - 96px);
 	display: flex;
-	font-size: 2vh;
-	margin: auto 80px;
-}
+	padding: 32px;
+	justify-content: center;
+	font-size: 1vw;
 
-.left-box {
-	width: 60%;
-	height: 100%;
-
-	.left-title {
-		display: grid;
-		grid-template-columns: 0.6fr 2fr 1fr;
-		align-items: center;
-		background-color: white;
-		height: 20%;
-		padding: 8px;
-
-		.icon-box {
-			margin: auto;
-			background-color: #2e9bff;
-			padding: 1em;
-		}
-
-		.company-name {
-			font-size: 2.5em;
-			font-weight: bold;
-		}
-
-		.price {
-			font-size: 2.5em;
-			font-weight: bold;
-		}
-
-		.price-ratio-up {
-			color: red;
-			font-size: 1.45em;
-		}
-
-		.price-ratio-down {
-			color: blue;
-			font-size: 1.45em;
-		}
+	@media screen and (max-width: 820px) {
+		width: 100%;
+		height: 100%;
+		flex-direction: column;
+		padding: 24px 24px;
 	}
 
-	.graph {
-		height: 80%;
+	.company-chart-view {
+		width: 70%;
+		height: 100%;
+		display: flex;
+		flex-direction: row;
 
-		ul {
+		@media screen and (max-width: 820px) {
 			width: 100%;
-			height: 15%;
+			flex-direction: column-reverse;
+		}
+
+		.company-chart {
+			width: 65%;
+			height: 100%;
 			display: flex;
-			align-items: center;
-			li {
-				float: left;
+			flex-direction: column;
+			margin-left: 10px;
 
-				input {
-					display: none;
-				}
-
-				label {
-					background-color: white;
-					font-weight: bold;
-					padding: 8px;
-					margin: 8px;
-					cursor: pointer;
-				}
-
-				input:checked + label {
-					background-color: #60b2ff;
-					color: white;
-				}
+			.company-title {
+				background-color: white;
+				margin-bottom: 10px;
 			}
-		}
 
-		.graph-chart {
-			background-color: white;
-			width: 100%;
-			height: 85%;
-			padding: 20px;
-		}
-	}
-}
-
-.vertical-line {
-	height: 100%;
-	border-left: 1px solid #b5b5b5;
-	margin: 0 24px;
-}
-
-.summary-box {
-	width: 40%;
-	height: 100%;
-
-	.summary-logo {
-		height: 30%;
-
-		.logo-box {
-			background-color: white;
-			width: 10em;
-			height: 10em;
-			padding: 8px;
-			margin: auto;
-
-			img {
+			@media screen and (max-width: 820px) {
 				width: 100%;
-				height: 100%;
-				object-fit: contain;
+				height: 400px;
+				margin-left: 0px;
 			}
 		}
 	}
 
-	.summary-detail {
-		background-color: white;
-		height: 70%;
-		padding: 24px;
-		display: grid;
-		grid-template-rows: 0.1fr 1fr;
+	.vertical-line {
+		width: 3px;
+		background-color: #b5b5b5;
+		margin: 20px;
+		border-radius: 5px;
 
-		.summary-title {
-			font-size: 1.5em;
-			font-weight: bold;
-			padding-bottom: 24px;
-		}
-
-		.summary-content {
-			word-break: break-all;
-			overflow: auto;
-			font-size: 1.2em;
+		@media screen and (max-width: 820px) {
+			display: none;
 		}
 	}
 }
