@@ -108,12 +108,12 @@
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: white;
-  margin-top: 10px;
   padding: 20px;
 }
 
 @media screen and (max-width: 820px) {
   .home .right-area {
+    margin-top: 10px;
     width: 100%;
   }
 }
