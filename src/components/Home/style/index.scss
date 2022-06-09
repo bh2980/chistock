@@ -79,6 +79,14 @@
 			button {
 				margin-right: 10px;
 				font-size: 1.2em;
+				padding: 5px 10px;
+				border-radius: 5px;
+				font-weight: bold;
+			}
+			.unselected {
+				&:hover {
+					background-color: rgb(233, 233, 233);
+				}
 
 				@media screen and (max-width: 820px) {
 					font-size: 3em;
@@ -87,10 +95,7 @@
 
 			.selected {
 				background-color: #0084ff;
-				padding: 5px 10px;
-				border-radius: 5px;
 				color: white;
-				font-weight: bold;
 			}
 		}
 
