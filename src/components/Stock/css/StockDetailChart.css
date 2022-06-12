@@ -38,8 +38,11 @@
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 5px;
-  color: #4d4d4d;
   font-weight: bold;
+}
+
+.chart-container .period-selector ul li label:hover {
+  background-color: #e9e9e9;
 }
 
 .chart-container .period-selector ul li input:checked + label {
@@ -53,6 +56,10 @@
   height: 30px;
   margin-left: 10px;
   border-radius: 5px;
+}
+
+.chart-container .period-selector ul li button:hover {
+  background-color: #e9e9e9;
 }
 
 .chart-container .period-selector ul li button svg {
