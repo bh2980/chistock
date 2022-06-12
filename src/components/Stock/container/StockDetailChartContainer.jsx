@@ -59,7 +59,7 @@ const StockDetailChartContainer = ({ chartData }) => {
 				},
 			},
 			bar: {
-				columnWidth: isCandle ? '90%' : '100%',
+				columnWidth: isCandle ? '85%' : '100%',
 			},
 		},
 		chart: {
@@ -130,7 +130,7 @@ const StockDetailChartContainer = ({ chartData }) => {
 			curve: 'smooth',
 			lineCap: 'round',
 			colors: '#0084ff',
-			width: isCandle ? 2 : 3,
+			width: isCandle ? 1 : 3,
 		},
 		markers: {
 			size: 0,
