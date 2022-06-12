@@ -14,20 +14,21 @@ const DashBoard = ({
 	return isLoad ? null : (
 		<div className="dashboard">
 			<div className="card shadow-box">
+				<div className="top" />
 				<div className="card-title">
 					<span>Financials</span>
 					<div className="sub-menu">
 						<button
-							className={financePeriod === 'Year' ? 'selected-card' : ''}
-							onClick={onFinanceChange}
-						>
-							Year
-						</button>
-						<button
-							className={financePeriod === 'Quarter' ? 'selected-card' : ''}
+							className={financePeriod === 'Quarter' ? 'selected-menu' : 'unselected-menu'}
 							onClick={onFinanceChange}
 						>
 							Quarter
+						</button>
+						<button
+							className={financePeriod === 'Year' ? 'selected-menu' : 'unselected-menu'}
+							onClick={onFinanceChange}
+						>
+							Year
 						</button>
 					</div>
 				</div>
@@ -38,6 +39,7 @@ const DashBoard = ({
 					width={'100%'}
 					height={'300px'}
 				/>
+				<div className="bottom" />
 			</div>
 			<div className="card shadow-box">
 				<div className="card-title">Recommendation Trends</div>

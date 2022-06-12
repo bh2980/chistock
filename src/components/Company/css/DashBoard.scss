@@ -53,18 +53,23 @@
 
 			.sub-menu {
 				font-size: 0.7em;
-				font-weight: normal;
 
 				button {
-					margin-left: 10px;
-				}
-
-				.selected-card {
 					font-weight: bold;
-					background-color: #0084ff;
-					color: white;
+					margin-left: 10px;
 					padding: 5px 10px;
 					border-radius: 5px;
+				}
+
+				.unselected-menu {
+					&:hover {
+						background-color: rgb(233, 233, 233);
+					}
+				}
+
+				.selected-menu {
+					background-color: #0084ff;
+					color: white;
 				}
 			}
 		}
