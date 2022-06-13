@@ -1,5 +1,4 @@
 .home {
-	background-color: #ececec;
 	height: calc(100vh - 96px);
 	display: flex;
 	padding: 32px;
@@ -53,10 +52,10 @@
 	}
 
 	.line {
-		width: 3px;
-		background-color: #b5b5b5;
+		width: 1px;
+		background-color: #0c2a6b;
 		margin: 20px;
-		border-radius: 5px;
+		border-radius: 2px;
 
 		@media screen and (max-width: 820px) {
 			display: none;
