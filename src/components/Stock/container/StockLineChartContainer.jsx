@@ -104,13 +104,8 @@ const StockLineChartContainer = ({ chartData, setIsLineChart, canCandle }) => {
 			options={options}
 			updatetime={updateDate}
 			setIsLineChart={setIsLineChart}
-			canCandle={canCandle}
 		/>
 	);
-};
-
-StockLineChartContainer.defaultProps = {
-	canCandle: true,
 };
 
 export default StockLineChartContainer;
