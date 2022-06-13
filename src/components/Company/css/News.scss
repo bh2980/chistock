@@ -1,0 +1,46 @@
+.profile-news-list {
+	padding: 15px;
+
+	a {
+		display: flex;
+		align-items: center;
+		border-bottom: 1px solid #cecece;
+
+		&:first-child {
+			border-top: 1px solid #cecece;
+		}
+
+		&:hover {
+			background-color: rgb(227, 244, 253);
+		}
+		.profile-news-item {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 10px;
+
+			div {
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				text-align: left;
+				overflow: hidden;
+
+				.profile-news-title {
+					font-size: 1.1em;
+					font-weight: bold;
+					padding-right: 20px;
+				}
+
+				.profile-news-date {
+					text-align: left;
+				}
+			}
+
+			img {
+				width: 25%;
+			}
+		}
+	}
+}

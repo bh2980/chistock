@@ -1,0 +1,45 @@
+.profile-wrapper {
+	padding: 15px;
+
+	.profile-title {
+		display: flex;
+		align-items: center;
+
+		.profile-logo {
+			width: 60px;
+			padding: 10px;
+			background-color: white;
+			border-radius: 100%;
+			border: 2px solid #05325c;
+			margin-right: 15px;
+		}
+
+		.profile-name {
+			font-size: 1.7em;
+			font-weight: bold;
+		}
+
+		.profile-symbol {
+			color: #0084ff;
+			margin-top: 5px;
+		}
+	}
+
+	.profile-table {
+		width: 100%;
+		margin-top: 15px;
+
+		th {
+			text-align: left;
+		}
+	}
+
+	.profile-summary {
+		margin-top: 15px;
+	}
+}
+
+.fold {
+	max-height: 300px;
+	overflow: hidden;
+}

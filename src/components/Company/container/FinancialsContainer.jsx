@@ -23,12 +23,12 @@ const FinancialsContainer = ({ dashBoardInfo }) => {
 	const financeSeriesSet = (earning, revenue) => {
 		setFinanciaSeries([
 			{
-				name: 'Earning',
+				name: '당기순이익',
 				type: 'bar',
 				data: earning,
 			},
 			{
-				name: 'Revenue',
+				name: '매출',
 				type: 'bar',
 				data: revenue,
 			},
@@ -70,7 +70,7 @@ const FinancialsContainer = ({ dashBoardInfo }) => {
 				categories: xLabel,
 				labels: {
 					formatter: function (val) {
-						return val.length > 5 ? val.substring(2, 4) + ' ' + val.substring(0, 2) : val;
+						return val.length > 5 ? val.substring(4) + ' ' + val.substring(0, 2) : val;
 					},
 				},
 			},
@@ -135,7 +135,7 @@ const FinancialsContainer = ({ dashBoardInfo }) => {
 		setIsLoad(false);
 	}, []);
 
-	return (
+	return isLoad ? null : (
 		<Financials
 			isLoad={isLoad}
 			financialSeries={financialSeries}

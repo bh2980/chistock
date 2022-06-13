@@ -18,7 +18,7 @@ const Company = ({ isLoad, companyInfo, recommendList }) => {
 				</div>
 			</div>
 			<div className="vertical-line" />
-			<DashBoardContainer dashBoardInfo={companyInfo.data} />
+			<DashBoardContainer companyInfo={companyInfo} dashBoardInfo={companyInfo.data} />
 		</div>
 	);
 };

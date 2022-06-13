@@ -1,23 +1,28 @@
 import React from 'react';
 import '../css/DashBoard.css';
-import ReactApexChart from 'react-apexcharts';
 import FinancialsContainer from '../container/FinancialsContainer';
+import RecommendTrendContainer from '../container/RecommendTrendContainer';
+import EarningContainer from '../container/EarningContainer';
+import ProfileContainer from '../container/ProfileContainer';
+import NewsContainer from '../container/NewsContainer';
 
-const DashBoard = ({ isLoad, recommendData, recommendOptions, dashBoardInfo }) => {
-	return isLoad ? null : (
+const DashBoard = ({ companyInfo, dashBoardInfo }) => {
+	return (
 		<div className="dashboard">
+			<div className="card shadow-box">
+				<ProfileContainer companyInfo={companyInfo} />
+			</div>
+			<div className="card shadow-box">
+				<NewsContainer companyInfo={companyInfo} />
+			</div>
 			<div className="card shadow-box">
 				<FinancialsContainer dashBoardInfo={dashBoardInfo} />
 			</div>
 			<div className="card shadow-box">
-				<div className="card-title">Recommendation Trends</div>
-				<ReactApexChart
-					series={recommendData}
-					options={recommendOptions}
-					type="bar"
-					width={'100%'}
-					height={'300px'}
-				/>
+				<EarningContainer dashBoardInfo={dashBoardInfo} />
+			</div>
+			<div className="card shadow-box">
+				<RecommendTrendContainer dashBoardInfo={dashBoardInfo} />
 			</div>
 		</div>
 	);
