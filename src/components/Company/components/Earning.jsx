@@ -4,7 +4,7 @@ import ReactApexChart from 'react-apexcharts';
 const Earning = ({ earningSeries, earningOptions }) => {
 	return (
 		<>
-			<div className="card-title">Earning</div>
+			<div className="card-title">Earnings</div>
 			<ReactApexChart
 				series={earningSeries}
 				options={earningOptions}

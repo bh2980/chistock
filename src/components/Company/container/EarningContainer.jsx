@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Earning from '../components/Earning';
 
 const EarningContainer = ({ dashBoardInfo }) => {
-	console.log('render');
 	const [isLoad, setIsLoad] = useState(true);
 	const [earningSeries, setEarningSeries] = useState();
 	const [earningOptions, setEarningOptions] = useState();
