@@ -20,12 +20,12 @@ const StockItem = ({ companyInfo }) => {
 				<span>
 					{companyInfo.shortName === undefined ? companyInfo.symbol : companyInfo.shortName}
 				</span>
-				<div>
+				<span>
 					{new Intl.NumberFormat('en-US', {
 						type: 'currency',
 						currency: 'USD',
 					}).format(companyInfo.regularMarketPrice)}
-				</div>
+				</span>
 			</div>
 		</div>
 	);
