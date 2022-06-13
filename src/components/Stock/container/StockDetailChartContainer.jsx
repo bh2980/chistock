@@ -21,7 +21,12 @@ const StockDetailChartContainer = ({ chartData }) => {
 		const uDate = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
 		const newCandle = timestamp.map((ts, index) => ({
 			x: ts,
-			y: [open[index], high[index], low[index], close[index]],
+			y: [
+				Math.round(open[index] * 100) / 100,
+				Math.round(high[index] * 100) / 100,
+				Math.round(low[index] * 100) / 100,
+				Math.round(close[index] * 100) / 100,
+			],
 		}));
 
 		const newVolume = timestamp.map((ts, index) => ({
@@ -140,11 +145,6 @@ const StockDetailChartContainer = ({ chartData }) => {
 		},
 		tooltip: {
 			enabled: true,
-			custom: function ({ series, seriesIndex, dataPointIndex, w }) {
-				return `<div class="tooltip-box">${companyName} : <span>${
-					Math.round(series[seriesIndex][dataPointIndex] * 100) / 100
-				}</span></div>`;
-			},
 		},
 	};
 
