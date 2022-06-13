@@ -5,13 +5,13 @@ const News = ({ news }) => {
 	return (
 		<>
 			<div className="card-title">News</div>
-			<div className="profile-news-list">
+			<div className="dashboard-news-list">
 				{news.map(anews => (
 					<a key={anews.id} href={anews.url}>
-						<button className="profile-news-item">
+						<button className="dashboard-news-item">
 							<div>
-								<span className="profile-news-title">{anews.headline}</span>
-								<div className="profile-news-date">
+								<span className="dashboard-news-title">{anews.headline}</span>
+								<div className="dashboard-news-date">
 									{anews.source} / {anews.datetime}
 								</div>
 							</div>
@@ -19,6 +19,9 @@ const News = ({ news }) => {
 						</button>
 					</a>
 				))}
+				<div className="dashboard-news-more-btn">
+					<button>더보기</button>
+				</div>
 			</div>
 		</>
 	);
