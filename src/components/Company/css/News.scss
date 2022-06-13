@@ -1,5 +1,5 @@
 .profile-news-list {
-	padding: 15px;
+	padding: 10px;
 
 	a {
 		display: flex;
@@ -13,6 +13,7 @@
 		&:hover {
 			background-color: rgb(227, 244, 253);
 		}
+
 		.profile-news-item {
 			width: 100%;
 			display: flex;
@@ -35,6 +36,7 @@
 
 				.profile-news-date {
 					text-align: left;
+					font-size: 0.7em;
 				}
 			}
 
