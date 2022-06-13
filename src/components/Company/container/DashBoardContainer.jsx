@@ -7,14 +7,6 @@ const DashBoardContainer = ({ dashBoardInfo }) => {
 	const [recommendOptions, setRecommendOptions] = useState();
 	const [earningData, setEarningData] = useState();
 	const [earningOptions, setEarningOptions] = useState();
-	const [financePeriod, setFinancePeriod] = useState('Quarter');
-	const [financialData, setFinanciaData] = useState();
-	const [financialOptions, setFinanciaOptions] = useState();
-
-	const onFinanceChange = e => {
-		console.log(e);
-		setFinancePeriod(e.target.innerText);
-	};
 
 	const getRecommendTrend = () => {
 		const { recommendationTrend } = dashBoardInfo;
@@ -135,124 +127,11 @@ const DashBoardContainer = ({ dashBoardInfo }) => {
 			earningsDate,
 			quarterly,
 		} = earningsChart;
-
-		// console.log(earningsChart);
-	};
-
-	const financeSeriesSet = (earning, revenue) => {
-		setFinanciaData([
-			{
-				name: 'Earning',
-				type: 'bar',
-				data: earning,
-			},
-			{
-				name: 'Revenue',
-				type: 'bar',
-				data: revenue,
-			},
-		]);
-	};
-
-	const financeOptionSet = xLabel => {
-		setFinanciaOptions({
-			chart: {
-				type: 'bar',
-				height: 350,
-				toolbar: {
-					show: false,
-					tools: {
-						download: false,
-						selection: false,
-						zoom: false,
-						zoomin: false,
-						zoomout: false,
-						pan: false,
-						reset: true,
-					},
-				},
-			},
-			dataLabels: {
-				enabled: false,
-			},
-			plotOptions: {
-				bar: {
-					horizontal: false,
-					borderRadius: 8,
-				},
-			},
-			stroke: {
-				width: 1,
-				colors: ['#fff'],
-			},
-			xaxis: {
-				categories: xLabel,
-				labels: {
-					formatter: function (val) {
-						return val.substring(2, 4) + ' ' + val.substring(0, 2);
-					},
-				},
-			},
-			yaxis: {
-				labels: {
-					formatter: function (val) {
-						return val / 1000000000 + ' B';
-					},
-				},
-			},
-			tooltip: {
-				enabled: true,
-			},
-			fill: {
-				opacity: 1,
-			},
-			legend: {
-				position: 'bottom',
-				height: 20,
-				horizontalAlign: 'center',
-				offsetX: -20,
-			},
-		});
-	};
-
-	const FinancialData = () => {
-		const { earnings } = dashBoardInfo;
-		const { financialsChart } = earnings;
-		const { quarterly, yearly } = financialsChart;
-
-		const quarterXLabel = quarterly.map(finaince => {
-			return finaince.date;
-		});
-		const quarterEarning = quarterly.map(finaince => {
-			return finaince.earnings.raw;
-		});
-		const quarterRevenue = quarterly.map(finaince => {
-			return finaince.revenue.raw;
-		});
-
-		const yearXLabel = yearly.map(finaince => {
-			return finaince.date;
-		});
-		const yearEarning = yearly.map(finaince => {
-			return finaince.earnings.raw;
-		});
-		const yearRevenue = yearly.map(finaince => {
-			return finaince.revenue.raw;
-		});
-
-		financeSeriesSet(quarterEarning, quarterRevenue);
-		financeOptionSet(quarterXLabel);
-
-		return {
-			quarterly: { quarterXLabel, quarterEarning, quarterRevenue },
-			yearly: { yearXLabel, yearEarning, yearRevenue },
-		};
 	};
 
 	useEffect(() => {
 		getRecommendTrend();
 		getEarningData();
-		FinancialData();
 		setIsLoad(false);
 	}, []);
 
@@ -261,10 +140,7 @@ const DashBoardContainer = ({ dashBoardInfo }) => {
 			isLoad={isLoad}
 			recommendData={recommendData}
 			recommendOptions={recommendOptions}
-			financialData={financialData}
-			financialOptions={financialOptions}
-			financePeriod={financePeriod}
-			onFinanceChange={onFinanceChange}
+			dashBoardInfo={dashBoardInfo}
 		/>
 	);
 };
