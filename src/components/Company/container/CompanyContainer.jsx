@@ -83,10 +83,11 @@ const CompanyContainer = () => {
 	};
 
 	useEffect(() => {
+		setIsLoad(true);
 		getCompanyInfo(ticker);
 		getRecommendList(ticker);
 		setIsLoad(false);
-	}, []);
+	}, [ticker]);
 
 	return <Company isLoad={isLoad} companyInfo={companyInfo} recommendList={recommendList} />;
 };
