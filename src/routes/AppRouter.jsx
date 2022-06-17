@@ -11,7 +11,6 @@ const AppRouter = () => {
 			<HeaderContainer component={HeaderContainer} />
 			<Switch>
 				<Route path="/" exact component={HomeContainer} />
-				<Route path="/search-list" component={SearchList} />
 				<Route path="/detail/:ticker" component={CompanyContainer} />
 			</Switch>
 		</Router>
