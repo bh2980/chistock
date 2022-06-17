@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
+import '../css/Financials.scss';
 
 const Financials = ({ financialSeries, financialOptions, financePeriod, onFinanceChange }) => {
 	return (
@@ -25,8 +26,7 @@ const Financials = ({ financialSeries, financialOptions, financePeriod, onFinanc
 				series={financialSeries}
 				options={financialOptions}
 				type="bar"
-				width={'100%'}
-				height={'300px'}
+				height="280px"
 			/>
 		</>
 	);

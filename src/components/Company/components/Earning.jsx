@@ -9,8 +9,7 @@ const Earning = ({ earningSeries, earningOptions }) => {
 				series={earningSeries}
 				options={earningOptions}
 				type="scatter"
-				width={'100%'}
-				height={'300px'}
+				height="280px"
 			/>
 		</>
 	);

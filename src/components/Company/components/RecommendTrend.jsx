@@ -9,8 +9,7 @@ const RecommendTrend = ({ recommendSeries, recommendOptions }) => {
 				series={recommendSeries}
 				options={recommendOptions}
 				type="bar"
-				width={'100%'}
-				height={'300px'}
+				height="280px"
 			/>
 		</>
 	);

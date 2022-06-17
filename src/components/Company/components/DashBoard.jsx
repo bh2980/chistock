@@ -9,19 +9,19 @@ import NewsContainer from '../container/NewsContainer';
 const DashBoard = ({ companyInfo, dashBoardInfo }) => {
 	return (
 		<div className="dashboard">
-			<div className="card shadow-box">
+			<div className="card shadow-box profile-card">
 				<ProfileContainer companyInfo={companyInfo} />
 			</div>
-			<div className="card shadow-box">
+			<div className="card shadow-box news-card">
 				<NewsContainer companyInfo={companyInfo} />
 			</div>
-			<div className="card shadow-box">
+			<div className="card shadow-box financials-card">
 				<FinancialsContainer dashBoardInfo={dashBoardInfo} />
 			</div>
-			<div className="card shadow-box">
+			<div className="card shadow-box earning-card">
 				<EarningContainer dashBoardInfo={dashBoardInfo} />
 			</div>
-			<div className="card shadow-box">
+			<div className="card shadow-box recommend-card">
 				<RecommendTrendContainer dashBoardInfo={dashBoardInfo} />
 			</div>
 		</div>

@@ -19,9 +19,6 @@ const News = ({ news }) => {
 						</button>
 					</a>
 				))}
-				<div className="dashboard-news-more-btn">
-					<button>더보기</button>
-				</div>
 			</div>
 		</>
 	);

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/Profile.scss';
 
-const Profile = ({ profile }) => {
+const Profile = ({ profile, isFold, reverseFold }) => {
 	return (
 		<div className="profile-wrapper">
 			<div className="profile-title">
@@ -27,7 +27,10 @@ const Profile = ({ profile }) => {
 					</tr>
 				</tbody>
 			</table>
-			<div className="profile-summary fold">{profile.summary}</div>
+			<div className={isFold ? 'profile-summary fold' : 'profile-summary'}>{profile.summary}</div>
+			<div className="dashboard-profile-more-btn">
+				<button onClick={reverseFold}>{isFold ? '더보기' : '닫기'}</button>
+			</div>
 		</div>
 	);
 };

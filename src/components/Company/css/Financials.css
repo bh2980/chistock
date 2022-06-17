@@ -1,0 +1,20 @@
+.sub-menu {
+  font-size: 0.7em;
+}
+
+.sub-menu button {
+  font-weight: bold;
+  margin-left: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.sub-menu .unselected-menu:hover {
+  background-color: #e9e9e9;
+}
+
+.sub-menu .selected-menu {
+  background-color: #0084ff;
+  color: white;
+}
+/*# sourceMappingURL=Financials.css.map */
