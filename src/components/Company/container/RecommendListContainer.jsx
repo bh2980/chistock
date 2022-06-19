@@ -5,7 +5,6 @@ import { useHistory } from 'react-router-dom';
 const RecommendListContainer = ({ stockList }) => {
 	let history = useHistory();
 	const onClick = (e, index) => {
-		console.log(stockList[index].data.symbol);
 		history.push(`/detail/${stockList[index].data.symbol}`);
 	};
 

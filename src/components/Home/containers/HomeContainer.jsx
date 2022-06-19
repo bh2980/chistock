@@ -20,7 +20,7 @@ const HomeContainer = () => {
 	};
 
 	const getNews = () => {
-		const newNews = dummy.News.stream.map(anews => {
+		const newNews = dummy.MarketNews.stream.map(anews => {
 			const { content } = anews;
 			const { pubDate, title } = content;
 			return {

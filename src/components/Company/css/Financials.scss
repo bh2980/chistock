@@ -1,0 +1,21 @@
+.sub-menu {
+	font-size: 0.7em;
+
+	button {
+		font-weight: bold;
+		margin-left: 5px;
+		padding: 5px 10px;
+		border-radius: 5px;
+	}
+
+	.unselected-menu {
+		&:hover {
+			background-color: rgb(233, 233, 233);
+		}
+	}
+
+	.selected-menu {
+		background-color: #0084ff;
+		color: white;
+	}
+}

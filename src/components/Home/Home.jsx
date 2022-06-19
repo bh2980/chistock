@@ -34,13 +34,13 @@ const Home = ({
 					<div className="right-area shadow-box">
 						<div className="side-title">
 							<button
-								className={selectedSide === 'Trending' ? 'selected' : null}
+								className={selectedSide === 'Trending' ? 'selected' : 'unselected'}
 								onClick={onSideClick}
 							>
 								Trending
 							</button>
 							<button
-								className={selectedSide !== 'Trending' ? 'selected' : null}
+								className={selectedSide !== 'Trending' ? 'selected' : 'unselected'}
 								onClick={onSideClick}
 							>
 								News

@@ -1734,7 +1734,7 @@ const TrendingStock = [
 	},
 ];
 
-const News = {
+const MarketNews = {
 	stream: [
 		{
 			id: '7012087f-bb69-30a5-b1d4-4ffdd84bc4f0',
@@ -3259,6 +3259,21 @@ const MostActiveStock = [
 		changesPercentage: 3.127275,
 	},
 ];
+
+const AppleProfile = {
+	country: 'US',
+	currency: 'USD',
+	exchange: 'NASDAQ NMS - GLOBAL MARKET',
+	finnhubIndustry: 'Technology',
+	ipo: '1980-12-12',
+	logo: 'https://static.finnhub.io/logo/87cb30d8-80df-11ea-8951-00000000092a.png',
+	marketCapitalization: 2219473.903492,
+	name: 'Apple Inc',
+	phone: '14089961010.0',
+	shareOutstanding: 16185.2,
+	ticker: 'AAPL',
+	weburl: 'https://www.apple.com/',
+};
 
 const AppleSummary = {
 	defaultKeyStatistics: {
@@ -14806,14 +14821,2935 @@ const AppleRecommend = [
 	},
 ];
 
+const AppleNews = [
+	{
+		category: 'company',
+		datetime: 1631179227,
+		headline: 'Tencent Leads $60 Billion Selloff As Gaming Crackdown Fears Grow',
+		id: 70401756,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/GqxZIjDgjUk3HYz.1cj1Mw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://s.yimg.com/uu/api/res/1.2/CCVJvo02fUqKyNGXcMx8bQ--~B/aD0yNjY3O3c9NDAwMDthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/bloomberg_technology_68/e7c875c531c474dbb2ae27414da1e419',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'(Bloomberg) -- Tencent Holdings Ltd. and Netease Inc. shed more than $60 billion of value as investor fears grow that Chinese regulators are preparing to tighten their grip dramatically on the world’s largest gaming industry.Chinese regulators summoned industry executives to a Wednesday meeting to instruct them to break their “solitary focus” on profit and prevent minors from becoming addicted to games, according to the official Xinhua News Agency. Regulators also said there will be a temporary',
+		url: 'https://finnhub.io/api/news?id=84c5b4de755ccc3e00ee9c4b208f0861aa73883903a77d5ad317762fbd20a9ee',
+	},
+	{
+		category: 'company',
+		datetime: 1631228365,
+		headline: 'Sheryl Sandberg Says Small Businesses Online Revolution Will Continue',
+		id: 70428593,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/ETDo80erXHJuxOCwaoq_Mw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://s.yimg.com/uu/api/res/1.2/WV6Ulbr8mG0eHt3bRj0gwA--~B/aD0xMzM0O3c9MjAwMDthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/bloomberg_technology_68/d20da2fd0206df527f593dffa6362437',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'(Bloomberg) -- Facebook Inc. Chief Operating Officer Sheryl Sandberg said small businesses will keep choosing the internet to reach their customers even after the pandemic subsides and brick-and-mortar advertising options become more useful.“That digital transformation will continue to happen,” Sandberg said in an interview with Bloomberg News. “It might happen at a slightly slower rate but I think that the transformation and people moving to be online is going to continue to happen.”The Menlo P',
+		url: 'https://finnhub.io/api/news?id=19a06062957f933704aa32735cf95caa963aec8b1d87db5fc073407a65ab9b7c',
+	},
+	{
+		category: 'company',
+		datetime: 1631227222,
+		headline:
+			'Apple : MEDIA-Apple fires senior engineering program manager Ashley Gjøvik for allegedly leaking information - Verge',
+		id: 70431277,
+		image: '',
+		related: 'AAPL',
+		source: 'Finnhub',
+		summary:
+			'-- Source link: https://bit.ly/2YxCceL -- Note: Reuters has not verified this story and does notvouch for its accuracy ... | September 10, 2021',
+		url: 'https://finnhub.io/api/news?id=efe075d666077e41df14ddef4d2601e1e0f3e98cf44dd8e55ac4fd6dfda7c331',
+	},
+	{
+		category: 'company',
+		datetime: 1631225580,
+		headline: 'Apple: Things Looking up Ahead of Anticipated September iPhone 13',
+		id: 70447369,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?654147703',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'After a stodgy period, Apple (AAPL) stock has been gaining momentum recently. With shares up 21% over the past 3 months, the year-to-date performance has materially improved. \n\n\n\nThere’s also a big catalyst ahead too, which Wedbush’ Daniel Ives believes is partly what makes the giant from Cupertino a “top tech name to own.”\n\n\n\n"The invites are out; iPhone 13 launch around the corner next week," Ives noted.\n\n\n\nIves’ “enhanced confidence” in the iPhone 13 product cycle is based on Asia supply chain checks, in which the iPhone 13 makes up 35%-45% of the total 130-150 million iPhone builds in Q3.\n\n\n\nSpecs wise, Ives is confident Apple fans can look forward to an iPhone 13 boasting an “eye-popping” 1 terabyte storage option. This is double the amount of the current 512 GB capacity on offer with the highest Pro unit. The new model and will also include several other “key enhancements” with all iPhone 13 models possessing Lidar capabilities.\n\n\n\nThere’s “massive pent-up demand” amongst Apple’s installed base, says the analyst, pointing out that based on his analysis, over the past 3.5 years, roughly 250 million of the current 975 million iPhone owners have yet to upgrade their handsets.\n\n\n\nElsewhere, Ives thinks Apple remains fairly insulated from the regulators’ ire with all things Big Tech, believing the App Store remains a “very defendable moat both in the courts and in the Beltway.” Facebook and Google are both more likely to get caught in the “anti-trust spider web.”\n\n\n\nApple remains the “favorite large cap tech name to play the 5G transformational cycle,” and as such, Ives sticks with an Outperform (i.e. Buy) rating and $185 price target. The implication for investors? Upside of 20%. (To watch Ives’ track record, click here)\n\n\n\nSo, that’s the Wedbush view, what does the rest of the Street have in mind for Apple? The stock boasts a Moderate Buy consensus rating based on 17 Buys vs. 6 Holds. The average price target is a more modest $166.64, representing 12-month returns of 8%. (See Apple stock analysis on TipRanks)\n\n\n\n\n\n\n\nTo find good ideas for stocks trading at attractive valuations, visit TipRanks’ Best Stocks to Buy, a newly launched tool that unites all of TipRanks’ equity insights.\n\n\n\nDisclaimer: The opinions expressed in this article are solely those of the featured analyst. The content is intended to be used for informational purposes only. It is very important to do your own analysis before making any investment.',
+		url: 'https://finnhub.io/api/news?id=41cc682cc72336b4c4823e4d369ec7731a97a386428fbbb957839819ca5bceee',
+	},
+	{
+		category: 'company',
+		datetime: 1631223360,
+		headline:
+			"Epic Games asks Apple to allow Fortnite's re-release in South Korea after passage of new law",
+		id: 70447370,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-10T013905Z_1_ET1_RTRLXPP_2_LYNXPACKAGER.JPG?1390060399',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'"Fortnite" creator Epic Games has asked iPhone maker Apple to restore its Fortnite developer account and intends to re-release the popular game on iOS in South Korea, offering both Epic and Apple payment side-by-side, it said in a tweet.',
+		url: 'https://finnhub.io/api/news?id=25e422ba2aa635b5b6536b2578e7b75ac9e4265c361d7d5e0177e37b3d3da557',
+	},
+	{
+		category: 'company',
+		datetime: 1631221200,
+		headline: 'Their Phone Chargers Rule Amazon, But Anker Has Bigger Ambitions',
+		id: 70428365,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/pBjVtq6VWa47AEUeXka5BQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://s.yimg.com/uu/api/res/1.2/pyRMtLD4SkgZOPa2xgs06Q--~B/aD0xMzMzO3c9MTk5OTthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/bloomberg_technology_68/be31ae7dea5d4f2583e47171e71da2b6',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'(Bloomberg) -- A decade ago, then-Googler Steven Yang left California for Chinese technology hub Shenzhen to start Anker Innovations Technology Co Ltd. with less than $1 million in seed capital. Since then, he’s relied on a pioneering strategy of mining consumer reviews on Amazon.com Inc. to pump out some of the world’s most ubiquitous phone accessories.By studying the thousands of reviews and complaints about electronic products posted on the e-commerce platform daily, Yang realized he could re',
+		url: 'https://finnhub.io/api/news?id=769c2f061e5896e9c6eb1dd75a89741a0fd1414506d46a3fd15b11069fd72fd0',
+	},
+	{
+		category: 'company',
+		datetime: 1631220000,
+		headline: 'Epic Games asks Apple to allow "Fortnite" to return in South Korea',
+		id: 70447371,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-10T010530Z_1_CH0_RTRLXPP_2_LYNXPACKAGER.JPG?1385172410',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'"Fortnite" creator Epic Games has asked iPhone maker Apple Inc to restore its Fortnite developer account and intends to re-release Fortnite on iOS in South Korea offering both Epic payment and Apple payment side-by-side, it said in a tweet.',
+		url: 'https://finnhub.io/api/news?id=9de082e14b550b82c68119eb7f9f4e417b9dfeb00296fb8d1c04558d852b5f32',
+	},
+	{
+		category: 'company',
+		datetime: 1631218633,
+		headline: 'Why Biden can’t fix the semiconductor shortage',
+		id: 70428164,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/ub4A5VGXbpFIQ9CkBO0iDg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDE-/https://s.yimg.com/os/creatr-uploaded-images/2021-02/e5c12850-7712-11eb-bed7-ff59768d247a',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			"No matter how vital chips may be, there's no simple fix for shortages in a sector where overcapacity can be deadly.",
+		url: 'https://finnhub.io/api/news?id=47c1c68ae65dc2a771f0cac178c1498c05bde9689bd14dcf1a74d252b24e7399',
+	},
+	{
+		category: 'company',
+		datetime: 1631218541,
+		headline: 'Amazon Lights Fire Under Hot TV Market With Branded Set Of Devices',
+		id: 70428596,
+		image:
+			'https://s.yimg.com/uu/api/res/1.2/RTN0CDheB.EFq.QhflmaUQ--~B/aD01NjM7dz0xMDAwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/ibd.com/03547db8e4ed73edea51f94e64670bdc',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'Amazon pushed deeper into the television market Thursday, announcing an all-new lineup of devices and its first Amazon-branded 4K smart TVs.',
+		url: 'https://finnhub.io/api/news?id=f73d2ce4abfbb90370f48ddfa3ae87d424ef3fba8f9ec95c1d618d1b24701cd9',
+	},
+	{
+		category: 'company',
+		datetime: 1631217600,
+		headline: "Samsung decision on new U.S. chip plant location 'imminent' -Texas county judge",
+		id: 70446833,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-09T223412Z_240577150_RC2MMP9HIS07_RTRMADP_2_SAMSUNG-ELEC-USA.JPG?73708146',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			"A decision by Samsung Electronics on the location of its new $17 billion U.S. chip plant was imminent, the judge for Texas' Williamson County, which is in the running for the new factory, said on Thursday.",
+		url: 'https://finnhub.io/api/news?id=f5c6d9605e8ed8b0bca804031e4b19780594e7ddcc4c5ed1877a88ca149a74d9',
+	},
+	{
+		category: 'company',
+		datetime: 1631213728,
+		headline: 'Apple’s Watch Software Chief Takes Over Self-Driving Car Project',
+		id: 70428597,
+		image: 'https://s.yimg.com/cv/apiv2/social/images/yahoo_default_logo-1200x1200.png',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'(Bloomberg) -- Apple Inc. appointed one of its top software executives, Kevin Lynch, to oversee its nascent self-driving car project after the previous leader left for Ford Motor Co. Lynch, an Adobe Inc. veteran who joined Apple in 2013 to run the software group for the company’s smartwatch and health efforts, replaced Doug Field as the manager in charge of the car work, according to people with knowledge of the matter.The executive first started working on the project earlier this year when he',
+		url: 'https://finnhub.io/api/news?id=32081eb2d1db0773deadf692fb1f0092485f297c4d335f6f494342272aba69d5',
+	},
+	{
+		category: 'company',
+		datetime: 1631211452,
+		headline: 'Google’s Medical Chief Says Company Shifting Health Focus',
+		id: 70428598,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/o1UdUFjWmUHdSfsAiXDV0A--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD03OTk-/https://s.yimg.com/uu/api/res/1.2/2Ldk3hUHCkDOwbTAWRjesQ--~B/aD0xMzMyO3c9MjAwMDthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/bloomberg_technology_68/34cadf7bfe2a735cbdaa8bcdea26ce0c',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'(Bloomberg) -- In August, the leader of Google Health departed and the division dissolved. While some interpreted the moves as evidence that Google was retreating from health care, the company’s chief health officer said the changes reflected a shifting focus, not an abandonment of a sector the search giant has trumpeted as a promising future business. “We are not retrenching on health,” Karen DeSalvo said in an interview. “I’m busier than ever. So is my team.”She framed Google’s strategy as an',
+		url: 'https://finnhub.io/api/news?id=a5fd6309551a729983ed029018d2b70ff7e58c62c7aaa25eb2d77c23051ccfcf',
+	},
+	{
+		category: 'company',
+		datetime: 1631210778,
+		headline: 'Why the market is responding favorably to airline stocks',
+		id: 70428599,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/cwC96wU25WTifW9iK6XX_w--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NzQ-/https://s.yimg.com/hd/cp-video-transcode/prod/2021-09/09/613a4d1bd024e653656ce91f/613a4d1bd024e653656ce920_o_U_v2.jpg',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'Ann Berry, Wheelhouse Chief Investment Officer, joins Yahoo Finance to discuss the outlook on the overall market, the airlines industry, big tech, and the IPO market.',
+		url: 'https://finnhub.io/api/news?id=f2f1a4bb0b63630aae7406d3b9caa5ec649657462e040181abfb5caa6252892e',
+	},
+	{
+		category: 'company',
+		datetime: 1631209759,
+		headline: 'Tech Support: Should you buy the new iPhone',
+		id: 70428600,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/fjjWGdTPUd2MN_z2R3Ncqw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NzQ-/https://s.yimg.com/hd/cp-video-transcode/prod/2021-09/09/613a492189e9c765ac7219fc/613a492189e9c765ac7219fd_o_U_v2.jpg',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'Yahoo Finance’s Dan Howley joins the Yahoo Finance Live panel with the latest Tech Support: Should you hold off on buying a new iPhone?',
+		url: 'https://finnhub.io/api/news?id=f213f80fd9e48777e32720663e7d24da6bb86c93daa6d92f45d39da3bbc6f9ea',
+	},
+	{
+		category: 'company',
+		datetime: 1631209229,
+		headline:
+			"Apple is spending 'chump change' on original content, and that is big win for Netflix stock: analyst",
+		id: 70428601,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/hoReb6RMocF3xsa6fxWsVQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://s.yimg.com/os/creatr-uploaded-images/2021-09/2d52a0d0-1192-11ec-bbd3-da5036b4ce7b',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'Netflix continues to dust Apple on spending for original content, and that is ultimately bullish for Netflix investors argues this top analyst on Yahoo Finance Live.',
+		url: 'https://finnhub.io/api/news?id=93136ca7cc9d9a78a2013f3cca8a2d03b22b69e034f6645e664e0e852ed64ba2',
+	},
+	{
+		category: 'company',
+		datetime: 1631206560,
+		headline: 'VR Is Finally Here To Stay, And Facebook Is The Big Winner',
+		id: 70426283,
+		image:
+			'https://static.seekingalpha.com/cdn/s3/uploads/getty_images/1252396999/medium_image_1252396999.jpg',
+		related: 'AAPL',
+		source: 'SeekingAlpha',
+		summary:
+			'Facebook is one of the leading players in the fast growing AR/VR industry. Read more to learn why Facebook is set to continue to dominate this segment.',
+		url: 'https://finnhub.io/api/news?id=f0418380aadf3d87d72547a7d947c50281302377e0ef012a29cfbf55ac4d0414',
+	},
+	{
+		category: 'company',
+		datetime: 1631206345,
+		headline: 'Facebook’s Smart Glasses Can Take Calls and Photos, Lack AR',
+		id: 70428602,
+		image:
+			'https://s.yimg.com/uu/api/res/1.2/EWRY5TCjY7Z.NxPS8XmA2A--~B/aD02MTg7dz05OTA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/bloomberg_technology_68/6040e7dfb5054ab304ed6130362ef543',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'(Bloomberg) -- Facebook Inc. unveiled its long-awaited smart glasses in partnership with Ray-Ban, entering a nascent wearables market with a focus on capturing photos rather than augmented reality.The social network on Thursday showed off the glasses, called Ray-Ban Stories -- a direct rival to Snapchat’s Spectacles. The $299 Facebook glasses, which use EssilorLuxottica SA-owned Ray-Ban’s classic Wayfarer frame style, let users take photos and video, listen to music and answer phone calls. While',
+		url: 'https://finnhub.io/api/news?id=cef83938928d3b0eb48f8a232ac05e4e35eb2cd43228a0bce2df1c67b770543e',
+	},
+	{
+		category: 'company',
+		datetime: 1631205271,
+		headline:
+			'Apple event: Everything we expect from the big launch live stream, including iPhone 13, Apple Watch Series 7 and new AirPods',
+		id: 70428603,
+		image:
+			'https://static.independent.co.uk/2021/08/13/15/apple.jpg?width=1200&auto=webp&quality=75',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'Apple is holding its biggest event of the year, a live streamed presentation called “California Streaming”.  The new iPhone is likely to be the star of the event, as it is every September.  You can read our full rundown of everything that’s coming with the iPhone here.',
+		url: 'https://finnhub.io/api/news?id=c0e9dfccc4369c3f10f1eb106fbb6ef6e6d59125f64d7d5ac09a4779512b6bec',
+	},
+	{
+		category: 'company',
+		datetime: 1631204940,
+		headline:
+			'After Hours Most Active for Sep 9, 2021 :  NVST, AFRM, SIRI, XOM, VZ, KMI, ISEE, AAPL, KPLT, CLOV, GIS, HPE',
+		id: 70445887,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?762092753',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'The NASDAQ 100 After Hours Indicator is down -2.87 to 15,558.18.  The total After hours volume is currently 49,345,789 shares traded.The following are the most active stocks for the after hours session: Envista Holdings Corporation (NVST) is unchanged at $43.33, with 3,417,014 sh',
+		url: 'https://finnhub.io/api/news?id=b99f735de5b23ae1b0313e025b0b0761135069f9b50bb977c5dfc30ac7d69ae9',
+	},
+	{
+		category: 'company',
+		datetime: 1631203680,
+		headline:
+			'Apple Stock Beats the Market Ahead of the iPhone Launch. The Street Remains Bullish.',
+		id: 70428604,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/AKDnPeKct1CSCaFPB_LTmg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD00MDA-/https://s.yimg.com/uu/api/res/1.2/BcH4IFmuFznlLnoIOcaebQ--~B/aD02NDA7dz0xMjgwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/Barrons.com/778c6603c04a579359af3c8aacded3f5',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'Since the end of June, Apple shares have appreciated 13%, more than twice the return on the Nasdaq Composite.',
+		url: 'https://finnhub.io/api/news?id=9ab24d73524d93aeb07bcfc665b4f642177bc6842378c87c742761c722517aea',
+	},
+	{
+		category: 'company',
+		datetime: 1631203593,
+		headline:
+			"GameStop says it isn't just selling video games — it's also 'evolving' into a tech company",
+		id: 70428503,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/ZwaeLbUKKmOF7UCx9efnQA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD00MDA-/https://s.yimg.com/os/creatr-uploaded-images/2021-01/095abc60-6271-11eb-bbfd-f4e426d901fb',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary: "GameStop doesn't see itself as a retailer anymore.",
+		url: 'https://finnhub.io/api/news?id=cabce6b8be8f9231d3334c79717a0c40db2133519ddbbe764fa0b9c7259a9507',
+	},
+	{
+		category: 'company',
+		datetime: 1631203237,
+		headline: 'Microsoft Scraps Return-to-Office Plan as Delta Variant Rages',
+		id: 70428606,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/9sh618mW9VcT_KNoqneyGA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02Njc-/https://s.yimg.com/uu/api/res/1.2/nF1GqcDNjEOCFJ7wtJxzKQ--~B/aD03MjA7dz0xMjk2O2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/bloomberg_technology_68/b64ef13b4e97574fd96c8d55a398c578',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'(Bloomberg) -- Microsoft Corp. is scrapping plans to fully reopen offices by Oct. 4, saying it can no longer give a date for returning to work because the pandemic is too unpredictable. “Given the uncertainty of Covid-19, we’ve decided against attempting to forecast a new date for a full reopening of our U.S. work sites in favor of opening U.S. work sites as soon as we’re able to do so safely based on public health guidance,” the Redmond, Washington-based software maker said in a blog post Thurs',
+		url: 'https://finnhub.io/api/news?id=931d9f387b226999f3d212843d5acc0e20aa31cf6f9ce62c8f923fa9ecc23df2',
+	},
+	{
+		category: 'company',
+		datetime: 1631203200,
+		headline: 'S&P 500 ends down after jobless claims hit 18-month low',
+		id: 70445758,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-09T113916Z_1_XY8_RTRLXPP_2_LYNXPACKAGER.JPG?1925273180',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'The S&P 500 ended lower on Thursday after weekly jobless claims fell to a near 18-month low, allaying fears of a slowing economic recovery, but also stoking worries the Fed could move sooner than expected to scale back its accommodative policies.',
+		url: 'https://finnhub.io/api/news?id=c69168e92c222dda697977ae9f534a9a8a3b619cfa3910de600549b5049a7542',
+	},
+	{
+		category: 'company',
+		datetime: 1631203200,
+		headline: "Key Takeaways From Facebook's Smart Glass Launch",
+		id: 70428403,
+		image:
+			'https://cdn.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/abtech_1717.png',
+		related: 'AAPL',
+		source: 'Benzinga',
+		summary:
+			"Facebook Inc (NASDAQ: FB) launched new smart glasses in partnership with Ray-Ban. \nThe $299 Facebook glasses, which use Luxottica Group SpA-owned Ray-Ban'...",
+		url: 'https://finnhub.io/api/news?id=b2b46e991db760e7cfc142fdd02bf31146b6db9295814417e59b2809389a6c7b',
+	},
+	{
+		category: 'company',
+		datetime: 1631202600,
+		headline: 'Amazon Intensifies Home-Entertainment Rivalry With Latest Launch',
+		id: 70425481,
+		image:
+			'https://cdn.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/abtech_1715.png',
+		related: 'AAPL',
+		source: 'Benzinga',
+		summary:
+			'Amazon.com Inc (NASDAQ: AMZN) announced an all-new lineup of Fire TV devices with its first-ever Amazon-built smart TVs, the Amazon Fire TV Omni Series and 4-...',
+		url: 'https://finnhub.io/api/news?id=b0c976a5d3480546da7309ab6d033fb743a974455bd05ce1b31509dc696f2899',
+	},
+	{
+		category: 'company',
+		datetime: 1631200508,
+		headline: 'Bridgerton, Stranger Things are the most important shows for Netflix: analyst',
+		id: 70428607,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/Kv.yYnyN1jsd2WRY1H612A--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NzQ-/https://s.yimg.com/hd/cp-video-transcode/prod/2021-09/09/613a24fc8346ba45ba75964f/613a24fc8346ba45ba759650_o_U_v2.jpg',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			"Nat Schindler, Bank of America Research Analyst, joins Yahoo Finance Live to discuss Netflix's epic month rally, attracting more subscribers and what's next for the streaming service before the year ends.",
+		url: 'https://finnhub.io/api/news?id=7197e28d2a39e44dda01c14c5c3590f8d623ff5d6a631c600375ca382f9d8877',
+	},
+	{
+		category: 'company',
+		datetime: 1631196900,
+		headline: '2 Top Growth Stocks to Buy Right Now and Hold for the Long Term',
+		id: 70428168,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/i7nciMbAMyfO1_vHlrwBLQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDE-/https://s.yimg.com/uu/api/res/1.2/2tLhSVT_8kU3SB0wWn8gCQ--~B/aD05MzQ7dz0xNDAwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/motleyfool.com/204548f81c2f5c3345c315e6a64dc648',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'Apple and PayPal have delivered years of big gains for their shareholders, and their growth stories are far from over.',
+		url: 'https://finnhub.io/api/news?id=b02cf46f524fc4660da618f228c81e8a4e6b0564f097cc9fac8e4ae80f20e387',
+	},
+	{
+		category: 'company',
+		datetime: 1631196420,
+		headline: 'Apple Intensifies Folding Phone Rivalry With This Move',
+		id: 70428405,
+		image:
+			'https://cdn.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/abtech_1709.png',
+		related: 'AAPL',
+		source: 'Benzinga',
+		summary:
+			'Apple Inc (NASDAQ: AAPL) continues to explore options to fill the entire volume of an iPhone, Apple Insider reports. The iPhone maker is researching batteries that can...',
+		url: 'https://finnhub.io/api/news?id=839e02007d5f3d87735ae870ea68508b1c7f9aa8951b556d82dd7a5a9b73df3f',
+	},
+	{
+		category: 'company',
+		datetime: 1631192460,
+		headline: 'Apple Plans To Go Solo With Car Project To Avoid Potential Delays: Report',
+		id: 70428406,
+		image:
+			'https://cdn.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/screenshot_2021-09-09_1.01.29_pm.png',
+		related: 'AAPL',
+		source: 'Benzinga',
+		summary:
+			"Rumors about Apple, Inc.'s (NASDAQ: AAPL) self-driving car project continue to crop up, suggesting the tech giant may be finally getting serious on expediting...",
+		url: 'https://finnhub.io/api/news?id=5ebffea34a8ee8cc6ae8de310a7f44b0f23f7d0d1947212028eadb973c8a768c',
+	},
+	{
+		category: 'company',
+		datetime: 1631192040,
+		headline: 'Facebook unveils its first smart glasses',
+		id: 70445793,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-09T160209Z_1_CF0_RTRLXPP_2_LYNXPACKAGER.JPG?1230806261',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'Facebook Inc launched its first smart glasses on Thursday in a step toward its aim of offering true augmented-reality spectacles.',
+		url: 'https://finnhub.io/api/news?id=363aa32d42e361b2fe41372b993e23e6b7c4f0689f3e11494359503926beb461',
+	},
+	{
+		category: 'company',
+		datetime: 1631191980,
+		headline: "A Look Into Apple's Price Over Earnings",
+		id: 70428407,
+		image:
+			'https://cdn.benzinga.com/files/imagecache/og_image_social_share_1200x630/sites/all/themes/bz2/images/bz-icon.png',
+		related: 'AAPL',
+		source: 'Benzinga',
+		summary:
+			' \n \nIn the current market session, Apple Inc. (NASDAQ:AAPL) is trading at $155.02, after a 0.1% decrease. However, over the past month, the stock spiked by 4.12%, and in...',
+		url: 'https://finnhub.io/api/news?id=bf7cb006060c0a16735dd9abacc6f5811b1b1f91ec90ac8a9d930111c67b1260',
+	},
+	{
+		category: 'company',
+		datetime: 1631191871,
+		headline: 'Apple : Florida butcher shop installs vending machine to serve customers 24/7',
+		id: 70421840,
+		image: '',
+		related: 'AAPL',
+		source: 'Finnhub',
+		summary:
+			'A Tampa, Florida butcher shop, the Boozy Pig, has installed an outdoor vending machine to offer meat 24/7, according to a WFLA report.The machine offers cuts of steak, pork and sausage as well as... | September 9, 2021',
+		url: 'https://finnhub.io/api/news?id=ab1e074779c9cedb095607e4fd50a69177871b6fd7c4cfaac85efb2ce93c3c5e',
+	},
+	{
+		category: 'company',
+		datetime: 1631191620,
+		headline: "Thursday's ETF with Unusual Volume: FCTR",
+		id: 70446776,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?1173826945',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'The First Trust Lunt U.S. Factor Rotation ETF is seeing unusually high volume in afternoon trading Thursday, with over 335,000 shares traded versus three month average volume of about 110,000.  Shares of FCTR were up about 0.3% on the day.',
+		url: 'https://finnhub.io/api/news?id=00868bed778c4b27f4d9f54d07fa47cc43fead55907a2dab41c18514202c2b57',
+	},
+	{
+		category: 'company',
+		datetime: 1631190300,
+		headline: 'Qualivian Investment Partners Q2 2021 Investment Letter',
+		id: 70420636,
+		image:
+			'https://static.seekingalpha.com/assets/og_image_1200-29b2bfe1a595477db6826bd2126c63ac2091efb7ec76347a8e7f81ba17e3de6c.png',
+		related: 'AAPL',
+		source: 'SeekingAlpha',
+		summary:
+			'Qualivian Investment Partners is an investment partnership focused on long-only public equities.',
+		url: 'https://finnhub.io/api/news?id=7a3a52f5968063c87ba51361e054a50205275a29caabb3131dcf0beb3bed9618',
+	},
+	{
+		category: 'company',
+		datetime: 1631189580,
+		headline: 'Most Active Equity Options For Midday - Thursday, Sept. 9',
+		id: 70447323,
+		image: '',
+		related: 'AAPL',
+		source: 'TalkMarkets',
+		summary: '',
+		url: 'https://finnhub.io/api/news?id=26cc2d95309d82d47e5220bac620a516b20d8ef16afac1d17f88c9f9029bcbfc',
+	},
+	{
+		category: 'company',
+		datetime: 1631188380,
+		headline: "3 Financial Tech Stocks to Buy While They're Out of Favor",
+		id: 70450137,
+		image: 'https://investorplace.com/wp-content/uploads/2021/07/fintech_1600.jpg',
+		related: 'AAPL',
+		source: 'InvestorPlace',
+		summary:
+			'Even though markets are breaking records, there are pockets of relative weakness. These are the best fintech stocks to buy before they bounce.',
+		url: 'https://finnhub.io/api/news?id=2f7fd5c326240ddaf0e9f7ed349dbc9f0de34dea8b8ef8320c3183ce72ebd361',
+	},
+	{
+		category: 'company',
+		datetime: 1631187000,
+		headline: 'Microsoft delays office reopening date indefinitely in United States',
+		id: 70445795,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-09T151848Z_1_SH6_RTRLXPP_2_LYNXPACKAGER.JPG?864531640',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'Microsoft Corp on Thursday decided to push the dates for the full reopening of its offices in the United States indefinitely due to the highly contagious Delta variant.',
+		url: 'https://finnhub.io/api/news?id=c0606c5825a99532026e2cc6483e0541037a57c9d1ee5408c66c9683ea5c2639',
+	},
+	{
+		category: 'company',
+		datetime: 1631183340,
+		headline:
+			'Taper Or Tarry: Will Delta, Inflation, And Employment Data Spur Fed Action Or Delay?',
+		id: 70423013,
+		image:
+			'https://cdn.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/architecture-768432_1920_16.jpg',
+		related: 'AAPL',
+		source: 'Benzinga',
+		summary:
+			'It makes sense that tonight is the start of football season because the market’s been taking a few hits. \nMajor indices headed lower again overnight as the mood seems...',
+		url: 'https://finnhub.io/api/news?id=5c263671efd7e50fc2bbb06f78942a5142a27ec5045948b3ff1fcef42d8c4dd9',
+	},
+	{
+		category: 'company',
+		datetime: 1631182920,
+		headline: 'US STOCKS-Wall St rises as jobless claims fall to near 18-month low',
+		id: 70445762,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-09T114004Z_1_RZ6_RTRLXPP_2_LYNXPACKAGER.JPG?2117744183',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'Wall Street indexes gained on Thursday after data showed weekly jobless claims fell to a near 18-month low, allaying fears of a slowing economic recovery due to the impact of the Delta coronavirus variant.',
+		url: 'https://finnhub.io/api/news?id=29cfbdbbf4db0390abe568af87e14c7cecee299130d3e5e06d2b0978b6e5e039',
+	},
+	{
+		category: 'company',
+		datetime: 1631182200,
+		headline: 'Chancellor: Tech growth comes at irrational price',
+		id: 70416159,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?745221138',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'LONDON (Reuters Breakingviews) -     So overwhelming is the desire to find the next Alphabet, Amazon.com or Facebook that investors are chasing growth at any price. Just about any software company offering cloud-based services now commands a noseble',
+		url: 'https://finnhub.io/api/news?id=1d3f2f9f1602ac38d65b8363c25924bcffdfe2d5cd5efbd8be6ce172fbaea4e9',
+	},
+	{
+		category: 'company',
+		datetime: 1631181180,
+		headline: "IN THE KNOW: China's technology regulatory muscle flexing nothing new",
+		id: 70414050,
+		image: '',
+		related: 'AAPL',
+		source: 'Alliance News',
+		summary:
+			'Looking for stock market analysis and research with proves results? Zacks.com offers in-depth financial research with over 30years of proven results.',
+		url: 'https://finnhub.io/api/news?id=f2da9d06769471c517b6fabd17f14e962b1c80e83cebf9fffa8aebaa4e566434',
+	},
+	{
+		category: 'company',
+		datetime: 1631179020,
+		headline: 'US STOCKS-Futures recoup some losses as jobless claims fall to near 18-month low',
+		id: 70413217,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-09T114109Z_1_PH5_RTRLXPP_2_LYNXPACKAGER.JPG?1692390081',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'Wall Street futures recouped some losses on Thursday after data showed weekly jobless claims fell to a near 18-month low, allaying fears of a slowing economic recovery due to the impact of the Delta coronavirus variant.',
+		url: 'https://finnhub.io/api/news?id=b37de4ff6edad4a8c85a5428cb1319e6ae1399c74326d300ad2148ec49f101a1',
+	},
+	{
+		category: 'company',
+		datetime: 1631178540,
+		headline: "If You'd Invested $1,000 in Roku In 2017, This Is How Much You Would Have Today",
+		id: 70413637,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?1120497609',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			"Four years ago Roku (NASDAQ: ROKU) went public at $14 per share. The streaming device company's stock opened at $15.78 on the first day, closed at $23.50, and now trades in the $340s. If you had invested $1,000 at the declared IPO price, your stake would be worth nearly $25,000 t",
+		url: 'https://finnhub.io/api/news?id=860eb2bccc8f85ae994bd6dd5bea111e00c47121e2d1bcd2a485d55ecb617b42',
+	},
+	{
+		category: 'company',
+		datetime: 1631178001,
+		headline: 'Amazon TVs are coming in October, with prices starting at $370',
+		id: 70422684,
+		image:
+			'https://image.cnbcfm.com/api/v1/image/106939177-1631189007613amazon-omni-series-tv-2.PNG?v=1631189047',
+		related: 'AAPL',
+		source: 'CNBC',
+		summary:
+			'Two series will be available in various sizes: the Amazon Fire TV Omni and the more affordable Amazon Fire TV 4 Series.',
+		url: 'https://finnhub.io/api/news?id=f97ee4d59d48aed013b6c4f0b30e234b599299f5e7e431a670c82172262d37a7',
+	},
+	{
+		category: 'company',
+		datetime: 1631178000,
+		headline: "Nobel laureate Doudna's biotech Mammoth hits over $1 bln in valuation",
+		id: 70414672,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-09T131537Z_1_MI4_RTRLXPP_2_LYNXPACKAGER.JPG?450888720',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'Mammoth Biosciences, co-founded by Nobel laureate Jennifer Doudna, touched a valuation of more than $1 billion after raising $150 million in its latest funding round.',
+		url: 'https://finnhub.io/api/news?id=64a4d6029cf768e98b1e68dab580b5901acc7177531422fa6dbfbae9390e8d20',
+	},
+	{
+		category: 'company',
+		datetime: 1631174971,
+		headline: 'The Time To Think About Tomorrow Is Today',
+		id: 70409431,
+		image:
+			'https://static.seekingalpha.com/cdn/s3/uploads/getty_images/180806860/medium_image_180806860.jpg',
+		related: 'AAPL',
+		source: 'SeekingAlpha',
+		summary:
+			'Investors should re-balance their portfolios. Check out why this is a good time to review your portfolio and see what investors should do at this time.',
+		url: 'https://finnhub.io/api/news?id=0b172d40a1babaf6fb4c36a6f7f4cfc95294b808b7e81161e91737ff3e29142f',
+	},
+	{
+		category: 'company',
+		datetime: 1631174100,
+		headline: 'Notable open interest changes for September 9th',
+		id: 70414479,
+		image: '',
+		related: 'AAPL',
+		source: 'Thefly.com',
+		summary: "Wednesday's total op... GSAT, AAPL, CCJ, BBIG",
+		url: 'https://finnhub.io/api/news?id=5f716d69746c6b2f07bdbd69976d048e9db921a7ba5bc9b8c87adeed1b3da26d',
+	},
+	{
+		category: 'company',
+		datetime: 1631173020,
+		headline: 'US STOCKS-Futures drop ahead of jobless claims data as recovery concerns weigh',
+		id: 70412604,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-09T114004Z_1_RZ6_RTRLXPP_2_LYNXPACKAGER.JPG?1280738342',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			"U.S. stock index futures fell on Thursday ahead of weekly jobless claims data, as uncertainty around Federal Reserve's monetary tapering timeline and signs of slowing economic growth were a drag on investor sentiment.",
+		url: 'https://finnhub.io/api/news?id=eb6320f88429645fcccc37c83383d3d11db62484d9a94ecb75da24674c55b62f',
+	},
+	{
+		category: 'company',
+		datetime: 1631170800,
+		headline: "We're Buying Into The Great American REIT Reopening Trade",
+		id: 70405808,
+		image:
+			'https://static.seekingalpha.com/cdn/s3/uploads/getty_images/1222266660/medium_image_1222266660.jpg',
+		related: 'AAPL',
+		source: 'SeekingAlpha',
+		summary:
+			"As the US economy continues to expand, we believe the various property sectors could generate meaningful alpha. Check out the 6 REITs that I'm planning to add.",
+		url: 'https://finnhub.io/api/news?id=d0c249dadfb8afeb729c5bf18826f51bb7521dd805a82160b7098ead6aefb5dc',
+	},
+	{
+		category: 'company',
+		datetime: 1631170380,
+		headline: 'Down 14% This Year, Is Samsung Stock A Buy?',
+		id: 70414675,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?761984432',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'Samsung Electronics’ stock (LSE: SMSN) has declined by almost 14% year-to-date and currently trades at levels of around $1,660 per share. There are likely a couple of factors driving the decline. Although Samsung has been a big beneficiary of the surging demand and strong',
+		url: 'https://finnhub.io/api/news?id=9622dce8c0489fbce56ed6b96856f2e5084977445ca6056f6e9b378bbc9558fb',
+	},
+	{
+		category: 'company',
+		datetime: 1631170380,
+		headline: 'Apple Stock Hits All Time Highs Of $154. Will It Rally Further?',
+		id: 70413786,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?2116556202',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'Apple stock (NASDAQ: AAPL) has gained almost 4% over the last week at near all-time highs of about $154 per share, driven by anticipation surrounding the launch of the company’s next generation of iPhones, which are likely due around the third week of September, and possi',
+		url: 'https://finnhub.io/api/news?id=0ea3f7eb7263f2e6df1132706104456797850840b5405e5bdb823f5a52980c92',
+	},
+	{
+		category: 'company',
+		datetime: 1631169840,
+		headline:
+			'What’s Up With Apple: Analyst Boosts Price Target, Globalstar on the Bubble, and More',
+		id: 70415915,
+		image: 'https://247wallst.com/wp-content/uploads/2020/03/imageForEntry1-89A.jpg',
+		related: 'AAPL',
+		source: '247WallSt',
+		summary:
+			"Apple stock traded near its all-time high on Wednesday before slipping a bit to close down about 1% for the day. The dip followed one analyst's price target hike on the stock to $170, up nearly 10% from current levels.",
+		url: 'https://finnhub.io/api/news?id=cc1828e8eaa399466ce29eab2acc12a080b107b1073cd35b05ec50de70d65afe',
+	},
+	{
+		category: 'company',
+		datetime: 1631168940,
+		headline: 'Google under new EU antitrust investigation - MLex reporter',
+		id: 70414370,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-09T102630Z_1_ER1_RTRLXPP_2_LYNXPACKAGER.JPG?1580612472',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			"Alphabet Inc's Google is facing a renewed EU antitrust investigation into whether it may have forced device manufacturers to use Google Assistant as the default voice assistant on Android devices, an MLex reporter tweeted on Thursday.",
+		url: 'https://finnhub.io/api/news?id=edd3c0b9f376c236a103371763aae3acc59373fa15eb1f880ff680508dcceda7',
+	},
+	{
+		category: 'company',
+		datetime: 1631166195,
+		headline: 'NFJ: Does Options Writing Strategy Offer Enough Downside Protection?',
+		id: 70402029,
+		image:
+			'https://static.seekingalpha.com/cdn/s3/uploads/getty_images/1338420716/medium_image_1338420716.jpg',
+		related: 'AAPL',
+		source: 'SeekingAlpha',
+		summary:
+			'AllianzGI Dividend, Interest & Premium Strategy Fund (NFJ) invests in equities and convertible securities. Check out my analysis on NFJ Fund here.',
+		url: 'https://finnhub.io/api/news?id=cc2b522c0dc8a1f73456c96e439bb791b78d3a5b8e37c903a3606da1566e94b8',
+	},
+	{
+		category: 'company',
+		datetime: 1631164440,
+		headline: 'US and EU form council to seek harmony on big tech regulation',
+		id: 70415492,
+		image: '',
+		related: 'AAPL',
+		source: 'Alliance News',
+		summary:
+			'Looking for stock market analysis and research with proves results? Zacks.com offers in-depth financial research with over 30years of proven results.',
+		url: 'https://finnhub.io/api/news?id=31cf6bf44d6395f8d6614f58cae9fe2b97a0ef8cab36fb7750ce7c57b96226db',
+	},
+	{
+		category: 'company',
+		datetime: 1631164080,
+		headline: 'Apple price target raised to $175 from $165 at Piper Sandler',
+		id: 70415917,
+		image: '',
+		related: 'AAPL',
+		source: 'Thefly.com',
+		summary: 'Piper Sandler analyst Har... AAPL',
+		url: 'https://finnhub.io/api/news?id=a282cab292c23372e401e613f2df97e4ecd7da5b8a565360f5f05bef0b48df3d',
+	},
+	{
+		category: 'company',
+		datetime: 1631149238,
+		headline: 'CoCoPIE helps lower end smartphones achieve high-end performance',
+		id: 70391388,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/X6ssrDtBI4Upm8.CJj7yeQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NzQ-/https://s.yimg.com/hd/cp-video-transcode/prod/2021-09/09/61395cb78346ba45ba75936d/61395cb78346ba45ba75936e_o_U_v2.jpg',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'Xipeng Shen, CoCoPIE Co-Founder and CTO, joins Yahoo Finance to discuss how smart phones could become cheaper moving forward.',
+		url: 'https://finnhub.io/api/news?id=a941478a871f88287b4b158cd56ef5d5f3ec5c11bb9a392b5643132deea48423',
+	},
+	{
+		category: 'company',
+		datetime: 1631141878,
+		headline: 'Why Globalstar Stock Soared 30% Today',
+		id: 70390781,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/YI0VqbnyyowkSCHmBC70Yw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD05MDA-/https://s.yimg.com/uu/api/res/1.2/g9r3EVtVvBtSwHn2c9ngeA--~B/aD0xMDUwO3c9MTQwMDthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/motleyfool.com/f94d2628d5ee5bdc1f5dd1455d2be7e2',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			"Investors are targeting Apple's upcoming media event as a possible game-changer for the satellite communications provider.",
+		url: 'https://finnhub.io/api/news?id=9920952dae1876b2ef0c14c9211072323b9978bb23cfd366b170ce9618212922',
+	},
+	{
+		category: 'company',
+		datetime: 1631138730,
+		headline: 'Is Apple Stock A Buy Ahead Of iPhone 13 Launch?',
+		id: 70391390,
+		image:
+			'https://s.yimg.com/uu/api/res/1.2/Jx7Lo1DTuJPL869J7Thdlw--~B/aD01NjM7dz0xMDAwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/ibd.com/3ddd965bcf3603e1af87f1c09d1868db',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			"Apple has been an American success story several times over with the Mac, iPod, iPhone and other inventions. But is Apple stock a buy now? Here's what its stock chart and earnings show.",
+		url: 'https://finnhub.io/api/news?id=3e6878a33f664b9e5f28dce76acf69884b935aa847835319d8cf9b495269f74f',
+	},
+	{
+		category: 'company',
+		datetime: 1631136434,
+		headline: "Nicholas Ward's Dividend Growth Portfolio: August 2021 Update",
+		id: 70390694,
+		image:
+			'https://static.seekingalpha.com/cdn/s3/uploads/getty_images/1236903031/medium_image_1236903031.jpg',
+		related: 'AAPL',
+		source: 'SeekingAlpha',
+		summary:
+			'My passive income was up 21.1% during August. I made 8 trades during August; all purchases.',
+		url: 'https://finnhub.io/api/news?id=13c4809001167de57919d49e7b3b44a529e3fb73f4d9b1ad94969cf0b2a7f654',
+	},
+	{
+		category: 'company',
+		datetime: 1631134427,
+		headline: "Microsoft's Latest Move To Compete Against Google, Apple",
+		id: 70389638,
+		image:
+			'https://s.yimg.com/uu/api/res/1.2/Cd7yTU2T6RjnPtk1.D_gSA--~B/aD00MDA7dz02MDA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/Benzinga/d973cf4786bc499e02e79ceffdbf2701',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			"Microsoft Corp (NASDAQ: MSFT) has launched a personalized news feed and collection of informational content called 'Microsoft Start,' which provides news from premium publishers. It offers breaking headlines and content based on user interest cutting on time lost in navigating notifications, validating sources, and switching devices. Microsoft Start is available on Microsoft Edge and Alphabet Inc's (NASDAQ: GOOG) (NASDAQ: GOOGL) Google Chrome as a standalone website, as a mobile app on Android a",
+		url: 'https://finnhub.io/api/news?id=301383ccda7787a4230eadae0656d2c28d9fbefc5cc0ad43599e802d23f21dc3',
+	},
+	{
+		category: 'company',
+		datetime: 1631131542,
+		headline: 'Apple Will See Minimal Financial Impact From App Store Changes: Analysts',
+		id: 70391392,
+		image:
+			'https://s.yimg.com/uu/api/res/1.2/JJNu2OKtsNKNEvvj_U9CpQ--~B/aD01NjM7dz0xMDAwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/ibd.com/b515c8aa0ade73ee7a09790f7671da5b',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			"Recent changes to Apple's App Store in response to regulatory and legal pressure will have minimal financial impact on the company, analysts say.",
+		url: 'https://finnhub.io/api/news?id=5343e084431e23503c2242359a592e9d8c758692da0c66c2d52f07c17c0f9825',
+	},
+	{
+		category: 'company',
+		datetime: 1631131200,
+		headline: 'New iPhones Are Coming. Apple Stock Is a Buy, This Analyst Says.',
+		id: 70391393,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/7lhlsjdSLlcemHpupthO_w--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02MDA-/https://s.yimg.com/uu/api/res/1.2/TwhOoWEy1LLRiZZi1gLsIw--~B/aD02NDA7dz0xMjgwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/Barrons.com/cf3a2a6adec638a4e5bbfa538cddbb53',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'Baird analyst William V. Power raised his price target on Apple stock even as the new iPhone 13 may include only incremental upgrades.',
+		url: 'https://finnhub.io/api/news?id=669838d1c244de7231a7ab920d5f41d5d9fff7624063e978732cce747479a05b',
+	},
+	{
+		category: 'company',
+		datetime: 1631130736,
+		headline:
+			'Fast-Growing Stocks: Apple, GOOGL Stock Among 24 Names Expecting 65% To 749% Growth In Q3',
+		id: 70390757,
+		image:
+			'https://s.yimg.com/uu/api/res/1.2/YYX1idIE8u1ya2SL8Z4itw--~B/aD01NjM7dz0xMDAwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/ibd.com/b7c6459026e128446c7e462dfbf643e3',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			"Apple, DocuSign, and Google parent Alphabet are among today's fastest-growing stocks expecting up to 749% Q3 growth.",
+		url: 'https://finnhub.io/api/news?id=c59ab0555b33fd8446d18cf35056db55a7cd7031ec7d6001781538744f68e029',
+	},
+	{
+		category: 'company',
+		datetime: 1631080800,
+		headline: 'Apple App Store Changes Fail to Sway Lawmakers Bent on Overhaul',
+		id: 70362097,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/fJBcULLcaBOSo90IDMt9AQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD05MDE-/https://s.yimg.com/uu/api/res/1.2/cXIHvJMaDkcfmf6MjNXhtg--~B/aD0xMjMzO3c9MTY0MzthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/bloomberg_technology_68/fbf58af5db1c9891343fb98558cb8eb3',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'(Bloomberg) -- U.S. lawmakers are barreling ahead with legislation to change the way Apple Inc. runs its App Store, unconvinced by the company’s recent moves to address antitrust complaints from developers and regulators around the world. A proposed bill from a bipartisan trio of senators would force significant changes to the way consumers download and use apps on their iPhones and other Apple devices. Minnesota Democrat Amy Klobuchar, head of the Senate antitrust subcommittee and one of the bi',
+		url: 'https://finnhub.io/api/news?id=6906046b9cdeb0afc92f254fd48d1cfa2bffd309d1a210b84e01690a499f3585',
+	},
+	{
+		category: 'company',
+		datetime: 1631125831,
+		headline: "Netflix stock has been on a tear — here's why",
+		id: 70390761,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/iYccPDk7Sv9fs6Oycm8HCA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://s.yimg.com/os/creatr-uploaded-images/2021-09/29b5fdb0-10c4-11ec-97f4-4e8b8f076902',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary: "Netflix shares are on one mighty run. Here's why.",
+		url: 'https://finnhub.io/api/news?id=b27e4678260435c7bb2917d29914081d90060691ee39593771d5fad1122a9978',
+	},
+	{
+		category: 'company',
+		datetime: 1631124195,
+		headline: 'Stock futures are flat after Dow and S&P 500 fall for the third straight session ',
+		id: 70390155,
+		image: 'https://image.cnbcfm.com/api/v1/image/106931048-1629474197254-trader.jpg?v=1629474240',
+		related: 'AAPL',
+		source: 'CNBC',
+		summary:
+			'On Wednesday, the Dow Jones Industrial Average and S&P 500 fell for the third day straight. ',
+		url: 'https://finnhub.io/api/news?id=e5450c8d68ac718e774f59aed67c980bbc090ba4fb7a5e3919e05e6d8de88379',
+	},
+	{
+		category: 'company',
+		datetime: 1631121600,
+		headline: "Apple is facing a mountain of controversies, but investors don't seem to care",
+		id: 70391397,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/6sGgfdvJ_KDMEmH07UguGQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://s.yimg.com/os/creatr-images/2020-07/d33f78d0-bc96-11ea-abbb-2f6a0cb6c107',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			"Apple is facing major controversies at a time when its about to launch its most important product of the year. But investors don't seem to care.",
+		url: 'https://finnhub.io/api/news?id=09becd8940b5038320e5dadbd4317c5f82e62e94d93e9dd30ebb3c69d6809ed6',
+	},
+	{
+		category: 'company',
+		datetime: 1631120669,
+		headline: 'iPhone 13: Everything we know about new Apple phone as release date nears',
+		id: 70391398,
+		image:
+			'https://static.independent.co.uk/2021/08/18/11/apple.jpg?width=1200&auto=webp&quality=75',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'Apple is about to release the iPhone 13.  While it has not said specifically that the event is for the iPhone – and the release was delayed into October, last year – it almost certainly will be the launch of the new handset.  While we’ve been referring to it as the iPhone 13 – and will continue to do so – there’s no guarantee that’s what it will be called.',
+		url: 'https://finnhub.io/api/news?id=7a963e12a16eba445e0fadcbf3dbb7ab3b6a5b517c751bff30f03bea4ad2d89a',
+	},
+	{
+		category: 'company',
+		datetime: 1631119740,
+		headline: "WiMi Hologram Cloud's Introduces WiMi HoloAR lens",
+		id: 70419479,
+		image:
+			'https://cdn.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/abtech_1697.png',
+		related: 'AAPL',
+		source: 'Benzinga',
+		summary:
+			'Holographic AR application technology provider WiMi Hologram Cloud Inc (NASDAQ: WIMI) has launched a new augmented reality head-mounted display (HMD) product, named "WiMi...',
+		url: 'https://finnhub.io/api/news?id=f9a7bd69428e52c06d7d29434c0b75042187b26c57122e71c82476423d8f45bf',
+	},
+	{
+		category: 'company',
+		datetime: 1631118540,
+		headline:
+			'After Hours Most Active for Sep 8, 2021 :  CPNG, AAPL, VEON, NLOK, ELAN, V, ENDP, CMCSA, HL, BAC, PINS, CAR',
+		id: 70412504,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?1595232854',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			"The NASDAQ 100 After Hours Indicator is down -2.53 to 15,618.32.  The total After hours volume is currently 57,179,117 shares traded.The following are the most active stocks for the after hours session: Coupang, Inc. (CPNG) is -0.03 at $31.32, with 5,310,272 shares traded. CPNG's",
+		url: 'https://finnhub.io/api/news?id=95492ce56d3315206bc7b512098ad948ffd4bc209f045b68aca54cb40ebeacb4',
+	},
+	{
+		category: 'company',
+		datetime: 1631118038,
+		headline: "Dow Jones Off Lows After Stock Market Sell-Off Fueled By Fed Official's Comments",
+		id: 70389921,
+		image:
+			'https://s.yimg.com/uu/api/res/1.2/CRy0tjr2zqoQpOODo_tfJA--~B/aD02MDA7dz0xMDY1O2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/ibd.com/72af72ab3154f62716df3be530b0601d',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			"Stocks moved off lows midday, as the Dow Jones Industrial Average pared a 174-point loss that was fueled by a Fed official's comments.",
+		url: 'https://finnhub.io/api/news?id=a4f40fb0662ae068919b60f14ebd32ec30c4ed21fdefd2c4172829709cb58160',
+	},
+	{
+		category: 'company',
+		datetime: 1631117760,
+		headline: 'Sherwin-Williams, PulteGroup fall; Perrigo, Kadmon rise',
+		id: 70415700,
+		image: '',
+		related: 'AAPL',
+		source: 'Associated Press, The',
+		summary:
+			'Looking for stock market analysis and research with proves results? Zacks.com offers in-depth financial research with over 30years of proven results.',
+		url: 'https://finnhub.io/api/news?id=1de3aa5cbf76357278d78a57607765b25399ef3dd3ec7c6b5f02475cea7f662f',
+	},
+	{
+		category: 'company',
+		datetime: 1631117700,
+		headline: 'US STOCKS-Wall Street ends lower, weighed down by Big Tech',
+		id: 70412538,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-08T113918Z_1_DO1_RTRLXPP_2_LYNXPACKAGER.JPG?1679391943',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			"Wall Street ended lower on Wednesday, spooked by worries that the Delta coronavirus variant could blunt the economy's recovery and on uncertainty about when the Federal Reserve may pull back its accommodative policies.",
+		url: 'https://finnhub.io/api/news?id=7cc7b867b7a9cf1bd4aeac921f91643a3b3a1c0324963df1e8e631bfdc08bfb6',
+	},
+	{
+		category: 'company',
+		datetime: 1631116820,
+		headline:
+			'Dow Jones Slides As Yellen Warns Congress; Apple Sells Off From Record High; Tesla Skids Amid China Sales',
+		id: 70389925,
+		image:
+			'https://s.yimg.com/uu/api/res/1.2/jyYDBjHF7bnIEtCEQeuhfg--~B/aD01NjM7dz0xMDAwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/ibd.com/1856de03212e386cb58e628bf758fa91',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'The Dow Jones Industrial Average dropped 150 points Wednesday, as Tesla stock reversed lower amid China sales. Apple fell from record highs.',
+		url: 'https://finnhub.io/api/news?id=641a0e057cae39507b8093f9dcbffa73d3388ce5de1f1cdec67762ffb3cad7f7',
+	},
+	{
+		category: 'company',
+		datetime: 1631116800,
+		headline: 'Wall Street ends lower, weighed down by Big Tech',
+		id: 70412539,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-08T113747Z_1_YD8_RTRLXPP_2_LYNXPACKAGER.JPG?1623812766',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			"Wall Street ended lower on Wednesday, spooked by worries that the Delta coronavirus variant could blunt the economy's recovery and on uncertainty about when the Federal Reserve may pull back its accommodative policies.",
+		url: 'https://finnhub.io/api/news?id=5e483a72270bf77ab377f86ae75a5260306c81207c3cb4a76aa04f4bdf1b6de6',
+	},
+	{
+		category: 'company',
+		datetime: 1631116651,
+		headline: 'Apple stock falls as investors look ahead to Apple iPhone 13 event',
+		id: 70391401,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/ub0MNkgu8AFhVYcKUYOZlA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NzY-/https://s.yimg.com/hd/cp-video-transcode/prod/2021-09/08/6138dd6c540ba3052adb3749/6138dd6c540ba3052adb374a_o_U_v2.jpg',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'Krish Sankar, Cowen Senior Analyst, talks about what to expect ahead of the September 14th event.',
+		url: 'https://finnhub.io/api/news?id=9e6dd816eb1181d17c5d146471ec97c3868b0f9c691bc7503797f2c5319a5333',
+	},
+	{
+		category: 'company',
+		datetime: 1631116620,
+		headline: "Twitter's Latest Feature 'Communities' Trial Underway - What You Need To Know",
+		id: 70388425,
+		image:
+			'https://cdn.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/twitter-3319619_1920_20.jpg',
+		related: 'AAPL',
+		source: 'Benzinga',
+		summary:
+			"Twitter Inc's (NYSE: TWTR) latest feature under trial is called 'Communities,' the company mentioned in its blog. Thus far, it will be on Apple Inc...",
+		url: 'https://finnhub.io/api/news?id=1f99a6ae5987c93b73a35a4793a08b30dc13a8933cae3e5494ae50fa62b9c1a4',
+	},
+	{
+		category: 'company',
+		datetime: 1631113818,
+		headline: 'When can you pre-order Apple’s iPhone 13 in the UK?',
+		id: 70391402,
+		image:
+			'https://static.independent.co.uk/2021/09/08/15/iphone%2013%20indybest%20copy.jpg?width=1200&auto=webp&quality=75',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'Here’s everything we know about the launch of the newest iPhone, and how to get your hands on it',
+		url: 'https://finnhub.io/api/news?id=69ec979d6fe26ff57a5581efb921129257a72edb6c66b2dca149ea05c2425fbf',
+	},
+	{
+		category: 'company',
+		datetime: 1631112488,
+		headline: 'Tech sector has no ‘shortage of opportunities’',
+		id: 70390767,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/2vlbq2RCwLDNkR5LGHvszQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NzU-/https://s.yimg.com/hd/cp-video-transcode/prod/2021-09/08/6138cd298346ba45ba7590ea/6138d435540ba3052adb372e_o_U_v3.jpg',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'Yahoo Finance’s Julie Hyman and Brian Sozzi discuss outlook for big tech with Lo Toney, Plexo Capital Founding Managing Partner.',
+		url: 'https://finnhub.io/api/news?id=13613617f18efb2144df717ee72a3e30b910cdc1df73d569be1b9034b9ff68f4',
+	},
+	{
+		category: 'company',
+		datetime: 1631112191,
+		headline: 'When is iPhone 13 out? Likely release date for new Apple phone',
+		id: 70391404,
+		image:
+			'https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/11/18/iphone-2.jpg?width=1200&auto=webp&quality=75',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'The iPhone 13 is about to arrive.  Nobody outside the company knows what exactly that could mean, though rumours suggest Apple’s new phone will have a smaller notch at the top, improved cameras and a faster processor.  Apple might choose to forego the “13” number, given its reputation, and perhaps even drop the numbering scheme entirely as it has with other products such as the iPad.',
+		url: 'https://finnhub.io/api/news?id=34f3a1f9c7fdc321e6e160dc7287f66fc14cf666457ea80729e7f8f5afffef9e',
+	},
+	{
+		category: 'company',
+		datetime: 1631111323,
+		headline: 'Apple’s big event is September 14 — here’s what to expect',
+		id: 70391405,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/Y0Zl4FLOZbhnUXpoDVkyVA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NzQ-/https://s.yimg.com/hd/cp-video-transcode/prod/2021-09/08/6138c89c2f6b901586a3a76b/6138d4558346ba45ba759108_o_U_v3.jpg',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'Brian Sozzi and Julie Hyman discuss the reasoning behind the sudden frenzy taking place with investors over Apple’s stock as the world continues to await the latest Apple event met to showcase the company’s newest products.',
+		url: 'https://finnhub.io/api/news?id=5be85dc51f5302e259cf03f58e947992e2d4d4e3199e9cc2229a293289d15974',
+	},
+	{
+		category: 'company',
+		datetime: 1631111102,
+		headline: 'Apple ETFs to Soar on New iPhone 13 Launch Fervor',
+		id: 70391406,
+		image:
+			'https://s.yimg.com/uu/api/res/1.2/0SBi3Os9RGINCBhzJBAHyw--~B/aD00MDA7dz02MzU7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/zacks.com/4c8321f6f5d3653d94cd8aa97f40ea11',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary: 'Apple is hitting new fresh highs ahead of its iPhone launch event on Sep 14.',
+		url: 'https://finnhub.io/api/news?id=a343f47503922662a3108cb1542cc3994fd9fc5b5f29b7303e5f549f516e41c9',
+	},
+	{
+		category: 'company',
+		datetime: 1631110980,
+		headline: 'US STOCKS-Big Tech tugs Wall Street back from record high levels',
+		id: 70412540,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-08T113918Z_1_DO1_RTRLXPP_2_LYNXPACKAGER.JPG?736673950',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			"Wall Street receded from record high levels on Wednesday, spooked by worries that the Delta coronavirus variant could blunt the economy's recovery and on uncertainty about when the Federal Reserve may pull back its accommodative policies.",
+		url: 'https://finnhub.io/api/news?id=1bdf9fa912db4849c07924cb59ba962b66c4d035b1a22f087763a5c0c24e2d10',
+	},
+	{
+		category: 'company',
+		datetime: 1631107492,
+		headline: "U.S. FTC meeting will scrutinize Big Tech's small deals",
+		id: 70384469,
+		image: '',
+		related: 'AAPL',
+		source: 'Finnhub',
+		summary:
+			'The U.S. Federal Trade Commission will hold its next open meeting on Sept. 15 to hear staff findings on deals that Big Tech firms like Facebook and Apple make which are sometimes too small to... | September 8, 2021',
+		url: 'https://finnhub.io/api/news?id=b0c4be24f970f40e001c4fe1c41af4c5c48156ba23b8260e6c57334c4f5f1795',
+	},
+	{
+		category: 'company',
+		datetime: 1631106001,
+		headline:
+			'Twitter begins testing Communities, a new feature for connecting people with shared interests',
+		id: 70387737,
+		image:
+			'https://image.cnbcfm.com/api/v1/image/106938256-1631049958799-Screen_Shot_2021-09-07_at_22038_PM.png?v=1631050058',
+		related: 'AAPL',
+		source: 'CNBC',
+		summary:
+			"Twitter announced it's testing a new feature Communities that will allow users to talk about specific topics with others who share the same interest. ",
+		url: 'https://finnhub.io/api/news?id=cfe0c6f399f9cfffd46229198749089e76c1c859f95979ad5c290023ffb57f58',
+	},
+	{
+		category: 'company',
+		datetime: 1631105820,
+		headline: 'Nvidia seeks EU approval for Arm deal, decision due Oct. 13',
+		id: 70413809,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-04-12T122442Z_1086843909_RC2CUM9RJR25_RTRMADP_2_AUTOS-TECH-NVIDIA.JPG?1655002175',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'Nvidia on Wednesday sought EU antitrust approval of its $54 billion takeover of British chip designer Arm, according to a European Commission filing, with regulators likely to echo worries similar to those voiced by the UK watchdog last month.',
+		url: 'https://finnhub.io/api/news?id=6fa966b49bd5613b4f4d0f44049ff657e1e2092612c45536c81803f689056227',
+	},
+	{
+		category: 'company',
+		datetime: 1631104615,
+		headline: "What WSJ's Joanna Stern expects to see from Apple's event next week",
+		id: 70390177,
+		image:
+			'https://image.cnbcfm.com/api/v1/image/106938668-16311169111631116907-18558541912-1080pnbcnews.jpg?v=1631116910',
+		related: 'AAPL',
+		source: 'CNBC',
+		summary:
+			"Joanna Stern, WSJ personal tech columnist, joins 'Tech Check' to discuss what she's expecting from Apple's 'California Streaming' event next Tuesday.",
+		url: 'https://finnhub.io/api/news?id=cfb78ee7a9aa56c5b01bfd9ed1a879fd2a0d33ed2f1c83e8224577718321e109',
+	},
+	{
+		category: 'company',
+		datetime: 1631104320,
+		headline: 'GSAT Stock: The Huge Reason Globalstar Shares Are Skyrocketing Today',
+		id: 70415413,
+		image: 'https://investorplace.com/wp-content/uploads/2019/08/telecom1600e.jpg',
+		related: 'AAPL',
+		source: 'InvestorPlace',
+		summary:
+			'Today, investors in Globalstar and GSAT stock are seeing intense buying pressure as traders speculate on an Apple partnership.',
+		url: 'https://finnhub.io/api/news?id=205d161286433a286beb75319fa0ddb57c9768fb808c7b4891045d6c5b273a64',
+	},
+	{
+		category: 'company',
+		datetime: 1631103600,
+		headline: 'US STOCKS-Wall Street falls as growth worries grip investors',
+		id: 70413236,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-08T113918Z_1_DO1_RTRLXPP_2_LYNXPACKAGER.JPG?131447073',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'Wall Street indexes dropped on Wednesday on concerns that the spread of the Delta coronavirus variant could slow economic growth and on uncertainty over the timeline for the Federal Reserve to pull back its accommodative policies.',
+		url: 'https://finnhub.io/api/news?id=052bab0dd27e9188ec113bedf37d2a762ccf898d1b80a087716948fd7fc19255',
+	},
+	{
+		category: 'company',
+		datetime: 1631103371,
+		headline: "IT guy-in-chief: president tries to fix El Salvador's bitcoin woes",
+		id: 70382667,
+		image: '',
+		related: 'AAPL',
+		source: 'Finnhub',
+		summary:
+			"SAN SALVADOR -El Salvador's President Nayib Bukele stepped in on Wednesday to closely manage the fraught roll-out of a payments app that underpins the nation's adoption of bitcoin as legal tender,... | September 8, 2021",
+		url: 'https://finnhub.io/api/news?id=af6c4bc40539fd447a517974171da37ead843b0541c5b1f61ac4c466ed08b1c2',
+	},
+	{
+		category: 'company',
+		datetime: 1631103120,
+		headline: 'Nvidia seeks EU approval for Arm takeover, Reuters reports',
+		id: 70415920,
+		image: '',
+		related: 'AAPL',
+		source: 'Thefly.com',
+		summary: 'Nvidia (NVDA) is seeking ... NVDA, SFTBY, SSNLF, QCOM, AAPL, MRVL, AVGO',
+		url: 'https://finnhub.io/api/news?id=46ce71906da2fd8407baf9c3bf3c86fbe1e5932d96ad96507700640d7b286342',
+	},
+	{
+		category: 'company',
+		datetime: 1631102700,
+		headline: 'Nvidia seeks EU approval for Arm deal, EU decision due Oct. 13',
+		id: 70413811,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-04-12T122442Z_1086843909_RC2CUM9RJR25_RTRMADP_2_AUTOS-TECH-NVIDIA.JPG?1774618460',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'Nvidia on Wednesday filed for EU antitrust approval of its $54 billion takeover of British chip designer Arm, according to a submission on the European Commission website, kicking off a process likely to take several months.',
+		url: 'https://finnhub.io/api/news?id=c5d52e57c346158a8e99acaff9982868f0a3c26bf045a9f5ccaecf82af6936a5',
+	},
+	{
+		category: 'company',
+		datetime: 1631100120,
+		headline: 'Wall Street in Fives - Must Read Lists at Midday',
+		id: 70414482,
+		image: 'https://image.thefly.com/catalog/201810/img_66.png',
+		related: 'AAPL',
+		source: 'Thefly.com',
+		summary:
+			'Five top five lists with the news and calls moving stocks, powered by The Fly. NFLX, AAPL, ALB, SNY, KDMN, UHS, T, PYPL, LHCG, HCA, BKD, COIN, CTXS, GOOS, SSNLF, TGT, ASPS, ICUI, BBIG, PRGO, VRTV, REVG, SHW, PM, KHC, PATH, KFY',
+		url: 'https://finnhub.io/api/news?id=0beeee009de063f907ae4f125423a0a862171237791574fa211df2195d8ce7a7',
+	},
+	{
+		category: 'company',
+		datetime: 1631099654,
+		headline: 'Apple: Time For A Pause?',
+		id: 70380368,
+		image:
+			'https://static.seekingalpha.com/cdn/s3/uploads/getty_images/1254939558/medium_image_1254939558.jpg',
+		related: 'AAPL',
+		source: 'SeekingAlpha',
+		summary:
+			"They say you should own Apple stock and not trade it. Read on to know AAPL stock's pullback range that is an opportunity to add to your long-term position.",
+		url: 'https://finnhub.io/api/news?id=0a81c98d3c83180fa35fb8aec03974a332bbdab6ac91a6fab3404d0e322b42f2',
+	},
+	{
+		category: 'company',
+		datetime: 1631099100,
+		headline: 'Notable ETF Inflow Detected - IVV, AAPL, AMZN, V',
+		id: 70412506,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?2072117235',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			"Looking today at week-over-week shares outstanding changes among the universe of ETFs covered at ETF Channel, one standout is the iShares Core S&P 500 ETF (Symbol: IVV) where we have detected an approximate $1.1 billion dollar inflow -- that's a 0.4% increase week over week",
+		url: 'https://finnhub.io/api/news?id=5284ef35032c6640773eaf7080bd459a030259dce6dfa0115c180503bc58a98b',
+	},
+	{
+		category: 'company',
+		datetime: 1631096220,
+		headline: 'S&P 500: More Short-Term Weakness Despite Tech Rally?',
+		id: 70415922,
+		image: '',
+		related: 'AAPL',
+		source: 'TalkMarkets',
+		summary: '',
+		url: 'https://finnhub.io/api/news?id=c4b21b32adfe92c6d3172b91fda0b53d63d2df3b8880532f51b62ad8cb92227b',
+	},
+	{
+		category: 'company',
+		datetime: 1631095800,
+		headline: 'Buy These 2 Stocks Before Apple Releases the Next iPhone',
+		id: 70413726,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?774351105',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'September has arrived and this is generally the month when smartphone giant Apple (NASDAQ: AAPL) refreshes its bread-and-butter product -- the iPhone. Apple is likely to launch the 2021 iteration of its smartphone on Sept. 14 as it has announced an Apple Event will take place tha',
+		url: 'https://finnhub.io/api/news?id=969b402e07713f22aeb21b9330ba065d66b223fd1090a3447d216595f3157516',
+	},
+	{
+		category: 'company',
+		datetime: 1631095681,
+		headline: 'Ford poaches top tech executive from Apple',
+		id: 70385080,
+		image:
+			'https://image.cnbcfm.com/api/v1/image/106938566-16311073241631107321-18556412815-1080pnbcnews.jpg?v=1631107323',
+		related: 'AAPL',
+		source: 'CNBC',
+		summary:
+			'CNBC\'s "Squawk on the Street" team discusses why Ford poached a top executive from Apple and what it means for both companies.',
+		url: 'https://finnhub.io/api/news?id=a7a4e1a8a94e2b0174c024618d47b2c837cb47efec45ba3f8c1685053a9c8980',
+	},
+	{
+		category: 'company',
+		datetime: 1631091600,
+		headline: 'Apple Gets Close To Their VR/AR Headset',
+		id: 70375455,
+		image:
+			'https://static.seekingalpha.com/cdn/s3/uploads/getty_images/1325087896/medium_image_1325087896.jpg',
+		related: 'AAPL',
+		source: 'SeekingAlpha',
+		summary:
+			"Recent rumors suggest we are getting very close to an Apple VR/AR headset. Check out the short, medium and long-term effects on Apple's VR/AR headsets.",
+		url: 'https://finnhub.io/api/news?id=ff197f0bdfa940002b78d8ca875faebd069c74193364b4d13464199ae7363b66',
+	},
+	{
+		category: 'company',
+		datetime: 1631091540,
+		headline: 'US STOCKS-Wall St set to open flat on fears over slowing economic growth',
+		id: 70375737,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-08T113918Z_1_DO1_RTRLXPP_2_LYNXPACKAGER.JPG?341211355',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'Wall Street was set to open flat on Wednesday on concerns that the spread of the Delta coronavirus variant could slow economic growth and on uncertainty over the timeline for the Federal Reserve to pull back its accommodative policies.',
+		url: 'https://finnhub.io/api/news?id=1d6884f070d47b210e1abea51346de338358157952a5123204f5e8368f9659c8',
+	},
+	{
+		category: 'company',
+		datetime: 1631090400,
+		headline: '3 Robinhood Stocks to Buy Right Now',
+		id: 70375920,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?321140744',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			"Robinhood Markets' commission-free trading platform has attracted millions of new investors and paved the way for its users to emerge as a market-moving powerhouse. While the platform is often associated with cryptocurrencies and popular meme stocks like GameStop and AMC Entertai",
+		url: 'https://finnhub.io/api/news?id=f46bdd1a2ea0807dfe2c74f05e87e0d068ef71831d69d533895f424e2a7bf859',
+	},
+	{
+		category: 'company',
+		datetime: 1631089500,
+		headline: 'Home - The Fly',
+		id: 70381535,
+		image: '',
+		related: 'AAPL',
+		source: 'Thefly.com',
+		summary:
+			'The Fly is a leading digital publisher of real-time financial news. The Fly team scours all sources of company news and delivers short-form stories consisting of only market moving content.',
+		url: 'https://finnhub.io/api/news?id=1d7329aef0da5391d955f91dd199d834f407fe2ffe7a22ceec128d1ca9855a8e',
+	},
+	{
+		category: 'company',
+		datetime: 1631088780,
+		headline: 'Paysafe announces expanded partnership with Betfred USA Sports',
+		id: 70379717,
+		image: '',
+		related: 'AAPL',
+		source: 'Thefly.com',
+		summary: 'Paysafe (PSFE) announced ... PSFE, PYPL, MA, GPN, PAYS, SQ, AAPL, V',
+		url: 'https://finnhub.io/api/news?id=94a8620f862128290407f80715a0a39b88359ac13bb44f91c50da2937bec5e0b',
+	},
+	{
+		category: 'company',
+		datetime: 1631088600,
+		headline: 'Futures Extend Slide, European Markets Drop On Growth, Tapering Fears',
+		id: 70378462,
+		image: '',
+		related: 'AAPL',
+		source: 'TalkMarkets',
+		summary: '',
+		url: 'https://finnhub.io/api/news?id=24d7afd49960aff1a6c67c116c6f1aa6e0b3b56a759c0a8954700ab05641d787',
+	},
+	{
+		category: 'company',
+		datetime: 1631088420,
+		headline: 'SPDR-ETF Report For Wednesday, Sept. 8',
+		id: 70414989,
+		image: '',
+		related: 'AAPL',
+		source: 'TalkMarkets',
+		summary: '',
+		url: 'https://finnhub.io/api/news?id=9a92a0ae85296ece0cf1f950a40be9d8978315c6fab9285d7a5b012f1086397a',
+	},
+	{
+		category: 'company',
+		datetime: 1631087839,
+		headline: '5 things to know before the stock market opens Wednesday',
+		id: 70388602,
+		image:
+			'https://image.cnbcfm.com/api/v1/image/106931855-1629740050349-gettyimages-1234833993-US_STOCKS.jpeg?v=1629740111',
+		related: 'AAPL',
+		source: 'CNBC',
+		summary:
+			'U.S. stock futures were flat Wednesday, one day after the Dow dropped nearly 0.8%. The Nasdaq, however, eked out a gain for another record close.',
+		url: 'https://finnhub.io/api/news?id=88f1439873620a32d90c01faf3751ef448d2a5966297ec2a3f4d9165383bc68e',
+	},
+	{
+		category: 'company',
+		datetime: 1631087700,
+		headline: 'Notable open interest changes for September 8th',
+		id: 70377303,
+		image: '',
+		related: 'AAPL',
+		source: 'Thefly.com',
+		summary: "Tuesday's total opti... TSLA, CLOV, AAPL, AMC",
+		url: 'https://finnhub.io/api/news?id=7e0e4db26512c7dd6441d5224d0aec6eea8dab440742bc843ea8b33be1bf9d4f',
+	},
+	{
+		category: 'company',
+		datetime: 1631087340,
+		headline: 'Daily Markets: Stocks Feeling Some Pre-ECB Jitters',
+		id: 70377868,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021/06/10/european-central-bank-gertech-adobe.jpeg?1821391415',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'Equities today are likely experiencing some pre-European Central Bank meeting jitters ahead of the bank’s monetary policy meeting tomorrow, September 9.',
+		url: 'https://finnhub.io/api/news?id=58a9cb0303614bde8e908bc69ae8fd675625db2568547a3df0e812439933f1c6',
+	},
+	{
+		category: 'company',
+		datetime: 1631086380,
+		headline: 'US STOCKS-Futures dip on fears over slowing economic growth',
+		id: 70375740,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-08T113918Z_1_DO1_RTRLXPP_2_LYNXPACKAGER.JPG?1024610030',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'U.S. stock index futures dipped on Wednesday, suggesting that the S&P 500 and Dow Jones indexes would extend losses for a third straight day, as the spread of the Delta coronavirus variant stoked worries of slowing economic growth.',
+		url: 'https://finnhub.io/api/news?id=1613217e669bad54f74d8e46f325bc9d85622ef694fdddaecf58e7cbf0bcaf0f',
+	},
+	{
+		category: 'company',
+		datetime: 1631085660,
+		headline: 'What’s Up With Apple: California Streaming, Car Play and More',
+		id: 70381539,
+		image: 'https://247wallst.com/wp-content/uploads/2020/04/imageForEntry1-1pj.jpg',
+		related: 'AAPL',
+		source: '247WallSt',
+		summary:
+			"Apple's annual fall event will be held next Tuesday. The company is expected to introduce a new iPhone, among other things. ",
+		url: 'https://finnhub.io/api/news?id=f7d92dd2ffa0ca497a94c9733e0bb248091c56464b29af035c03503035f23726',
+	},
+	{
+		category: 'company',
+		datetime: 1631084820,
+		headline: "Google Accounts for a Huge Amount of Apple's Profits",
+		id: 70377387,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?776740686',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'Every year, Alphabet (NASDAQ: GOOG) (NASDAQ: GOOGL) pays for the placement of Google as the default search engine in web browsers. It files those payments under "traffic acquisition costs," or TAC, on its income statement. Last year, Alphabet paid nearly $33 billion in TAC, and o',
+		url: 'https://finnhub.io/api/news?id=6deb8606a931d1d7cec6b88e0256a5dfa752b1e7f1d8d7b7f3a45ef481bb6b97',
+	},
+	{
+		category: 'company',
+		datetime: 1631083440,
+		headline: 'Warren Buffett Is Betting Big on This Stock -- Should You?',
+		id: 70375827,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?786009955',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			"In a recent episode of The Rank on Fool Live, longtime Fool.com contributors Matt Frankel, CFP, and Jason Hall ranked the 10 largest holdings of Berkshire Hathaway (NYSE: BRK.A)(NYSE: BRK.B). And although Apple (NASDAQ: AAPL) is Berkshire's largest stock position by a wide margin",
+		url: 'https://finnhub.io/api/news?id=4aaa7d216e30d88b2ba00e3741384632d9dfb8d91b9a32eee76e77bd4fd1b4f5',
+	},
+	{
+		category: 'company',
+		datetime: 1631082180,
+		headline: 'Apple price target raised to $170 from $160 at Baird',
+		id: 70381540,
+		image: '',
+		related: 'AAPL',
+		source: 'Thefly.com',
+		summary: 'Baird analyst William Pow... AAPL',
+		url: 'https://finnhub.io/api/news?id=26b01c234dc290029a41e2d43b5eee2887ddb082f15e85cb36a4a0e9754d6764',
+	},
+	{
+		category: 'company',
+		datetime: 1631081160,
+		headline: 'Is It Too Late to Buy Apple Stock?',
+		id: 70377872,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?61334840',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			"Apple's (NASDAQ: AAPL) stock rallied roughly 48,660% over the past 20 years and recently hit a new all-time high. Once dismissed as an also-ran of the tech sector, Apple's introductions of the iPod, iPhone, and iPad under Steve Jobs turned it into one of the world's most valuable",
+		url: 'https://finnhub.io/api/news?id=75381a25964f51f389c4431164d81cad1d62e351597e15973e9c1c034c751b60',
+	},
+	{
+		category: 'company',
+		datetime: 1631080380,
+		headline: "App Store headlines 'more bark than bite' for Apple, says Morgan Stanley",
+		id: 70381541,
+		image: '',
+		related: 'AAPL',
+		source: 'Thefly.com',
+		summary: 'Morgan Stanley analyst Ka... AAPL',
+		url: 'https://finnhub.io/api/news?id=927d4fc2b7ff490880344cc5c24b3a0f41de9a4763ccb5e1123ef0607c670add',
+	},
+	{
+		category: 'company',
+		datetime: 1631079120,
+		headline:
+			"Apple Hasn't Done Enough To Address Antitrust Concerns, Says Klobuchar As Lawmakers Remain Adamant On Overhaul",
+		id: 70384982,
+		image:
+			'https://cdn.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/hussam-abd-zp5upuuctqi-unsplash_2.jpg',
+		related: 'AAPL',
+		source: 'Benzinga',
+		summary:
+			'Apple Inc (NASDAQ: AAPL) has taken small steps but not done enough to address the antitrust concerns amid rising global scrutiny, Senator Amy Klobuchar (D-Minn) told...',
+		url: 'https://finnhub.io/api/news?id=f2f101bd3afbc1d62ff05feceaf68ba3817f0bc668bc1b7caf6bec7df1a56c4f',
+	},
+	{
+		category: 'company',
+		datetime: 1631077380,
+		headline:
+			'Amazon, Alphabet, Apple, Square, Facebook & Tesla Elliott Wave Analysis - Wednesday, Sept. 8',
+		id: 70415342,
+		image: '',
+		related: 'AAPL',
+		source: 'TalkMarkets',
+		summary: '',
+		url: 'https://finnhub.io/api/news?id=33c2fc92a7168b177547e3fb0daa099628addb9afd6b237e6a324f40ccbda12c',
+	},
+	{
+		category: 'company',
+		datetime: 1631075280,
+		headline: 'Value Investing Live Recap: Bill Smead - 2021 Market Update',
+		id: 70415925,
+		image: 'https://static.gurufocus.com/photos/others/value_investing.jpg',
+		related: 'AAPL',
+		source: 'GuruFocus',
+		summary: 'Key questions and takeaways',
+		url: 'https://finnhub.io/api/news?id=206032c0df8f2170ddfcdb373531cec252c52a3deda930dbf962bfd0691d1466',
+	},
+	{
+		category: 'company',
+		datetime: 1631072400,
+		headline: 'Ford greatly enhances its tech’s appeal',
+		id: 70377505,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?1951730175',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'(The author is a Reuters Breakingviews columnist.  The opinions expressed are their own.)',
+		url: 'https://finnhub.io/api/news?id=b301105a53fae12bb25ff243a0af1a4c68b5131bf458d519d9e10b0e717b2e01',
+	},
+	{
+		category: 'company',
+		datetime: 1631072220,
+		headline:
+			'Does Apple Plan To Also Introduce New iPad Alongside iPhone 13 And Apple Watch Series 7 Next Week?',
+		id: 70385013,
+		image:
+			'https://cdn.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/daniel-romero--ccxgkia5ra-unsplash_2.jpg',
+		related: 'AAPL',
+		source: 'Benzinga',
+		summary:
+			'Apple Inc (NASDAQ: AAPL)-focused journalist Mark Gurman said on Twitter that the “currently unavailable” and shipping delay statuses on product listings of the entry-...',
+		url: 'https://finnhub.io/api/news?id=adbc702bb44cd1f35670b62984d252da7f69f39f4b663d993445555496a7c3a0',
+	},
+	{
+		category: 'company',
+		datetime: 1631071920,
+		headline: 'Wall Street in Fives - Must Read Lists for Wednesday',
+		id: 70414583,
+		image: 'https://image.thefly.com/catalog/201904/img_457.jpg',
+		related: 'AAPL',
+		source: 'Thefly.com',
+		summary:
+			'Five top five lists with the news and calls moving stocks, powered by The Fly. BKD, PRGO, SNY, PYPL, SPB, UHS, T, NFLX, ALB, AAPL, CTXS, GOOS, SSNLF, TGT, AMZN, ICUI, LHCG, HCA, VRTV, REVG, SHW, PMA, KHC, PATH, KFY',
+		url: 'https://finnhub.io/api/news?id=a1b2b65977c870ad80d355ef2f5c898facc4e58ab1790c35de6c82c67253174c',
+	},
+	{
+		category: 'company',
+		datetime: 1631071680,
+		headline:
+			"PayPal Steps Up Efforts In 'Buy Now, Pay Later' Segment With $2.7B Deal To Acquire Paidy",
+		id: 70382747,
+		image:
+			'https://cdn.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/5a1a0129.jpeg',
+		related: 'AAPL',
+		source: 'Benzinga',
+		summary:
+			'PayPal Holdings Inc (NASDAQ: PYPL) said on Tuesday it will buy Japanese payments company Paidy for about $2.7 billion in cash as it looks to boost its presence into “...',
+		url: 'https://finnhub.io/api/news?id=12c5247d65b803c4ed2f54bb3030e0583ac6725d582f06170eb80095efba5829',
+	},
+	{
+		category: 'company',
+		datetime: 1631070060,
+		headline: 'Silicon Valley finds remote work is easier to begin than end',
+		id: 70378945,
+		image: '',
+		related: 'AAPL',
+		source: 'Associated Press, The',
+		summary:
+			'Looking for stock market analysis and research with proves results? Zacks.com offers in-depth financial research with over 30years of proven results.',
+		url: 'https://finnhub.io/api/news?id=9df4c4bd5d2ba2597bf77f1ae30a8125135948ce6ca427d694e53d0869a22a3d',
+	},
+	{
+		category: 'company',
+		datetime: 1631002980,
+		headline: 'App Developers’ Payments Dilemma: Easier With or Without Apple and Google?',
+		id: 70348825,
+		image: 'https://images.wsj.net/im-396255/social',
+		related: 'AAPL',
+		source: 'DowJones',
+		summary:
+			'South Korea’s app developers can soon break away from the U.S. tech giants’ digital tollway, but logistical and strategic challenges lie ahead.',
+		url: 'https://finnhub.io/api/news?id=c23f254c8cd8240182970813f2399b9c7254dc8ce77906c1d48d9f83987c3f43',
+	},
+	{
+		category: 'company',
+		datetime: 1631055333,
+		headline: "Ford poaches Apple's car project chief Doug Field",
+		id: 70357486,
+		image:
+			'https://static.reuters.com/resources/r/?m=02&d=20210907&t=2&i=1574126163&r=LYNXMPEH860WK',
+		related: 'AAPL',
+		source: 'Reuters',
+		summary:
+			"The head of Apple Inc's car project, Doug Field, is going to work for Ford Motor Co to lead the automaker's advanced technology and embedded systems efforts, a hiring coup for Ford Chief Executive Jim Farley.",
+		url: 'https://finnhub.io/api/news?id=79b5ab78e7dd92b54249be20f35e710be2bf4cff352b5eb2655bc47a59cb88bf',
+	},
+	{
+		category: 'company',
+		datetime: 1631049960,
+		headline: 'These 2 Stocks Made Monster Moves Tuesday',
+		id: 70377048,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?2078875042',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'Investors in the stock market seemed to get a slow start to the holiday-shortened week, with most major market benchmarks giving up ground on Tuesday. As has often been the case lately, the Nasdaq Composite (NASDAQINDEX: ^IXIC) was the exception, but the S&P 500 (SNPINDEX: ^G',
+		url: 'https://finnhub.io/api/news?id=ec0d18e08e7a050bf3390927b7191f29527c290507a90ffdeab92a4e5ed8b81b',
+	},
+	{
+		category: 'company',
+		datetime: 1631048400,
+		headline: "FOCUS-South Korea's 'Gen MZ' leads rush into the 'metaverse'",
+		id: 70375743,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-08T010133Z_143584018_RC2D4P9S3BO9_RTRMADP_2_SOUTHKOREA-METAVERSE-INVESTORS.JPG?513736336',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'South Korean engineer Shaun has big plans to develop the parcels of land he has snapped up for millions of won (thousands of dollars) in recent years into long-term moneyspinners.',
+		url: 'https://finnhub.io/api/news?id=98312820ab121f18e877695c4321cb8c869ec296368653691d1d7dcf1629b603',
+	},
+	{
+		category: 'company',
+		datetime: 1631041184,
+		headline: 'Microsoft rolls out personalized news feed',
+		id: 70357487,
+		image:
+			'https://static.reuters.com/resources/r/?m=02&d=20210907&t=2&i=1574110708&r=LYNXMPEH860VC',
+		related: 'AAPL',
+		source: 'Reuters',
+		summary:
+			'Microsoft Corp on Tuesday rolled out a personalized news feed called Microsoft Start, which will be available both as a website and a mobile app.',
+		url: 'https://finnhub.io/api/news?id=4e4e58ae12e8fb86eb7992daea8489781a7facf809cad1b1b79f4fddc3be469f',
+	},
+	{
+		category: 'company',
+		datetime: 1631041137,
+		headline: 'Apple car project chief to leave for Ford - Bloomberg News',
+		id: 70357488,
+		image: '',
+		related: 'AAPL',
+		source: 'Reuters',
+		summary:
+			'Apple Inc car project chief Doug Field is leaving the company for Ford Motor Co, according to a tweet https://twitter.com/markgurman/status/1435313387530072066 from a Bloomberg reporter.',
+		url: 'https://finnhub.io/api/news?id=15c80358688f706d97ae1f178e5ef6e0e2c8dc840a17d711f549fda01965ce73',
+	},
+	{
+		category: 'company',
+		datetime: 1631038980,
+		headline: 'Microsoft Start Allows Users to Create Personalized News Feed',
+		id: 70359562,
+		image: 'https://images.wsj.net/im-397252/social',
+		related: 'AAPL',
+		source: 'DowJones',
+		summary:
+			'Similar to offerings from Google and Apple, Microsoft Start uses content from more than 1,000 publishers.',
+		url: 'https://finnhub.io/api/news?id=298d898eadc2d6d10a7a1d235b25ab3bdd71f6ba1bfab4715bebaed5b2fd1bd2',
+	},
+	{
+		category: 'company',
+		datetime: 1631038920,
+		headline: 'Ford Hires Apple’s Doug Field to Advance Technology Role ',
+		id: 70365020,
+		image: 'https://images.wsj.net/im-397158/social',
+		related: 'AAPL',
+		source: 'DowJones',
+		summary:
+			'The executive played an important role in developing Tesla’s Model 3 compact car and has been working on the iPhone maker’s car project. ',
+		url: 'https://finnhub.io/api/news?id=20d147058dfd598e4265d48590773e7ccf5dcda530beac48e2182ff2a861aee9',
+	},
+	{
+		category: 'company',
+		datetime: 1631034166,
+		headline: 'Apple, Microsoft are top buys for TD Ameritrade clients',
+		id: 70362854,
+		image:
+			'https://image.cnbcfm.com/api/v1/image/106938233-16310474693ED2-CB-UNTITLED-090721.jpg?v=1631047468',
+		related: 'AAPL',
+		source: 'CNBC',
+		summary:
+			"JJ Kinahan from TD Ameritrade joins Closing Bell to discuss today's markets and the volatility he expects to see in the next few weeks from the market.",
+		url: 'https://finnhub.io/api/news?id=3516bb374c7d5a9a50a9ffd74894b18531570b379329bdcfc6a19b9c3b7be9a0',
+	},
+	{
+		category: 'company',
+		datetime: 1631034072,
+		headline: 'Apple to hold event on Sept 14, new iPhones expected',
+		id: 70352489,
+		image:
+			'https://static.reuters.com/resources/r/?m=02&d=20210907&t=2&i=1574101820&r=LYNXMPEH860RG',
+		related: 'AAPL',
+		source: 'Reuters',
+		summary:
+			'Apple Inc said on Tuesday it would hold a special event on Sept. 14, which most industry watchers believe will be used to unveil a new line of its flagship iPhones.',
+		url: 'https://finnhub.io/api/news?id=8bb594634fbe1b184f3664f69fe10bcee1ba9457d837ea7fffb420fe3416caaf',
+	},
+	{
+		category: 'company',
+		datetime: 1631033340,
+		headline: 'GLOBAL MARKETS-S&P 500, world equity index retreat as economic worries weigh',
+		id: 70376965,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-07T205511Z_1_FS2_RTRLXPP_2_LYNXPACKAGER.JPG?351254425',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'U.S. shares were mixed and global equities retreated from record highs on Tuesday as investors balanced mounting worries over the slowing pace of economic recovery and hopes the Federal Reserve will delay tapering its bond purchases.',
+		url: 'https://finnhub.io/api/news?id=f9fa484d291ecbbb3bda9ee8c83d0f1a94ddc85067ba8e4c6b595a2d2a891d82',
+	},
+	{
+		category: 'company',
+		datetime: 1631033280,
+		headline: 'Disney And Apple Lead The Dow Jones',
+		id: 70382745,
+		image:
+			'https://cdn.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/stock-1863880_1.jpg',
+		related: 'AAPL',
+		source: 'Benzinga',
+		summary:
+			'U.S. indices had a mixed day of trading Tuesday as investors continue to weigh an increase in COVID-19 deaths nationwide. President Biden on Thursday will lay out a six-pronged...',
+		url: 'https://finnhub.io/api/news?id=1fec6629e4e80d97fbc6624ee121c52e89c1d1793d6cd9b1df90e3d2e1e07ed9',
+	},
+	{
+		category: 'company',
+		datetime: 1631032380,
+		headline: 'Key Apple Car Exec Jumps Ship To Join Ford: What You Need To Know',
+		id: 70356930,
+		image:
+			'https://cdn.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/apple-2385198_1920_4.jpg',
+		related: 'AAPL',
+		source: 'Benzinga',
+		summary:
+			"Apple, Inc's. (NASDAQ: AAPL) self-driving car chatter returned in recent weeks amid reports the tech giant is actively scouting for partners and suppliers in Asia.\nThe Apple...",
+		url: 'https://finnhub.io/api/news?id=19f3c218eb6a7e8df991b3b394a10f1917d414df52b795163a1cc1c28de347c6',
+	},
+	{
+		category: 'company',
+		datetime: 1631032260,
+		headline: 'Stock Market Today: Stocks Sluggish as Wall Street Weighs Delta Threat',
+		id: 70377049,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?948015699',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'Investors returned to their desks Tuesday for a holiday-shortened week of trading stocks with little to guide them. No major U.S. economic data releases were slated for today (and few are on deck this week). And the Q2 earnings slate is thinning out.',
+		url: 'https://finnhub.io/api/news?id=56e0643d2c9628c1c2ddecc69926306b5034a00009d019b149be17cf4379ae03',
+	},
+	{
+		category: 'company',
+		datetime: 1631032140,
+		headline:
+			'After Hours Most Active for Sep 7, 2021 :  CPNG, IGSB, CLOV, CSCO, T, CMCSA, IQ, AAPL, CAG, IVZ, HTA, PFE',
+		id: 70375726,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?884581697',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			"The NASDAQ 100 After Hours Indicator is down -6.73 to 15,669.03.  The total After hours volume is currently 57,715,470 shares traded.The following are the most active stocks for the after hours session: Coupang, Inc. (CPNG) is -0.05 at $32.50, with 5,336,739 shares traded. CPNG's",
+		url: 'https://finnhub.io/api/news?id=8bbd4388544f8177edc3376c9ecbabe1fd23b5c490f1bd6c13fe992e6ccf8724',
+	},
+	{
+		category: 'company',
+		datetime: 1631031900,
+		headline: 'Apple Announces Sept. 14 Launch Event',
+		id: 70377879,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?2002808863',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'(RTTNews) - Tech giant Apple Inc. (AAPL) Tuesday announced that it will be holding its annual launch event on Tuesday, September 14 at 10:00 a.m. The event will take place at the Steve Jobs Theater on the Apple Park campus in Cupertino, California.',
+		url: 'https://finnhub.io/api/news?id=8ae050af66117c4f85d9bce40e4fdb9a7da5c61d8e1ad791def4663343da6abe',
+	},
+	{
+		category: 'company',
+		datetime: 1631031720,
+		headline: 'US STOCKS-S&P 500 ends down, Big Tech lifts Nasdaq to record',
+		id: 70375818,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-07T113056Z_1_DG1_RTRLXPP_2_LYNXPACKAGER.JPG?852804223',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'The S&P 500 closed lower on Tuesday while the Nasdaq edged up to a record high, as investors balanced worries about the slowing pace of economic recovery with expectations that the Federal Reserve will maintain its accommodative monetary policy.',
+		url: 'https://finnhub.io/api/news?id=9d05a581aaf468b4ae2e325caaacdc9c23c057d93d46ceed0982f3db53d58850',
+	},
+	{
+		category: 'company',
+		datetime: 1631029920,
+		headline: 'Technology Sector Update for 09/07/2021: AAPL,AEHR,IAS,CSCW',
+		id: 70376664,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?109078291',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'Technology stocks were hanging on for slim gains, with the SPDR Technology Select Sector ETF (XLK) Tuesday rising 0.1% although the Philadelphia Semiconductor Index was falling 0.3% this afternoon.',
+		url: 'https://finnhub.io/api/news?id=96488dbb867467c3d3b3816c6f2544bd1d29ae299151ef110273a78a9948f27f',
+	},
+	{
+		category: 'company',
+		datetime: 1631029680,
+		headline: 'Dallas Fed’s Robert Kaplan Was Active Buyer and Seller of Stocks Last Year',
+		id: 70365005,
+		image: 'https://images.wsj.net/im-397156/social',
+		related: 'AAPL',
+		source: 'DowJones',
+		summary:
+			'Dallas Fed leader Robert Kaplan made multiple million-dollar-plus stock trades in 2020, according to a financial disclosure form provided by his bank, in contrast with other regional Fed leaders who reported more modest financial holdings and smaller transactions.',
+		url: 'https://finnhub.io/api/news?id=e54a5f2f102b8bf40668e786b54c7903c9cf0fd6185612a0ecb67afafd952e31',
+	},
+	{
+		category: 'company',
+		datetime: 1631029070,
+		headline: "Toni Sacconaghi on two potential risks to Google's payments to Apple",
+		id: 70359542,
+		image:
+			'https://image.cnbcfm.com/api/v1/image/106938193-16310427971631042794-18542350277-1080pnbcnews.jpg?v=1631042796',
+		related: 'AAPL',
+		source: 'CNBC',
+		summary:
+			"Toni Sacconaghi, Bernstein, joins 'Closing Bell' to explain his Apple price target of $132 and what's he expects to see from Apple's September event.",
+		url: 'https://finnhub.io/api/news?id=b30ffe5b35c8fa2a4ec7f2e4c813ef515c1f21ba2a65161d465515213ade1bde',
+	},
+	{
+		category: 'company',
+		datetime: 1631028840,
+		headline: 'Apple Sets Sept. 14 as Date for Launch Party. The iPhone 13 Could Make Its Debut.',
+		id: 70353637,
+		image: 'https://images.barrons.com/im-397107/social',
+		related: 'AAPL',
+		source: 'MarketWatch',
+		summary: 'The tech giant could also unveil the Apple Watch Series 7 and AirPods 3.',
+		url: 'https://finnhub.io/api/news?id=781fa69f0452c419bd0945c0e7f4b170ccbd841a3c8d18dc74e88f25fd49f5a1',
+	},
+	{
+		category: 'company',
+		datetime: 1631028360,
+		headline: 'Ford’s stock jumps Tuesday after vehicle maker hires former Apple, Tesla executive',
+		id: 70353636,
+		image: 'https://images.mktw.net/im-385325/social',
+		related: 'AAPL',
+		source: 'MarketWatch',
+		summary:
+			"Ford Motor Co. announces Tuesday that it hired the executive in charge of Apple's automotive efforts, and shares immediately jumped.",
+		url: 'https://finnhub.io/api/news?id=472de2082539b18191860b2688d9eb96518230726754a336816caea5467eea7c',
+	},
+	{
+		category: 'company',
+		datetime: 1631027846,
+		headline: 'Ford hires Apple executive Doug Field',
+		id: 70362183,
+		image:
+			'https://image.cnbcfm.com/api/v1/image/106938188-16310418931631041889-18542153527-1080pnbcnews.jpg?v=1631041892',
+		related: 'AAPL',
+		source: 'CNBC',
+		summary:
+			"Ford is making a big hire: The automobile company has hired Apple Executive Doug Field, who reportedly ran Apple's car project.",
+		url: 'https://finnhub.io/api/news?id=c68516969c54a5f7a951a84460431cd763a22ee8d14b98363658b6025a4063a1',
+	},
+	{
+		category: 'company',
+		datetime: 1631027791,
+		headline: "Apple : Ford poaches Apple's car project chief Doug Field",
+		id: 70353213,
+		image: '',
+		related: 'AAPL',
+		source: 'Finnhub',
+		summary:
+			'Ford Motor Co on Tuesday namedApple Inc car project head Doug Field as its chiefadvanced technology and embedded systems officer. Field most recently served as vice president of... | September 7, 2021',
+		url: 'https://finnhub.io/api/news?id=7f13df991a600221ad1f5817f4a078b6e14528b953c3acb4155d13d1b4a0fd54',
+	},
+	{
+		category: 'company',
+		datetime: 1631027086,
+		headline: 'Apple: Moderating Revenue Growth Beyond FY2021',
+		id: 70353070,
+		image:
+			'https://static.seekingalpha.com/cdn/s3/uploads/getty_images/696091516/medium_image_696091516.jpg',
+		related: 'AAPL',
+		source: 'SeekingAlpha',
+		summary:
+			'We revised our growth assumptions for Apple in FY 2021 from 9.7% following a record year to derive a new growth projection of 26.9%. Read more about AAPL here.',
+		url: 'https://finnhub.io/api/news?id=ebb83bd9a4573648b2d9d6401f59e5cf717ebeffda2b50254540f034cc8ceb57',
+	},
+	{
+		category: 'company',
+		datetime: 1631026842,
+		headline:
+			"Ford poaches top tech executive Doug Field who helped lead Apple's top-secret car project",
+		id: 70359547,
+		image:
+			'https://image.cnbcfm.com/api/v1/image/106849171-16148686202021-03-04t110128z_357075086_rc2b4m9smycs_rtrmadp_0_usa-semiconductors-tools.jpeg?v=1614868674',
+		related: 'AAPL',
+		source: 'CNBC',
+		summary:
+			'Ford has hired former Tesla and Apple executive Doug Field as its chief advanced technology and embedded systems officer, the company announced Tuesday. ',
+		url: 'https://finnhub.io/api/news?id=06b32710f83349e37ff7734258489bc5926a2ccc0273cf5fd3f8e3d209061c6d',
+	},
+	{
+		category: 'company',
+		datetime: 1631026737,
+		headline: 'Apple : car project chief to leave for Ford - Bloomberg News',
+		id: 70353020,
+		image: '',
+		related: 'AAPL',
+		source: 'Finnhub',
+		summary:
+			'Apple Inc car project chief DougField is leaving the company for Ford Motor Co, accordingto a tweet https://twitter.com/markgurman/status/1435313387530072066from a Bloomberg reporter. ... | September 7, 2021',
+		url: 'https://finnhub.io/api/news?id=6626767be43392d8c739eff9be4a91c6f7430f846e6ca73eaee229456234da60',
+	},
+	{
+		category: 'company',
+		datetime: 1631026500,
+		headline: 'Apple Inc.: 52-Week High Recently Eclipsed (AAPL)',
+		id: 70385017,
+		image:
+			'https://cdn.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/apple-1867461_1920_0.jpg',
+		related: 'AAPL',
+		source: 'Benzinga',
+		summary:
+			'Shares of Apple Inc. (NASDAQ: AAPL) traded at a new 52-week high today of $156.24. This new high was reached on below-average trading volume as 9.7 million shares traded hands,...',
+		url: 'https://finnhub.io/api/news?id=086c095474cead1d73378d4545961709741b461a07b166c0fba53c4462ca2f96',
+	},
+	{
+		category: 'company',
+		datetime: 1631025600,
+		headline: 'US STOCKS-Big Tech fuels Nasdaq record, S&P 500 dips',
+		id: 70375820,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-07T113056Z_1_DG1_RTRLXPP_2_LYNXPACKAGER.JPG?1262823114',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'The S&P 500 fell on Tuesday while the Nasdaq hit a record high, as investors balanced worries about the slowing pace of economic recovery with expectations that the Federal Reserve will maintain its accommodative monetary policy.',
+		url: 'https://finnhub.io/api/news?id=c757e1bceb995b483347b158df004bf93e7ab298799d6fd41213b5db1a47ce24',
+	},
+	{
+		category: 'company',
+		datetime: 1631023874,
+		headline: "Pete's latest options trades",
+		id: 70361592,
+		image:
+			'https://image.cnbcfm.com/api/v1/image/106938149-16310368553ED2-FMHR-PETE-090721.jpg?v=1631036855',
+		related: 'AAPL',
+		source: 'CNBC',
+		summary: '"Halftime Report" trader Pete Najarian spots unusual activity in the options market',
+		url: 'https://finnhub.io/api/news?id=d62bf97c7454ca32fcb4fb88d6546aa797c0829754aa73644ddc6bf7c67d2dac',
+	},
+	{
+		category: 'company',
+		datetime: 1631023200,
+		headline: "Apple's Sept. 14 'California Streaming' Invite Is Out: What's On The Agenda?",
+		id: 70352709,
+		image:
+			'https://cdn.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/apple_wwdc20-keynote-tim-cook_06222020_20.jpg',
+		related: 'AAPL',
+		source: 'Benzinga',
+		summary:
+			'Apple, Inc. (NASDAQ: AAPL) shares were spiking to an all-time high Tuesday after Cupertino sent out invites to its much-awaited hardware event.\nWhat Happened:  Apple announced in...',
+		url: 'https://finnhub.io/api/news?id=ce633ac95902f6517d9e53f9d6d0662e7fd0a2519a5efde7532f8d2963989ef0',
+	},
+	{
+		category: 'company',
+		datetime: 1631022360,
+		headline: 'New Apple iPhone Expected to Be Unveiled at Sept. 14 Event ',
+		id: 70382215,
+		image: 'https://images.wsj.net/im-397035/social',
+		related: 'AAPL',
+		source: 'DowJones',
+		summary:
+			'After relatively significant upgrades last year, analysts are expecting more incremental changes for 2021. ',
+		url: 'https://finnhub.io/api/news?id=c3d100603321608f1ca08beff8450f04a5ecfa71ad41ce60ca1dd3a37b65a664',
+	},
+	{
+		category: 'company',
+		datetime: 1631020680,
+		headline: 'Noteworthy Tuesday Option Activity: AAPL, FB, SPG',
+		id: 70375744,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?305593168',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'Among the underlying components of the S&P 500 index, we saw noteworthy options trading volume today in Apple Inc (Symbol: AAPL), where a total of 1.2 million contracts have traded so far, representing approximately 115.2 million underlying shares.  That amounts to about 16',
+		url: 'https://finnhub.io/api/news?id=b68c87ea95bdf7e339733d1e226c66a8fd1d9a8705f4972c4656fe1187d6cafe',
+	},
+	{
+		category: 'company',
+		datetime: 1631019992,
+		headline: "El Salvador's world-first adoption of bitcoin hits snags",
+		id: 70352232,
+		image: '',
+		related: 'AAPL',
+		source: 'Finnhub',
+		summary:
+			'El Salvador on Tuesday became the first country to adopt bitcoin as legal tender, although it suffered teething problems when the government had to unplug a digital wallet to cope with demand.... | September 7, 2021',
+		url: 'https://finnhub.io/api/news?id=abd8807c1c1ad825754931188652918ea05b41f5e9abd4b3dabef117f31c4308',
+	},
+	{
+		category: 'company',
+		datetime: 1631018400,
+		headline: 'Have an Older iPhone? Here’s a Guide to Getting the Best Performance',
+		id: 70382216,
+		image: 'https://images.wsj.net/im-396214/social',
+		related: 'AAPL',
+		source: 'DowJones',
+		summary:
+			'New iPhones are just around the corner—but before you rush to buy one, take a closer look at the one you’ve got.',
+		url: 'https://finnhub.io/api/news?id=d3a402a5ef2e5abefd536983529f18af753718e4bfa3ece5f360d9c889791664',
+	},
+	{
+		category: 'company',
+		datetime: 1631017740,
+		headline: 'Apple announces expected iPhone launch event, stock heads for another record',
+		id: 70353638,
+		image: 'https://images.mktw.net/im-391119/social',
+		related: 'AAPL',
+		source: 'MarketWatch',
+		summary:
+			'Apple Inc. said Tuesday it has scheduled an event for Sept. 14, at which the tech giant is expected to announce its new line of iPhones, and shares received...',
+		url: 'https://finnhub.io/api/news?id=236e8ec7b474bbb2d2e96cb188a58e100995f276109109d3621feeaf58c81d85',
+	},
+	{
+		category: 'company',
+		datetime: 1631017080,
+		headline: 'US STOCKS-Wall Street falls on worries over slowing economic recovery',
+		id: 70375745,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-07T113056Z_1_DG1_RTRLXPP_2_LYNXPACKAGER.JPG?778268004',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'The Dow Jones and S&P 500 fell on Tuesday, as worries over the slowing pace of economic recovery overshadowed hopes that the Federal Reserve would maintain its accommodative stance a little longer after a soft U.S. payrolls report.',
+		url: 'https://finnhub.io/api/news?id=47365d9bdf479f6ebb4e952b24c192d876e06edf3fc9686da47f6cf3d02209ca',
+	},
+	{
+		category: 'company',
+		datetime: 1631016538,
+		headline: 'Apple : to hold event on Sept 14, new iPhones expected',
+		id: 70351401,
+		image: '',
+		related: 'AAPL',
+		source: 'Finnhub',
+		summary:
+			'Apple Inc said on Tuesday itwould hold a special event on Sept. 14, which most industrywatchers believe will be used to unveil a new line of itsflagship iPhones. Since 2013, Apple has... | September 7, 2021',
+		url: 'https://finnhub.io/api/news?id=799cb8dc12aefd0c490d6423dac6779e843b7eaac127566142646c2937460314',
+	},
+	{
+		category: 'company',
+		datetime: 1631015760,
+		headline: 'Apple Gains on September 14 invite With Hope of New iPhones By Investing.com',
+		id: 70381544,
+		image: 'https://i-invdn-com.investing.com/news/LYNXNPEC3P1MK_L.jpg',
+		related: 'AAPL',
+		source: 'Investing.com',
+		summary: 'Apple Gains on September 14 invite With Hope of New iPhones',
+		url: 'https://finnhub.io/api/news?id=21e4c8ff8ebd0010a53472fca564363b07be8cd6e1530a920f6e59020bb52ca5',
+	},
+	{
+		category: 'company',
+		datetime: 1631015509,
+		headline: 'My Dividend Portfolio: August 2021 Update - 99 Holdings, 36 Buys',
+		id: 70350779,
+		image:
+			'https://static.seekingalpha.com/cdn/s3/uploads/getty_images/1257405518/medium_image_1257405518.jpg',
+		related: 'AAPL',
+		source: 'SeekingAlpha',
+		summary:
+			"The S&P 500 extends its monthly win streak to 7 with markets up 2.9% in August. Here's an update on my dividend portfolio for August.",
+		url: 'https://finnhub.io/api/news?id=307a956c102d34d93d4c239b3b9e230ba5adc7bed0fb54afbe9822f504e6f81a',
+	},
+	{
+		category: 'company',
+		datetime: 1631014860,
+		headline: "Russian search engine delists Navalny's tactical voting site after ban",
+		id: 70376895,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-07T154331Z_1_YP8_RTRLXPP_2_LYNXPACKAGER.JPG?1184906348',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			"Russian tech firm Yandex said on Tuesday it had removed jailed Kremlin critic Alexei Navalny's tactical voting website from its search engine to comply with a government ban ahead of a parliamentary election this month.",
+		url: 'https://finnhub.io/api/news?id=02766512c1724c0ae788bf562f30c1342520c6afcf03c8386d3c05dd935dbf1a',
+	},
+	{
+		category: 'company',
+		datetime: 1631014380,
+		headline: 'Most Active Equity Options For Midday - Tuesday, Sept. 7',
+		id: 70377310,
+		image: '',
+		related: 'AAPL',
+		source: 'TalkMarkets',
+		summary: '',
+		url: 'https://finnhub.io/api/news?id=514bbde21d06baa12a61f69a262fc1b35301cca873b4a8dfcfada9d28deefc13',
+	},
+	{
+		category: 'company',
+		datetime: 1631014380,
+		headline: "These 2 Stocks Are on Wall Street's Radar Tuesday",
+		id: 70376237,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?1640958241',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'The stock market gave up some ground on Tuesday morning, coming out of a long holiday weekend and failing to maintain the upward momentum that sent several major market benchmarks to record levels last week. As of 10:15 a.m. EDT today, the Dow Jones Industrial Average (DJINDICES:',
+		url: 'https://finnhub.io/api/news?id=5f119179aeff3769e2cfd574ee56e09e546c757be8bf8e00925eb8c8a7976592',
+	},
+	{
+		category: 'company',
+		datetime: 1631014140,
+		headline: "Game On: An exclusive talk with 'Coromon' developer TRAGSoft",
+		id: 70378338,
+		image: 'https://image.thefly.com/catalog/202109/img_1199.jpg',
+		related: 'AAPL',
+		source: 'Thefly.com',
+		summary:
+			"Co-CEO Pouwels says demo feedback 'overwhelmingly good' MSFT, NTDOY, SONY, TCEHY, DIS, KKR, AMZN, GOOG, GOOGL, AAPL, ATVI, EA, TTWO, UBSFY",
+		url: 'https://finnhub.io/api/news?id=46383e583fedaefeec0eebb9e087d689f3222fce0970bdf435ef3dbac2615c87',
+	},
+	{
+		category: 'company',
+		datetime: 1631014020,
+		headline:
+			'CLOV Stock: What Investors Are Saying About Clover Health Today as Shares Begin a Run Higher',
+		id: 70412755,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?2059858911',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary: 'InvestorPlace - Stock Market News, Stock Advice & Trading Tips',
+		url: 'https://finnhub.io/api/news?id=4778eacd6320795cc315d65908efb1c1cf3eb5d4faf280c05d039ead74e40250',
+	},
+	{
+		category: 'company',
+		datetime: 1631012760,
+		headline: 'Apple announces event to be held Sept. 14',
+		id: 70381548,
+		image: '',
+		related: 'AAPL',
+		source: 'Thefly.com',
+		summary: 'Mark Gurman of Bloomberg,... AAPL',
+		url: 'https://finnhub.io/api/news?id=468b98532cb997765a31b7ea8ff89f475b8d242bb2874e7820f69a4186c24cd3',
+	},
+	{
+		category: 'company',
+		datetime: 1631011800,
+		headline: 'Apple Stock: Is Now A Good Time To Buy Or Sell? Wait For The Dip First To Buy',
+		id: 70348391,
+		image:
+			'https://static.seekingalpha.com/cdn/s3/uploads/getty_images/696091516/medium_image_696091516.jpg',
+		related: 'AAPL',
+		source: 'SeekingAlpha',
+		summary:
+			'Apple (AAPL) is facing potential headwinds regarding its App Store take rate. See if now is a good time to buy or sell Apple stock.',
+		url: 'https://finnhub.io/api/news?id=2d1e2b3c16ac58881d6897f0c81a89dce1c6f495b69c9d62e593d637a5f83e92',
+	},
+	{
+		category: 'company',
+		datetime: 1631009400,
+		headline: 'AAPL Stock News: 15 Things We Know About the Apple Watch Series 7 Release',
+		id: 70381550,
+		image: 'https://investorplace.com/wp-content/uploads/2020/10/apple-pay-aaple-stock.jpg',
+		related: 'AAPL',
+		source: 'InvestorPlace',
+		summary:
+			'Apple (AAPL) is likely going to hold its yearly September event soon and AAPL stock holders will want to keep and eye on it.',
+		url: 'https://finnhub.io/api/news?id=98d2641654ef48c6b0edf5c9004f244281db9cd6da5309c2090b8cacfe181e62',
+	},
+	{
+		category: 'company',
+		datetime: 1631009340,
+		headline:
+			'7 Years Later, Only 6% Of People With iPhones In The U.S. Use Apple Pay In-Store When They Can',
+		id: 70347249,
+		image:
+			'https://static.seekingalpha.com/cdn/s3/uploads/getty_images/458990823/medium_image_458990823.jpg',
+		related: 'AAPL',
+		source: 'SeekingAlpha',
+		summary:
+			'Seven years in, Apple Pay just hasn’t lived up to its potential for transforming the point-of-sale experience in the store. Click to know more...',
+		url: 'https://finnhub.io/api/news?id=b944d7c6c55892286536130bad627bbef2348120adcae8373412c997b2acd8f4',
+	},
+	{
+		category: 'company',
+		datetime: 1631007360,
+		headline: 'Market Briefing For Wednesday, Sept. 8',
+		id: 70379936,
+		image: '',
+		related: 'AAPL',
+		source: 'TalkMarkets',
+		summary: '',
+		url: 'https://finnhub.io/api/news?id=aa9b522f3be1e50c8cf908f7e1743cf3d2700987fc85708fcc5f029d7eaf74fd',
+	},
+	{
+		category: 'company',
+		datetime: 1631006040,
+		headline: 'US STOCKS-Wall Street to open flat as Delta variant weighs on recovery',
+		id: 70345900,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-07T113056Z_1_DG1_RTRLXPP_2_LYNXPACKAGER.JPG?711515153',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'Wall Street was set for a subdued open on Tuesday as worries over the slowing pace of economic recovery overshadowed hopes that the Federal Reserve would maintain its accommodative stance a little longer after a soft U.S. payrolls report.',
+		url: 'https://finnhub.io/api/news?id=70823b3d8c142b6f615d88befaefd17893dfee2c037f46db5221d7e3bcd0ad26',
+	},
+	{
+		category: 'company',
+		datetime: 1631005680,
+		headline: "Spotify upgrade, Netflix target raise among today's top calls on Wall Street",
+		id: 70349709,
+		image: 'https://image.thefly.com/catalog/201811/img_112.jpg',
+		related: 'AAPL',
+		source: 'Thefly.com',
+		summary:
+			'Johnson & Johnson and Merck downgrades also among notable calls SPOT, SIRI, NFLX, JNJ, MRK, FTCH, CRUS, AAPL',
+		url: 'https://finnhub.io/api/news?id=4c98fce5e173e3a0c1293dc6c62f43f7fd8a00f011406241fc3a71d0a84bf7c4',
+	},
+	{
+		category: 'company',
+		datetime: 1631005140,
+		headline: 'Is Broadcom Stock a Buy?',
+		id: 70345998,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?1027239206',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			"Broadcom's (NASDAQ: AVGO) stock rose to an all-time high after the chipmaker posted its third-quarter earnings on Sept. 2. Its revenue rose 16% year-over-year to $6.78 billion, beating estimates by $20 million.Its non-GAAP net income increased 28% to $3.12 billion, or $6.96 per s",
+		url: 'https://finnhub.io/api/news?id=02494a5ed4ea8bb55ef7da451619830f07bade39cc9ca43f25d326fbaba7c8f2',
+	},
+	{
+		category: 'company',
+		datetime: 1631003940,
+		headline:
+			'Allianz Variable Insurance Products Trust Buys Microsoft Corp, Apple Inc, Amazon.com Inc, Sells Danaher Corp, Global Payments Inc, CSX Corp',
+		id: 70378339,
+		image: '',
+		related: 'AAPL',
+		source: 'GuruFocus',
+		summary: '',
+		url: 'https://finnhub.io/api/news?id=72cf7785b475c1f570a68849aa184ef06792c8198fd87a2ece8077528b8d98b7',
+	},
+	{
+		category: 'company',
+		datetime: 1631003340,
+		headline:
+			'Pre-Market Most Active for Sep 7, 2021 :  ADAP, IRNT, MTL, MRK, IFRX, EDU, FATE, SQQQ, VEON, AAPL, DIDI, AMC',
+		id: 70345591,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?2031242086',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'The NASDAQ 100 Pre-Market Indicator is up 18.9 to 15,671.76.  The total Pre-Market volume is currently 21,061,206 shares traded.The following are the most active stocks for the pre-market session: Adaptimmune Therapeutics plc (ADAP) is +1.27 at $6.21, with 2,570,206 shares traded',
+		url: 'https://finnhub.io/api/news?id=4bfb5d7d5f9990919187430eb73efeb0965c2625108b89b68c24fbcd7c37e80c',
+	},
+	{
+		category: 'company',
+		datetime: 1631001600,
+		headline: 'Nvidia Stock Dips on Report of EU Opposition to Arm Deal',
+		id: 70353640,
+		image: 'https://images.barrons.com/im-262360/social',
+		related: 'AAPL',
+		source: 'MarketWatch',
+		summary:
+			'Nvidia is facing fresh opposition from the European Union over its planned $40 billion acquisition of British chipmaker Arm, a report says.',
+		url: 'https://finnhub.io/api/news?id=8f509a848c15200391f4831f7d7031c45a72ab3e86ec63cf8ca341f58396f114',
+	},
+	{
+		category: 'company',
+		datetime: 1631001300,
+		headline: 'Notable open interest changes for September 7th',
+		id: 70348449,
+		image: '',
+		related: 'AAPL',
+		source: 'Thefly.com',
+		summary: "Friday's total optio... TSLA, AAPL, CCJ, AMC",
+		url: 'https://finnhub.io/api/news?id=acb6a9df3d48b2a41247ff274229e7207ffe8cbf7adc9a461cf652e97eb757ba',
+	},
+	{
+		category: 'company',
+		datetime: 1631001000,
+		headline: 'Spotify stock jumps after KeyBanc analyst says it’s time to buy',
+		id: 70353639,
+		image: 'https://images.mktw.net/im-396876/social',
+		related: 'AAPL',
+		source: 'MarketWatch',
+		summary:
+			"Shares of Spotify Technology SA surged Tuesday, after KeyBanc Capital analyst Justin Patterson said it's time to buy into the digital music service, citing...",
+		url: 'https://finnhub.io/api/news?id=f2680e326f69d7c1f50ea1e37a30cd8fc812d5b1a5b45d2e5aad13554544bd56',
+	},
+	{
+		category: 'company',
+		datetime: 1630999620,
+		headline: 'US STOCKS-Futures lower as worries over economic recovery weigh',
+		id: 70345556,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-07T112919Z_1_SO6_RTRLXPP_2_LYNXPACKAGER.JPG?23212919',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'The S&P 500 and Nasdaq futures dipped on Tuesday as worries over a slowing economic recovery overshadowed hopes that the Federal Reserve would maintain its accommodative stance a little longer after a soft U.S. payrolls report.',
+		url: 'https://finnhub.io/api/news?id=87051fab998ab0a0339a2e5ebe96f9d72f5261bfbb83037b5894179ccff9e147',
+	},
+	{
+		category: 'company',
+		datetime: 1630999320,
+		headline: 'What’s Up With Apple: Rumors Abound, No Image Scanning Yet, and More',
+		id: 70348450,
+		image: 'https://247wallst.com/wp-content/uploads/2021/01/imageForEntry1-hSr.jpg',
+		related: 'AAPL',
+		source: '247WallSt',
+		summary:
+			"The rumor mill that generates a lot of the heat for Apple's new product announcements has hit high gear. The company still hasn't issued an official announcement, but most people are expecting the event next week.",
+		url: 'https://finnhub.io/api/news?id=e99f05bd508b7f6b49cf52859a31a63d33ab031aac8abaffa7cd81eed9de332f',
+	},
+	{
+		category: 'company',
+		datetime: 1630998360,
+		headline: 'Voip-Pal.com announces updates on pending patent litigations',
+		id: 70347361,
+		image: '',
+		related: 'AAPL',
+		source: 'Thefly.com',
+		summary: 'VoIP-Pal.com Inc. (VPLM) ... VPLM, AAPL, T, VZ',
+		url: 'https://finnhub.io/api/news?id=dc7ce719840c85a1aceeb17da9c4e8f5f9de1f2415804991bd6541baedf94acb',
+	},
+	{
+		category: 'company',
+		datetime: 1630998000,
+		headline: 'Apple Likely Has More App Store Deals to Make',
+		id: 70382220,
+		image: 'https://images.wsj.net/im-396679/social',
+		related: 'AAPL',
+		source: 'DowJones',
+		summary:
+			'As the tech giant works to negotiate its way out of its App Store troubles, one thing is becoming increasingly clear: Apple might have to start competing on its own playing field. ',
+		url: 'https://finnhub.io/api/news?id=1a99bf0684ea10ae132e761d9f8e5c223f6f1477cb08011ce0e9a9604c4702fd',
+	},
+	{
+		category: 'company',
+		datetime: 1630996980,
+		headline: "Why I'm Investing in This High-Risk, High-Reward Fintech Stock",
+		id: 70346246,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?1215429465',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'I recently initiated a new position in the fintech company OppFi (NYSE: OPFI), a company that went public through a special purpose acquisition company (SPAC) toward the end of 2020 and began trading on its own in July. The company is attempting to revolutionize lending in the su',
+		url: 'https://finnhub.io/api/news?id=01ae309bf7f8228df006c5cf30ea43ad6f1dc62a8cb0bb3b8492ac784d16d1b1',
+	},
+	{
+		category: 'company',
+		datetime: 1630996495,
+		headline: 'Apple: Second Duopolistic Behemoth Continuing To Deliver',
+		id: 70337964,
+		image:
+			'https://static.seekingalpha.com/cdn/s3/uploads/getty_images/458990823/medium_image_458990823.jpg',
+		related: 'AAPL',
+		source: 'SeekingAlpha',
+		summary:
+			'Apple possesses remarkable dual duopoly position within the desktop and smartphone segments of operating systems. Check out why I consider AAPL stock as a buy.',
+		url: 'https://finnhub.io/api/news?id=85df55006f5ed58d2f74ce422f9f9593fc4fb847369661b402e2d7abbf1b37b9',
+	},
+	{
+		category: 'company',
+		datetime: 1630994580,
+		headline: 'A Peek Into The Markets: US Stock Futures Edge Higher',
+		id: 70352617,
+		image:
+			'https://cdn.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/peek_into_the_marketnew_254.png',
+		related: 'AAPL',
+		source: 'Benzinga',
+		summary:
+			'Pre-open movers\nU.S. stock futures traded slightly higher in early pre-market trade after closing mixed in the previous session following the release of weaker-than-expected jobs...',
+		url: 'https://finnhub.io/api/news?id=179d3af4bdbfbff77a10fab3949ff44f069de87e21a090cdb5c19d5b94137d0c',
+	},
+	{
+		category: 'company',
+		datetime: 1630994400,
+		headline: 'No One Should Bet Against GameStop Stock',
+		id: 70414661,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?742704754',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary: 'InvestorPlace - Stock Market News, Stock Advice & Trading Tips',
+		url: 'https://finnhub.io/api/news?id=816bf40e96d1e70f058993a3bf85150cd09e24faf0ad4d5984589b34f3f1cf64',
+	},
+	{
+		category: 'company',
+		datetime: 1630994160,
+		headline: 'El Salvador leads world in adopting bitcoin as official currency',
+		id: 70346259,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-06T211637Z_1_BG0_RTRLXPP_2_LYNXPACKAGER.JPG?1958788550',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'El Salvador on Tuesday became the first country to adopt bitcoin as legal tender, a real-world experiment proponents say will lower commission costs for billions of dollars sent from abroad but which critics warned may fuel money laundering.',
+		url: 'https://finnhub.io/api/news?id=41f07b188ff4be24de0e39d96a333a7008d1889729b83edc9049a3d54c9ca7b8',
+	},
+	{
+		category: 'company',
+		datetime: 1630993260,
+		headline:
+			"Apple, Google, Tesla, Others Face Consequences Of Hardware Jobs Being Seen As 'Uncool' In Silicon Valley Amid Their Chip Forays, Says Analyst",
+		id: 70352668,
+		image:
+			'https://cdn.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/l-n-r2tvrjxzfm8-unsplash_0.jpg',
+		related: 'AAPL',
+		source: 'Benzinga',
+		summary:
+			'Silicon Valley is now seeing the consequences of its excessive focus on “software” over the past few decades that deemed “hardware” out of...',
+		url: 'https://finnhub.io/api/news?id=c410ed38484aa1df7261862c9d216b2e1836b49a0d3d3e183fb9120de2025d2e',
+	},
+	{
+		category: 'company',
+		datetime: 1630993020,
+		headline: 'Cirrus Logic upgraded to Overweight from Equal Weight at Barclays',
+		id: 70348452,
+		image: '',
+		related: 'AAPL',
+		source: 'Thefly.com',
+		summary: 'Barclays analyst Blayne C... CRUS, AAPL',
+		url: 'https://finnhub.io/api/news?id=c7239c73e46b91d07af89e0ef60d4590b8070565f94f5e32334520306d84afad',
+	},
+	{
+		category: 'company',
+		datetime: 1630990860,
+		headline: 'Apple Watch Series 7 may ship late or in limited quantities, Bloomberg says',
+		id: 70348454,
+		image: '',
+		related: 'AAPL',
+		source: 'Thefly.com',
+		summary: 'The Apple Watch Series 7 ... AAPL',
+		url: 'https://finnhub.io/api/news?id=a64d3ba2b9ddb22a1dfeb9fed16c7368c302302ee8bc06be6de16eb9813b861c',
+	},
+	{
+		category: 'company',
+		datetime: 1630983120,
+		headline: "Apple Won't Bring Satellite Features To iPhone 13 At The Time Of Launch: Report",
+		id: 70352712,
+		image:
+			'https://cdn.benzinga.com/files/imagecache/og_image_social_share_1200x630/images/story/2012/dennis-brendel-ylnmxzxk8zs-unsplash.jpg',
+		related: 'AAPL',
+		source: 'Benzinga',
+		summary:
+			'Apple Inc’s (NASDAQ: AAPL) satellite-based feature for emergency situations will not be available on the highly-anticipated iPhone 13 at the time of launch, as per...',
+		url: 'https://finnhub.io/api/news?id=b882b86e97c3100e8146b71ad1d369670e2b4f50fccfe62b8d228831226d7e6e',
+	},
+	{
+		category: 'company',
+		datetime: 1630961265,
+		headline: '10 Trending Stocks on Reddit',
+		id: 70330713,
+		image:
+			'https://s.yimg.com/uu/api/res/1.2/tVZ9KVznK2gRf.fs.lhm3Q--~B/aD01MTI7dz03Njg7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/insidermonkey.com/adcab1fb307f33215738e52aa8f734f1',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'In this article, we discuss the 10 trending stocks on Reddit. If you want to skip our detailed analysis of these stocks, go directly to the 5 Trending Stocks on Reddit. The finance world has been rocked in recent months by the dramatic influx of retail investors on the marketplace. According to a report by […]',
+		url: 'https://finnhub.io/api/news?id=6b2e788be733e8b727eeac2b63f75f187aed9f157f536f3d598bc450020b2634',
+	},
+	{
+		category: 'company',
+		datetime: 1630959900,
+		headline: "Foxconn's Gou hopes for up to 9 mln BioNTech shots for Taiwan this year",
+		id: 70345714,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2021-09-06T054745Z_1_DW1_RTRLXPP_2_LYNXPACKAGER.JPG?1718351748',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			"Taiwan could get up to 9 million doses of BioNTech SE's COVID-19 vaccine this year, the founder of Taiwanese tech giant Foxconn said on Monday, laying out a delivery timetable for a vaccine order that became heavily politicised.",
+		url: 'https://finnhub.io/api/news?id=03130cbd19dd83bf1d8ed71f19c97c9262e428e7fe9c2666069863689f179736',
+	},
+	{
+		category: 'company',
+		datetime: 1630949859,
+		headline: 'Jabil: A Beat, A Raise, And A $1 Billion Stock Buyback',
+		id: 70330083,
+		image:
+			'https://static.seekingalpha.com/cdn/s3/uploads/getty_images/1176272373/medium_image_1176272373.jpg',
+		related: 'AAPL',
+		source: 'SeekingAlpha',
+		summary:
+			'Manufacturing and electronic design services company Jabil continues its hot streak with a strong FQ3 beat on both the top- and bottom-lines.',
+		url: 'https://finnhub.io/api/news?id=7f09f1f893b6d3a36b58bcc819db1dab219eab3b541ef6c545762c4afbf7e354',
+	},
+	{
+		category: 'company',
+		datetime: 1630947602,
+		headline:
+			'Market bull Tom Lee predicts a record September, but warns that a 10% correction could come in October',
+		id: 70330758,
+		image:
+			'https://image.cnbcfm.com/api/v1/image/106924668-1628607218863-106924668-16286071672021-08-10t141944z_873841915_rc2d2p9py4wh_rtrmadp_0_usa-stocks.jpg?v=1628607247',
+		related: 'AAPL',
+		source: 'CNBC',
+		summary: 'Why investors may want to take profits before September ends. ',
+		url: 'https://finnhub.io/api/news?id=6eba11511737d5c8d85f60169cd7fcb866dc2ced8c1f54d4976bd7b9f683c6d7',
+	},
+	{
+		category: 'company',
+		datetime: 1630938420,
+		headline: '5 Consumer Stocks For Your Watchlist This Week',
+		id: 70345565,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?821501470',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'Are These The Best Consumer Stocks To Buy In September?When it comes to the stock market today, consumer-focused companies continue to gain ground. For the most part, this would explain investor interest in the top consumer stocks now. After all, there are countless means of mark',
+		url: 'https://finnhub.io/api/news?id=ba58f7fef4cd1143c817e8bf674b54d75601adebc9468a64f0f7122ccfbc72c3',
+	},
+	{
+		category: 'company',
+		datetime: 1630931832,
+		headline: 'Remote Working Continues to Drive PC Sales: 4 Stocks to Watch',
+		id: 70326652,
+		image:
+			'https://s.yimg.com/uu/api/res/1.2/2BT5.fTusQJ84ktHCjeq1g--~B/aD00MDA7dz02MzU7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/zacks.com/3ea321b0ddff0a81c9121fece0abf69e',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'The pandemic has given a boost to PC sales, helping players like Alphabet (GOOGL), Apple, (AAPL), Lenovo (LNVGY) and Dell Technologies (DELL).',
+		url: 'https://finnhub.io/api/news?id=0b7e9c38118ea20f733587bacc59192ddbd705971f5eea087cf3267f198357b5',
+	},
+	{
+		category: 'company',
+		datetime: 1630922331,
+		headline: 'Nintendo, Keyence, Murata to Join Nikkei 225 in Major Change',
+		id: 70320281,
+		image:
+			'https://s.yimg.com/uu/api/res/1.2/aNrrGlFLNrREqSpBYSDQ8Q--~B/aD0zOTY7dz01OTQ7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/bloomberg_technology_68/e8b8e2351b1ab3070311efe6f324ddea',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'(Bloomberg) -- Nintendo Co., Keyence Corp. and Murata Manufacturing Co. will join Japan’s Nikkei 225 Stock Average in a major shake up to the makeup of the blue-chip gauge.The three companies’ stocks will be added on October 1, Nikkei Inc. said in a statement. The long-awaited inclusion of Nintendo comes after Nikkei implemented changes to the way the measure is calculated, allowing for the adjustment of high-priced stocks. Nisshinbo Holdings Inc., Toyo Seikan Group Holdings and Sky Perfect JSAT',
+		url: 'https://finnhub.io/api/news?id=9d5758c6d9d59ed27690683cb11887cd972d7cd33d08090f423d4f040be04283',
+	},
+	{
+		category: 'company',
+		datetime: 1630912393,
+		headline: 'Tech giants are rushing to develop their own chips – here’s why ',
+		id: 70329581,
+		image:
+			'https://image.cnbcfm.com/api/v1/image/105193346-Screenshot_Google_Pichai_TPU_3_02.jpg?v=1525801777',
+		related: 'AAPL',
+		source: 'CNBC',
+		summary:
+			'Apple, Amazon, Facebook, Tesla and Baidu are all shunning established chip firms and bringing certain aspects of chip development in-house. ',
+		url: 'https://finnhub.io/api/news?id=e7fc88f5bd84c53f559910421187f5bfa8d45b5d711dab316609c2ad646f6bb2',
+	},
+	{
+		category: 'company',
+		datetime: 1630910940,
+		headline: 'Two Stocks To Buy Tomorrow And Hold For (At Least) A Year',
+		id: 70324317,
+		image: '',
+		related: 'AAPL',
+		source: 'TalkMarkets',
+		summary: '',
+		url: 'https://finnhub.io/api/news?id=b912075498f58cb9789f9792fb29d1f97587ff3075584a34e5ce8db50b850ca5',
+	},
+	{
+		category: 'company',
+		datetime: 1630901847,
+		headline: 'Monthly Review Of DivGro: August 2021',
+		id: 70319421,
+		image:
+			'https://static.seekingalpha.com/cdn/s3/uploads/getty_images/1061369956/medium_image_1061369956.jpg',
+		related: 'AAPL',
+		source: 'SeekingAlpha',
+		summary:
+			'My monthly review of DivGro provides a summary of transactions and explains how those transactions affect projected annual dividend income. DivGro is my portfolio of dividend growth stocks.',
+		url: 'https://finnhub.io/api/news?id=52438cd0e8a4620144d11ba0e837008f9dec20d7c18c645bbac370b764e0c79c',
+	},
+	{
+		category: 'company',
+		datetime: 1630899127,
+		headline: 'Apple : Taiwan August exports set to rise for 14th straight month',
+		id: 70318930,
+		image: '',
+		related: 'AAPL',
+		source: 'Finnhub',
+		summary:
+			"Taiwan's exports likely rose fora 14th straight month in August, a Reuters poll showed, boostedby strong demand for electronics goods as the global economytraces its path back to recovery. ... | September 6, 2021",
+		url: 'https://finnhub.io/api/news?id=ac17c55b0105e8c488d255458fc747205445f50d639a034cf429c667ba9d59cc',
+	},
+	{
+		category: 'company',
+		datetime: 1630893961,
+		headline: 'ADX: Massive Q4 Dividend, On Sale, Despite Naysayers',
+		id: 70318112,
+		image:
+			'https://static.seekingalpha.com/cdn/s3/uploads/getty_images/471765704/medium_image_471765704.jpg',
+		related: 'AAPL',
+		source: 'SeekingAlpha',
+		summary:
+			'If you like big steady income, this CEF has been paying dividends for over 80 years, and it guarantees at least a 6% distribution each year.',
+		url: 'https://finnhub.io/api/news?id=4e14b38dacbf7f7cddef8e2324678370903fc7c9988ef1547d13396e5fbbbb04',
+	},
+	{
+		category: 'company',
+		datetime: 1630893900,
+		headline: '5 Largest US M&A Deals In Q2: Railways, Health Care, REITS And More',
+		id: 70346776,
+		image: '',
+		related: 'AAPL',
+		source: 'TalkMarkets',
+		summary: '',
+		url: 'https://finnhub.io/api/news?id=c3ac3e94d3aac2cb3163275044ba9bcf439265f7a2e1045d2d8ec33bffa14bde',
+	},
+	{
+		category: 'company',
+		datetime: 1630886301,
+		headline:
+			'China Crash: Alibaba, Tencent And Other Bargains Are Still Investable - Question Is Only How',
+		id: 70317231,
+		image:
+			'https://static.seekingalpha.com/cdn/s3/uploads/getty_images/1020075066/medium_image_1020075066.jpg',
+		related: 'AAPL',
+		source: 'SeekingAlpha',
+		summary:
+			"I'm massively reducing my exposure to individual Chinese stocks like Tencent. But check out why I'm heavily buying shares in ETFs with many Chinese companies.",
+		url: 'https://finnhub.io/api/news?id=009a30a6b75fec9a3e1dde811866a95ceddc7a1341cc661c4ba03f387823753d',
+	},
+	{
+		category: 'company',
+		datetime: 1630872780,
+		headline: "How Tencent Is Managing China's New Regulatory Environment",
+		id: 70323496,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?1705696605',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			"In many ways, Tencent (OTC: TCEHY) seems as if it isn't as threatened by China's regulatory crackdown as other big Chinese tech stocks  are. The company isn't traded on a U.S. exchange, and it hasn't yet faced a significant penalty from the government. Management also appears to",
+		url: 'https://finnhub.io/api/news?id=b16b76384c4c08bf3d3dfa0d797287d237b6560a8bfff87b77cb17dd8ada9ead',
+	},
+	{
+		category: 'company',
+		datetime: 1630870380,
+		headline: 'Should You Worry About Fraud With Chinese Tech Giants?',
+		id: 70323513,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?235878700',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			"Despite the growth opportunities in China, many investors consider the country off-limits in part because they don't trust Chinese companies' financial reporting. After Luckin Coffee was found to be a fraud, some investors reason that all Chinese stocks run a similar risk.",
+		url: 'https://finnhub.io/api/news?id=de61d0bd3a18200657a20b1be66e22f2a6bfd74506922d1a6bdf058f0bfbcb81',
+	},
+	{
+		category: 'company',
+		datetime: 1630867481,
+		headline: "Apple's Making a Big Change to the App Store; Here's What Investors Need to Know",
+		id: 70319094,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/jJy7V0IP52ff9c8nuXBQgg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD0xMTEw/https://s.yimg.com/uu/api/res/1.2/TluxzUDG4gE47DCOftxTgQ--~B/aD0xMjk1O3c9MTQwMDthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/motleyfool.com/8ebfec1b67bcad481400d115de38321c',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			"Apple's (NASDAQ: AAPL) App Store has been under pressure to make some changes around payments, and it's finally giving some apps a break.  Starting next year, Apple will allow what it calls \"reader\" apps like Netflix and Spotify to bypass Apple's payment system and direct users to their own websites for payment.  The move was prompted by a ruling from the Japan Fair Trade Commission, but it'll apply worldwide.",
+		url: 'https://finnhub.io/api/news?id=8cd2a300113579fdf4eef3593aded2685abaeffa9387d5e9999dd58ffafd9816',
+	},
+	{
+		category: 'company',
+		datetime: 1630866360,
+		headline: 'Wallets Are Over. Your Phone Is Your Everything Now. ',
+		id: 70331528,
+		image: 'https://images.wsj.net/im-394468/social',
+		related: 'AAPL',
+		source: 'DowJones',
+		summary:
+			'Mobile payments replacing credit cards was just the start. A digital driver’s license, work ID and other card holdouts are coming to your smartphone.',
+		url: 'https://finnhub.io/api/news?id=10d6d389d9dc5ad9d2c355e7640c75a5c3cb2ee7f688f23a3437f48342ca26a7',
+	},
+	{
+		category: 'company',
+		datetime: 1630844533,
+		headline: 'Apple Expected to Deliver on iPhone 13',
+		id: 70312995,
+		image:
+			'https://s.yimg.com/uu/api/res/1.2/ObFnHP2PEA5jw7e7p4fbcw--~B/aD0zNDM7dz0xMDI0O2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/tipranks_452/2181bd19c72b32f21d962daa5213e980',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'As the year moves toward the fall and winter seasons, retail companies will typically release new products to capture holiday shoppers. Apple Inc. (AAPL) holds an annual event around September for showcasing new products and upgrades, and this year is expected to launch the new iPhone 13. While the global chip shortage has held back supply chains for smartphone producers, confidence is brewing in Apple’s ability to deliver. (See Apple stock charts on TipRanks) Spelling out his Bullish thesis on',
+		url: 'https://finnhub.io/api/news?id=7aaa2ebd0d20c79f6456990660f20fc1b41bbbdfeebf1c28b3d63a3a91e33536',
+	},
+	{
+		category: 'company',
+		datetime: 1630827300,
+		headline: '3 Game-Changing Stocks That Could Turn $100,000 to $1 Million by 2035',
+		id: 70312301,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?1386925586',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'Many investors search for what may seem to be an elusive unicorn, the 10-bagger stock. But with enough patience and companies that have the tailwinds of long-term growth trends, a massive market, and excellent execution, you can improve your odds. We asked three Motley Fool contr',
+		url: 'https://finnhub.io/api/news?id=ffae015d95b51bcb14aecaca6f7106d9a98831252d4990bd6422819a9609a74a',
+	},
+	{
+		category: 'company',
+		datetime: 1630812329,
+		headline: 'IXN: Strong Earnings Should Enable Further Price Growth',
+		id: 70310752,
+		image:
+			'https://static.seekingalpha.com/cdn/s3/uploads/getty_images/1254825733/medium_image_1254825733.jpg',
+		related: 'AAPL',
+		source: 'SeekingAlpha',
+		summary:
+			'IXN continues to perform well in line with strong tech earnings and it offers better value than alternative tech funds. Click here to read about this ETF and its holdings.',
+		url: 'https://finnhub.io/api/news?id=a769484715360896c3048deb3cc90677fbedc8bbaee268f0bb8937b7e84ca405',
+	},
+	{
+		category: 'company',
+		datetime: 1630809180,
+		headline: 'Broadcom Continues to Gain Momentum',
+		id: 70324313,
+		image: 'https://static.gurufocus.com/photos/others/Semiconductor 8.18.15.jpg',
+		related: 'AAPL',
+		source: 'GuruFocus',
+		summary:
+			'The semiconductor company is well-positioned to benefit from favorable macroeconomic trends',
+		url: 'https://finnhub.io/api/news?id=05d7d319f5d9fd2cb0892f9baee6bd42c49d84faf866e8671d3587e799394246',
+	},
+	{
+		category: 'company',
+		datetime: 1630783140,
+		headline:
+			'These are the most important things to check on a stock’s quote page before deciding whether to buy or sell',
+		id: 70309106,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/uzqheMPq08s7rEjulhqHUw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02MDA-/https://s.yimg.com/uu/api/res/1.2/YtXCrxWWdVRsJgKTOvJpnQ--~B/aD02NDA7dz0xMjgwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/marketwatch.com/01900b2e306f7e1b91bdde797c1244c1',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			"There's a lot more to glean from a MarketWatch stock quote page than just the price and the change from the previous session. In fact, price may be one of the least useful pieces of information.",
+		url: 'https://finnhub.io/api/news?id=0b8f924f51ad67965741741d1d912e3e232d641cc18f990dc8fc0e6cfbf85d1c',
+	},
+	{
+		category: 'company',
+		datetime: 1630763571,
+		headline:
+			"EV Week In Review: Tesla's Many Delays, Chip Crunch Bites Nio, Apple Car Rumors, Trouble Brews For Workhorse, Volkswagen's Best-seller Reaches China",
+		id: 70307614,
+		image:
+			'https://s.yimg.com/uu/api/res/1.2/46rIRW3UgxiWnX88qI_fbw--~B/aD00MDA7dz02MDA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/Benzinga/36c0cd681681873b663cdc0c81c6ebc0',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'EV stocks had a mixed outing in the week ending Sept. 3. The global semiconductor shortage was back in the headlines following warnings by EV makers, and after a brief pause, Apple, Inc. (NASDAQ: AAPL) Car chatter grew louder during the week. Here are the key developments from the EV space: Tesla Delays & Model 2 Budget Car: Tesla announced three delays during the week. Elon Musk relayed through a tweet the full-self driving, or FSD, beta 10 will roll out next Friday, a week later than the previ',
+		url: 'https://finnhub.io/api/news?id=e8d50af2585d9b6d79f410dcde4ce406125068e12c0541695a5bfba9dcaff632',
+	},
+	{
+		category: 'company',
+		datetime: 1630762604,
+		headline: 'Week 36 MDA Breakout Stocks - September 2021: Short-Term Picks To Give You An Edge',
+		id: 70307027,
+		image:
+			'https://static.seekingalpha.com/cdn/s3/uploads/getty_images/1298080788/medium_image_1298080788.jpg',
+		related: 'AAPL',
+		source: 'SeekingAlpha',
+		summary:
+			'Two new Breakout Stocks for Week 36 with better than 10% short-term upside potential. Following the Momentum Gauges, the portfolio is up +57.6% YTD.',
+		url: 'https://finnhub.io/api/news?id=59137402058082f96e33eed2a7d2f1bd8c9da9dd17e3f536bb146972a0c86244',
+	},
+	{
+		category: 'company',
+		datetime: 1630760847,
+		headline: '10 Reddit YOLO Stocks That Are Losing Ground',
+		id: 70302825,
+		image:
+			'https://s.yimg.com/uu/api/res/1.2/QDj5nOtqGBZzyMfKHFL_eA--~B/aD02MDA7dz00MDA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/insidermonkey.com/fa0b8bb863ca7cb691d99a09ad4c4ed6',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'In this article, we discuss the 10 Reddit YOLO stocks that are losing ground. If you want to skip our detailed analysis of these stocks, go directly to the 5 Reddit YOLO Stocks That Are Losing Ground. Retail investors have become an important market force in recent months, giving established stock market experts a run […]',
+		url: 'https://finnhub.io/api/news?id=e9886b8a9af9f3e438b599cf445eee0e5939bc271cf722d23dcbc720cbbe4b5e',
+	},
+	{
+		category: 'company',
+		datetime: 1630749600,
+		headline: 'Why Figs Is the Starbucks of Scrubs',
+		id: 70312411,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/2019-05/0902-Q19%20Total%20Markets%20photos%20and%20gif_CC8.jpg?961576098',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			"Figs (NYSE: FIGS) is an up-and-coming, specialty clothing company that recently went public. I bought shares in it and then had buyer's remorse and got out -- which is not Foolish at all, just kind of embarrassing.",
+		url: 'https://finnhub.io/api/news?id=1497c2c436b48ec2bdb6a810a8c81fc63c0489f8111b5ce9cf82375b9f854856',
+	},
+	{
+		category: 'company',
+		datetime: 1630747800,
+		headline: 'How To Retire With A Million In 10 Years And Live Off Dividends',
+		id: 70303385,
+		image:
+			'https://static.seekingalpha.com/cdn/s3/uploads/getty_images/1193547242/medium_image_1193547242.jpg',
+		related: 'AAPL',
+		source: 'SeekingAlpha',
+		summary:
+			"If you are 50 or older and haven't done retirement planning, there's no better time to do this than now. In fact, it's never too early.",
+		url: 'https://finnhub.io/api/news?id=c8b18d08b19ce735769b327b046bbc9492b409a2f3e2d27c729dced17831f713',
+	},
+	{
+		category: 'company',
+		datetime: 1630746000,
+		headline: '3 Golden Rules On How To Invest At All-Time Highs',
+		id: 70302774,
+		image:
+			'https://static.seekingalpha.com/cdn/s3/uploads/getty_images/1015828796/medium_image_1015828796.jpg',
+		related: 'AAPL',
+		source: 'SeekingAlpha',
+		summary:
+			"What should you be aware of in today's market? Should you sell out at these overvalued prices or can you still generate great returns by buying today? Read more to know...",
+		url: 'https://finnhub.io/api/news?id=2772b70acdf86faab7cf5ec1da8c5fa69848c91792a76b9788699abd23fa81ca',
+	},
+	{
+		category: 'company',
+		datetime: 1630743930,
+		headline: 'Wall Street Breakfast: What Moved Markets',
+		id: 70302557,
+		image:
+			'https://static.seekingalpha.com/assets/og_image_1200-29b2bfe1a595477db6826bd2126c63ac2091efb7ec76347a8e7f81ba17e3de6c.png',
+		related: 'AAPL',
+		source: 'SeekingAlpha',
+		summary:
+			"Listen on the go! A daily podcast of Wall Street Breakfast's Alpha Talks will be available by 8:00 a.m. on Seeking Alpha, iTunes, Stitcher and Spotify.",
+		url: 'https://finnhub.io/api/news?id=0fa2c47e9809711a804ced3cb3596486c4a7ccc198804286c8b8e6366613e38a',
+	},
+	{
+		category: 'company',
+		datetime: 1630741140,
+		headline:
+			'Democratic Large Cap Core ETF Buys Facebook Inc, Danaher Corp, Amphenol Corp, Sells Alphabet Inc, Agilent Technologies Inc, Expeditors International of Washington Inc',
+		id: 70304525,
+		image: '',
+		related: 'AAPL',
+		source: 'GuruFocus',
+		summary: '',
+		url: 'https://finnhub.io/api/news?id=db7f63b791e6adc5a5bf583ea318bce743b8c61602c5f2bdf3ab64e1dc1e208b',
+	},
+	{
+		category: 'company',
+		datetime: 1630738500,
+		headline: 'Apple Inc Shares Close in on 52-Week High - Market Mover',
+		id: 70303672,
+		image:
+			'https://www.nasdaq.com/sites/acquia.prod/files/kwhen/AAPL-d94463ac-386e-4d37-b1a4-ac24eb601990.png?874066438',
+		related: 'AAPL',
+		source: 'Nasdaq',
+		summary:
+			'Apple Inc (AAPL) shares closed today at 0.4% below its 52 week high of $154.98, giving the company a market cap of $2.55T. The stock is currently up 16.8% year-to-date, up 28.5% over the past 12 months, and up 510.9% over the',
+		url: 'https://finnhub.io/api/news?id=3f17db2b189b679017098c99f12bb9da86e691ef40620ca3bd986590e690528c',
+	},
+	{
+		category: 'company',
+		datetime: 1630731600,
+		headline: 'Why Cupertino Could Get Its Act Together With Its `Apple Car` Project',
+		id: 70312885,
+		image: '',
+		related: 'AAPL',
+		source: 'TalkMarkets',
+		summary: '',
+		url: 'https://finnhub.io/api/news?id=6caf000ae2b0f605670aefcace630fe9e79b8c6f8e17bdefac6f9fcc3bb3db2f',
+	},
+	{
+		category: 'company',
+		datetime: 1630730700,
+		headline: '2021 Year-To-Date Percentage Returns Of 8 Largest Stocks - Saturday, Sept. 4',
+		id: 70312886,
+		image: '',
+		related: 'AAPL',
+		source: 'TalkMarkets',
+		summary: '',
+		url: 'https://finnhub.io/api/news?id=53750318c90a6a7ca382b11aad42055facb4a05523fb579033f69cdd4d52c0fa',
+	},
+	{
+		category: 'company',
+		datetime: 1630696380,
+		headline: 'Apple Is Suddenly Yielding Ground to Critics. Why Now.',
+		id: 70298535,
+		image:
+			'https://s.yimg.com/ny/api/res/1.2/nHW2Hc90l4Sqen4CNYXsZg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02MDA-/https://s.yimg.com/uu/api/res/1.2/iRoUsNtrEjJPQkP10Q5InQ--~B/aD02NDA7dz0xMjgwO2FwcGlkPXl0YWNoeW9u/https://media.zenfs.com/en/Barrons.com/0179885bff745c647f134a762c182b98',
+		related: 'AAPL',
+		source: 'Yahoo',
+		summary:
+			'The company has put on hold a plan to roll out technology that would report collections of child-abuse images on iPhones and made concessions on app-store fees.',
+		url: 'https://finnhub.io/api/news?id=7c60a60a6d2fbb21e7865fb248503ed677b7e25677de90753930294e8957b41f',
+	},
+];
+
 export const dummy = {
 	MarketSummary,
+	MostActiveStock,
+	TrendingStock,
+	MarketNews,
+	AppleProfile,
 	AppleSummary,
 	AppleChart,
 	AppleRecommend,
-	MostActiveStock,
-	TrendingStock,
-	News,
+	AppleNews,
 };
 
 export default dummy;

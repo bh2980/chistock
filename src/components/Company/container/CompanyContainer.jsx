@@ -20,6 +20,8 @@ const CompanyContainer = () => {
 			regularMarketPrice,
 			regularMarketTime,
 		} = price;
+		const { logo } = dummy.AppleProfile;
+		const news = dummy.AppleNews;
 
 		const { meta, timestamp, indicators } = dummy.AppleChart[0];
 		const { exchangeName } = meta;
@@ -28,6 +30,7 @@ const CompanyContainer = () => {
 		setCompanyInfo({
 			data: {
 				symbol,
+				logo,
 				shortName,
 				regularMarketChange: regularMarketChange.raw,
 				regularMarketChangePercent: regularMarketChangePercent.raw,
@@ -40,6 +43,7 @@ const CompanyContainer = () => {
 				exchangeName,
 				recommendationTrend,
 				earnings,
+				news,
 			},
 			chart: {
 				shortName,
@@ -79,10 +83,11 @@ const CompanyContainer = () => {
 	};
 
 	useEffect(() => {
+		setIsLoad(true);
 		getCompanyInfo(ticker);
 		getRecommendList(ticker);
 		setIsLoad(false);
-	}, []);
+	}, [ticker]);
 
 	return <Company isLoad={isLoad} companyInfo={companyInfo} recommendList={recommendList} />;
 };

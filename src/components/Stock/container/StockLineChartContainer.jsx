@@ -90,6 +90,7 @@ const StockLineChartContainer = ({ chartData, setIsLineChart, canCandle }) => {
 			curve: 'smooth',
 			lineCap: 'round',
 			colors: '#0084ff',
+			width: 3,
 		},
 	};
 
@@ -103,13 +104,8 @@ const StockLineChartContainer = ({ chartData, setIsLineChart, canCandle }) => {
 			options={options}
 			updatetime={updateDate}
 			setIsLineChart={setIsLineChart}
-			canCandle={canCandle}
 		/>
 	);
-};
-
-StockLineChartContainer.defaultProps = {
-	canCandle: true,
 };
 
 export default StockLineChartContainer;

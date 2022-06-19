@@ -1,53 +1,28 @@
 import React from 'react';
 import '../css/DashBoard.css';
-import ReactApexChart from 'react-apexcharts';
+import FinancialsContainer from '../container/FinancialsContainer';
+import RecommendTrendContainer from '../container/RecommendTrendContainer';
+import EarningContainer from '../container/EarningContainer';
+import ProfileContainer from '../container/ProfileContainer';
+import NewsContainer from '../container/NewsContainer';
 
-const DashBoard = ({
-	isLoad,
-	recommendData,
-	recommendOptions,
-	financialData,
-	financialOptions,
-	financePeriod,
-	onFinanceChange,
-}) => {
-	return isLoad ? null : (
+const DashBoard = ({ companyInfo, dashBoardInfo }) => {
+	return (
 		<div className="dashboard">
-			<div className="card shadow-box">
-				<div className="card-title">
-					<span>Financials</span>
-					<div className="sub-menu">
-						<button
-							className={financePeriod === 'Year' ? 'selected-card' : ''}
-							onClick={onFinanceChange}
-						>
-							Year
-						</button>
-						<button
-							className={financePeriod === 'Quarter' ? 'selected-card' : ''}
-							onClick={onFinanceChange}
-						>
-							Quarter
-						</button>
-					</div>
-				</div>
-				<ReactApexChart
-					series={financialData}
-					options={financialOptions}
-					type="bar"
-					width={'100%'}
-					height={'300px'}
-				/>
+			<div className="card shadow-box profile-card">
+				<ProfileContainer companyInfo={companyInfo} />
 			</div>
-			<div className="card shadow-box">
-				<div className="card-title">Recommendation Trends</div>
-				<ReactApexChart
-					series={recommendData}
-					options={recommendOptions}
-					type="bar"
-					width={'100%'}
-					height={'300px'}
-				/>
+			<div className="card shadow-box news-card">
+				<NewsContainer companyInfo={companyInfo} />
+			</div>
+			<div className="card shadow-box financials-card">
+				<FinancialsContainer dashBoardInfo={dashBoardInfo} />
+			</div>
+			<div className="card shadow-box earning-card">
+				<EarningContainer dashBoardInfo={dashBoardInfo} />
+			</div>
+			<div className="card shadow-box recommend-card">
+				<RecommendTrendContainer dashBoardInfo={dashBoardInfo} />
 			</div>
 		</div>
 	);
