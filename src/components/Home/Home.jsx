@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import StockLineChartContainer from 'components/Stock/container/StockLineChartContainer';
 import IndexListContainer from './IndexList';
 
-const HomeContainer = () => {
+const Home = () => {
 	const [isChartLoading, setIsChartLoading] = useState(true);
 	const [marketSummary, setMarketSummary] = useState(null);
 	const [trendingList, setTrendingList] = useState(null);
@@ -143,4 +143,4 @@ const HomeContainer = () => {
 	);
 };
 
-export default HomeContainer;
+export default Home;
