@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './css/index.scss';
 import images from 'assets/images.js';
+import dummy from 'assets/dummy';
 
-const Header = ({ itemList }) => {
+const Header = () => {
+	const [itemList, setItemList] = useState([]);
+
+	const getHeaderList = () => {
+		return dummy.MostActiveStock;
+	};
+
+	useEffect(() => {
+		setItemList(getHeaderList());
+	});
+
 	return (
 		<div className="haeder-wrap">
 			<div className="header-top">
