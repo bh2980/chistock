@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import HomeContainer from 'components/Home/containers/HomeContainer';
+import HomeContainer from 'components/Home/Home';
 import SearchList from 'components/SearchList/SearchList';
 import CompanyContainer from 'components/Company/container/CompanyContainer';
 import HeaderContainer from 'components/Header/containers/HeaderContainer';

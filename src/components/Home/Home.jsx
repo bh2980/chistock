@@ -1,20 +1,77 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import dummy from 'assets/dummy';
 import './style/index.scss';
 import StockItem from 'components/Stock/StockItem';
 import { Link } from 'react-router-dom';
 import StockLineChartContainer from 'components/Stock/container/StockLineChartContainer';
-import IndexListContainer from './containers/IndexListContainer';
+import IndexListContainer from './IndexList';
 
-const Home = ({
-	isChartLoading,
-	viewStock,
-	setViewStock,
-	marketSummary,
-	trendingList,
-	news,
-	selectedSide,
-	onSideClick,
-}) => {
+const HomeContainer = () => {
+	const [isChartLoading, setIsChartLoading] = useState(true);
+	const [marketSummary, setMarketSummary] = useState(null);
+	const [trendingList, setTrendingList] = useState(null);
+	const [viewStock, setViewStock] = useState(null);
+	const [selectedSide, setSelectedSide] = useState('Trending');
+	const [news, setNews] = useState([]);
+
+	const onSideClick = e => {
+		setSelectedSide(e.currentTarget.textContent);
+	};
+
+	const getTrending = () => {
+		const newTrending = dummy.TrendingStock[0].quotes;
+		setTrendingList(newTrending);
+	};
+
+	const getNews = () => {
+		const newNews = dummy.MarketNews.stream.map(anews => {
+			const { content } = anews;
+			const { pubDate, title } = content;
+			return {
+				...anews,
+				content: {
+					...content,
+					pubDate: pubDate.replace('T', ' ').replace('Z', ''),
+					title: title.length > 70 ? title.slice(0, 50) + '...' : title,
+				},
+			};
+		});
+
+		setNews(newNews);
+	};
+
+	const getMarketItem = () => {
+		const marketSum = dummy.MarketSummary;
+		const newMarketSum = marketSum.map(marketItem => {
+			const { symbol, shortName, spark } = marketItem;
+			const { timestamp, previousClose, close } = spark;
+			const regularMarketPrice = close[close.length - 1];
+			const regularMarketChange = regularMarketPrice - previousClose;
+			const regularMarketChangePercent = regularMarketChange / previousClose;
+
+			return {
+				data: {
+					symbol,
+					shortName,
+					regularMarketPrice,
+					regularMarketChange,
+					regularMarketChangePercent,
+				},
+				chart: { shortName, timestamp, close },
+			};
+		});
+
+		setMarketSummary(newMarketSum);
+		setViewStock(newMarketSum[0]);
+	};
+
+	useEffect(() => {
+		getMarketItem();
+		getTrending();
+		getNews();
+		setIsChartLoading(false);
+	}, []);
+
 	return (
 		<div className="home">
 			{isChartLoading ? (
@@ -86,4 +143,4 @@ const Home = ({
 	);
 };
 
-export default Home;
+export default HomeContainer;
