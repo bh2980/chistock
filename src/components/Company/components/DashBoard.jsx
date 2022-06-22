@@ -1,28 +1,28 @@
 import React from 'react';
 import '../css/DashBoard.css';
-import FinancialsContainer from '../container/FinancialsContainer';
-import RecommendTrendContainer from '../container/RecommendTrendContainer';
-import EarningContainer from '../container/EarningContainer';
-import ProfileContainer from '../container/ProfileContainer';
-import NewsContainer from '../container/NewsContainer';
+import Financial from './Financial';
+import RecommendTrend from './RecommendTrend';
+import Earning from './Earning';
+import Profile from './Profile';
+import News from './News';
 
 const DashBoard = ({ companyInfo, dashBoardInfo }) => {
 	return (
 		<div className="dashboard">
 			<div className="card shadow-box profile-card">
-				<ProfileContainer companyInfo={companyInfo} />
+				<Profile companyInfo={companyInfo} />
 			</div>
 			<div className="card shadow-box news-card">
-				<NewsContainer companyInfo={companyInfo} />
+				<News companyInfo={companyInfo} />
 			</div>
 			<div className="card shadow-box financials-card">
-				<FinancialsContainer dashBoardInfo={dashBoardInfo} />
+				<Financial dashBoardInfo={dashBoardInfo} />
 			</div>
 			<div className="card shadow-box earning-card">
-				<EarningContainer dashBoardInfo={dashBoardInfo} />
+				<Earning dashBoardInfo={dashBoardInfo} />
 			</div>
 			<div className="card shadow-box recommend-card">
-				<RecommendTrendContainer dashBoardInfo={dashBoardInfo} />
+				<RecommendTrend dashBoardInfo={dashBoardInfo} />
 			</div>
 		</div>
 	);

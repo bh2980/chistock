@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Financials from '../components/Financials';
+import ReactApexChart from 'react-apexcharts';
+import '../css/Financial.scss';
 
-const FinancialsContainer = ({ dashBoardInfo }) => {
+const Financial = ({ dashBoardInfo }) => {
 	const [isLoad, setIsLoad] = useState(true);
 	const [financePeriod, setFinancePeriod] = useState('Quarter');
 	const [financialData, setFinanciaData] = useState();
@@ -136,14 +137,32 @@ const FinancialsContainer = ({ dashBoardInfo }) => {
 	}, []);
 
 	return isLoad ? null : (
-		<Financials
-			isLoad={isLoad}
-			financialSeries={financialSeries}
-			financialOptions={financialOptions}
-			financePeriod={financePeriod}
-			onFinanceChange={onFinanceChange}
-		/>
+		<>
+			<div className="card-title">
+				<span>Financials</span>
+				<div className="sub-menu">
+					<button
+						className={financePeriod === 'Quarter' ? 'selected-menu' : 'unselected-menu'}
+						onClick={onFinanceChange}
+					>
+						Quarter
+					</button>
+					<button
+						className={financePeriod === 'Year' ? 'selected-menu' : 'unselected-menu'}
+						onClick={onFinanceChange}
+					>
+						Year
+					</button>
+				</div>
+			</div>
+			<ReactApexChart
+				series={financialSeries}
+				options={financialOptions}
+				type="bar"
+				height="280px"
+			/>
+		</>
 	);
 };
 
-export default FinancialsContainer;
+export default Financial;
