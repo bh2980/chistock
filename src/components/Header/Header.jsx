@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './css/index.scss';
 import images from 'assets/images.js';
+import dummy from 'assets/dummy';
 
-const Header = ({ itemList }) => {
+const Header = () => {
+	const [headerList, setHeaderList] = useState([]);
+
+	const getHeaderList = () => {
+		const response = dummy.TrendingStock[0].quotes;
+		const newHeaderList = response.map(item => {
+			const { symbol, regularMarketChange, regularMarketChangePercent } = item;
+			return {
+				symbol,
+				regularMarketChange: Math.round(regularMarketChange * 100) / 100,
+				regularMarketChangePercent: Math.round(regularMarketChangePercent * 100) / 100,
+			};
+		});
+
+		return newHeaderList;
+	};
+
+	useEffect(() => {
+		setHeaderList(getHeaderList());
+	});
+
 	return (
 		<div className="haeder-wrap">
 			<div className="header-top">
@@ -25,31 +46,31 @@ const Header = ({ itemList }) => {
 			</div>
 			<div className="header-bottom">
 				<div className="banner">
-					{itemList.map(item => (
+					{headerList.map(item => (
 						<>
 							<span className="banner-ticker">{item.symbol}</span>
-							<span className={item.change > 0 ? 'red-text' : 'blue-text'}>
-								{item.change > 0 ? '+' : null}
-								{item.change.toFixed(2)}
+							<span className={item.regularMarketChange > 0 ? 'red-text' : 'blue-text'}>
+								{item.regularMarketChange > 0 ? '+' : null}
+								{item.regularMarketChange}
 							</span>
-							<span className={item.change > 0 ? 'red-text' : 'blue-text'}>
-								{item.change > 0 ? '+' : null}
-								{item.changesPercentage.toFixed(2)}%
+							<span className={item.regularMarketChange > 0 ? 'red-text' : 'blue-text'}>
+								{item.regularMarketChange > 0 ? '+' : null}
+								{item.regularMarketChangePercent}%
 							</span>
 						</>
 					))}
 				</div>
 				<div className="banner2">
-					{itemList.map(item => (
+					{headerList.map(item => (
 						<>
 							<span className="banner-ticker">{item.symbol}</span>
 							<span className={item.change > 0 ? 'red-text' : 'blue-text'}>
 								{item.change > 0 ? '+' : null}
-								{item.change.toFixed(2)}
+								{item.change}
 							</span>
 							<span className={item.change > 0 ? 'red-text' : 'blue-text'}>
 								{item.change > 0 ? '+' : null}
-								{item.changesPercentage.toFixed(2)}%
+								{item.regularMarketChangePercent}%
 							</span>
 						</>
 					))}

@@ -2,7 +2,7 @@ import StockTileList from 'components/Stock/StockTileList';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-const RecommendListContainer = ({ stockList }) => {
+const RecommendList = ({ stockList }) => {
 	let history = useHistory();
 	const onClick = (e, index) => {
 		history.push(`/detail/${stockList[index].data.symbol}`);
@@ -11,4 +11,4 @@ const RecommendListContainer = ({ stockList }) => {
 	return <StockTileList stockList={stockList} onClick={onClick} />;
 };
 
-export default RecommendListContainer;
+export default RecommendList;
