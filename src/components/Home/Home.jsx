@@ -3,8 +3,8 @@ import dummy from 'assets/dummy';
 import './style/index.scss';
 import StockItem from 'components/Stock/StockItem';
 import { Link } from 'react-router-dom';
-import StockLineChartContainer from 'components/Stock/container/StockLineChartContainer';
-import IndexListContainer from './IndexList';
+import StockLineChart from 'components/Stock/StockLineChart';
+import IndexList from './IndexList';
 
 const Home = () => {
 	const [isChartLoading, setIsChartLoading] = useState(true);
@@ -79,12 +79,12 @@ const Home = () => {
 			) : (
 				<>
 					<div className="home-chart-view">
-						<IndexListContainer stockList={marketSummary} setViewStock={setViewStock} />
+						<IndexList stockList={marketSummary} setViewStock={setViewStock} />
 						<div className="main-chart">
 							<div className="main-title shadow-box">
 								<StockItem companyInfo={viewStock.data} />
 							</div>
-							<StockLineChartContainer chartData={viewStock.chart} canCandle={false} />
+							<StockLineChart chartData={viewStock.chart} canCandle={false} />
 						</div>
 					</div>
 					<div className="line" />

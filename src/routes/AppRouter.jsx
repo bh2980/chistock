@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import HomeContainer from 'components/Home/Home';
+import Home from 'components/Home/Home';
 import SearchList from 'components/SearchList/SearchList';
-import CompanyContainer from 'components/Company/Company';
+import Company from 'components/Company/Company';
 import Header from 'components/Header/Header';
 
 const AppRouter = () => {
@@ -10,8 +10,8 @@ const AppRouter = () => {
 		<Router>
 			<Header component={Header} />
 			<Switch>
-				<Route path="/" exact component={HomeContainer} />
-				<Route path="/detail/:ticker" component={CompanyContainer} />
+				<Route path="/" exact component={Home} />
+				<Route path="/detail/:ticker" component={Company} />
 			</Switch>
 		</Router>
 	);

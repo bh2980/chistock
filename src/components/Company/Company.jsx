@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import './css/Company.scss';
 import RecommendList from './components/RecommendList';
 import StockItem from 'components/Stock/StockItem';
-import StockDetailChartContainer from 'components/Stock/container/StockDetailChartContainer';
+import StockDetailChart from 'components/Stock/StockDetailChart';
 import DashBoard from './components/DashBoard.jsx';
 
 const Company = () => {
@@ -101,7 +101,7 @@ const Company = () => {
 					<div className="company-title shadow-box">
 						<StockItem companyInfo={companyInfo.data} />
 					</div>
-					<StockDetailChartContainer chartData={companyInfo.chart} />
+					<StockDetailChart chartData={companyInfo.chart} />
 				</div>
 			</div>
 			<div className="vertical-line" />
