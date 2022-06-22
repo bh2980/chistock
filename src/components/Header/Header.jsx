@@ -64,12 +64,12 @@ const Header = () => {
 					{headerList.map(item => (
 						<>
 							<span className="banner-ticker">{item.symbol}</span>
-							<span className={item.change > 0 ? 'red-text' : 'blue-text'}>
-								{item.change > 0 ? '+' : null}
-								{item.change}
+							<span className={item.regularMarketChange > 0 ? 'red-text' : 'blue-text'}>
+								{item.regularMarketChange > 0 ? '+' : null}
+								{item.regularMarketChange}
 							</span>
-							<span className={item.change > 0 ? 'red-text' : 'blue-text'}>
-								{item.change > 0 ? '+' : null}
+							<span className={item.regularMarketChange > 0 ? 'red-text' : 'blue-text'}>
+								{item.regularMarketChange > 0 ? '+' : null}
 								{item.regularMarketChangePercent}%
 							</span>
 						</>
