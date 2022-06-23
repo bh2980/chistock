@@ -1,4 +1,4 @@
-import StockTileList from 'pages/Stock/StockTileList';
+import StockTileList from 'components/Stock/StockTileList';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
