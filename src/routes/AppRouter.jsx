@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Home from 'pages/Home/Home';
-import SearchList from 'pages/SearchList/SearchList';
-import Company from 'pages/Company/Company';
+import Home from 'components/Home/Home';
+import SearchList from 'components/SearchList/SearchList';
+import Company from 'components/Company/Company';
 import Header from 'components/Header/Header';
 
 const AppRouter = () => {
