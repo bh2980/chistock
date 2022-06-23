@@ -1,4 +1,4 @@
-import StockTileList from 'components/Stock/StockTileList';
+import StockTileList from 'pages/Stock/StockTileList';
 import React, { useState } from 'react';
 
 const IndexList = ({ stockList, setViewStock }) => {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../css/Profile.scss';
+import './css/Profile.scss';
 
 const Profile = ({ companyInfo }) => {
 	const [isLoad, setIsLoad] = useState(true);

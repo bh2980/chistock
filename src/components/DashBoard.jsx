@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/DashBoard.css';
+import './css/DashBoard.scss';
 import Financial from './Financial';
 import RecommendTrend from './RecommendTrend';
 import Earning from './Earning';

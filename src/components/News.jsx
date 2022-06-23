@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import '../css/News.scss';
+import './css/News.scss';
 
 const News = ({ companyInfo }) => {
 	const [news, setNews] = useState();
