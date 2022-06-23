@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import dummy from 'assets/dummy.js';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import './css/Company.scss';
-import RecommendList from 'components/RecommendList';
-import StockItem from 'pages/Stock/StockItem';
-import StockDetailChart from 'pages/Stock/StockDetailChart';
-import DashBoard from 'components/DashBoard.jsx';
+import RecommendList from './components/RecommendList';
+import StockItem from 'components/Stock/StockItem';
+import StockDetailChart from 'components/Stock/StockDetailChart';
+import DashBoard from './components/DashBoard.jsx';
 
 const Company = () => {
 	const { ticker } = useParams();

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import dummy from 'assets/dummy';
 import './style/index.scss';
-import StockItem from 'pages/Stock/StockItem';
+import StockItem from 'components/Stock/StockItem';
 import { Link } from 'react-router-dom';
-import StockLineChart from 'pages/Stock/StockLineChart';
+import StockLineChart from 'components/Stock/StockLineChart';
 import IndexList from './IndexList';
 
 const Home = () => {
