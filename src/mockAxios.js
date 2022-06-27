@@ -37,11 +37,13 @@ mock.onPost('api/yh/news/v2/list').reply(config => {
 
 mock.onGet('api/fh/v1/stock/profile2').reply(config => {
 	const { symbol, token } = config.params;
+	if (!token) return [401, ''];
 	return [200, dummy.AppleProfile];
 });
 
 mock.onGet('api/fh/v1/company-news').reply(config => {
 	const { from, to, token } = config.params;
+	if (!token) return [401, ''];
 	return [200, dummy.AppleNews];
 });
 
