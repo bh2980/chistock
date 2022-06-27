@@ -23,7 +23,7 @@ const Header = () => {
 
 	useEffect(() => {
 		setHeaderList(getHeaderList());
-	});
+	}, []);
 
 	return (
 		<div className="haeder-wrap">
