@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import dummy from 'assets/dummy.js';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
-import './css/Company.scss';
-import RecommendList from './components/RecommendList';
-import StockItem from 'components/Stock/StockItem';
-import StockDetailChart from 'components/Stock/StockDetailChart';
-import DashBoard from './components/DashBoard.jsx';
+import './styles/Company.scss';
+import RecommendList from '../../components/Company/RecommendList';
+import DashBoard from '../../components/Company/DashBoard.jsx';
+import CompanyChart from 'components/Company/CompanyChart';
 
 const Company = () => {
 	const { ticker } = useParams();
@@ -95,15 +94,8 @@ const Company = () => {
 
 	return isLoad ? null : (
 		<div className="container">
-			<div className="company-chart-view">
-				<RecommendList stockList={recommendList} />
-				<div className="company-chart">
-					<div className="company-title shadow-box">
-						<StockItem companyInfo={companyInfo.data} />
-					</div>
-					<StockDetailChart chartData={companyInfo.chart} />
-				</div>
-			</div>
+			<RecommendList stockList={recommendList} />
+			<CompanyChart companyInfo={companyInfo} />
 			<div className="vertical-line" />
 			<DashBoard companyInfo={companyInfo} dashBoardInfo={companyInfo.data} />
 		</div>
