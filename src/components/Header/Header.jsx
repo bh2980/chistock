@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './css/index.scss';
+import './styles/index.scss';
 import images from 'assets/images.js';
 import dummy from 'assets/dummy';
 

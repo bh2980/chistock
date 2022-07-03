@@ -1,10 +1,10 @@
 import React from 'react';
-import '../css/DashBoard.scss';
-import Financial from './Financial';
-import RecommendTrend from './RecommendTrend';
-import Earning from './Earning';
-import Profile from './Profile';
-import News from './News';
+import Earning from './DashBoardItem/Earning';
+import Financial from './DashBoardItem/Financial';
+import News from './DashBoardItem/News';
+import Profile from './DashBoardItem/Profile';
+import RecommendTrend from './DashBoardItem/RecommendTrend';
+import './styles/DashBoard.scss';
 
 const DashBoard = ({ companyInfo, dashBoardInfo }) => {
 	return (

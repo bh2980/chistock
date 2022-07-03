@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import images from 'assets/images';
 import ReactApexChart from 'react-apexcharts';
-import './css/StockDetailChart.scss';
+import './styles/StockDetailChart.scss';
 
 const StockDetailChart = ({ chartData }) => {
 	const [companyName, setCompanyName] = useState('');

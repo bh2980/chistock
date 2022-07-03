@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/StockItem.scss';
+import './styles/StockItem.scss';
 
 const StockItem = ({ companyInfo }) => {
 	return (

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactApexChart from 'react-apexcharts';
-import '../css/Financial.scss';
+import './styles/Financial.scss';
 
 const Financial = ({ dashBoardInfo }) => {
 	const [isLoad, setIsLoad] = useState(true);
