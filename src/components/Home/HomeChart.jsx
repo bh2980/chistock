@@ -1,4 +1,4 @@
-import './style/HomeChart.scss';
+import './styles/HomeChart.scss';
 import StockItem from 'components/Stock/StockItem';
 import StockLineChart from 'components/Stock/StockLineChart';
 import React, { useEffect, useState } from 'react';

@@ -1,5 +1,5 @@
 import dummy from 'assets/dummy';
-import './style/TrendingNewsList.scss';
+import './styles/TrendingNewsList.scss';
 import StockItem from 'components/Stock/StockItem';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';

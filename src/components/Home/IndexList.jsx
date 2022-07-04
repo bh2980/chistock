@@ -1,5 +1,5 @@
 import dummy from 'assets/dummy';
-import './style/IndexList.scss';
+import './styles/IndexList.scss';
 import StockTileList from 'components/Stock/StockTileList';
 import React, { useEffect, useState } from 'react';
 
