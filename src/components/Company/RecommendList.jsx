@@ -1,18 +1,51 @@
 import StockTileList from 'components/Stock/StockTileList';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './styles/RecommendList.scss';
 import { useHistory } from 'react-router-dom';
+import dummy from 'assets/dummy';
 
-const RecommendList = ({ stockList }) => {
+const RecommendList = ({ ticker }) => {
 	let history = useHistory();
 
-	const onClick = (e, index) => {
-		history.push(`/detail/${stockList[index].data.symbol}`);
+	const [recommendList, setRecommendList] = useState([]);
+	const [loading, setLoading] = useState(true);
+
+	const getRecommendList = ticker => {
+		const response = dummy.AppleRecommend[0].quotes;
+		const newRecommendList = response.map(item => {
+			const {
+				regularMarketChange,
+				regularMarketChangePercent,
+				regularMarketPrice,
+				symbol,
+				shortName,
+			} = item;
+			return {
+				data: {
+					regularMarketChange,
+					regularMarketChangePercent,
+					regularMarketPrice,
+					symbol,
+					shortName,
+				},
+			};
+		});
+
+		setRecommendList(newRecommendList);
 	};
 
-	return (
+	const onClick = (e, index) => {
+		history.push(`/detail/${recommendList[index].data.symbol}`);
+	};
+
+	useEffect(() => {
+		getRecommendList(ticker);
+		setLoading(false);
+	}, []);
+
+	return loading ? null : (
 		<div className="recommend-list">
-			<StockTileList stockList={stockList} onClick={onClick} />
+			<StockTileList stockList={recommendList} onClick={onClick} />
 		</div>
 	);
 };

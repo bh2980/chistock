@@ -9,11 +9,9 @@ import CompanyChart from 'components/Company/CompanyChart';
 const Company = () => {
 	const { ticker } = useParams();
 	const [companyInfo, setCompanyInfo] = useState(null);
-	const [recommendList, setRecommendList] = useState([]);
 	const [isLoad, setIsLoad] = useState(true);
 
 	const getCompanyInfo = ticker => {
-		console.log(ticker);
 		const { price, quoteType, summaryProfile, recommendationTrend, earnings } = dummy.AppleSummary;
 		const { sector, longBusinessSummary, website, industry, country } = summaryProfile;
 		const { shortName, symbol } = quoteType;
@@ -61,40 +59,15 @@ const Company = () => {
 		});
 	};
 
-	const getRecommendList = ticker => {
-		const response = dummy.AppleRecommend[0].quotes;
-		const newRecommendList = response.map(item => {
-			const {
-				regularMarketChange,
-				regularMarketChangePercent,
-				regularMarketPrice,
-				symbol,
-				shortName,
-			} = item;
-			return {
-				data: {
-					regularMarketChange,
-					regularMarketChangePercent,
-					regularMarketPrice,
-					symbol,
-					shortName,
-				},
-			};
-		});
-
-		setRecommendList(newRecommendList);
-	};
-
 	useEffect(() => {
 		setIsLoad(true);
 		getCompanyInfo(ticker);
-		getRecommendList(ticker);
 		setIsLoad(false);
 	}, [ticker]);
 
 	return isLoad ? null : (
 		<div className="container">
-			<RecommendList stockList={recommendList} />
+			<RecommendList ticker={ticker} />
 			<CompanyChart companyInfo={companyInfo} />
 			<div className="vertical-line" />
 			<DashBoard companyInfo={companyInfo} dashBoardInfo={companyInfo.data} />
