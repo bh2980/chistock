@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './styles/Profile.scss';
 
-const Profile = ({ companyInfo }) => {
+const Profile = ({ dashboardInfo }) => {
 	const [isLoad, setIsLoad] = useState(true);
 	const [isFold, setIsFold] = useState(true);
 	const [profile, setProfile] = useState();
@@ -11,11 +11,7 @@ const Profile = ({ companyInfo }) => {
 	};
 
 	const getProfile = () => {
-		const { data } = companyInfo;
-		const { website } = data;
-
-		const newProfile = { ...data, website: website.slice(8) };
-		setProfile(newProfile);
+		setProfile(dashboardInfo);
 	};
 
 	useEffect(() => {

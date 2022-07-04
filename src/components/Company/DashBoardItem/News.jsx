@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './styles/News.scss';
 
-const News = ({ companyInfo }) => {
+const News = ({ dashboardInfo }) => {
 	const [news, setNews] = useState();
 	const [isLoad, setIsLoad] = useState(true);
 
 	const getNews = () => {
-		const { data } = companyInfo;
-		const { news } = data;
-
-		console.log(news);
-
-		const newNews = news.map(anews => {
+		const newNews = dashboardInfo.news.map(anews => {
 			const { datetime } = anews;
 			const date = new Date(datetime);
 			const newDateTime =
