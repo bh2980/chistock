@@ -68,7 +68,7 @@ const Company = () => {
 	return isLoad ? null : (
 		<div className="container">
 			<RecommendList ticker={ticker} />
-			<CompanyChart companyInfo={companyInfo} />
+			<CompanyChart ticker={ticker} />
 			<div className="vertical-line" />
 			<DashBoard companyInfo={companyInfo} dashBoardInfo={companyInfo.data} />
 		</div>

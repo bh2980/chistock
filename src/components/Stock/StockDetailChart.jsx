@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import images from 'assets/images';
 import ReactApexChart from 'react-apexcharts';
 import './styles/StockDetailChart.scss';
+import dummy from 'assets/dummy';
 
-const StockDetailChart = ({ chartData }) => {
+const StockDetailChart = ({ ticker }) => {
+	const [loading, setLoading] = useState(true);
 	const [companyName, setCompanyName] = useState('');
 	const [updateDate, setUpdateDate] = useState(0);
 	const [minChart, setMinChart] = useState(0);
@@ -16,8 +18,10 @@ const StockDetailChart = ({ chartData }) => {
 		setIsCandle(current => !current);
 	};
 
-	const getChartData = () => {
-		const { shortName, timestamp, open, high, low, close, volume, regularMarketTime } = chartData;
+	const getChartData = ticker => {
+		const { timestamp, indicators } = dummy.AppleChart[0];
+		const { high, open, close, low, volume } = indicators.quote[0];
+		const regularMarketTime = timestamp[timestamp.length - 1];
 
 		const date = new Date(regularMarketTime);
 		const uDate = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
@@ -41,7 +45,7 @@ const StockDetailChart = ({ chartData }) => {
 		setMaxVolume(Math.max(...volume) * 3);
 		setCandleInfo(newCandle.slice(0, 40));
 		setVolumeInfo(newVolume.slice(0, 40));
-		setCompanyName(shortName);
+		setCompanyName(ticker);
 	};
 
 	const series = [
@@ -152,9 +156,10 @@ const StockDetailChart = ({ chartData }) => {
 
 	useEffect(() => {
 		getChartData();
+		setLoading(false);
 	}, []);
 
-	return (
+	return loading ? null : (
 		<div className="chart-container shadow-box">
 			<div className="period-selector">
 				<div>
