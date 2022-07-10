@@ -13908,7 +13908,7 @@ const AppleSummary = {
 	},
 };
 
-// TODO: Interval 별 차트 데이터 삽입 필요
+// TODO 이장훈: Interval 별 차트 데이터 삽입 필요
 
 const AppleChart = [
 	{
