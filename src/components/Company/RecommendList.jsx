@@ -8,14 +8,14 @@ const RecommendList = ({ symbol }) => {
 	let history = useHistory();
 
 	const [recommendList, setRecommendList] = useState([]);
+	//CHECK : 화면 표시를 위해 loading 시켜놓음. 리팩토링 시 제거
 	const [loading, setLoading] = useState(true);
 
 	const getRecommendList = async symbol => {
 		const { data } = await getRecommendations(symbol);
 
-		console.log('recommend', data);
-
 		setRecommendList(data);
+		//CHECK : 화면 표시를 위해 loading 시켜놓음. 리팩토링 시 제거
 		setLoading(false);
 	};
 

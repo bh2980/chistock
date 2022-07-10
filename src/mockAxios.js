@@ -7,7 +7,6 @@ const mock = new MockAdapter(mockAxios, { delayResponse: 1500 });
 
 mock.onGet('api/yh/market/v2/get-summary').reply(config => {
 	const { region } = config.params;
-	console.log(region);
 	return [200, { marketSummaryAndSparkResponse: { result: dummy.MarketSummary, error: null } }];
 });
 

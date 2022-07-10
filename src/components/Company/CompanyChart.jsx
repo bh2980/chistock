@@ -6,6 +6,7 @@ import './styles/CompanyChart.scss';
 
 const CompanyChart = ({ ticker }) => {
 	const [companyInfo, setCompanyInfo] = useState(null);
+	//CHECK : 화면 표시를 위해 loading 시켜놓음. 리팩토링 시 제거
 	const [loading, setLoading] = useState(true);
 
 	const getCompanyInfo = async ticker => {
@@ -22,6 +23,7 @@ const CompanyChart = ({ ticker }) => {
 			regularMarketPrice: regularMarketPrice.raw,
 		});
 
+		//CHECK : 화면 표시를 위해 loading 시켜놓음. 리팩토링 시 제거
 		setLoading(false);
 	};
 

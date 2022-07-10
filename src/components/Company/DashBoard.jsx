@@ -1,4 +1,3 @@
-import dummy from 'assets/dummy';
 import { getCompanyNews, getStockProfile, getStockSummary } from 'lib/fetchData';
 import React, { useEffect, useState } from 'react';
 import Earning from './DashBoardItem/Earning';
@@ -10,14 +9,14 @@ import './styles/DashBoard.scss';
 
 const DashBoard = ({ ticker }) => {
 	const token = process.env.REACT_APP_FH_API_KEY;
+	//CHECK : 화면 표시를 위해 loading 시켜놓음. 리팩토링 시 제거
 	const [loading, setLoading] = useState(true);
 	const [dashboardInfo, setDashboardInfo] = useState(null);
 
-	//TODO 이장훈 : 하나의 api에서 loading해와서 타일별로 로딩을 나누기 애매
+	//CHECK : 하나의 api에서 loading해와서 타일별로 로딩을 나누기 애매
 	const getDashboard = async ticker => {
 		const { data } = await getStockSummary();
 		const { quoteType, summaryProfile, recommendationTrend, earnings } = data;
-
 		const { sector, longBusinessSummary, website, industry, country } = summaryProfile;
 		const { shortName, symbol } = quoteType;
 
@@ -40,6 +39,7 @@ const DashBoard = ({ ticker }) => {
 			news: news.data.slice(0, 5),
 		});
 
+		//CHECK : 화면 표시를 위해 loading 시켜놓음. 리팩토링 시 제거
 		setLoading(false);
 	};
 

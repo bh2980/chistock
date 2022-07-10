@@ -158,7 +158,7 @@ const StockDetailChart = ({ ticker }) => {
 	};
 
 	useEffect(() => {
-		getChartData();
+		getChartData(ticker);
 	}, []);
 
 	return loading ? null : (

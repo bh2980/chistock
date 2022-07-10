@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { getTrendingTickers, postNewsList } from 'lib/fetchData';
 
 const TrendingNewsList = () => {
+	//CHECK : 화면 표시를 위해 loading 시켜놓음. 리팩토링 시 제거
 	const [isLoading, setIsLoading] = useState(true);
 	const [trendingList, setTrendingList] = useState(null);
 	const [selectedSide, setSelectedSide] = useState('Trending');
@@ -14,10 +15,10 @@ const TrendingNewsList = () => {
 		setSelectedSide(e.currentTarget.textContent);
 	};
 
-	//TODO 이장훈 : setIsLoading 시기 애매.
 	const getTrending = async () => {
 		const { data } = await getTrendingTickers();
 		setTrendingList(data);
+		//CHECK : 화면 표시를 위해 loading 시켜놓음. 리팩토링 시 제거
 		setIsLoading(false);
 	};
 
