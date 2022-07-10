@@ -2,14 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './styles/index.scss';
 import images from 'assets/images.js';
-import dummy from 'assets/dummy';
+import { getTrendingTickers } from 'lib/fetchData';
 
 const Header = () => {
+	//CHECK : 화면 표시를 위해 loading 시켜놓음. 리팩토링 시 제거
+	const [loading, setLoading] = useState(true);
 	const [headerList, setHeaderList] = useState([]);
 
-	const getHeaderList = () => {
-		const response = dummy.TrendingStock[0].quotes;
-		const newHeaderList = response.map(item => {
+	const getHeaderList = async () => {
+		const { data } = await getTrendingTickers();
+		const newHeaderList = data.map(item => {
 			const { symbol, regularMarketChange, regularMarketChangePercent } = item;
 			return {
 				symbol,
@@ -18,11 +20,13 @@ const Header = () => {
 			};
 		});
 
-		return newHeaderList;
+		setHeaderList(newHeaderList);
+		//CHECK : 화면 표시를 위해 loading 시켜놓음. 리팩토링 시 제거
+		setLoading(false);
 	};
 
 	useEffect(() => {
-		setHeaderList(getHeaderList());
+		getHeaderList();
 	}, []);
 
 	return (
@@ -45,36 +49,40 @@ const Header = () => {
 				</div>
 			</div>
 			<div className="header-bottom">
-				<div className="banner">
-					{headerList.map(item => (
-						<>
-							<span className="banner-ticker">{item.symbol}</span>
-							<span className={item.regularMarketChange > 0 ? 'red-text' : 'blue-text'}>
-								{item.regularMarketChange > 0 ? '+' : null}
-								{item.regularMarketChange}
-							</span>
-							<span className={item.regularMarketChange > 0 ? 'red-text' : 'blue-text'}>
-								{item.regularMarketChange > 0 ? '+' : null}
-								{item.regularMarketChangePercent}%
-							</span>
-						</>
-					))}
-				</div>
-				<div className="banner2">
-					{headerList.map(item => (
-						<>
-							<span className="banner-ticker">{item.symbol}</span>
-							<span className={item.regularMarketChange > 0 ? 'red-text' : 'blue-text'}>
-								{item.regularMarketChange > 0 ? '+' : null}
-								{item.regularMarketChange}
-							</span>
-							<span className={item.regularMarketChange > 0 ? 'red-text' : 'blue-text'}>
-								{item.regularMarketChange > 0 ? '+' : null}
-								{item.regularMarketChangePercent}%
-							</span>
-						</>
-					))}
-				</div>
+				{loading ? null : (
+					<>
+						<div className="banner">
+							{headerList.map(item => (
+								<>
+									<span className="banner-ticker">{item.symbol}</span>
+									<span className={item.regularMarketChange > 0 ? 'red-text' : 'blue-text'}>
+										{item.regularMarketChange > 0 ? '+' : null}
+										{item.regularMarketChange}
+									</span>
+									<span className={item.regularMarketChange > 0 ? 'red-text' : 'blue-text'}>
+										{item.regularMarketChange > 0 ? '+' : null}
+										{item.regularMarketChangePercent}%
+									</span>
+								</>
+							))}
+						</div>
+						<div className="banner2">
+							{headerList.map(item => (
+								<>
+									<span className="banner-ticker">{item.symbol}</span>
+									<span className={item.regularMarketChange > 0 ? 'red-text' : 'blue-text'}>
+										{item.regularMarketChange > 0 ? '+' : null}
+										{item.regularMarketChange}
+									</span>
+									<span className={item.regularMarketChange > 0 ? 'red-text' : 'blue-text'}>
+										{item.regularMarketChange > 0 ? '+' : null}
+										{item.regularMarketChangePercent}%
+									</span>
+								</>
+							))}
+						</div>
+					</>
+				)}
 			</div>
 		</div>
 	);
