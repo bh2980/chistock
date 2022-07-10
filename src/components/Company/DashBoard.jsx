@@ -8,6 +8,7 @@ import RecommendTrend from './DashBoardItem/RecommendTrend';
 import './styles/DashBoard.scss';
 
 const DashBoard = ({ ticker }) => {
+	//CHECK : .env에 FH 토큰 생성
 	const token = process.env.REACT_APP_FH_API_KEY;
 	//CHECK : 화면 표시를 위해 loading 시켜놓음. 리팩토링 시 제거
 	const [loading, setLoading] = useState(true);
