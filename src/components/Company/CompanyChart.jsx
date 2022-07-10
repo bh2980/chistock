@@ -1,6 +1,6 @@
-import dummy from 'assets/dummy';
 import StockDetailChart from 'components/Stock/StockDetailChart';
 import StockItem from 'components/Stock/StockItem';
+import { getStockSummary } from 'lib/fetchData';
 import React, { useState, useEffect } from 'react';
 import './styles/CompanyChart.scss';
 
@@ -8,8 +8,9 @@ const CompanyChart = ({ ticker }) => {
 	const [companyInfo, setCompanyInfo] = useState(null);
 	const [loading, setLoading] = useState(true);
 
-	const getCompanyInfo = ticker => {
-		const { price, quoteType } = dummy.AppleSummary;
+	const getCompanyInfo = async ticker => {
+		const { data } = await getStockSummary(ticker);
+		const { quoteType, price } = data;
 		const { shortName, symbol } = quoteType;
 		const { regularMarketChange, regularMarketChangePercent, regularMarketPrice } = price;
 
@@ -20,11 +21,12 @@ const CompanyChart = ({ ticker }) => {
 			regularMarketChangePercent: regularMarketChangePercent.raw,
 			regularMarketPrice: regularMarketPrice.raw,
 		});
+
+		setLoading(false);
 	};
 
 	useEffect(() => {
 		getCompanyInfo(ticker);
-		setLoading(false);
 	}, []);
 
 	return loading ? null : (

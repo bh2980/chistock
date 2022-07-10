@@ -2,36 +2,21 @@ import StockTileList from 'components/Stock/StockTileList';
 import React, { useEffect, useState } from 'react';
 import './styles/RecommendList.scss';
 import { useHistory } from 'react-router-dom';
-import dummy from 'assets/dummy';
+import { getRecommendations } from 'lib/fetchData';
 
-const RecommendList = ({ ticker }) => {
+const RecommendList = ({ symbol }) => {
 	let history = useHistory();
 
 	const [recommendList, setRecommendList] = useState([]);
 	const [loading, setLoading] = useState(true);
 
-	const getRecommendList = ticker => {
-		const response = dummy.AppleRecommend[0].quotes;
-		const newRecommendList = response.map(item => {
-			const {
-				regularMarketChange,
-				regularMarketChangePercent,
-				regularMarketPrice,
-				symbol,
-				shortName,
-			} = item;
-			return {
-				data: {
-					regularMarketChange,
-					regularMarketChangePercent,
-					regularMarketPrice,
-					symbol,
-					shortName,
-				},
-			};
-		});
+	const getRecommendList = async symbol => {
+		const { data } = await getRecommendations(symbol);
 
-		setRecommendList(newRecommendList);
+		console.log('recommend', data);
+
+		setRecommendList(data);
+		setLoading(false);
 	};
 
 	const onClick = (e, index) => {
@@ -39,8 +24,7 @@ const RecommendList = ({ ticker }) => {
 	};
 
 	useEffect(() => {
-		getRecommendList(ticker);
-		setLoading(false);
+		getRecommendList(symbol);
 	}, []);
 
 	return loading ? null : (

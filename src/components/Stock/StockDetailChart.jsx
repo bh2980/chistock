@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import images from 'assets/images';
 import ReactApexChart from 'react-apexcharts';
 import './styles/StockDetailChart.scss';
-import dummy from 'assets/dummy';
+import { getStockChart } from 'lib/fetchData';
 
 const StockDetailChart = ({ ticker }) => {
 	const [loading, setLoading] = useState(true);
@@ -18,8 +18,10 @@ const StockDetailChart = ({ ticker }) => {
 		setIsCandle(current => !current);
 	};
 
-	const getChartData = ticker => {
-		const { timestamp, indicators } = dummy.AppleChart[0];
+	const getChartData = async ticker => {
+		//TODO 이장훈 : interval 처리
+		const { data } = await getStockChart(ticker);
+		const { timestamp, indicators } = data;
 		const { high, open, close, low, volume } = indicators.quote[0];
 		const regularMarketTime = timestamp[timestamp.length - 1];
 
@@ -46,6 +48,7 @@ const StockDetailChart = ({ ticker }) => {
 		setCandleInfo(newCandle.slice(0, 40));
 		setVolumeInfo(newVolume.slice(0, 40));
 		setCompanyName(ticker);
+		setLoading(false);
 	};
 
 	const series = [
@@ -156,7 +159,6 @@ const StockDetailChart = ({ ticker }) => {
 
 	useEffect(() => {
 		getChartData();
-		setLoading(false);
 	}, []);
 
 	return loading ? null : (
@@ -184,6 +186,7 @@ const StockDetailChart = ({ ticker }) => {
 						<li>
 							<button onClick={chartChange}>
 								{isCandle ? (
+									//TODO 이장훈 : svg 이미지 불러오도록 깔끔하게
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 302 275.16">
 										<g id="레이어_2" data-name="레이어 2">
 											<g id="레이어_1-2" data-name="레이어 1">
