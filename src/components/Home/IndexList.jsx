@@ -1,35 +1,19 @@
-import dummy from 'assets/dummy';
 import './styles/IndexList.scss';
 import StockTileList from 'components/Stock/StockTileList';
 import React, { useEffect, useState } from 'react';
+import { getMarketSummary } from 'lib/fetchData';
 
 const IndexList = ({ setViewStock }) => {
 	const [isLoading, setIsLoading] = useState(true);
 	const [marketSummary, setMarketSummary] = useState(null);
 
-	const getMarketItem = () => {
-		const marketSum = dummy.MarketSummary;
-		const newMarketSum = marketSum.map(marketItem => {
-			const { symbol, shortName, spark } = marketItem;
-			const { timestamp, previousClose, close } = spark;
-			const regularMarketPrice = close[close.length - 1];
-			const regularMarketChange = regularMarketPrice - previousClose;
-			const regularMarketChangePercent = regularMarketChange / previousClose;
+	const getMarketItem = async () => {
+		const { data } = await getMarketSummary();
 
-			return {
-				data: {
-					symbol,
-					shortName,
-					regularMarketPrice,
-					regularMarketChange,
-					regularMarketChangePercent,
-				},
-				chart: { shortName, timestamp, close },
-			};
-		});
-
-		setMarketSummary(newMarketSum.slice(0, 5));
-		setViewStock(newMarketSum[0]);
+		//TODO 이장훈 : 임시로 데이터 잘라서 표현 중 -> 주기적으로 돌도록 수정할 것.
+		setMarketSummary(data.slice(0, 5));
+		setViewStock(data[0]);
+		setIsLoading(false);
 	};
 
 	const onClick = (e, index) => {
@@ -38,7 +22,6 @@ const IndexList = ({ setViewStock }) => {
 
 	useEffect(() => {
 		getMarketItem();
-		setIsLoading(false);
 	}, []);
 
 	return isLoading ? null : (

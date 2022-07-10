@@ -1,8 +1,8 @@
-import dummy from 'assets/dummy';
 import './styles/TrendingNewsList.scss';
 import StockItem from 'components/Stock/StockItem';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { getTrendingTickers, postNewsList } from 'lib/fetchData';
 
 const TrendingNewsList = () => {
 	const [isLoading, setIsLoading] = useState(true);
@@ -14,32 +14,21 @@ const TrendingNewsList = () => {
 		setSelectedSide(e.currentTarget.textContent);
 	};
 
-	const getTrending = () => {
-		const newTrending = dummy.TrendingStock[0].quotes;
-		setTrendingList(newTrending);
+	//TODO 이장훈 : setIsLoading 시기 애매.
+	const getTrending = async () => {
+		const { data } = await getTrendingTickers();
+		setTrendingList(data);
+		setIsLoading(false);
 	};
 
-	const getNews = () => {
-		const newNews = dummy.MarketNews.stream.map(anews => {
-			const { content } = anews;
-			const { pubDate, title } = content;
-			return {
-				...anews,
-				content: {
-					...content,
-					pubDate: pubDate.replace('T', ' ').replace('Z', ''),
-					title: title.length > 70 ? title.slice(0, 50) + '...' : title,
-				},
-			};
-		});
-
-		setNews(newNews);
+	const getNews = async () => {
+		const { data } = await postNewsList();
+		setNews(data);
 	};
 
 	useEffect(() => {
 		getTrending();
 		getNews();
-		setIsLoading(false);
 	}, []);
 
 	return isLoading ? null : (
