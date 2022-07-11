@@ -1,13 +1,15 @@
+import { getStockSummary } from 'lib/fetchData';
 import React, { useState, useEffect } from 'react';
 import ReactApexChart from 'react-apexcharts';
 
-const RecommendTrend = ({ dashBoardInfo }) => {
+const RecommendTrend = ({ ticker }) => {
 	const [isLoad, setIsLoad] = useState(true);
 	const [recommendSeries, setRecommendSeries] = useState();
 	const [recommendOptions, setRecommendOptions] = useState();
 
-	const getRecommendTrend = () => {
-		const { recommendationTrend } = dashBoardInfo;
+	const getRecommendTrend = async ticker => {
+		const { data } = await getStockSummary(ticker);
+		const { recommendationTrend } = data;
 
 		const tempRecommendInfo = {
 			period: [],
@@ -113,11 +115,11 @@ const RecommendTrend = ({ dashBoardInfo }) => {
 		};
 
 		setRecommendOptions(options);
+		setIsLoad(false);
 	};
 
 	useEffect(() => {
-		getRecommendTrend();
-		setIsLoad(false);
+		getRecommendTrend(ticker);
 	}, []);
 
 	return isLoad ? null : (

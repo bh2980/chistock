@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import images from 'assets/images';
 import ReactApexChart from 'react-apexcharts';
-import './css/StockDetailChart.scss';
+import './styles/StockDetailChart.scss';
 
-const StockLineChart = ({ chartData, setIsLineChart, canCandle }) => {
+const StockLineChart = ({ chartData }) => {
 	const [updateDate, setUpdateDate] = useState(0);
 	const [lineInfo, setLineInfo] = useState([]);
 

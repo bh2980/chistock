@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import images from 'assets/images';
 import ReactApexChart from 'react-apexcharts';
-import './css/StockDetailChart.scss';
+import './styles/StockDetailChart.scss';
+import { getStockChart } from 'lib/fetchData';
 
-const StockDetailChart = ({ chartData }) => {
+const StockDetailChart = ({ ticker }) => {
+	const [loading, setLoading] = useState(true);
 	const [companyName, setCompanyName] = useState('');
 	const [updateDate, setUpdateDate] = useState(0);
 	const [minChart, setMinChart] = useState(0);
@@ -16,8 +18,12 @@ const StockDetailChart = ({ chartData }) => {
 		setIsCandle(current => !current);
 	};
 
-	const getChartData = () => {
-		const { shortName, timestamp, open, high, low, close, volume, regularMarketTime } = chartData;
+	const getChartData = async ticker => {
+		//TODO 이장훈 : interval 처리
+		const { data } = await getStockChart(ticker);
+		const { timestamp, indicators } = data;
+		const { high, open, close, low, volume } = indicators.quote[0];
+		const regularMarketTime = timestamp[timestamp.length - 1];
 
 		const date = new Date(regularMarketTime);
 		const uDate = date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
@@ -41,7 +47,8 @@ const StockDetailChart = ({ chartData }) => {
 		setMaxVolume(Math.max(...volume) * 3);
 		setCandleInfo(newCandle.slice(0, 40));
 		setVolumeInfo(newVolume.slice(0, 40));
-		setCompanyName(shortName);
+		setCompanyName(ticker);
+		setLoading(false);
 	};
 
 	const series = [
@@ -151,10 +158,10 @@ const StockDetailChart = ({ chartData }) => {
 	};
 
 	useEffect(() => {
-		getChartData();
+		getChartData(ticker);
 	}, []);
 
-	return (
+	return loading ? null : (
 		<div className="chart-container shadow-box">
 			<div className="period-selector">
 				<div>
@@ -179,6 +186,7 @@ const StockDetailChart = ({ chartData }) => {
 						<li>
 							<button onClick={chartChange}>
 								{isCandle ? (
+									//TODO 이장훈 : svg 이미지 불러오도록 깔끔하게
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 302 275.16">
 										<g id="레이어_2" data-name="레이어 2">
 											<g id="레이어_1-2" data-name="레이어 1">

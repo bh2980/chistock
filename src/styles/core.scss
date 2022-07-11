@@ -60,3 +60,14 @@ button {
 	background-color: rgba(0, 0, 0, 0.2);
 	border-radius: 5px;
 }
+
+.vertical-line {
+	width: 1px;
+	background-color: #0c2a6b;
+	margin: 20px;
+	border-radius: 2px;
+
+	@media screen and (max-width: 820px) {
+		display: none;
+	}
+}

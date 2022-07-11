@@ -45,7 +45,7 @@ export const getTrendingTickers = () =>
 			params: { region: 'US' },
 		})
 		.then(response => {
-			return response.data.finance.result[0].quotes;
+			return { data: response.data.finance.result[0].quotes };
 		});
 
 export const getStockSummary = symbol =>

@@ -1,6 +1,6 @@
 import React from 'react';
 import StockItem from './StockItem';
-import './css/StockTileList.scss';
+import './styles/StockTileList.scss';
 
 const StockTileList = ({ stockList, onClick }) => {
 	return (

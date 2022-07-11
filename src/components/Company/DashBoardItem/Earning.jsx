@@ -1,19 +1,20 @@
+import { getStockSummary } from 'lib/fetchData';
 import React, { useState, useEffect } from 'react';
 import ReactApexChart from 'react-apexcharts';
 
-const Earning = ({ dashBoardInfo }) => {
+const Earning = ({ ticker }) => {
 	const [isLoad, setIsLoad] = useState(true);
 	const [earningSeries, setEarningSeries] = useState();
 	const [earningOptions, setEarningOptions] = useState();
 
-	const getEarningData = () => {
-		const { earnings } = dashBoardInfo;
+	const getEarningData = async ticker => {
+		const { data } = await getStockSummary(ticker);
+		const { earnings } = data;
 		const { earningsChart } = earnings;
 		const {
 			currentQuarterEstimate,
 			currentQuarterEstimateDate,
 			currentQuarterEstimateYear,
-			earningsDate,
 			quarterly,
 		} = earningsChart;
 
@@ -65,11 +66,11 @@ const Earning = ({ dashBoardInfo }) => {
 
 		setEarningSeries(series);
 		setEarningOptions(options);
+		setIsLoad(false);
 	};
 
 	useEffect(() => {
-		getEarningData();
-		setIsLoad(false);
+		getEarningData(ticker);
 	}, []);
 
 	return isLoad ? null : (

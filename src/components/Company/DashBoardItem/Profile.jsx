@@ -1,7 +1,8 @@
+import { getStockSummary } from 'lib/fetchData';
 import React, { useState, useEffect } from 'react';
-import '../css/Profile.scss';
+import './styles/Profile.scss';
 
-const Profile = ({ companyInfo }) => {
+const Profile = ({ ticker }) => {
 	const [isLoad, setIsLoad] = useState(true);
 	const [isFold, setIsFold] = useState(true);
 	const [profile, setProfile] = useState();
@@ -10,26 +11,35 @@ const Profile = ({ companyInfo }) => {
 		setIsFold(current => !current);
 	};
 
-	const getProfile = () => {
-		const { data } = companyInfo;
-		const { website } = data;
+	const getProfile = async ticker => {
+		const { data } = await getStockSummary(ticker);
+		const { quoteType, summaryProfile } = data;
+		const { sector, longBusinessSummary, website, industry, country } = summaryProfile;
+		const { shortName, symbol } = quoteType;
 
-		const newProfile = { ...data, website: website.slice(8) };
-		setProfile(newProfile);
+		console.log(shortName, symbol);
+
+		setProfile({
+			symbol,
+			shortName,
+			sector,
+			summary: longBusinessSummary,
+			website,
+			industry,
+			country,
+		});
+
+		setIsLoad(false);
 	};
 
 	useEffect(() => {
-		getProfile();
-		setIsLoad(false);
+		getProfile(ticker);
 	}, []);
 	return isLoad ? null : (
 		<div className="profile-wrapper">
 			<div className="profile-title">
-				<img className="profile-logo" src={profile.logo} alt={profile.shortName} />
-				<div>
-					<div className="profile-name">{profile.shortName}</div>
-					<div className="profile-symbol">{profile.symbol}</div>
-				</div>
+				<div className="profile-name">{profile.shortName}</div>
+				<div className="profile-symbol">{profile.symbol}</div>
 			</div>
 			<table className="profile-table">
 				<tbody>

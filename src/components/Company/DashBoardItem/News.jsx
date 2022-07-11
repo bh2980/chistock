@@ -1,17 +1,16 @@
+import { getCompanyNews } from 'lib/fetchData';
 import React, { useEffect, useState } from 'react';
-import '../css/News.scss';
+import './styles/News.scss';
 
-const News = ({ companyInfo }) => {
+const News = ({ ticker }) => {
 	const [news, setNews] = useState();
 	const [isLoad, setIsLoad] = useState(true);
 
-	const getNews = () => {
-		const { data } = companyInfo;
-		const { news } = data;
+	const getNews = async () => {
+		//TODO 이장훈 : 임시 날짜 변경
+		const { data } = await getCompanyNews('20220202', '20220202', ticker);
 
-		console.log(news);
-
-		const newNews = news.map(anews => {
+		const newNews = data.map(anews => {
 			const { datetime } = anews;
 			const date = new Date(datetime);
 			const newDateTime =
@@ -34,11 +33,11 @@ const News = ({ companyInfo }) => {
 		});
 
 		setNews(newNews.slice(0, 4));
+		setIsLoad(false);
 	};
 
 	useEffect(() => {
 		getNews();
-		setIsLoad(false);
 	}, []);
 
 	return isLoad ? null : (
