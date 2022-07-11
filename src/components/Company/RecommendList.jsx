@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { getRecommendations } from 'lib/fetchData';
 
 const RecommendList = ({ symbol }) => {
-	let history = useHistory();
+	const history = useHistory();
 
 	const [recommendList, setRecommendList] = useState([]);
 	//CHECK : 화면 표시를 위해 loading 시켜놓음. 리팩토링 시 제거
