@@ -1,11 +1,12 @@
+import { getStockSummary } from 'lib/fetchData';
 import React, { useState, useEffect } from 'react';
 import ReactApexChart from 'react-apexcharts';
 import './styles/Financial.scss';
 
-const Financial = ({ dashBoardInfo }) => {
+const Financial = ({ ticker }) => {
 	const [isLoad, setIsLoad] = useState(true);
 	const [financePeriod, setFinancePeriod] = useState('Quarter');
-	const [financialData, setFinanciaData] = useState();
+	const [financialData, setFinanciaData] = useState(null);
 	const [financialSeries, setFinanciaSeries] = useState();
 	const [financialOptions, setFinanciaOptions] = useState();
 
@@ -97,8 +98,9 @@ const Financial = ({ dashBoardInfo }) => {
 		});
 	};
 
-	const getFinancialData = () => {
-		const { earnings } = dashBoardInfo;
+	const getFinancialData = async ticker => {
+		const { data } = await getStockSummary(ticker);
+		const { earnings } = data;
 		const { financialsChart } = earnings;
 		const { quarterly, yearly } = financialsChart;
 
@@ -122,19 +124,23 @@ const Financial = ({ dashBoardInfo }) => {
 			return finaince.revenue.raw;
 		});
 
-		return {
+		setFinanciaData({
 			quarterly: { xlabel: quarterXLabel, earning: quarterEarning, revenue: quarterRevenue },
 			yearly: { xlabel: yearXLabel, earning: yearEarning, revenue: yearRevenue },
-		};
+		});
 	};
 
 	useEffect(() => {
-		const data = getFinancialData();
-		setFinanciaData(data);
-		financeSeriesSet(data.quarterly.earning, data.quarterly.revenue);
-		financeOptionSet(data.quarterly.xlabel);
-		setIsLoad(false);
+		getFinancialData(ticker);
 	}, []);
+
+	useEffect(() => {
+		if (!financialData) return;
+
+		financeSeriesSet(financialData.quarterly.earning, financialData.quarterly.revenue);
+		financeOptionSet(financialData.quarterly.xlabel);
+		setIsLoad(false);
+	}, [financialData]);
 
 	return isLoad ? null : (
 		<>
