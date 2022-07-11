@@ -1,4 +1,3 @@
-import { getCompanyNews, getStockProfile, getStockSummary } from 'lib/fetchData';
 import Earning from './DashBoardItem/Earning';
 import Financial from './DashBoardItem/Financial';
 import News from './DashBoardItem/News';
