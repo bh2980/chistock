@@ -3,16 +3,7 @@
 
 	.profile-title {
 		display: flex;
-		align-items: center;
-
-		.profile-logo {
-			width: 60px;
-			padding: 10px;
-			background-color: white;
-			border-radius: 100%;
-			border: 2px solid #05325c;
-			margin-right: 15px;
-		}
+		flex-direction: column;
 
 		.profile-name {
 			font-size: 1.7em;
