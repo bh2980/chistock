@@ -15,7 +15,6 @@ const Earning = ({ ticker }) => {
 			currentQuarterEstimate,
 			currentQuarterEstimateDate,
 			currentQuarterEstimateYear,
-			earningsDate,
 			quarterly,
 		} = earningsChart;
 
