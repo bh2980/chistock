@@ -20,8 +20,8 @@ const preview: Preview = {
     // NOTE: requires setting "darkMode" to "class" in your tailwind config
     withThemeByClassName({
       themes: {
-        light: "light",
-        dark: "dark",
+        light: "theme-light",
+        dark: "theme-dark",
       },
       defaultTheme: "light",
     }),
