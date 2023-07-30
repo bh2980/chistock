@@ -1,4 +1,10 @@
 /** @type {import('tailwindcss').Config} */
+import color from "./colorPalette";
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+// const { createThemes } = require("tw-colors");
+import { createThemes } from "tw-colors";
+
 module.exports = {
   mode: "jit",
   content: [
@@ -30,7 +36,7 @@ module.exports = {
     borderRadius: {
       none: "0rem",
       xs: "2rem",
-      xs: "4rem",
+      s: "4rem",
       m: "8rem",
       l: "16rem",
       circle: "50%",
@@ -48,93 +54,7 @@ module.exports = {
       s: "1rem",
       m: "3rem",
     },
-    colors: {
-      white: "#F9F9FB",
-      black: "#121212",
-      transparent: "rgba(0,0,0,0)",
-      blue: {
-        DEFAULT: "#1A8FFF", //400
-        light: "#80C1FF", //200
-        dark: "#005CB3", //600
-        50: "#E5F3FF",
-        100: "#B2DAFF",
-        200: "#80C1FF",
-        300: "#4DA8FF",
-        400: "#1A8FFF",
-        500: "#0076E5",
-        600: "#005CB3",
-        700: "#004280",
-        800: "#00274D",
-        900: "#000D1A",
-      },
-      red: {
-        DEFAULT: "#FF1A1D", //400
-        light: "#FF4D4F", //300
-        dark: "#800002", //700
-        50: "#FFE5E6",
-        100: "#FFB2B4",
-        200: "#FF8082",
-        300: "#FF4D4F",
-        400: "#FF1A1D",
-        500: "#E50004",
-        600: "#B20003",
-        700: "#800002",
-        800: "#4D0001",
-        900: "#1A0000",
-      },
-      yellow: {
-        DEFAULT: "#FFC14D", //300
-        50: "#FFF6E5",
-        100: "#FFE4B2",
-        200: "#FFD280",
-        300: "#FFC14D",
-        400: "#FFAF1A",
-        500: "#E59500",
-        600: "#B27400",
-        700: "#805300",
-        800: "#4D3200",
-        900: "#1A1100",
-      },
-      gray: {
-        50: "#F2F5F9",
-        100: "#CED9E8",
-        200: "#ABBFD8",
-        300: "#88A4C8",
-        400: "#6589B8",
-        500: "#4A6FA1",
-        600: "#3A577E",
-        700: "#2A3F5B",
-        800: "#1A2738",
-        900: "#0A0E15",
-      },
-      green: {
-        DEFAULT: "#00E56F", //500
-        50: "#E5FFF2",
-        100: "#B2FFD7",
-        200: "#80FFBD",
-        300: "#4DFFA3",
-        400: "#1AFF88",
-        500: "#00E56F",
-        600: "#00B256",
-        700: "#00803E",
-        800: "#004D25",
-        900: "#001A0C",
-      },
-
-      pink: {
-        DEFAULT: "#FF1A90", //400
-        50: "#FFE5F3",
-        100: "#FFB2DA",
-        200: "#FF80C1",
-        300: "#FF4DA9",
-        400: "#FF1A90",
-        500: "#E50077",
-        600: "#B2005C",
-        700: "#800042",
-        800: "#4D0028",
-        900: "#1A000D",
-      },
-    },
+    colors: {},
     extend: {
       width: {
         "desktop-4": "336rem",
@@ -143,6 +63,133 @@ module.exports = {
       },
     },
   },
-
-  plugins: [],
+  plugins: [
+    //Color - State - Background/Content
+    createThemes({
+      light: {
+        primary: {
+          DEFAULT: color.blue[50],
+          on: color.white,
+          fixed: {
+            DEFAULT: color.blue[50],
+            on: color.white,
+          },
+        },
+        secondary: {
+          DEFAULT: color.blue[20],
+          on: color.white,
+          fixed: {
+            DEFAULT: color.blue[20],
+            on: color.white,
+          },
+        },
+        tertiary: {
+          DEFAULT: color.blue[70],
+          on: color.blue[10],
+          fixed: {
+            DEFAULT: color.blue[70],
+            on: color.blue[10],
+          },
+        },
+        surface: {
+          DEFAULT: color.neutral[90],
+          variant: {
+            DEFAULT: color.white,
+            high: color.neutral[80],
+            highest: color.neutral[70],
+          },
+          on: {
+            DEFAULT: color.neutral[0],
+            variant: color.neutral[20],
+          },
+        },
+        outline: {
+          DEFAULT: color.neutral[20],
+          variant: color.neutral[80],
+        },
+        red: {
+          DEFAULT: color.red[50],
+          on: color.white,
+          variant: {
+            DEFAULT: color.red[30],
+            on: color.white,
+          },
+        },
+        yellow: {
+          DEFAULT: color.yellow[50],
+          on: color.neutral[0],
+        },
+        green: {
+          DEFAULT: color.green[50],
+          on: color.neutral[0],
+        },
+        magenta: {
+          DEFAULT: color.magenta[50],
+          on: color.neutral[0],
+        },
+      },
+      dark: {
+        primary: {
+          DEFAULT: color.blue[60],
+          on: color.blue[90],
+          fixed: {
+            DEFAULT: color.blue[50],
+            on: color.white,
+          },
+        },
+        secondary: {
+          DEFAULT: color.blue[80],
+          on: color.neutral[10],
+          fixed: {
+            DEFAULT: color.blue[20],
+            on: color.white,
+          },
+        },
+        tertiary: {
+          DEFAULT: color.blue[10],
+          on: color.blue[90],
+          fixed: {
+            DEFAULT: color.blue[70],
+            on: color.blue[10],
+          },
+        },
+        surface: {
+          DEFAULT: color.blue[5],
+          variant: {
+            DEFAULT: color.neutral[10],
+            high: color.neutral[20],
+            highest: color.neutral[30],
+          },
+          on: {
+            DEFAULT: color.white,
+            variant: color.neutral[60],
+          },
+        },
+        outline: {
+          DEFAULT: color.neutral[60],
+          variant: color.neutral[20],
+        },
+        red: {
+          DEFAULT: color.red[60],
+          on: color.neutral[0],
+          variant: {
+            DEFAULT: color.red[80],
+            on: color.neutral[0],
+          },
+        },
+        yellow: {
+          DEFAULT: color.yellow[60],
+          on: color.neutral[0],
+        },
+        green: {
+          DEFAULT: color.green[40],
+          on: color.neutral[0],
+        },
+        magenta: {
+          DEFAULT: color.magenta[60],
+          on: color.neutral[0],
+        },
+      },
+    }),
+  ],
 };

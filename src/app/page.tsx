@@ -1,3 +1,5 @@
+import Box from "./component/atom/Box";
+
 export default function Home() {
-  return <main>Hello, Im Next 13</main>;
+  return <Box />;
 }
