@@ -1,8 +1,11 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 
-const inter = Inter({ subsets: ["latin"] });
+const Pretandard = localFont({
+  src: "./fonts/PretendardVariable.woff2",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "chistock",
@@ -16,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" className="theme-light">
-      <body className={inter.className}>{children}</body>
+      <body className={Pretandard.className}>{children}</body>
     </html>
   );
 }
