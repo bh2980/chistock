@@ -1,7 +1,7 @@
 function Box() {
   return (
     <div className="flex">
-      <main className="w-[100px] h-[100px] bg-primary text-primary-on">
+      <main className="w-[100px] h-[100px] bg-primary text-primary-on text-2xl font-bold">
         Hello, Im Next 13
       </main>
       <main className="w-[100px] h-[100px] bg-secondary text-secondary-on">
