@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import color from "./colorPalette";
+import color from "./src/constants/colorPalette";
 
 import { createThemes } from "tw-colors";
 
@@ -16,6 +16,10 @@ module.exports = {
       l: ["20rem", "24rem"],
       xl: ["24rem", "32rem"],
       "2xl": ["36rem", "40rem"],
+    },
+    fontWeight: {
+      regular: "400",
+      bold: "800",
     },
     spacing: {
       "3xs": "2rem",
