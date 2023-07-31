@@ -1,18 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 import color from "./colorPalette";
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-// const { createThemes } = require("tw-colors");
 import { createThemes } from "tw-colors";
 
 module.exports = {
-  mode: "jit",
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: "class",
   theme: {
     fontSize: {
       xs: ["12rem", "16rem"],
@@ -131,7 +126,7 @@ module.exports = {
       dark: {
         primary: {
           DEFAULT: color.blue[60],
-          on: color.blue[90],
+          on: color.neutral[0],
           fixed: {
             DEFAULT: color.blue[50],
             on: color.white,
