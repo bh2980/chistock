@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" className="theme-light">
-      <body className={Pretandard.className}>{children}</body>
+      <body className={`${Pretandard.className} text-m`}>{children}</body>
     </html>
   );
 }
