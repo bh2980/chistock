@@ -19,7 +19,7 @@ module.exports = {
     },
     fontWeight: {
       regular: "400",
-      bold: "800",
+      bold: "700",
     },
     spacing: {
       "3xs": "2rem",
