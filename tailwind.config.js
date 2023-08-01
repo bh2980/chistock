@@ -53,7 +53,9 @@ module.exports = {
       s: "1rem",
       m: "3rem",
     },
-    colors: {},
+    colors: {
+      transparent: color.transparent,
+    },
     extend: {
       width: {
         "desktop-4": "336rem",
