@@ -1,5 +1,3 @@
-import Box from "@atoms/Box";
-
 export default function Home() {
-  return <Box />;
+  return <div>Hello, Im Next 13</div>;
 }
