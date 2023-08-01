@@ -38,7 +38,7 @@ module.exports = {
       s: "4rem",
       m: "8rem",
       l: "16rem",
-      circle: "50%",
+      circle: "9999rem",
     },
     boxShadow: {
       none: "",
@@ -53,7 +53,9 @@ module.exports = {
       s: "1rem",
       m: "3rem",
     },
-    colors: {},
+    colors: {
+      transparent: color.transparent,
+    },
     extend: {
       width: {
         "desktop-4": "336rem",
