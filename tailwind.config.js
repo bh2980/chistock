@@ -38,7 +38,7 @@ module.exports = {
       s: "4rem",
       m: "8rem",
       l: "16rem",
-      circle: "50%",
+      circle: "9999rem",
     },
     boxShadow: {
       none: "",
