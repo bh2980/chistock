@@ -37,21 +37,19 @@ export const textVariants = cva("", {
   },
 });
 
-type TextProps<T extends ElementType> = {
+type TextPropsType<T extends ElementType> = {
   as?: T;
 } & VariantProps<typeof textVariants> &
   Omit<ComponentPropsWithRef<T>, keyof VariantProps<typeof textVariants>>;
 
 type TextComponentType = <C extends React.ElementType = "span">(
-  props: TextProps<C>
+  props: TextPropsType<C>
 ) => React.ReactNode | null;
 
-const Text: TextComponentType = forwardRef(function Text<
-  T extends ElementType = "span"
->(
-  { children, as, color, size, weight, ...props }: TextProps<T>,
-  ref: ComponentPropsWithRef<T>
-) {
+const TextComponent = <T extends ElementType = "span">(
+  { children, as, color, size, weight, ...props }: TextPropsType<T>,
+  ref: React.ComponentPropsWithRef<T>["ref"]
+) => {
   const TextComponent = as || "span";
 
   return (
@@ -63,6 +61,8 @@ const Text: TextComponentType = forwardRef(function Text<
       {children}
     </TextComponent>
   );
-});
+};
+
+const Text: TextComponentType = forwardRef(TextComponent);
 
 export default Text;
