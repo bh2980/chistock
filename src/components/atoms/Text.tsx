@@ -5,7 +5,7 @@ import classMerge from "utils/classMerge";
 export const textVariants = cva("", {
   variants: {
     color: {
-      onDefault: "text-surface-on",
+      onSurface: "text-surface-on",
       onSub: "text-surface-on-variant",
       onPrimary: "text-primary-on",
       onPrimaryFixed: "text-primary-fixed-on",
@@ -31,7 +31,7 @@ export const textVariants = cva("", {
     },
   },
   defaultVariants: {
-    color: "onDefault",
+    color: "onSurface",
     size: "m",
     weight: "regular",
   },

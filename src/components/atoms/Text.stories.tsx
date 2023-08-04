@@ -12,7 +12,7 @@ const meta = {
   argTypes: {
     color: {
       options: [
-        "onDefault",
+        "onSurface",
         "onSub",
         "onPrimary",
         "onPrimaryFixed",
@@ -36,7 +36,7 @@ const meta = {
     },
   },
   args: {
-    color: "onDefault",
+    color: "onSurface",
     size: "m",
     weight: "regular",
   },
