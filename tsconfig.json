@@ -22,9 +22,16 @@
     "baseUrl": "./src",
     "paths": {
       "@constants/*": ["./constants/*"],
-      "@atoms/*": ["./components/atoms/*"]
+      "@atoms/*": ["./components/atoms/*"],
+      "@assets/*": ["./assets/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "global.d.ts",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }
