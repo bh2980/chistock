@@ -1,12 +1,12 @@
-import clsx from "clsx";
+import { cx } from "class-variance-authority";
 import { twMerge } from "tailwind-merge";
 
-const classMerge = (classes: string) => {
+const classMerge = (classes: string | string[]) => {
   const fontSizePattern =
     /(text-(xs|s|m|l|xl|2xl))[ ]+|(text-(xs|s|m|l|xl|2xl)$)/g;
 
-  return `${twMerge(clsx(classes.replace(fontSizePattern, "")))} ${twMerge(
-    clsx(classes.match(fontSizePattern))
+  return `${twMerge(cx(classes).replace(fontSizePattern, ""))} ${twMerge(
+    cx(classes).match(fontSizePattern)
   )}`;
 };
 
