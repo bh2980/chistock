@@ -1,7 +1,7 @@
 import { cx } from "class-variance-authority";
 import { twMerge } from "tailwind-merge";
 
-const classMerge = (classes: string | string[]) => {
+const classMerge = (classes: string | (string | undefined)[]) => {
   const fontSizePattern =
     /(text-(xs|s|m|l|xl|2xl))[ ]+|(text-(xs|s|m|l|xl|2xl)$)/g;
 
