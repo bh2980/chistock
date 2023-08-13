@@ -1,10 +1,7 @@
 import { forwardRef } from "react";
 import { VariantProps, cva } from "class-variance-authority";
 
-import {
-  PolymorphicPropsType,
-  PolymorphicRefType,
-} from "@customTypes/polymorphicType";
+import { PolymorphicPropsType, PolymorphicRefType } from "@customTypes/polymorphicType";
 import classMerge from "@utils/classMerge";
 
 type TilePropsType = VariantProps<typeof tileVariants>;

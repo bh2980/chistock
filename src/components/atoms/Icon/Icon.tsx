@@ -56,10 +56,7 @@ const Icon = ({ icon, className, color, size, ...props }: IconPropsType) => {
 
   return (
     <Suspense fallback={<div>loading...</div>}>
-      <IconComponent
-        className={classMerge([className, iconVariants({ color, size })])}
-        {...props}
-      />
+      <IconComponent className={classMerge([className, iconVariants({ color, size })])} {...props} />
     </Suspense>
   );
 };
