@@ -11,7 +11,7 @@ type ButtonPropsType = {
   disabled?: boolean;
 } & VariantProps<typeof buttonVariants>;
 
-type ButtonComponentType = <T extends React.ElementType>(
+type ButtonComponentType = <T extends React.ElementType = "button">(
   props: PolymorphicPropsType<T, ButtonPropsType>
 ) => React.ReactNode | null;
 
@@ -70,7 +70,7 @@ const StateLayer = ({ variant }: statePropsType) => {
   );
 };
 
-const ButtonComponent = <T extends React.ElementType = "button">(
+const ButtonComponent = <T extends React.ElementType>(
   {
     children,
     as,
