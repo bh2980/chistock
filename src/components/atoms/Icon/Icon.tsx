@@ -1,7 +1,7 @@
 import { VariantProps, cva } from "class-variance-authority";
 import { Suspense, lazy, useMemo } from "react";
 
-import classMerge from "utils/classMerge";
+import classMerge from "@utils/classMerge";
 import ICON_MAP from "@constants/iconMap";
 
 const iconVariants = cva("", {
