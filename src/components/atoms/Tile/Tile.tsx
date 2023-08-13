@@ -79,7 +79,7 @@ const TileComponent = <T extends React.ElementType>(
   }: PolymorphicPropsType<T, TilePropsType>,
   ref: PolymorphicRefType<T>
 ) => {
-  const TileComponent = as || "div";
+  const TileComponent = as || "article";
 
   return (
     <TileComponent
