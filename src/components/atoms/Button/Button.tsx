@@ -3,7 +3,7 @@ import { forwardRef } from "react";
 import classMerge from "utils/classMerge";
 
 const buttonVariants = cva(
-  "relative flex justify-center items-center gap-s overflow-hidden rounded-m disabled:bg-transparent disabled:text-surface-on disabled:text-opacity-30",
+  "relative flex justify-center items-center gap-s overflow-hidden rounded-m",
   {
     variants: {
       variant: {
@@ -11,6 +11,8 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-on",
         danger: "bg-red text-red-on",
         text: "text-surface-on-variant",
+        disabled:
+          "bg-transparent text-surface-on text-opacity-30 pointer-events-none",
       },
       size: {
         s: "text-s px-m py-xs",
@@ -24,9 +26,6 @@ const buttonVariants = cva(
     },
   }
 );
-
-type ButtonPropsType = React.ButtonHTMLAttributes<HTMLButtonElement> &
-  VariantProps<typeof buttonVariants>;
 
 const stateLayerVariants = cva(
   "w-full h-full absolute opacity-0 hover:opacity-20 active:opacity-10",
@@ -46,35 +45,57 @@ const stateLayerVariants = cva(
   }
 );
 
-type statePropsType = {
-  disabled: boolean | undefined;
-} & VariantProps<typeof stateLayerVariants>;
+type ButtonPropsType<T extends React.ElementType> = {
+  as?: T;
+  disabled?: boolean;
+} & Omit<React.ComponentPropsWithRef<T>, "as" | "disabled"> &
+  VariantProps<typeof buttonVariants>;
 
-const StateLayer = ({ variant, disabled }: statePropsType) => {
+type statePropsType = VariantProps<typeof stateLayerVariants>;
+
+const StateLayer = ({ variant }: statePropsType) => {
   return (
     <div
       className={stateLayerVariants({
-        variant: disabled ? "disabled" : variant,
+        variant,
       })}
     />
   );
 };
 
-const Button = (
-  { children, className, variant, size, disabled, ...props }: ButtonPropsType,
-  ref: React.LegacyRef<HTMLButtonElement> | undefined
+const ButtonComponent = <T extends React.ElementType = "button">(
+  {
+    children,
+    as,
+    className,
+    variant,
+    size,
+    disabled,
+    ...props
+  }: ButtonPropsType<T>,
+  ref: React.ComponentPropsWithRef<T>["ref"]
 ) => {
+  const ButtonComponent = as || "button";
+
+  variant = disabled ? "disabled" : variant;
+
   return (
-    <button
+    <ButtonComponent
       ref={ref}
       className={classMerge([className, buttonVariants({ variant, size })])}
       disabled={disabled}
       {...props}
     >
       {children}
-      <StateLayer variant={variant} disabled={disabled} />
-    </button>
+      <StateLayer variant={variant} />
+    </ButtonComponent>
   );
 };
 
-export default forwardRef<HTMLButtonElement, ButtonPropsType>(Button);
+type ButtonComponentType = <T extends React.ElementType>(
+  props: ButtonPropsType<T>
+) => React.ReactNode | null;
+
+const Button: ButtonComponentType = forwardRef(ButtonComponent);
+
+export default Button;

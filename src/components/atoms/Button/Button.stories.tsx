@@ -32,6 +32,16 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const Default: Story = {
+export const ButtonTag: Story = {
+  render: (args) => <Button {...args}>Button</Button>,
+};
+
+export const ATag: Story = {
+  args: {
+    as: "a",
+    href: "https://www.naver.com",
+    variant: "primary",
+    size: "m",
+  },
   render: (args) => <Button {...args}>Button</Button>,
 };
