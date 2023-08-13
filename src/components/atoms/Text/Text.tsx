@@ -1,6 +1,6 @@
 import { VariantProps, cva } from "class-variance-authority";
 import { ComponentPropsWithRef, ElementType, forwardRef } from "react";
-import classMerge from "utils/classMerge";
+import classMerge from "@utils/classMerge";
 
 export const textVariants = cva("", {
   variants: {

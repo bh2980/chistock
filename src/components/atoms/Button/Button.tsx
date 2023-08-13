@@ -1,6 +1,6 @@
 import { VariantProps, cva } from "class-variance-authority";
 import { forwardRef } from "react";
-import classMerge from "utils/classMerge";
+import classMerge from "@utils/classMerge";
 
 const buttonVariants = cva(
   "relative flex justify-center items-center gap-s overflow-hidden rounded-m",

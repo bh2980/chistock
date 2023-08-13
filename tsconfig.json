@@ -23,7 +23,8 @@
     "paths": {
       "@constants/*": ["./constants/*"],
       "@atoms/*": ["./components/atoms/*"],
-      "@assets/*": ["./assets/*"]
+      "@assets/*": ["./assets/*"],
+      "@utils/*": ["./utils/*"]
     }
   },
   "include": [
