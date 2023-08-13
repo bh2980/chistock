@@ -11,17 +11,21 @@ const meta = {
   tags: ["autodocs"],
   argTypes: {
     variant: {
-      options: ["primary", "secondary", "danger", "ghost"],
+      options: ["primary", "secondary", "danger", "text"],
       control: { type: "radio" },
     },
     size: {
-      options: ["sm", "md"],
+      options: ["s", "m", "l"],
       control: { type: "radio" },
+    },
+    disabled: {
+      options: [true, false],
+      control: { type: "boolean" },
     },
   },
   args: {
     variant: "primary",
-    size: "md",
+    size: "m",
   },
 } satisfies Meta<typeof Button>;
 
