@@ -48,7 +48,7 @@ export const textVariants = cva("", {
   },
 });
 
-const TextComponent = <T extends React.ElementType = "span">(
+const TextComponent = <T extends React.ElementType>(
   {
     children,
     as,
