@@ -21,9 +21,10 @@
     ],
     "baseUrl": "./src",
     "paths": {
-      "@constants/*": ["./constants/*"],
       "@atoms/*": ["./components/atoms/*"],
       "@assets/*": ["./assets/*"],
+      "@constants/*": ["./constants/*"],
+      "@customTypes/*": ["./customTypes/*"],
       "@utils/*": ["./utils/*"]
     }
   },

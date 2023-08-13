@@ -1,6 +1,21 @@
-import { VariantProps, cva } from "class-variance-authority";
 import { forwardRef } from "react";
+import { VariantProps, cva } from "class-variance-authority";
+
 import classMerge from "@utils/classMerge";
+import {
+  PolymorphicPropsType,
+  PolymorphicRefType,
+} from "@customTypes/polymorphicType";
+
+type ButtonPropsType = {
+  disabled?: boolean;
+} & VariantProps<typeof buttonVariants>;
+
+type ButtonComponentType = <T extends React.ElementType = "button">(
+  props: PolymorphicPropsType<T, ButtonPropsType>
+) => React.ReactNode | null;
+
+type statePropsType = VariantProps<typeof stateLayerVariants>;
 
 const buttonVariants = cva(
   "relative flex justify-center items-center gap-s overflow-hidden rounded-m",
@@ -45,14 +60,6 @@ const stateLayerVariants = cva(
   }
 );
 
-type ButtonPropsType<T extends React.ElementType> = {
-  as?: T;
-  disabled?: boolean;
-} & Omit<React.ComponentPropsWithRef<T>, "as" | "disabled"> &
-  VariantProps<typeof buttonVariants>;
-
-type statePropsType = VariantProps<typeof stateLayerVariants>;
-
 const StateLayer = ({ variant }: statePropsType) => {
   return (
     <div
@@ -63,7 +70,7 @@ const StateLayer = ({ variant }: statePropsType) => {
   );
 };
 
-const ButtonComponent = <T extends React.ElementType = "button">(
+const ButtonComponent = <T extends React.ElementType>(
   {
     children,
     as,
@@ -72,8 +79,8 @@ const ButtonComponent = <T extends React.ElementType = "button">(
     size,
     disabled,
     ...props
-  }: ButtonPropsType<T>,
-  ref: React.ComponentPropsWithRef<T>["ref"]
+  }: PolymorphicPropsType<T, ButtonPropsType>,
+  ref: PolymorphicRefType<T>
 ) => {
   const ButtonComponent = as || "button";
 
@@ -91,10 +98,6 @@ const ButtonComponent = <T extends React.ElementType = "button">(
     </ButtonComponent>
   );
 };
-
-type ButtonComponentType = <T extends React.ElementType>(
-  props: ButtonPropsType<T>
-) => React.ReactNode | null;
 
 const Button: ButtonComponentType = forwardRef(ButtonComponent);
 
