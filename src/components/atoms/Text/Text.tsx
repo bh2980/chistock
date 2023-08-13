@@ -52,6 +52,7 @@ const TextComponent = <T extends React.ElementType>(
   {
     children,
     as,
+    className,
     color,
     size,
     weight,
@@ -64,7 +65,7 @@ const TextComponent = <T extends React.ElementType>(
   return (
     <TextComponent
       ref={ref}
-      className={classMerge(textVariants({ color, size, weight }))}
+      className={classMerge([className, textVariants({ color, size, weight })])}
       {...props}
     >
       {children}
