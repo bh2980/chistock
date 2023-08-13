@@ -1,5 +1,7 @@
-import { VariantProps, cva, cx } from "class-variance-authority";
 import * as NextImage from "next/image";
+import { VariantProps, cva } from "class-variance-authority";
+
+import classMerge from "@utils/classMerge";
 
 const ImageVariants = cva("relative overflow-hidden aspect-square", {
   variants: {
@@ -33,7 +35,7 @@ type ImagePropsType = Omit<
 
 const Image = ({ className, rounded, alt, ...props }: ImagePropsType) => {
   return (
-    <div className={cx(className, ImageVariants({ rounded }))}>
+    <div className={classMerge([className, ImageVariants({ rounded })])}>
       <NextImage.default
         fill={true}
         alt={alt}

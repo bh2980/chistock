@@ -48,15 +48,16 @@ const iconVariants = cva("", {
 
 type IconPropsType = {
   icon: keyof typeof ICON_MAP;
-} & VariantProps<typeof iconVariants>;
+} & VariantProps<typeof iconVariants> &
+  React.SVGAttributes<SVGElement>;
 
-const Icon = ({ icon, color, size, ...props }: IconPropsType) => {
+const Icon = ({ icon, className, color, size, ...props }: IconPropsType) => {
   const IconComponent = useMemo(() => lazy(ICON_MAP[icon]), [icon]);
 
   return (
     <Suspense fallback={<div>loading...</div>}>
       <IconComponent
-        className={classMerge(iconVariants({ color, size }))}
+        className={classMerge([className, iconVariants({ color, size })])}
         {...props}
       />
     </Suspense>
