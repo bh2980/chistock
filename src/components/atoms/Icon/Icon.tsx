@@ -33,6 +33,7 @@ const iconVariants = cva("", {
       onMagenta: "fill-magenta-on",
     },
     size: {
+      inherit: "w-[1em] h-[1em]",
       s: "w-s h-s",
       m: "w-m h-m",
       l: "w-l h-l",
@@ -43,7 +44,7 @@ const iconVariants = cva("", {
   },
   defaultVariants: {
     color: "current",
-    size: "m",
+    size: "inherit",
   },
 });
 

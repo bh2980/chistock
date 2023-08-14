@@ -42,7 +42,7 @@ const meta = {
       control: { type: "radio" },
     },
     size: {
-      options: ["s", "m", "l", "xl", "2xl", "3xl"],
+      options: ["inherit", "s", "m", "l", "xl", "2xl", "3xl"],
       control: { type: "radio" },
     },
   },
@@ -55,10 +55,10 @@ export const Add: Story = {
   args: {
     icon: "Add",
     color: "current",
-    size: "m",
+    size: "inherit",
   },
   render: (args) => (
-    <div className="text-magenta">
+    <div className="text-magenta text-[120rem]">
       <Icon {...args} />
     </div>
   ),
