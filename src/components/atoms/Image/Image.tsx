@@ -36,12 +36,7 @@ type ImagePropsType = Omit<
 const Image = ({ className, rounded, alt, ...props }: ImagePropsType) => {
   return (
     <div className={classMerge([className, ImageVariants({ rounded })])}>
-      <NextImage.default
-        fill={true}
-        alt={alt}
-        style={{ objectFit: "cover" }}
-        {...props}
-      />
+      <NextImage.default fill={true} alt={alt} style={{ objectFit: "cover" }} {...props} />
     </div>
   );
 };

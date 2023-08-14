@@ -33,7 +33,7 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const ButtonTag: Story = {
-  render: (args) => <Button {...args}>Button</Button>,
+  render: (args) => <Button {...args}>LABEL</Button>,
 };
 
 export const ATag: Story = {
@@ -43,5 +43,5 @@ export const ATag: Story = {
     variant: "primary",
     size: "m",
   },
-  render: (args) => <Button {...args}>Button</Button>,
+  render: (args) => <Button {...args}>GO TO NAVER</Button>,
 };
