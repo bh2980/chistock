@@ -4,32 +4,35 @@ import { VariantProps, cva } from "class-variance-authority";
 import classMerge from "@utils/classMerge";
 import { PolymorphicComponentType, PolymorphicPropsType, PolymorphicRefType } from "@customTypes/polymorphicType";
 
-type ButtonPropsType = {
+export type ButtonPropsType = {
   disabled?: boolean;
 } & VariantProps<typeof buttonVariants>;
 
 type statePropsType = VariantProps<typeof stateLayerVariants>;
 
-const buttonVariants = cva("relative flex justify-center items-center gap-s overflow-hidden rounded-m font-bold", {
-  variants: {
-    variant: {
-      primary: "bg-primary text-primary-on",
-      secondary: "bg-secondary text-secondary-on",
-      danger: "bg-red text-red-on",
-      text: "text-surface-on-variant",
-      disabled: "bg-transparent text-surface-on text-opacity-30 pointer-events-none",
+const buttonVariants = cva(
+  "relative flex justify-center items-center gap-xs overflow-hidden rounded-m font-bold py-xs",
+  {
+    variants: {
+      variant: {
+        primary: "bg-primary text-primary-on",
+        secondary: "bg-secondary text-secondary-on",
+        danger: "bg-red text-red-on",
+        text: "text-surface-on-variant",
+        disabled: "bg-transparent text-surface-on text-opacity-30 pointer-events-none",
+      },
+      size: {
+        s: "text-s px-m",
+        m: "text-m px-xl",
+        l: "text-xl px-xl",
+      },
     },
-    size: {
-      s: "text-s px-m py-xs",
-      m: "text-m px-xl py-s",
-      l: "text-xl px-xl py-s",
+    defaultVariants: {
+      variant: "primary",
+      size: "m",
     },
-  },
-  defaultVariants: {
-    variant: "primary",
-    size: "m",
-  },
-});
+  }
+);
 
 const stateLayerVariants = cva("w-full h-full absolute opacity-0 hover:opacity-20 active:opacity-10", {
   variants: {
