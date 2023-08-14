@@ -12,6 +12,7 @@ const meta = {
   argTypes: {
     color: {
       options: [
+        "current",
         "onSurface",
         "onSub",
         "onPrimary",
@@ -36,7 +37,7 @@ const meta = {
     },
   },
   args: {
-    color: "onSurface",
+    color: "current",
     size: "m",
     weight: "regular",
   },
@@ -46,12 +47,20 @@ export default meta;
 type Story = StoryObj<typeof Text>;
 
 export const Default: Story = {
-  render: (args) => <Text {...args}>텍스트 예시</Text>,
+  render: (args) => (
+    <div className="text-magenta">
+      <Text {...args}>텍스트 예시</Text>
+    </div>
+  ),
 };
 
 export const H1: Story = {
   args: {
     as: "h1",
   },
-  render: (args) => <Text {...args}>텍스트 예시</Text>,
+  render: (args) => (
+    <div>
+      <Text {...args}>텍스트 예시</Text>
+    </div>
+  ),
 };

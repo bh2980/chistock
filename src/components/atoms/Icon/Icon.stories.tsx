@@ -16,6 +16,7 @@ const meta = {
     },
     color: {
       options: [
+        "current",
         "primary",
         "primaryFixed",
         "secondary",
@@ -53,8 +54,12 @@ type Story = StoryObj<typeof Icon>;
 export const Add: Story = {
   args: {
     icon: "Add",
-    color: "onSurface",
+    color: "current",
     size: "m",
   },
-  render: (args) => <Icon {...args} />,
+  render: (args) => (
+    <div className="text-magenta">
+      <Icon {...args} />
+    </div>
+  ),
 };

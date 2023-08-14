@@ -9,6 +9,7 @@ type TextPropsType = VariantProps<typeof textVariants>;
 export const textVariants = cva("", {
   variants: {
     color: {
+      current: "text-current",
       onSurface: "text-surface-on",
       onSub: "text-surface-on-variant",
       onPrimary: "text-primary-on",
@@ -35,7 +36,7 @@ export const textVariants = cva("", {
     },
   },
   defaultVariants: {
-    color: "onSurface",
+    color: "current",
     size: "m",
     weight: "regular",
   },
