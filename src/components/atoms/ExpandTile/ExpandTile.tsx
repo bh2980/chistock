@@ -50,6 +50,7 @@ const ExpandTileComponent = <T extends React.ElementType>(
     return (
       <Tile
         className={classMerge([isExpend ? "h-auto" : shrinkHeight, expandTileVariants({ padding })])}
+        padding={"none"}
         {...(props as TilePropsType)}
         ref={ref}
       >
