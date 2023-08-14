@@ -2,15 +2,11 @@ import { forwardRef } from "react";
 import { VariantProps, cva } from "class-variance-authority";
 
 import classMerge from "@utils/classMerge";
-import { PolymorphicPropsType, PolymorphicRefType } from "@customTypes/polymorphicType";
+import { PolymorphicComponentType, PolymorphicPropsType, PolymorphicRefType } from "@customTypes/polymorphicType";
 
 type ButtonPropsType = {
   disabled?: boolean;
 } & VariantProps<typeof buttonVariants>;
-
-type ButtonComponentType = <T extends React.ElementType = "button">(
-  props: PolymorphicPropsType<T, ButtonPropsType>
-) => React.ReactNode | null;
 
 type statePropsType = VariantProps<typeof stateLayerVariants>;
 
@@ -81,6 +77,6 @@ const ButtonComponent = <T extends React.ElementType>(
   );
 };
 
-const Button: ButtonComponentType = forwardRef(ButtonComponent);
+const Button: PolymorphicComponentType<"button", ButtonPropsType> = forwardRef(ButtonComponent);
 
 export default Button;

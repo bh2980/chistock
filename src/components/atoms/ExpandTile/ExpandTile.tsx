@@ -1,17 +1,13 @@
 import { forwardRef, useState } from "react";
 import { cva } from "class-variance-authority";
 
-import { PolymorphicPropsType, PolymorphicRefType } from "@customTypes/polymorphicType";
+import { PolymorphicComponentType, PolymorphicPropsType, PolymorphicRefType } from "@customTypes/polymorphicType";
 import classMerge from "@utils/classMerge";
 
 import Button from "@atoms/Button/Button";
 import Tile, { TilePropsType } from "@atoms/Tile/Tile";
 
 type ExpandTilePropsType = { shrinkHeight: string } & Omit<TilePropsType, "backgroundColor">;
-
-type ExpandTileComponentType = <T extends React.ElementType = "article">(
-  props: PolymorphicPropsType<T, ExpandTilePropsType>
-) => React.ReactNode | null;
 
 const expandTileVariants = cva("", {
   variants: {
@@ -65,6 +61,6 @@ const ExpandTileComponent = <T extends React.ElementType>(
   }
 };
 
-const ExpandTile: ExpandTileComponentType = forwardRef(ExpandTileComponent);
+const ExpandTile: PolymorphicComponentType<"article", ExpandTilePropsType> = forwardRef(ExpandTileComponent);
 
 export default ExpandTile;

@@ -1,14 +1,10 @@
 import { forwardRef } from "react";
 import { VariantProps, cva } from "class-variance-authority";
 
-import { PolymorphicPropsType, PolymorphicRefType } from "@customTypes/polymorphicType";
+import { PolymorphicComponentType, PolymorphicPropsType, PolymorphicRefType } from "@customTypes/polymorphicType";
 import classMerge from "@utils/classMerge";
 
 export type TilePropsType = VariantProps<typeof tileVariants>;
-
-type TileComponentType = <T extends React.ElementType = "article">(
-  props: PolymorphicPropsType<T, TilePropsType>
-) => React.ReactNode | null;
 
 const tileVariants = cva("flex border border-outline-variant text-m", {
   variants: {
@@ -98,6 +94,6 @@ const TileComponent = <T extends React.ElementType>(
   );
 };
 
-const Tile: TileComponentType = forwardRef(TileComponent);
+const Tile: PolymorphicComponentType<"article", TilePropsType> = forwardRef(TileComponent);
 
 export default Tile;

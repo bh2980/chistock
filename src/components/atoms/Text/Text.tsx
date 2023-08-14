@@ -2,13 +2,9 @@ import { forwardRef } from "react";
 import { VariantProps, cva } from "class-variance-authority";
 
 import classMerge from "@utils/classMerge";
-import { PolymorphicPropsType, PolymorphicRefType } from "@customTypes/polymorphicType";
+import { PolymorphicComponentType, PolymorphicPropsType, PolymorphicRefType } from "@customTypes/polymorphicType";
 
 type TextPropsType = VariantProps<typeof textVariants>;
-
-type TextComponentType = <T extends React.ElementType = "span">(
-  props: PolymorphicPropsType<T, TextPropsType>
-) => React.ReactNode | null;
 
 export const textVariants = cva("", {
   variants: {
@@ -58,6 +54,6 @@ const TextComponent = <T extends React.ElementType>(
   );
 };
 
-const Text: TextComponentType = forwardRef(TextComponent);
+const Text: PolymorphicComponentType<"span", TextPropsType> = forwardRef(TextComponent);
 
 export default Text;
