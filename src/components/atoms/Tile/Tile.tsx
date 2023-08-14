@@ -4,7 +4,7 @@ import { VariantProps, cva } from "class-variance-authority";
 import { PolymorphicPropsType, PolymorphicRefType } from "@customTypes/polymorphicType";
 import classMerge from "@utils/classMerge";
 
-type TilePropsType = VariantProps<typeof tileVariants>;
+export type TilePropsType = VariantProps<typeof tileVariants>;
 
 type TileComponentType = <T extends React.ElementType = "article">(
   props: PolymorphicPropsType<T, TilePropsType>

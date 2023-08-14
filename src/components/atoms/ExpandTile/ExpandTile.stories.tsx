@@ -29,7 +29,6 @@ const meta = {
     },
   },
   args: {
-    backgroundColor: "default",
     width: "desktop-4",
     borderRadius: "m",
     padding: "2xl",
