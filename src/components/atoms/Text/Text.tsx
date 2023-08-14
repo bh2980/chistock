@@ -23,6 +23,7 @@ export const textVariants = cva("", {
       onYellow: "text-yellow-on",
     },
     size: {
+      inherit: "text-inherit",
       xs: "text-xs",
       s: "text-s",
       m: "text-m",
@@ -37,7 +38,7 @@ export const textVariants = cva("", {
   },
   defaultVariants: {
     color: "current",
-    size: "m",
+    size: "inherit",
     weight: "regular",
   },
 });
