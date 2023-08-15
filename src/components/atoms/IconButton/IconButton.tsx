@@ -8,17 +8,14 @@ import ICON_MAP from "@constants/iconMap";
 
 type IconButtonPropsType = { icon: keyof typeof ICON_MAP } & ButtonPropsType;
 
-const IconButtonComponent = <T extends React.ElementType>({
-  icon,
-  ...props
-}: PolymorphicPropsType<T, IconButtonPropsType>) => {
+const IconButton: PolymorphicComponentType<"button", IconButtonPropsType> = forwardRef(function IconButton<
+  T extends React.ElementType
+>({ icon, ...props }: PolymorphicPropsType<T, IconButtonPropsType>) {
   return (
     <Button className="p-s" {...(props as ButtonPropsType)}>
       <Icon icon={icon} />
     </Button>
   );
-};
-
-const IconButton: PolymorphicComponentType<"button", IconButtonPropsType> = forwardRef(IconButtonComponent);
+});
 
 export default IconButton;

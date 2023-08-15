@@ -58,7 +58,7 @@ const tileVariants = cva("flex border border-outline-variant text-m", {
   },
 });
 
-const TileComponent = <T extends React.ElementType>(
+const Tile: PolymorphicComponentType<"article", TilePropsType> = forwardRef(function Tile<T extends React.ElementType>(
   {
     children,
     as,
@@ -71,7 +71,7 @@ const TileComponent = <T extends React.ElementType>(
     ...props
   }: PolymorphicPropsType<T, TilePropsType>,
   ref: PolymorphicRefType<T>
-) => {
+) {
   const TileComponent = as || "article";
 
   return (
@@ -92,8 +92,6 @@ const TileComponent = <T extends React.ElementType>(
       {children}
     </TileComponent>
   );
-};
-
-const Tile: PolymorphicComponentType<"article", TilePropsType> = forwardRef(TileComponent);
+});
 
 export default Tile;

@@ -56,10 +56,12 @@ const StateLayer = ({ variant }: statePropsType) => {
   );
 };
 
-const ButtonComponent = <T extends React.ElementType>(
+const Button: PolymorphicComponentType<"button", ButtonPropsType> = forwardRef(function Button<
+  T extends React.ElementType
+>(
   { children, as, className, variant, size, disabled, ...props }: PolymorphicPropsType<T, ButtonPropsType>,
   ref: PolymorphicRefType<T>
-) => {
+) {
   const ButtonComponent = as || "button";
 
   variant = disabled ? "disabled" : variant;
@@ -75,8 +77,6 @@ const ButtonComponent = <T extends React.ElementType>(
       <StateLayer variant={variant} />
     </ButtonComponent>
   );
-};
-
-const Button: PolymorphicComponentType<"button", ButtonPropsType> = forwardRef(ButtonComponent);
+});
 
 export default Button;

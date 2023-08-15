@@ -32,10 +32,12 @@ const expandTileVariants = cva("", {
 const CLOSE_TEXT = "닫기";
 const EXPAND_TEXT = "더 보기";
 
-const ExpandTileComponent = <T extends React.ElementType>(
+const ExpandTile: PolymorphicComponentType<"article", ExpandTilePropsType> = forwardRef(function ExpandTile<
+  T extends React.ElementType
+>(
   { shrinkHeight, padding, children, ...props }: PolymorphicPropsType<T, ExpandTilePropsType>,
   ref: PolymorphicRefType<T>
-) => {
+) {
   {
     const [isExpend, setIsExpand] = useState(false);
 
@@ -59,8 +61,6 @@ const ExpandTileComponent = <T extends React.ElementType>(
       </Tile>
     );
   }
-};
-
-const ExpandTile: PolymorphicComponentType<"article", ExpandTilePropsType> = forwardRef(ExpandTileComponent);
+});
 
 export default ExpandTile;

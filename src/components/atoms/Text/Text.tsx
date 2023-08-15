@@ -43,10 +43,10 @@ export const textVariants = cva("", {
   },
 });
 
-const TextComponent = <T extends React.ElementType>(
+const Text: PolymorphicComponentType<"span", TextPropsType> = forwardRef(function Text<T extends React.ElementType>(
   { children, as, className, color, size, weight, ...props }: PolymorphicPropsType<T, TextPropsType>,
   ref: PolymorphicRefType<T>
-) => {
+) {
   const TextComponent = as || "span";
 
   return (
@@ -54,8 +54,6 @@ const TextComponent = <T extends React.ElementType>(
       {children}
     </TextComponent>
   );
-};
-
-const Text: PolymorphicComponentType<"span", TextPropsType> = forwardRef(TextComponent);
+});
 
 export default Text;
