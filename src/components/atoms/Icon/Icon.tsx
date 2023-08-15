@@ -7,6 +7,7 @@ import ICON_MAP from "@constants/iconMap";
 const iconVariants = cva("", {
   variants: {
     color: {
+      transparent: "fill-transparent",
       current: "fill-current",
       primary: "fill-primary",
       primaryFixed: "fill-primary-fixed",
@@ -57,8 +58,8 @@ const Icon = ({ icon, className, color, size, ...props }: IconPropsType) => {
   const IconComponent = useMemo(() => lazy(ICON_MAP[icon]), [icon]);
 
   return (
-    <Suspense fallback={<div>loading...</div>}>
-      <IconComponent className={classMerge([className, iconVariants({ color, size })])} {...props} />
+    <Suspense fallback={<div className={classMerge([iconVariants({ color: "transparent", size })])} />}>
+      <IconComponent className={classMerge([iconVariants({ color, size }), className])} {...props} />
     </Suspense>
   );
 };

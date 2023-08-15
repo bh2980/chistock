@@ -50,7 +50,7 @@ const Text: PolymorphicComponentType<"span", TextPropsType> = forwardRef(functio
   const TextComponent = as || "span";
 
   return (
-    <TextComponent ref={ref} className={classMerge([className, textVariants({ color, size, weight })])} {...props}>
+    <TextComponent ref={ref} className={classMerge([textVariants({ color, size, weight }), className])} {...props}>
       {children}
     </TextComponent>
   );
