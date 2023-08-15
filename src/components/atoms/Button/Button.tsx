@@ -10,29 +10,26 @@ export type ButtonPropsType = {
 
 type statePropsType = VariantProps<typeof stateLayerVariants>;
 
-const buttonVariants = cva(
-  "relative flex justify-center items-center gap-xs overflow-hidden rounded-m font-bold py-xs",
-  {
-    variants: {
-      variant: {
-        primary: "bg-primary text-primary-on",
-        secondary: "bg-secondary text-secondary-on",
-        danger: "bg-red text-red-on",
-        text: "text-surface-on-variant",
-        disabled: "bg-transparent text-surface-on text-opacity-30 pointer-events-none",
-      },
-      size: {
-        s: "text-s px-m",
-        m: "text-m px-xl",
-        l: "text-xl px-xl",
-      },
+const buttonVariants = cva("relative flex justify-center items-center gap-s overflow-hidden rounded-m py-xs", {
+  variants: {
+    variant: {
+      primary: "bg-primary text-primary-on",
+      secondary: "bg-secondary text-secondary-on",
+      danger: "bg-red text-red-on",
+      text: "text-surface-on-variant",
+      disabled: "bg-transparent text-surface-on text-opacity-30 pointer-events-none",
     },
-    defaultVariants: {
-      variant: "primary",
-      size: "m",
+    size: {
+      s: "text-s px-m",
+      m: "text-m px-xl",
+      l: "text-xl px-xl",
     },
-  }
-);
+  },
+  defaultVariants: {
+    variant: "primary",
+    size: "m",
+  },
+});
 
 const stateLayerVariants = cva("w-full h-full absolute opacity-0 hover:opacity-20 active:opacity-10", {
   variants: {
@@ -70,7 +67,7 @@ const ButtonComponent = <T extends React.ElementType>(
   return (
     <ButtonComponent
       ref={ref}
-      className={classMerge([className, buttonVariants({ variant, size })])}
+      className={classMerge([buttonVariants({ variant, size }), className])}
       disabled={disabled}
       {...props}
     >
