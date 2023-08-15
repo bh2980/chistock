@@ -2,19 +2,15 @@ import { forwardRef } from "react";
 import { VariantProps, cva } from "class-variance-authority";
 
 import classMerge from "@utils/classMerge";
-import { PolymorphicPropsType, PolymorphicRefType } from "@customTypes/polymorphicType";
+import { PolymorphicComponentType, PolymorphicPropsType, PolymorphicRefType } from "@customTypes/polymorphicType";
 
-type ButtonPropsType = {
+export type ButtonPropsType = {
   disabled?: boolean;
 } & VariantProps<typeof buttonVariants>;
 
-type ButtonComponentType = <T extends React.ElementType = "button">(
-  props: PolymorphicPropsType<T, ButtonPropsType>
-) => React.ReactNode | null;
-
 type statePropsType = VariantProps<typeof stateLayerVariants>;
 
-const buttonVariants = cva("relative flex justify-center items-center gap-s overflow-hidden rounded-m font-bold", {
+const buttonVariants = cva("relative flex justify-center items-center gap-s overflow-hidden rounded-m py-xs", {
   variants: {
     variant: {
       primary: "bg-primary text-primary-on",
@@ -24,9 +20,9 @@ const buttonVariants = cva("relative flex justify-center items-center gap-s over
       disabled: "bg-transparent text-surface-on text-opacity-30 pointer-events-none",
     },
     size: {
-      s: "text-s px-m py-xs",
-      m: "text-m px-xl py-s",
-      l: "text-xl px-xl py-s",
+      s: "text-s px-m",
+      m: "text-m px-xl",
+      l: "text-xl px-xl",
     },
   },
   defaultVariants: {
@@ -71,7 +67,7 @@ const ButtonComponent = <T extends React.ElementType>(
   return (
     <ButtonComponent
       ref={ref}
-      className={classMerge([className, buttonVariants({ variant, size })])}
+      className={classMerge([buttonVariants({ variant, size }), className])}
       disabled={disabled}
       {...props}
     >
@@ -81,6 +77,6 @@ const ButtonComponent = <T extends React.ElementType>(
   );
 };
 
-const Button: ButtonComponentType = forwardRef(ButtonComponent);
+const Button: PolymorphicComponentType<"button", ButtonPropsType> = forwardRef(ButtonComponent);
 
 export default Button;

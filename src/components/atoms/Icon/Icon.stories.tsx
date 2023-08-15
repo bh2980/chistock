@@ -16,6 +16,7 @@ const meta = {
     },
     color: {
       options: [
+        "current",
         "primary",
         "primaryFixed",
         "secondary",
@@ -41,7 +42,7 @@ const meta = {
       control: { type: "radio" },
     },
     size: {
-      options: ["s", "m", "l", "xl", "2xl", "3xl"],
+      options: ["inherit", "s", "m", "l", "xl", "2xl", "3xl"],
       control: { type: "radio" },
     },
   },
@@ -53,8 +54,12 @@ type Story = StoryObj<typeof Icon>;
 export const Add: Story = {
   args: {
     icon: "Add",
-    color: "onSurface",
-    size: "m",
+    color: "current",
+    size: "inherit",
   },
-  render: (args) => <Icon {...args} />,
+  render: (args) => (
+    <div className="text-[#f58f00] text-[120rem]">
+      <Icon {...args} />
+    </div>
+  ),
 };

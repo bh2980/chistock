@@ -2,17 +2,14 @@ import { forwardRef } from "react";
 import { VariantProps, cva } from "class-variance-authority";
 
 import classMerge from "@utils/classMerge";
-import { PolymorphicPropsType, PolymorphicRefType } from "@customTypes/polymorphicType";
+import { PolymorphicComponentType, PolymorphicPropsType, PolymorphicRefType } from "@customTypes/polymorphicType";
 
 type TextPropsType = VariantProps<typeof textVariants>;
-
-type TextComponentType = <T extends React.ElementType = "span">(
-  props: PolymorphicPropsType<T, TextPropsType>
-) => React.ReactNode | null;
 
 export const textVariants = cva("", {
   variants: {
     color: {
+      current: "text-current",
       onSurface: "text-surface-on",
       onSub: "text-surface-on-variant",
       onPrimary: "text-primary-on",
@@ -26,6 +23,7 @@ export const textVariants = cva("", {
       onYellow: "text-yellow-on",
     },
     size: {
+      inherit: "text-inherit",
       xs: "text-xs",
       s: "text-s",
       m: "text-m",
@@ -39,8 +37,8 @@ export const textVariants = cva("", {
     },
   },
   defaultVariants: {
-    color: "onSurface",
-    size: "m",
+    color: "current",
+    size: "inherit",
     weight: "regular",
   },
 });
@@ -58,6 +56,6 @@ const TextComponent = <T extends React.ElementType>(
   );
 };
 
-const Text: TextComponentType = forwardRef(TextComponent);
+const Text: PolymorphicComponentType<"span", TextPropsType> = forwardRef(TextComponent);
 
 export default Text;

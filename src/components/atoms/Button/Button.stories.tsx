@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import Button from "./Button";
+import Icon from "@atoms/Icon/Icon";
+import Text from "@atoms/Text/Text";
 
 const meta = {
   title: "Atom/Button",
@@ -44,4 +46,14 @@ export const ATag: Story = {
     size: "m",
   },
   render: (args) => <Button {...args}>GO TO NAVER</Button>,
+};
+
+export const ButtonWithIcon: Story = {
+  args: {},
+  render: (args) => (
+    <Button {...args}>
+      <Text>Add</Text>
+      <Icon icon="Add" />
+    </Button>
+  ),
 };

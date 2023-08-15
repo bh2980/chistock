@@ -7,6 +7,7 @@ import ICON_MAP from "@constants/iconMap";
 const iconVariants = cva("", {
   variants: {
     color: {
+      current: "fill-current",
       primary: "fill-primary",
       primaryFixed: "fill-primary-fixed",
       secondary: "fill-secondary",
@@ -32,6 +33,7 @@ const iconVariants = cva("", {
       onMagenta: "fill-magenta-on",
     },
     size: {
+      inherit: "w-[1em] h-[1em]",
       s: "w-s h-s",
       m: "w-m h-m",
       l: "w-l h-l",
@@ -41,8 +43,8 @@ const iconVariants = cva("", {
     },
   },
   defaultVariants: {
-    color: "onSurface",
-    size: "m",
+    color: "current",
+    size: "inherit",
   },
 });
 

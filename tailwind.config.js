@@ -4,12 +4,10 @@ import color from "./src/constants/colorPalette";
 import { createThemes } from "tw-colors";
 
 module.exports = {
-  content: [
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/components/**/*.{js,ts,jsx,tsx,mdx}", "./src/app/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     fontSize: {
+      inherit: "inherit",
       xs: ["12rem", "16rem"],
       s: ["14rem", "16rem"],
       m: ["16rem", "24rem"],
@@ -54,7 +52,8 @@ module.exports = {
       m: "3rem",
     },
     colors: {
-      transparent: color.transparent,
+      current: "currentColor",
+      transparent: "transparent",
     },
     extend: {
       width: {
