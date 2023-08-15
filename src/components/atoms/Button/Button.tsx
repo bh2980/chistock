@@ -1,5 +1,8 @@
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import { VariantProps, cva } from "class-variance-authority";
+
+import Icon from "@atoms/Icon/Icon";
+import Text from "@atoms/Text/Text";
 
 import classMerge from "@utils/classMerge";
 import { PolymorphicComponentType, PolymorphicPropsType, PolymorphicRefType } from "@customTypes/polymorphicType";
@@ -10,7 +13,7 @@ export type ButtonPropsType = {
 
 type statePropsType = VariantProps<typeof stateLayerVariants>;
 
-const buttonVariants = cva("relative flex justify-center items-center gap-s overflow-hidden rounded-m py-xs", {
+const buttonVariants = cva("relative flex justify-center items-center overflow-hidden rounded-m p-xs", {
   variants: {
     variant: {
       primary: "bg-primary text-primary-on",
@@ -20,9 +23,9 @@ const buttonVariants = cva("relative flex justify-center items-center gap-s over
       disabled: "bg-transparent text-surface-on text-opacity-30 pointer-events-none",
     },
     size: {
-      s: "text-s px-m",
-      m: "text-m px-xl",
-      l: "text-xl px-xl",
+      s: "text-s",
+      m: "text-m",
+      l: "text-xl",
     },
   },
   defaultVariants: {
@@ -31,20 +34,33 @@ const buttonVariants = cva("relative flex justify-center items-center gap-s over
   },
 });
 
-const stateLayerVariants = cva("w-full h-full absolute opacity-0 hover:opacity-20 active:opacity-10", {
+const buttonIconVariants = cva("", {
   variants: {
-    variant: {
-      primary: "bg-primary-on",
-      secondary: "bg-secondary-on",
-      danger: "bg-red-on",
-      text: "bg-surface-on-variant",
-      disabled: "bg-surface-on opacity-10 hover:opacity-10 active:opacity-10",
+    size: {
+      s: "w-m h-m",
+      m: "w-xl h-xl",
+      l: "w-2xl h-2xl",
     },
   },
-  defaultVariants: {
-    variant: "primary",
-  },
 });
+
+const stateLayerVariants = cva(
+  "absolute top-[0rem] left-[0rem] w-full h-full opacity-0 hover:opacity-20 active:opacity-10",
+  {
+    variants: {
+      variant: {
+        primary: "bg-primary-on",
+        secondary: "bg-secondary-on",
+        danger: "bg-red-on",
+        text: "bg-surface-on-variant",
+        disabled: "bg-surface-on opacity-10 hover:opacity-10 active:opacity-10",
+      },
+    },
+    defaultVariants: {
+      variant: "primary",
+    },
+  }
+);
 
 const StateLayer = ({ variant }: statePropsType) => {
   return (
@@ -56,11 +72,14 @@ const StateLayer = ({ variant }: statePropsType) => {
   );
 };
 
-const ButtonComponent = <T extends React.ElementType>(
+const Button: PolymorphicComponentType<"button", ButtonPropsType> = forwardRef(function Button<
+  T extends React.ElementType
+>(
   { children, as, className, variant, size, disabled, ...props }: PolymorphicPropsType<T, ButtonPropsType>,
   ref: PolymorphicRefType<T>
-) => {
+) {
   const ButtonComponent = as || "button";
+  const TEXT_PADDING_X = "px-xs";
 
   variant = disabled ? "disabled" : variant;
 
@@ -71,12 +90,26 @@ const ButtonComponent = <T extends React.ElementType>(
       disabled={disabled}
       {...props}
     >
-      {children}
+      {React.Children.map(children, (child) => {
+        const prevClasses: string = child.props?.className;
+
+        if (React.isValidElement(child) && child.type === Icon) {
+          return React.cloneElement(child, {
+            className: classMerge([buttonIconVariants({ size }), prevClasses]),
+          });
+        } else if (React.isValidElement(child) && child.type === Text) {
+          return React.cloneElement(child, {
+            className: classMerge([TEXT_PADDING_X, prevClasses]),
+          });
+        } else if (typeof child === "string") {
+          return <Text className={classMerge([TEXT_PADDING_X, prevClasses])}>{child}</Text>;
+        }
+
+        return child;
+      })}
       <StateLayer variant={variant} />
     </ButtonComponent>
   );
-};
-
-const Button: PolymorphicComponentType<"button", ButtonPropsType> = forwardRef(ButtonComponent);
+});
 
 export default Button;
