@@ -48,7 +48,7 @@ type Story = StoryObj<typeof Text>;
 
 export const Default: Story = {
   render: (args) => (
-    <div className="text-magenta">
+    <div className="text-[#f58f00]">
       <Text {...args}>텍스트 예시</Text>
     </div>
   ),

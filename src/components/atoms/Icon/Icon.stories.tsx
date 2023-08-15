@@ -58,7 +58,7 @@ export const Add: Story = {
     size: "inherit",
   },
   render: (args) => (
-    <div className="text-magenta text-[120rem]">
+    <div className="text-[#f58f00] text-[120rem]">
       <Icon {...args} />
     </div>
   ),
