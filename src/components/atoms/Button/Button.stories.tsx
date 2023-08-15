@@ -28,6 +28,8 @@ const meta = {
   args: {
     variant: "primary",
     size: "m",
+    disabled: false,
+    className: "",
   },
 } satisfies Meta<typeof Button>;
 
@@ -38,22 +40,50 @@ export const ButtonTag: Story = {
   render: (args) => <Button {...args}>LABEL</Button>,
 };
 
-export const ATag: Story = {
+export const IconTextBtn: Story = {
+  render: (args) => (
+    <Button {...args}>
+      <Icon icon="Add" />
+      Add Wishlist
+    </Button>
+  ),
+};
+
+export const TextIconBtn: Story = {
+  render: (args) => (
+    <Button {...args}>
+      Add Wishlist
+      <Icon icon="Add" />
+    </Button>
+  ),
+};
+
+export const TextIconBtnWithClasses: Story = {
+  args: { className: "w-desktop-4 uppercase" },
+  render: (args) => (
+    <Button {...args}>
+      Add Wishlist
+      <Icon icon="Add" />
+    </Button>
+  ),
+};
+
+export const IconBtn: Story = {
+  render: (args) => (
+    <Button {...args}>
+      <Icon icon="Add" />
+    </Button>
+  ),
+};
+
+export const ATagBtn: Story = {
   args: {
     as: "a",
     href: "https://www.naver.com",
-    variant: "primary",
-    size: "m",
   },
-  render: (args) => <Button {...args}>GO TO NAVER</Button>,
-};
-
-export const ButtonWithIcon: Story = {
-  args: {},
   render: (args) => (
     <Button {...args}>
-      <Text>Add</Text>
-      <Icon icon="Add" />
+      <Text>GO TO NAVER</Text>
     </Button>
   ),
 };
