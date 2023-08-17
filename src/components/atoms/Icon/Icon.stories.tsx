@@ -51,9 +51,9 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof Icon>;
 
-export const Add: Story = {
+export const Default: Story = {
   args: {
-    icon: "Add",
+    icon: "arrow-path",
     color: "current",
     size: "inherit",
   },

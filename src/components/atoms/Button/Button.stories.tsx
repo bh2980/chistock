@@ -43,7 +43,7 @@ export const ButtonTag: Story = {
 export const IconTextBtn: Story = {
   render: (args) => (
     <Button {...args}>
-      <Icon icon="Add" />
+      <Icon icon="plus" />
       Add Wishlist
     </Button>
   ),
@@ -52,18 +52,18 @@ export const IconTextBtn: Story = {
 export const TextIconBtn: Story = {
   render: (args) => (
     <Button {...args}>
-      Add Wishlist
-      <Icon icon="Add" />
+      Switch to Dark Mode
+      <Icon icon="moon" />
     </Button>
   ),
 };
 
-export const TextIconBtnWithClasses: Story = {
-  args: { className: "w-desktop-4 uppercase" },
+export const BtnWithClass: Story = {
+  args: { className: "w-desktop-4 uppercase justify-between" },
   render: (args) => (
     <Button {...args}>
-      Add Wishlist
-      <Icon icon="Add" />
+      Setting
+      <Icon icon="setting" />
     </Button>
   ),
 };
@@ -71,7 +71,7 @@ export const TextIconBtnWithClasses: Story = {
 export const IconBtn: Story = {
   render: (args) => (
     <Button {...args}>
-      <Icon icon="Add" />
+      <Icon icon="chevron-up" />
     </Button>
   ),
 };
