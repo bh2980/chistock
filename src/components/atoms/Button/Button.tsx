@@ -15,11 +15,11 @@ export type ButtonPropsType = {
 
 type statePropsType = VariantProps<typeof stateLayerVariants>;
 
-const has = (item: unknown) => {
+export const has = (item: unknown) => {
   return !!item;
 };
 
-const buttonVariants = cva("relative flex justify-center items-center overflow-hidden rounded-m px-m py-xs", {
+const buttonVariants = cva("relative flex justify-center items-center overflow-hidden rounded-m py-xs", {
   variants: {
     variant: {
       primary: "bg-primary text-primary-on",
@@ -29,37 +29,24 @@ const buttonVariants = cva("relative flex justify-center items-center overflow-h
       disabled: "bg-transparent text-surface-on text-opacity-30 pointer-events-none",
     },
     size: {
-      s: "text-s gap-xs",
-      m: "text-m gap-xs",
-      l: "text-xl gap-s",
+      s: "h-[32rem] px-s text-s gap-xs",
+      m: "h-[40rem] px-m text-m gap-xs",
+      l: "h-[48rem] px-m text-xl gap-s",
     },
   },
   defaultVariants: {
-    variant: "primary",
+    variant: "secondary",
     size: "m",
   },
 });
 
-const iconButtonPadding = cva("", {
+const iconButtonPadding = cva("aspect-square", {
   variants: {
     size: {
       s: "p-xs",
       m: "p-s",
       l: "p-s",
     },
-  },
-});
-
-const buttonIconSize = cva("inline-flex justify-center items-center", {
-  variants: {
-    size: {
-      s: "w-m h-m",
-      m: "w-m h-m",
-      l: "w-xl h-xl",
-    },
-  },
-  defaultVariants: {
-    size: "m",
   },
 });
 
@@ -72,11 +59,11 @@ const stateLayerVariants = cva(
         secondary: "bg-secondary-on",
         danger: "bg-red-on",
         text: "bg-surface-on-variant",
-        disabled: "bg-surface-on opacity-10 hover:opacity-10 active:opacity-10 pointer-events-none",
+        disabled: "bg-surface-on opacity-10",
       },
     },
     defaultVariants: {
-      variant: "primary",
+      variant: "secondary",
     },
   }
 );
@@ -119,9 +106,9 @@ const Button: PolymorphicComponentType<"button", ButtonPropsType> = forwardRef(f
       )}
       {...props}
     >
-      {icon && iconPosition === "before" && <span className={buttonIconSize({ size })}>{icon}</span>}
+      {icon && iconPosition === "before" && icon}
       {children}
-      {icon && iconPosition === "after" && <span className={buttonIconSize({ size })}>{icon}</span>}
+      {icon && iconPosition === "after" && icon}
       <StateLayer variant={btnVariant} />
     </ButtonComponent>
   );
