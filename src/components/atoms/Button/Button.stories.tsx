@@ -41,39 +41,34 @@ export const ButtonTag: Story = {
 };
 
 export const IconTextBtn: Story = {
-  render: (args) => (
-    <Button {...args}>
-      <Icon icon="plus" />
-      Add Wishlist
-    </Button>
-  ),
+  args: {
+    icon: <Icon icon="plus" />,
+  },
+  render: (args) => <Button {...args}>Add Wishlist</Button>,
 };
 
 export const TextIconBtn: Story = {
-  render: (args) => (
-    <Button {...args}>
-      Switch to Dark Mode
-      <Icon icon="moon" />
-    </Button>
-  ),
+  args: {
+    icon: <Icon icon="moon" />,
+    iconPosition: "after",
+  },
+  render: (args) => <Button {...args}>Switch to Dark Mode</Button>,
 };
 
 export const BtnWithClass: Story = {
-  args: { className: "w-desktop-4 uppercase justify-between" },
-  render: (args) => (
-    <Button {...args}>
-      Setting
-      <Icon icon="setting" />
-    </Button>
-  ),
+  args: {
+    className: "w-desktop-4 uppercase justify-between",
+    icon: <Icon icon="setting" />,
+    iconPosition: "after",
+  },
+  render: (args) => <Button {...args}>Setting</Button>,
 };
 
 export const IconBtn: Story = {
-  render: (args) => (
-    <Button {...args}>
-      <Icon icon="chevron-up" />
-    </Button>
-  ),
+  args: {
+    icon: <Icon icon="chevron-up" />,
+  },
+  render: (args) => <Button {...args}></Button>,
 };
 
 export const ATagBtn: Story = {

@@ -1,19 +1,25 @@
 import React, { forwardRef } from "react";
 import { VariantProps, cva } from "class-variance-authority";
 
-import Icon from "@atoms/Icon/Icon";
-import Text from "@atoms/Text/Text";
-
 import classMerge from "@utils/classMerge";
+import { twJoin } from "tailwind-merge";
 import { PolymorphicComponentType, PolymorphicPropsType, PolymorphicRefType } from "@customTypes/polymorphicType";
 
 export type ButtonPropsType = {
   disabled?: boolean;
-} & VariantProps<typeof buttonVariants>;
+  icon?: React.ReactElement;
+  iconPosition?: "before" | "after";
+} & Omit<VariantProps<typeof buttonVariants>, "variant"> & {
+    variant: Exclude<VariantProps<typeof buttonVariants>["variant"], "disabled">;
+  };
 
 type statePropsType = VariantProps<typeof stateLayerVariants>;
 
-const buttonVariants = cva("relative flex justify-center items-center overflow-hidden rounded-m p-xs", {
+const has = (item: unknown) => {
+  return !!item;
+};
+
+const buttonVariants = cva("relative flex justify-center items-center overflow-hidden rounded-m px-m py-xs", {
   variants: {
     variant: {
       primary: "bg-primary text-primary-on",
@@ -23,9 +29,9 @@ const buttonVariants = cva("relative flex justify-center items-center overflow-h
       disabled: "bg-transparent text-surface-on text-opacity-30 pointer-events-none",
     },
     size: {
-      s: "text-s",
-      m: "text-m",
-      l: "text-xl",
+      s: "text-s gap-xs",
+      m: "text-m gap-xs",
+      l: "text-xl gap-s",
     },
   },
   defaultVariants: {
@@ -34,13 +40,26 @@ const buttonVariants = cva("relative flex justify-center items-center overflow-h
   },
 });
 
-const buttonIconVariants = cva("", {
+const iconButtonPadding = cva("", {
+  variants: {
+    size: {
+      s: "p-xs",
+      m: "p-s",
+      l: "p-s",
+    },
+  },
+});
+
+const buttonIconSize = cva("inline-flex justify-center items-center", {
   variants: {
     size: {
       s: "w-m h-m",
-      m: "w-xl h-xl",
-      l: "w-2xl h-2xl",
+      m: "w-m h-m",
+      l: "w-xl h-xl",
     },
+  },
+  defaultVariants: {
+    size: "m",
   },
 });
 
@@ -53,7 +72,7 @@ const stateLayerVariants = cva(
         secondary: "bg-secondary-on",
         danger: "bg-red-on",
         text: "bg-surface-on-variant",
-        disabled: "bg-surface-on opacity-10 hover:opacity-10 active:opacity-10",
+        disabled: "bg-surface-on opacity-10 hover:opacity-10 active:opacity-10 pointer-events-none",
       },
     },
     defaultVariants: {
@@ -75,39 +94,35 @@ const StateLayer = ({ variant }: statePropsType) => {
 const Button: PolymorphicComponentType<"button", ButtonPropsType> = forwardRef(function Button<
   T extends React.ElementType
 >(
-  { children, as, className, variant, size, disabled, ...props }: PolymorphicPropsType<T, ButtonPropsType>,
+  {
+    children,
+    as,
+    className,
+    variant,
+    size,
+    icon,
+    iconPosition = "before",
+    ...props
+  }: PolymorphicPropsType<T, ButtonPropsType>,
   ref: PolymorphicRefType<T>
 ) {
   const ButtonComponent = as || "button";
-  const TEXT_PADDING_X = "px-xs";
 
-  variant = disabled ? "disabled" : variant;
+  const btnVariant = props.disabled ? "disabled" : variant;
+  const isIconButton = has(icon) && !has(children);
 
   return (
     <ButtonComponent
       ref={ref}
-      className={classMerge([buttonVariants({ variant, size }), className])}
-      disabled={disabled}
+      className={classMerge(
+        twJoin([buttonVariants({ variant: btnVariant, size }), isIconButton && iconButtonPadding({ size }), className])
+      )}
       {...props}
     >
-      {React.Children.map(children, (child) => {
-        const prevClasses: string = child.props?.className;
-
-        if (React.isValidElement(child) && child.type === Icon) {
-          return React.cloneElement(child, {
-            className: classMerge([buttonIconVariants({ size }), prevClasses]),
-          });
-        } else if (React.isValidElement(child) && child.type === Text) {
-          return React.cloneElement(child, {
-            className: classMerge([TEXT_PADDING_X, prevClasses]),
-          });
-        } else if (typeof child === "string") {
-          return <Text className={classMerge([TEXT_PADDING_X, prevClasses])}>{child}</Text>;
-        }
-
-        return child;
-      })}
-      <StateLayer variant={variant} />
+      {icon && iconPosition === "before" && <span className={buttonIconSize({ size })}>{icon}</span>}
+      {children}
+      {icon && iconPosition === "after" && <span className={buttonIconSize({ size })}>{icon}</span>}
+      <StateLayer variant={btnVariant} />
     </ButtonComponent>
   );
 });
