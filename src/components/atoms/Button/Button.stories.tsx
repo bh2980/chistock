@@ -26,7 +26,7 @@ const meta = {
     },
   },
   args: {
-    variant: "primary",
+    variant: "secondary",
     size: "m",
     disabled: false,
     className: "",
