@@ -3,6 +3,7 @@ import type { Preview } from "@storybook/react";
 import { withThemeByClassName } from "@storybook/addon-styling";
 
 import "../src/app/globals.css";
+import "./storybook.css";
 
 const preview: Preview = {
   parameters: {
@@ -14,7 +15,6 @@ const preview: Preview = {
       },
     },
   },
-
   decorators: [
     withThemeByClassName({
       themes: {
