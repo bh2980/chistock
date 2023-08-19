@@ -1,14 +1,13 @@
 const ICON_MAP = {
-  Add: () => import("@assets/icons/add.svg"),
-  ArrowBack: () => import("@assets/icons/arrowBack.svg"),
-  DarkMode: () => import("@assets/icons/darkMode.svg"),
-  Error: () => import("@assets/icons/error.svg"),
-  LightMode: () => import("@assets/icons/lightMode.svg"),
-  Loading: () => import("@assets/icons/loading.svg"),
-  Refresh: () => import("@assets/icons/refresh.svg"),
-  Search: () => import("@assets/icons/search.svg"),
-  Settings: () => import("@assets/icons/settings.svg"),
-  SyncProblem: () => import("@assets/icons/syncProblem.svg"),
+  "arrow-path": () => import("@assets/icons/arrow-path.svg"),
+  "chevron-down": () => import("@assets/icons/chevron-down.svg"),
+  "chevron-up": () => import("@assets/icons/chevron-up.svg"),
+  "exclamation-circle": () => import("@assets/icons/exclamation-circle.svg"),
+  moon: () => import("@assets/icons/moon.svg"),
+  plus: () => import("@assets/icons/plus.svg"),
+  search: () => import("@assets/icons/search.svg"),
+  setting: () => import("@assets/icons/setting.svg"),
+  sun: () => import("@assets/icons/sun.svg"),
 };
 
 export default ICON_MAP;

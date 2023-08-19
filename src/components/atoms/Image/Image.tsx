@@ -3,7 +3,7 @@ import { VariantProps, cva } from "class-variance-authority";
 
 import classMerge from "@utils/classMerge";
 
-const ImageVariants = cva("relative overflow-hidden aspect-square", {
+const ImageVariants = cva("relative min-w-[1em] overflow-hidden aspect-square", {
   variants: {
     rounded: {
       none: "rounded-none",

@@ -1,113 +1,126 @@
-import React, { forwardRef } from "react";
+import React, { PropsWithChildren, forwardRef } from "react";
 import { VariantProps, cva } from "class-variance-authority";
 
-import Icon from "@atoms/Icon/Icon";
-import Text from "@atoms/Text/Text";
-
 import classMerge from "@utils/classMerge";
+import { twJoin } from "tailwind-merge";
 import { PolymorphicComponentType, PolymorphicPropsType, PolymorphicRefType } from "@customTypes/polymorphicType";
 
 export type ButtonPropsType = {
   disabled?: boolean;
+  icon?: React.ReactElement;
+  iconPosition?: "before" | "after";
 } & VariantProps<typeof buttonVariants>;
 
-type statePropsType = VariantProps<typeof stateLayerVariants>;
+export const has = (item: unknown) => !!item;
 
-const buttonVariants = cva("relative flex justify-center items-center overflow-hidden rounded-m p-xs", {
+type IconWrapperPropsType = PropsWithChildren &
+  Pick<ButtonPropsType, "iconPosition"> & {
+    isIconButton?: boolean;
+  };
+
+const buttonVariants = cva("relative flex justify-center items-center overflow-hidden rounded-m py-xs", {
   variants: {
     variant: {
       primary: "bg-primary text-primary-on",
       secondary: "bg-secondary text-secondary-on",
       danger: "bg-red text-red-on",
       text: "text-surface-on-variant",
-      disabled: "bg-transparent text-surface-on text-opacity-30 pointer-events-none",
     },
     size: {
-      s: "text-s",
-      m: "text-m",
-      l: "text-xl",
+      s: "h-[32rem] px-s text-s",
+      m: "h-[40rem] px-m text-m",
+      l: "h-[48rem] px-m text-xl",
     },
   },
   defaultVariants: {
-    variant: "primary",
+    variant: "secondary",
     size: "m",
   },
 });
 
-const buttonIconVariants = cva("", {
+const buttonDisabledVariants = cva("text-surface-on/30 grayscale pointer-events-none", {
+  variants: {
+    variant: {
+      primary: "bg-surface-on/10",
+      secondary: "bg-surface-on/10",
+      danger: "bg-surface-on/10",
+      text: "bg-transparent",
+    },
+  },
+  defaultVariants: {
+    variant: "secondary",
+  },
+});
+
+const iconButtonPadding = cva("aspect-square", {
   variants: {
     size: {
-      s: "w-m h-m",
-      m: "w-xl h-xl",
-      l: "w-2xl h-2xl",
+      s: "p-xs",
+      m: "p-s",
+      l: "p-s",
     },
   },
 });
 
-const stateLayerVariants = cva(
-  "absolute top-[0rem] left-[0rem] w-full h-full opacity-0 hover:opacity-20 active:opacity-10",
-  {
-    variants: {
-      variant: {
-        primary: "bg-primary-on",
-        secondary: "bg-secondary-on",
-        danger: "bg-red-on",
-        text: "bg-surface-on-variant",
-        disabled: "bg-surface-on opacity-10 hover:opacity-10 active:opacity-10",
-      },
-    },
-    defaultVariants: {
-      variant: "primary",
-    },
-  }
-);
-
-const StateLayer = ({ variant }: statePropsType) => {
+const Overlay = () => {
   return (
-    <div
-      className={stateLayerVariants({
-        variant,
-      })}
-    />
+    <div className="absolute top-[0rem] left-[0rem] w-full h-full bg-current opacity-0 hover:opacity-20 active:opacity-10" />
+  );
+};
+
+const IconWrapper = ({ iconPosition, isIconButton, children }: IconWrapperPropsType) => {
+  return (
+    <span className={twJoin("leading-none", !isIconButton && [iconPosition === "before" ? "mr-xs" : "ml-xs"])}>
+      {children}
+    </span>
   );
 };
 
 const Button: PolymorphicComponentType<"button", ButtonPropsType> = forwardRef(function Button<
   T extends React.ElementType
 >(
-  { children, as, className, variant, size, disabled, ...props }: PolymorphicPropsType<T, ButtonPropsType>,
+  {
+    children,
+    as,
+    className,
+    variant,
+    size,
+    icon,
+    iconPosition = "before",
+    disabled,
+    ...props
+  }: PolymorphicPropsType<T, ButtonPropsType>,
   ref: PolymorphicRefType<T>
 ) {
   const ButtonComponent = as || "button";
-  const TEXT_PADDING_X = "px-xs";
 
-  variant = disabled ? "disabled" : variant;
+  const isIconButton = has(icon) && !has(children);
 
   return (
     <ButtonComponent
       ref={ref}
-      className={classMerge([buttonVariants({ variant, size }), className])}
-      disabled={disabled}
+      className={classMerge(
+        twJoin([
+          buttonVariants({ variant, size }),
+          isIconButton && iconButtonPadding({ size }),
+          className,
+          disabled && buttonDisabledVariants({ variant }),
+        ])
+      )}
       {...props}
     >
-      {React.Children.map(children, (child) => {
-        const prevClasses: string = child.props?.className;
-
-        if (React.isValidElement(child) && child.type === Icon) {
-          return React.cloneElement(child, {
-            className: classMerge([buttonIconVariants({ size }), prevClasses]),
-          });
-        } else if (React.isValidElement(child) && child.type === Text) {
-          return React.cloneElement(child, {
-            className: classMerge([TEXT_PADDING_X, prevClasses]),
-          });
-        } else if (typeof child === "string") {
-          return <Text className={classMerge([TEXT_PADDING_X, prevClasses])}>{child}</Text>;
-        }
-
-        return child;
-      })}
-      <StateLayer variant={variant} />
+      {icon && iconPosition === "before" && (
+        <IconWrapper iconPosition={iconPosition} isIconButton={isIconButton}>
+          {icon}
+        </IconWrapper>
+      )}
+      {children}
+      {icon && iconPosition === "after" && (
+        <IconWrapper iconPosition={iconPosition} isIconButton={isIconButton}>
+          {icon}
+        </IconWrapper>
+      )}
+      <Overlay />
     </ButtonComponent>
   );
 });

@@ -3,7 +3,7 @@ import { ClassNameValue } from "tailwind-merge";
 
 import twMerge from "./customTwMerge";
 
-const classMerge = (classes: ClassNameValue[]) => {
+const classMerge = (classes: ClassNameValue | ClassNameValue[]) => {
   return twMerge(cx(classes));
 };
 

@@ -27,7 +27,7 @@ const meta = {
     direction: "horizontal",
     thickness: "s",
     color: "outline",
-    className: "w-[720rem] h-[720rem]",
+    className: "w-[256rem] h-[256rem]",
   },
 } satisfies Meta<typeof Divider>;
 
