@@ -1,48 +1,24 @@
+import resolveConfig from "tailwindcss/resolveConfig";
 import { extendTailwindMerge } from "tailwind-merge";
+
+import tailwindConfig from "@root/tailwind.config";
+
+const customTailwindTheme = resolveConfig(tailwindConfig).theme;
+
+const getToken = (tokenName: Exclude<keyof typeof customTailwindTheme, "extend">) =>
+  Object.keys(customTailwindTheme[tokenName]).filter((key) => key !== "DEFAULT");
 
 const twMerge = extendTailwindMerge({
   theme: {
-    colors: [
-      "current",
-      "transparent",
-      "primary",
-      "primary-on",
-      "primary-fixed",
-      "primary-fixed-on",
-      "secondary",
-      "secondary-on",
-      "secondary-fixed",
-      "secondary-fixed-on",
-      "tertiary",
-      "tertiary-on",
-      "tertiary-fixed",
-      "tertiary-fixed-on",
-      "surface",
-      "surface-variant",
-      "surface-variant-high",
-      "surface-variant-highest",
-      "surface-on",
-      "surface-on-variant",
-      "outline",
-      "outline-variant",
-      "red",
-      "red-on",
-      "red-variant",
-      "red-variant-on",
-      "yellow",
-      "yellow-on",
-      "green",
-      "green-on",
-      "magenta",
-      "magenta-on",
-    ],
-    spacing: ["3xs", "2xs", "xs", "s", "m", "l", "xl", "2xl", "3xl"],
-    borderRadius: ["none", "xs", "s", "m", "l", "circle"],
-    borderWidth: ["s", "m"],
+    colors: getToken("colors"),
+    spacing: getToken("spacing"),
+    borderRadius: getToken("borderRadius"),
+    borderWidth: getToken("borderWidth"),
   },
   classGroups: {
-    "font-size": [{ text: ["inherit", "xs", "s", "m", "l", "xl", "2xl"] }],
+    "font-size": [{ text: getToken("fontSize") }],
   },
 });
 
 export default twMerge;
+``;

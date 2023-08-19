@@ -1,9 +1,9 @@
-/** @type {import('tailwindcss').Config} */
-import color from "./src/constants/colorPalette";
-
+import type { Config } from "tailwindcss";
 import { createThemes } from "tw-colors";
 
-module.exports = {
+import color from "./src/constants/colorPalette";
+
+export default {
   content: ["./src/components/**/*.{js,ts,jsx,tsx,mdx}", "./src/app/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     fontSize: {
@@ -52,6 +52,7 @@ module.exports = {
       m: "3rem",
     },
     colors: {
+      inherit: "inherit",
       current: "currentColor",
       transparent: "transparent",
     },
@@ -192,4 +193,4 @@ module.exports = {
       },
     }),
   ],
-};
+} satisfies Config;
