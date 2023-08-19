@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React, { PropsWithChildren, forwardRef } from "react";
 import { VariantProps, cva } from "class-variance-authority";
 
 import classMerge from "@utils/classMerge";
@@ -9,15 +9,14 @@ export type ButtonPropsType = {
   disabled?: boolean;
   icon?: React.ReactElement;
   iconPosition?: "before" | "after";
-} & Omit<VariantProps<typeof buttonVariants>, "variant"> & {
-    variant: Exclude<VariantProps<typeof buttonVariants>["variant"], "disabled">;
+} & VariantProps<typeof buttonVariants>;
+
+export const has = (item: unknown) => !!item;
+
+type IconWrapperPropsType = PropsWithChildren &
+  Pick<ButtonPropsType, "iconPosition"> & {
+    isIconButton?: boolean;
   };
-
-type statePropsType = VariantProps<typeof stateLayerVariants>;
-
-export const has = (item: unknown) => {
-  return !!item;
-};
 
 const buttonVariants = cva("relative flex justify-center items-center overflow-hidden rounded-m py-xs", {
   variants: {
@@ -26,17 +25,30 @@ const buttonVariants = cva("relative flex justify-center items-center overflow-h
       secondary: "bg-secondary text-secondary-on",
       danger: "bg-red text-red-on",
       text: "text-surface-on-variant",
-      disabled: "bg-transparent text-surface-on text-opacity-30 pointer-events-none",
     },
     size: {
-      s: "h-[32rem] px-s text-s gap-xs",
-      m: "h-[40rem] px-m text-m gap-xs",
-      l: "h-[48rem] px-m text-xl gap-s",
+      s: "h-[32rem] px-s text-s",
+      m: "h-[40rem] px-m text-m",
+      l: "h-[48rem] px-m text-xl",
     },
   },
   defaultVariants: {
     variant: "secondary",
     size: "m",
+  },
+});
+
+const buttonDisabledVariants = cva("text-surface-on/30 grayscale pointer-events-none", {
+  variants: {
+    variant: {
+      primary: "bg-surface-on/10",
+      secondary: "bg-surface-on/10",
+      danger: "bg-surface-on/10",
+      text: "bg-transparent",
+    },
+  },
+  defaultVariants: {
+    variant: "secondary",
   },
 });
 
@@ -50,31 +62,17 @@ const iconButtonPadding = cva("aspect-square", {
   },
 });
 
-const stateLayerVariants = cva(
-  "absolute top-[0rem] left-[0rem] w-full h-full opacity-0 hover:opacity-20 active:opacity-10",
-  {
-    variants: {
-      variant: {
-        primary: "bg-primary-on",
-        secondary: "bg-secondary-on",
-        danger: "bg-red-on",
-        text: "bg-surface-on-variant",
-        disabled: "bg-surface-on opacity-10",
-      },
-    },
-    defaultVariants: {
-      variant: "secondary",
-    },
-  }
-);
-
-const StateLayer = ({ variant }: statePropsType) => {
+const Overlay = () => {
   return (
-    <div
-      className={stateLayerVariants({
-        variant,
-      })}
-    />
+    <div className="absolute top-[0rem] left-[0rem] w-full h-full bg-current opacity-0 hover:opacity-20 active:opacity-10" />
+  );
+};
+
+const IconWrapper = ({ iconPosition, isIconButton, children }: IconWrapperPropsType) => {
+  return (
+    <span className={twJoin("leading-none", !isIconButton && [iconPosition === "before" ? "mr-xs" : "ml-xs"])}>
+      {children}
+    </span>
   );
 };
 
@@ -89,27 +87,40 @@ const Button: PolymorphicComponentType<"button", ButtonPropsType> = forwardRef(f
     size,
     icon,
     iconPosition = "before",
+    disabled,
     ...props
   }: PolymorphicPropsType<T, ButtonPropsType>,
   ref: PolymorphicRefType<T>
 ) {
   const ButtonComponent = as || "button";
 
-  const btnVariant = props.disabled ? "disabled" : variant;
   const isIconButton = has(icon) && !has(children);
 
   return (
     <ButtonComponent
       ref={ref}
       className={classMerge(
-        twJoin([buttonVariants({ variant: btnVariant, size }), isIconButton && iconButtonPadding({ size }), className])
+        twJoin([
+          buttonVariants({ variant, size }),
+          isIconButton && iconButtonPadding({ size }),
+          className,
+          disabled && buttonDisabledVariants({ variant }),
+        ])
       )}
       {...props}
     >
-      {icon && iconPosition === "before" && icon}
+      {icon && iconPosition === "before" && (
+        <IconWrapper iconPosition={iconPosition} isIconButton={isIconButton}>
+          {icon}
+        </IconWrapper>
+      )}
       {children}
-      {icon && iconPosition === "after" && icon}
-      <StateLayer variant={btnVariant} />
+      {icon && iconPosition === "after" && (
+        <IconWrapper iconPosition={iconPosition} isIconButton={isIconButton}>
+          {icon}
+        </IconWrapper>
+      )}
+      <Overlay />
     </ButtonComponent>
   );
 });
