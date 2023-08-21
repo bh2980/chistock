@@ -44,10 +44,10 @@ export const textVariants = cva("", {
 });
 
 const Text: PolymorphicComponentType<"span", TextPropsType> = forwardRef(function Text<T extends React.ElementType>(
-  { children, as, className, color, size, weight, ...props }: PolymorphicPropsType<T, TextPropsType>,
+  { children, renderAs, className, color, size, weight, ...props }: PolymorphicPropsType<T, TextPropsType>,
   ref: PolymorphicRefType<T>
 ) {
-  const TextComponent = as || "span";
+  const TextComponent = renderAs || "span";
 
   return (
     <TextComponent ref={ref} className={classMerge([textVariants({ color, size, weight }), className])} {...props}>
