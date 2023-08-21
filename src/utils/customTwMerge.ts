@@ -21,4 +21,3 @@ const twMerge = extendTailwindMerge({
 });
 
 export default twMerge;
-``;

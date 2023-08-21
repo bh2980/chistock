@@ -9,7 +9,7 @@ export default {
     fontSize: {
       inherit: "inherit",
       xs: ["12rem", "16rem"],
-      s: ["14rem", "16rem"],
+      s: ["14rem", "20rem"],
       m: ["16rem", "24rem"],
       l: ["20rem", "24rem"],
       xl: ["24rem", "32rem"],
@@ -40,11 +40,11 @@ export default {
     },
     boxShadow: {
       none: "",
-      xs: "0 0 24rem 0 rgba(18, 18, 18, 0.05)",
-      s: "0 0 24rem 0 rgba(18, 18, 18, 0.25)",
-      m: "0 0 24rem 0 rgba(18, 18, 18, 0.45)",
-      l: "0 0 24rem 0 rgba(18, 18, 18, 0.65)",
-      xl: "0 0 24rem 0 rgba(18, 18, 18, 0.85)",
+      xs: "0rem 2rem 2rem 0rem rgba(10, 14, 21, 0.25)",
+      s: "0rem 4rem 4rem 0rem rgba(10, 14, 21, 0.25)",
+      m: "0rem 8rem 8rem 0rem rgba(10, 14, 21, 0.25",
+      l: "0rem 12rem 12rem 0rem rgba(10, 14, 21, 0.25",
+      xl: "0rem 16rem 16rem 0rem rgba(10, 14, 21, 0.25",
     },
     borderWidth: {
       DEFAULT: "1rem",
@@ -101,11 +101,11 @@ export default {
           },
           on: {
             DEFAULT: color.neutral[0],
-            variant: color.neutral[20],
+            variant: color.neutral[30],
           },
         },
         outline: {
-          DEFAULT: color.neutral[20],
+          DEFAULT: color.neutral[40],
           variant: color.neutral[80],
         },
         red: {
@@ -163,7 +163,7 @@ export default {
           },
           on: {
             DEFAULT: color.white,
-            variant: color.neutral[60],
+            variant: color.neutral[70],
           },
         },
         outline: {
