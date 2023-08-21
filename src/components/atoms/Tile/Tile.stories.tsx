@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Tile from "./Tile";
 
 const meta = {
-  title: "Atom/Tile",
+  title: "Atom/Tile/Tile",
   component: Tile,
   parameters: {
     layout: "centered",

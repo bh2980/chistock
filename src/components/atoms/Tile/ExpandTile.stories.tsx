@@ -4,7 +4,7 @@ import ExpandTile from "./ExpandTile";
 import Text from "@atoms/Text/Text";
 
 const meta = {
-  title: "Atom/ExpandTile",
+  title: "Atom/Tile/ExpandTile",
   component: ExpandTile,
   parameters: {
     layout: "centered",
