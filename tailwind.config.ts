@@ -163,11 +163,11 @@ export default {
           },
           on: {
             DEFAULT: color.white,
-            variant: color.neutral[60],
+            variant: color.neutral[70],
           },
         },
         outline: {
-          DEFAULT: color.neutral[70],
+          DEFAULT: color.neutral[60],
           variant: color.neutral[20],
         },
         red: {
