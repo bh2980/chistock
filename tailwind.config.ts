@@ -101,11 +101,11 @@ export default {
           },
           on: {
             DEFAULT: color.neutral[0],
-            variant: color.neutral[20],
+            variant: color.neutral[30],
           },
         },
         outline: {
-          DEFAULT: color.neutral[20],
+          DEFAULT: color.neutral[40],
           variant: color.neutral[80],
         },
         red: {
@@ -167,7 +167,7 @@ export default {
           },
         },
         outline: {
-          DEFAULT: color.neutral[60],
+          DEFAULT: color.neutral[70],
           variant: color.neutral[20],
         },
         red: {
