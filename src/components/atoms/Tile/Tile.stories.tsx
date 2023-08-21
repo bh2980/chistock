@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import Tile from "./Tile";
 
 const meta = {
-  title: "Atom/Tile",
+  title: "Atom/Tile/Tile",
   component: Tile,
   parameters: {
     layout: "centered",
@@ -19,7 +19,7 @@ const meta = {
       control: { type: "radio" },
     },
     borderRadius: {
-      options: ["none", "xs", "s", "m", "l", "circle"],
+      options: ["none", "xs", "s", "m", "l"],
       control: { type: "radio" },
     },
     padding: {

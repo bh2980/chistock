@@ -4,7 +4,7 @@ import ExpandTile from "./ExpandTile";
 import Text from "@atoms/Text/Text";
 
 const meta = {
-  title: "Atom/ExpandTile",
+  title: "Atom/Tile/ExpandTile",
   component: ExpandTile,
   parameters: {
     layout: "centered",
@@ -16,7 +16,7 @@ const meta = {
       control: { type: "radio" },
     },
     borderRadius: {
-      options: ["none", "xs", "s", "m", "l", "circle"],
+      options: ["none", "xs", "s", "m", "l"],
       control: { type: "radio" },
     },
     padding: {
@@ -33,7 +33,7 @@ const meta = {
     borderRadius: "m",
     padding: "2xl",
     shadow: "xs",
-    shrinkHeight: "h-[256rem]",
+    collapseHeight: "max-h-[256rem]",
   },
 } satisfies Meta<typeof ExpandTile>;
 
