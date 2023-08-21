@@ -9,7 +9,7 @@ export default {
     fontSize: {
       inherit: "inherit",
       xs: ["12rem", "16rem"],
-      s: ["14rem", "16rem"],
+      s: ["14rem", "20rem"],
       m: ["16rem", "24rem"],
       l: ["20rem", "24rem"],
       xl: ["24rem", "32rem"],
