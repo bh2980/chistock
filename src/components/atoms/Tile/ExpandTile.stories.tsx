@@ -33,7 +33,7 @@ const meta = {
     borderRadius: "m",
     padding: "2xl",
     shadow: "xs",
-    shrinkHeight: "h-[256rem]",
+    minHeight: "max-h-[256rem]",
   },
 } satisfies Meta<typeof ExpandTile>;
 
