@@ -40,11 +40,11 @@ export default {
     },
     boxShadow: {
       none: "",
-      xs: "0 0 24rem 0 rgba(18, 18, 18, 0.05)",
-      s: "0 0 24rem 0 rgba(18, 18, 18, 0.25)",
-      m: "0 0 24rem 0 rgba(18, 18, 18, 0.45)",
-      l: "0 0 24rem 0 rgba(18, 18, 18, 0.65)",
-      xl: "0 0 24rem 0 rgba(18, 18, 18, 0.85)",
+      xs: "0rem 2rem 2rem 0rem rgba(10, 14, 21, 0.25)",
+      s: "0rem 4rem 4rem 0rem rgba(10, 14, 21, 0.25)",
+      m: "0rem 8rem 8rem 0rem rgba(10, 14, 21, 0.25",
+      l: "0rem 12rem 12rem 0rem rgba(10, 14, 21, 0.25",
+      xl: "0rem 16rem 16rem 0rem rgba(10, 14, 21, 0.25",
     },
     borderWidth: {
       DEFAULT: "1rem",
