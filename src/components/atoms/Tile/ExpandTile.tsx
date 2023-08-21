@@ -7,7 +7,7 @@ import classMerge from "@utils/classMerge";
 import Button from "@atoms/Button/Button";
 import Tile, { TilePropsType } from "@atoms/Tile/Tile";
 
-type ExpandTilePropsType = { collapsedHeight: string; expandHeight: string } & Omit<TilePropsType, "backgroundColor">;
+type ExpandTilePropsType = { collapseHeight: string; expandHeight: string } & Omit<TilePropsType, "backgroundColor">;
 
 const expandTileVariants = cva("", {
   variants: {
@@ -36,7 +36,7 @@ const ExpandTile: PolymorphicComponentType<"article", ExpandTilePropsType> = for
   T extends React.ElementType
 >(
   {
-    collapsedHeight,
+    collapseHeight,
     expandHeight = "max-h-screen",
     padding,
     children,
@@ -54,7 +54,7 @@ const ExpandTile: PolymorphicComponentType<"article", ExpandTilePropsType> = for
     return (
       <Tile
         className={classMerge([
-          isExpend ? expandHeight : collapsedHeight,
+          isExpend ? expandHeight : collapseHeight,
           "transition-[max-height]",
           expandTileVariants({ padding }),
         ])}

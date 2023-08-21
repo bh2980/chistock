@@ -33,7 +33,7 @@ const meta = {
     borderRadius: "m",
     padding: "2xl",
     shadow: "xs",
-    collapsedHeight: "max-h-[256rem]",
+    collapseHeight: "max-h-[256rem]",
   },
 } satisfies Meta<typeof ExpandTile>;
 
