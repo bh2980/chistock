@@ -1,5 +1,5 @@
 type AsPropType<T extends React.ElementType> = {
-  as?: T;
+  renderAs?: T;
 };
 
 export type PolymorphicRefType<T extends React.ElementType> = React.ComponentPropsWithRef<T>["ref"];

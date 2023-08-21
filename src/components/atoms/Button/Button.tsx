@@ -81,7 +81,7 @@ const Button: PolymorphicComponentType<"button", ButtonPropsType> = forwardRef(f
 >(
   {
     children,
-    as,
+    renderAs,
     className,
     variant,
     size,
@@ -92,7 +92,7 @@ const Button: PolymorphicComponentType<"button", ButtonPropsType> = forwardRef(f
   }: PolymorphicPropsType<T, ButtonPropsType>,
   ref: PolymorphicRefType<T>
 ) {
-  const ButtonComponent = as || "button";
+  const ButtonComponent = renderAs || "button";
 
   const isIconButton = has(icon) && !has(children);
 

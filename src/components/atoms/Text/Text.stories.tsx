@@ -56,7 +56,7 @@ export const Default: Story = {
 
 export const H1: Story = {
   args: {
-    as: "h1",
+    renderAs: "h1",
   },
   render: (args) => (
     <div>
