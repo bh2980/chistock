@@ -26,7 +26,6 @@ const tileVariants = cva("flex border border-outline-variant text-m", {
       s: "rounded-s",
       m: "rounded-m",
       l: "rounded-l",
-      circle: "rounded-circle",
     },
     padding: {
       none: "",
