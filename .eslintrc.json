@@ -1,12 +1,18 @@
 {
-  "plugins": [
-    "@typescript-eslint"
-  ],
+  "root": true,
+  "plugins": ["@typescript-eslint", "jest", "jest-dom", "testing-library"],
   "extends": [
     "next/core-web-vitals",
-    "plugin:@typescript-eslint/recommended",
     "prettier",
+    "plugin:@typescript-eslint/recommended",
     "plugin:storybook/recommended"
+  ],
+  "overrides": [
+    {
+      "files": ["**/?(*.)+(spec|test).[jt]s?(x)"],
+      "plugins": ["jest"],
+      "extends": ["plugin:jest/recommended", "plugin:jest-dom/recommended", "plugin:testing-library/react"]
+    }
   ],
   "rules": {
     "@typescript-eslint/no-unused-vars": "error",
