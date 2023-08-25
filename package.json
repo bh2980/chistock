@@ -61,5 +61,11 @@
     "ts-node": "^10.9.1",
     "tw-colors": "^1.2.6",
     "typescript": "^5.1.6"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }
