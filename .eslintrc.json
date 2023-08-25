@@ -1,6 +1,6 @@
 {
   "root": true,
-  "plugins": ["@typescript-eslint", "jest", "jest-dom", "testing-library"],
+  "plugins": ["@typescript-eslint"],
   "extends": [
     "next/core-web-vitals",
     "prettier",
@@ -10,7 +10,7 @@
   "overrides": [
     {
       "files": ["**/?(*.)+(spec|test).[jt]s?(x)"],
-      "plugins": ["jest"],
+      "plugins": ["jest", "jest-dom", "testing-library"],
       "extends": ["plugin:jest/recommended", "plugin:jest-dom/recommended", "plugin:testing-library/react"]
     }
   ],
