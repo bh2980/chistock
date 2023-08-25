@@ -1,7 +1,18 @@
 module.exports = {
   disableEmoji: false,
   format: "{type}: {emoji}{subject}",
-  list: ["feat", "fix", "fixTypo", "docs", "style", "design", "refactor", "test", "chore", "ci"],
+  list: [
+    "feat",
+    "fix",
+    "fixTypo",
+    "docs",
+    "style",
+    "design",
+    "refactor",
+    "test",
+    "chore",
+    "ci",
+  ],
   maxMessageLength: 64,
   minMessageLength: 3,
   questions: ["type", "subject", "body", "issues"],
@@ -57,11 +68,11 @@ module.exports = {
       emoji: "👷",
       value: "ci",
     },
-    messages: {
-      type: "커밋 유형을 선택하세요:",
-      subject: "짧은 단언문으로 간단한 설명을 작성하세요:\n",
-      body: "필요할 경우 추가적인 설명을 작성하세요:\n ",
-      footer: "이 커밋으로 종료되는 이슈(예: #123):",
-    },
+  },
+  messages: {
+    type: "커밋 유형을 선택하세요:",
+    subject: "짧은 단언문으로 간단한 설명을 작성하세요:\n",
+    body: "필요할 경우 추가적인 설명을 작성하세요:\n ",
+    issues: "이 커밋으로 종료되는 이슈(예: #123):",
   },
 };
