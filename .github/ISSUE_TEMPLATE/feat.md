@@ -1,10 +1,9 @@
 ---
 name: Feat
 about: 기능 이슈 템플릿
-title: ''
+title: ""
 labels: "✨ Feature"
-assignees: bh2980
-
+assignees: ""
 ---
 
 ## 구현 기능
