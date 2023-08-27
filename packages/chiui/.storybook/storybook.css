@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Pretandard";
+  src: url("../../../shared/assets/fonts/PretendardVariable.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html[class="theme-light"] {
+  background-color: white;
+}
+
+html[class="theme-dark"] {
+  background-color: black;
+}
+
+body {
+  font-family: "Pretandard", sans-serif; /* 기본 폰트 적용 */
+}

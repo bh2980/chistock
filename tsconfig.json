@@ -14,22 +14,16 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "paths": {
-      "@atoms/*": ["./components/atoms/*"],
-      "@assets/*": ["./assets/*"],
-      "@constants/*": ["./constants/*"],
-      "@customTypes/*": ["./customTypes/*"],
-      "@utils/*": ["./utils/*"],
-      "@src/*": ["./*"],
-      "@root/*": ["../*"]
+      "@assets/*": ["./shared/assets/*"],
+      "@constants/*": ["./shared/constants/*"],
+      "@customTypes/*": ["./shared/customTypes/*"],
+      "@utils/*": ["./shared/utils/*"],
+      "@atoms/*": ["./packages/chiui/src/atoms/*"],
+      "@root/*": ["./*"]
     }
   },
-  "include": ["global.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["global.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }

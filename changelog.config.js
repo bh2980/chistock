@@ -15,7 +15,7 @@ module.exports = {
   ],
   maxMessageLength: 64,
   minMessageLength: 3,
-  questions: ["type", "subject", "body", "issues"],
+  questions: ["type", "subject", "body", "breaking", "issues"],
   scopes: [],
   types: {
     feat: {
@@ -49,7 +49,7 @@ module.exports = {
       value: "design",
     },
     refactor: {
-      description: "코드 리팩토링",
+      description: "코드 리팩토링, 구조 변경",
       emoji: "♻️",
       value: "refactor",
     },
@@ -73,6 +73,7 @@ module.exports = {
     type: "커밋 유형을 선택하세요:",
     subject: "짧은 단언문으로 간단한 설명을 작성하세요:\n",
     body: "필요할 경우 추가적인 설명을 작성하세요:\n ",
+    breaking: "Breaking Change인가요?",
     issues: "이 커밋으로 종료되는 이슈(예: #123):",
   },
 };

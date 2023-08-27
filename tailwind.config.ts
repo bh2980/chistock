@@ -1,10 +1,10 @@
 import type { Config } from "tailwindcss";
 import { createThemes } from "tw-colors";
 
-import color from "./src/constants/colorPalette";
+import color from "./shared/constants/colorPalette";
 
 export default {
-  content: ["./src/components/**/*.{js,ts,jsx,tsx,mdx}", "./src/app/**/*.{js,ts,jsx,tsx,mdx}"],
+  content: [],
   theme: {
     fontSize: {
       inherit: "inherit",
