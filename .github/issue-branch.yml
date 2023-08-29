@@ -1,8 +1,5 @@
 branchName: "chistock-#${issue.number}"
 autoCloseIssue: true
-openDraftPR: true
-copyIssueLabelsToPR: true
-copyIssueAssigneeToPR: true
 branches:
   - label: 🐛 Bug
     prefix: bugfix/
