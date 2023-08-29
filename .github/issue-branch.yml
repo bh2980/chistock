@@ -1,0 +1,28 @@
+branchName: "$chistock-#${issue.number}"
+autoCloseIssue: true
+openDraftPR: true
+copyIssueLabelsToPR: true
+copyIssueAssigneeToPR: true
+copyIssueProjectsToPR: true
+copyIssueMilestoneToPR: true
+branches:
+  - label: "⚠️ Hold"
+    skipBranch: true
+  - label:
+      - 🐛 Bug
+      - 🩹 Simple Fix
+    prefix: bugfix/
+  - label: 🚨 HOTFIX
+    prefix: hotfix/
+  - label:
+      - 👷 CI
+      - ⚙️ Setting
+    prefix: env/
+  - label:
+      - 💄 Design
+      - ✨ Feature
+      - ♻️ Refactor
+      - ✅ Test
+    prefix: feature/
+  - label: "*"
+    prefix: issues/
