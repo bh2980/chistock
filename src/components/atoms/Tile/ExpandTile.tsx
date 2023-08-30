@@ -1,13 +1,16 @@
-import { forwardRef, useState } from "react";
+import { useState } from "react";
 import { cva } from "class-variance-authority";
 
-import { PolymorphicComponentType, PolymorphicPropsType, PolymorphicRefType } from "@customTypes/polymorphicType";
+import { PolymorphicPropsTypeWithInnerRef } from "@customTypes/polymorphicType";
 import classMerge from "@utils/classMerge";
 
 import Button from "@atoms/Button/Button";
 import Tile, { TilePropsType } from "@atoms/Tile/Tile";
 
-type ExpandTilePropsType = { collapseHeight: string; expandHeight: string } & Omit<TilePropsType, "backgroundColor">;
+type ExpandTilePropsType = {
+  collapseHeight: string;
+  expandHeight: string;
+} & Omit<TilePropsType, "backgroundColor">;
 
 const expandTileVariants = cva("", {
   variants: {
@@ -32,20 +35,17 @@ const expandTileVariants = cva("", {
 const CLOSE_TEXT = "닫기";
 const EXPAND_TEXT = "더 보기";
 
-const ExpandTile: PolymorphicComponentType<"article", ExpandTilePropsType> = forwardRef(function ExpandTile<
-  T extends React.ElementType
->(
-  {
-    collapseHeight,
-    expandHeight = "max-h-screen",
-    padding,
-    children,
-    ...props
-  }: PolymorphicPropsType<T, ExpandTilePropsType>,
-  ref: PolymorphicRefType<T>
-) {
+const ExpandTile = <T extends React.ElementType>({
+  children,
+  collapseHeight,
+  expandHeight = "max-h-screen",
+  padding,
+  innerRef,
+  ...props
+}: PolymorphicPropsTypeWithInnerRef<T, ExpandTilePropsType>) => {
   {
     const [isExpend, setIsExpand] = useState(false);
+    const tileProps: TilePropsType = props;
 
     const changeTileState = () => {
       setIsExpand((current) => !current);
@@ -53,24 +53,29 @@ const ExpandTile: PolymorphicComponentType<"article", ExpandTilePropsType> = for
 
     return (
       <Tile
+        ref={innerRef}
         className={classMerge([
           isExpend ? expandHeight : collapseHeight,
           "transition-[max-height]",
           expandTileVariants({ padding }),
         ])}
         padding={"none"}
-        {...(props as TilePropsType)}
-        ref={ref}
+        {...tileProps}
       >
         <div className="flex flex-col w-full relative gap-s">
           <div className="h-[calc(100%-32rem)] overflow-hidden">{children}</div>
-          <Button variant={"text"} size="s" onClick={changeTileState} className="w-full">
+          <Button
+            variant={"text"}
+            size="s"
+            onClick={changeTileState}
+            className="w-full"
+          >
             {isExpend ? CLOSE_TEXT : EXPAND_TEXT}
           </Button>
         </div>
       </Tile>
     );
   }
-});
+};
 
 export default ExpandTile;

@@ -1,7 +1,6 @@
-import { forwardRef } from "react";
 import { VariantProps, cva } from "class-variance-authority";
 
-import { PolymorphicComponentType, PolymorphicPropsType, PolymorphicRefType } from "@customTypes/polymorphicType";
+import { PolymorphicPropsTypeWithInnerRef } from "@customTypes/polymorphicType";
 import classMerge from "@utils/classMerge";
 
 export type TilePropsType = VariantProps<typeof tileVariants>;
@@ -26,6 +25,7 @@ const tileVariants = cva("flex border border-outline-variant text-m", {
       s: "rounded-s",
       m: "rounded-m",
       l: "rounded-l",
+      circle: "rounded-circle",
     },
     padding: {
       none: "",
@@ -57,24 +57,23 @@ const tileVariants = cva("flex border border-outline-variant text-m", {
   },
 });
 
-const Tile: PolymorphicComponentType<"article", TilePropsType> = forwardRef(function Tile<T extends React.ElementType>(
-  {
-    children,
-    renderAs,
-    className,
-    backgroundColor,
-    width,
-    borderRadius,
-    padding,
-    shadow,
-    ...props
-  }: PolymorphicPropsType<T, TilePropsType>,
-  ref: PolymorphicRefType<T>
-) {
+const Tile = <T extends React.ElementType>({
+  children,
+  renderAs,
+  className,
+  backgroundColor,
+  width,
+  borderRadius,
+  padding,
+  shadow,
+  innerRef,
+  ...props
+}: PolymorphicPropsTypeWithInnerRef<T, TilePropsType>) => {
   const TileComponent = renderAs || "article";
 
   return (
     <TileComponent
+      ref={innerRef}
       className={classMerge([
         className,
         tileVariants({
@@ -85,12 +84,11 @@ const Tile: PolymorphicComponentType<"article", TilePropsType> = forwardRef(func
           shadow,
         }),
       ])}
-      ref={ref}
       {...props}
     >
       {children}
     </TileComponent>
   );
-});
+};
 
 export default Tile;

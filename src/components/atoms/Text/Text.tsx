@@ -1,8 +1,7 @@
-import { forwardRef } from "react";
 import { VariantProps, cva } from "class-variance-authority";
 
 import classMerge from "@utils/classMerge";
-import { PolymorphicComponentType, PolymorphicPropsType, PolymorphicRefType } from "@customTypes/polymorphicType";
+import { PolymorphicPropsTypeWithInnerRef } from "@customTypes/polymorphicType";
 
 type TextPropsType = VariantProps<typeof textVariants>;
 
@@ -43,17 +42,27 @@ export const textVariants = cva("", {
   },
 });
 
-const Text: PolymorphicComponentType<"span", TextPropsType> = forwardRef(function Text<T extends React.ElementType>(
-  { children, renderAs, className, color, size, weight, ...props }: PolymorphicPropsType<T, TextPropsType>,
-  ref: PolymorphicRefType<T>
-) {
+const Text = <T extends React.ElementType>({
+  children,
+  renderAs,
+  className,
+  color,
+  size,
+  weight,
+  innerRef,
+  ...props
+}: PolymorphicPropsTypeWithInnerRef<T, TextPropsType>) => {
   const TextComponent = renderAs || "span";
 
   return (
-    <TextComponent ref={ref} className={classMerge([textVariants({ color, size, weight }), className])} {...props}>
+    <TextComponent
+      ref={innerRef}
+      className={classMerge([textVariants({ color, size, weight }), className])}
+      {...props}
+    >
       {children}
     </TextComponent>
   );
-});
+};
 
 export default Text;

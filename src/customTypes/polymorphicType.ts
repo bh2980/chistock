@@ -2,16 +2,21 @@ type AsPropType<T extends React.ElementType> = {
   renderAs?: T;
 };
 
-export type PolymorphicRefType<T extends React.ElementType> = React.ComponentPropsWithRef<T>["ref"];
+export type PolymorphicRefType<T extends React.ElementType> =
+  React.ComponentPropsWithRef<T>["ref"];
 
-export type PolymorphicPropsType<T extends React.ElementType, Props = object> = AsPropType<T> &
+export type InnerRefType<T extends React.ElementType> = {
+  innerRef?: PolymorphicRefType<T>;
+};
+
+export type PolymorphicPropsType<
+  T extends React.ElementType,
+  Props = object
+> = AsPropType<T> &
   Props &
-  Omit<React.ComponentPropsWithoutRef<T>, keyof Props> & {
-    ref?: PolymorphicRefType<T>;
-  };
+  Omit<React.ComponentPropsWithoutRef<T>, keyof Props>;
 
-export type PolymorphicComponentType<TDefault extends React.ElementType, K = object> = <
-  T extends React.ElementType = TDefault
->(
-  props: PolymorphicPropsType<T, K>
-) => React.ReactNode | null;
+export type PolymorphicPropsTypeWithInnerRef<
+  T extends React.ElementType,
+  Props = object
+> = PolymorphicPropsType<T, Props> & InnerRefType<T>;

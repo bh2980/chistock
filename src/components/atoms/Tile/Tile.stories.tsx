@@ -19,7 +19,7 @@ const meta = {
       control: { type: "radio" },
     },
     borderRadius: {
-      options: ["none", "xs", "s", "m", "l"],
+      options: ["none", "xs", "s", "m", "l", "circle"],
       control: { type: "radio" },
     },
     padding: {
