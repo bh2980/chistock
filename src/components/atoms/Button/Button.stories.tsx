@@ -10,6 +10,7 @@ const meta = {
   component: Button,
   parameters: {
     layout: "centered",
+    componentSubtitle: "컴포넌트 부제목",
   },
   tags: ["autodocs"],
   argTypes: {
@@ -40,6 +41,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
+/** 스토리 설명 */
 export const ButtonTag: Story = {
   render: (args) => <Button {...args}>LABEL</Button>,
 };

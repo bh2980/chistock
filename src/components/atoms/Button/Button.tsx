@@ -7,6 +7,7 @@ import { twJoin } from "tailwind-merge";
 import { PolymorphicPropsTypeWithInnerRef } from "@customTypes/polymorphicType";
 
 export type ButtonPropsType = {
+  /** props 설명 */
   disabled?: boolean;
   icon?: React.ReactElement;
   iconPosition?: "before" | "after";
@@ -23,6 +24,7 @@ const buttonVariants = cva(
   "relative flex justify-center items-center overflow-hidden rounded-m py-xs",
   {
     variants: {
+      /** props 설명 */
       variant: {
         primary: "bg-primary text-primary-on",
         secondary: "bg-secondary text-secondary-on",
@@ -92,6 +94,9 @@ const IconWrapper = ({
   );
 };
 
+/**
+ * Button 컴포넌트
+ */
 const Button = <T extends React.ElementType>({
   children,
   renderAs,
