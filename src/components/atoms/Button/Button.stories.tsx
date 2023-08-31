@@ -13,29 +13,6 @@ const meta = {
     componentSubtitle: "컴포넌트 부제목",
   },
   tags: ["autodocs"],
-  argTypes: {
-    variant: {
-      options: ["primary", "secondary", "danger", "text"],
-      control: { type: "radio" },
-    },
-    size: {
-      options: ["s", "m", "l"],
-      control: { type: "radio" },
-    },
-    disabled: {
-      options: [true, false],
-      control: { type: "boolean" },
-    },
-    iconPosition: {
-      options: ["before", "after"],
-      control: { type: "radio" },
-    },
-  },
-  args: {
-    variant: "secondary",
-    size: "m",
-    disabled: false,
-  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
