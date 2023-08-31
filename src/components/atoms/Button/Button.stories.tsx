@@ -12,7 +12,7 @@ const meta = {
     layout: "centered",
     componentSubtitle: "컴포넌트 부제목",
   },
-  tags: ["autodocs"],
+  // tags: ["autodocs"],
 } satisfies Meta<typeof Button>;
 
 export default meta;
