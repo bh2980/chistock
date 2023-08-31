@@ -8,12 +8,12 @@ export default {
   theme: {
     fontSize: {
       inherit: "inherit",
-      xs: ["12rem", "16rem"],
+      xs: ["12rem", "20rem"],
       s: ["14rem", "20rem"],
       m: ["16rem", "24rem"],
-      l: ["20rem", "24rem"],
-      xl: ["24rem", "32rem"],
-      "2xl": ["36rem", "40rem"],
+      l: ["20rem", "32rem"],
+      xl: ["24rem", "36rem"],
+      "2xl": ["32rem", "48rem"],
     },
     fontWeight: {
       regular: "400",
