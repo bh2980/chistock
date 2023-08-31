@@ -1,0 +1,45 @@
+import { Canvas, Meta } from "@storybook/blocks";
+
+<Meta title="Token/BorderRadii" />
+
+<br />
+<br />
+<br />
+<br />
+
+# Border Radii
+
+치스톡에 사용되는 테두리 반경을 정의합니다.
+
+<Canvas withSource="none">
+  <div className="flex flex-col gap-2xl ml-xl">
+    <div className="flex gap-l">
+      <div className="flex gap-2xl items-center">
+        <div className="w-[64px] h-[64px] bg-[#0A5AFA] rounded-none" />
+      </div>
+      <div className="flex gap-2xl items-center">
+        <div className="w-[64px] h-[64px] bg-[#0A5AFA] rounded-xs" />
+      </div>
+      <div className="flex gap-2xl items-center">
+        <div className="w-[64px] h-[64px] bg-[#0A5AFA] rounded-s" />
+      </div>
+      <div className="flex gap-2xl items-center">
+        <div className="w-[64px] h-[64px] bg-[#0A5AFA] rounded-m" />
+      </div>
+      <div className="flex gap-2xl items-center">
+        <div className="w-[64px] h-[64px] bg-[#0A5AFA] rounded-l" />
+      </div>
+      <div className="flex gap-2xl items-center">
+        <div className="w-[64px] h-[64px] bg-[#0A5AFA] rounded-circle" />
+      </div>
+    </div>
+    <div className="flex gap-l">
+      <div className="w-[64px] text-center text-l font-bold">none</div>
+      <div className="w-[64px] text-center text-l font-bold">xs</div>
+      <div className="w-[64px] text-center text-l font-bold">s</div>
+      <div className="w-[64px] text-center text-l font-bold">m</div>
+      <div className="w-[64px] text-center text-l font-bold">l</div>
+      <div className="w-[64px] text-center text-l font-bold">circle</div>
+    </div>
+  </div>
+</Canvas>
