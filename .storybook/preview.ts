@@ -1,6 +1,5 @@
-import type { Preview } from "@storybook/react";
-
 import { withThemeByClassName } from "@storybook/addon-styling";
+import type { Preview } from "@storybook/react";
 
 import "../src/app/globals.css";
 import "./storybook.css";
@@ -13,6 +12,9 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/,
       },
+    },
+    options: {
+      storySort: { order: ["Token", "Atom"] },
     },
   },
   decorators: [
