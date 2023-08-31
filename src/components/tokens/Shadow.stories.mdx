@@ -1,0 +1,45 @@
+import { Canvas, Meta } from "@storybook/blocks";
+
+<Meta title="Token/Shadow" />
+
+<br />
+<br />
+<br />
+<br />
+
+# Shadow
+
+치스톡에 사용되는 그림자를 정의합니다.
+
+<Canvas withSource="none">
+  <div className="flex flex-col gap-2xl ml-xl">
+    <div className="flex gap-l">
+      <div className="flex gap-2xl items-center">
+        <div className="w-[64px] h-[64px] bg-[#E7ECF4] rounded-m shadow-none" />
+      </div>
+      <div className="flex gap-2xl items-center">
+        <div className="w-[64px] h-[64px] bg-[#E7ECF4] rounded-m shadow-xs" />
+      </div>
+      <div className="flex gap-2xl items-center">
+        <div className="w-[64px] h-[64px] bg-[#E7ECF4] rounded-m shadow-s" />
+      </div>
+      <div className="flex gap-2xl items-center">
+        <div className="w-[64px] h-[64px] bg-[#E7ECF4] rounded-m shadow-m" />
+      </div>
+      <div className="flex gap-2xl items-center">
+        <div className="w-[64px] h-[64px] bg-[#E7ECF4] rounded-m shadow-l" />
+      </div>
+      <div className="flex gap-2xl items-center">
+        <div className="w-[64px] h-[64px] bg-[#E7ECF4] rounded-m shadow-xl" />
+      </div>
+    </div>
+    <div className="flex gap-l">
+      <div className="w-[64px] text-center text-l font-bold">none</div>
+      <div className="w-[64px] text-center text-l font-bold">xs</div>
+      <div className="w-[64px] text-center text-l font-bold">s</div>
+      <div className="w-[64px] text-center text-l font-bold">m</div>
+      <div className="w-[64px] text-center text-l font-bold">l</div>
+      <div className="w-[64px] text-center text-l font-bold">xl</div>
+    </div>
+  </div>
+</Canvas>

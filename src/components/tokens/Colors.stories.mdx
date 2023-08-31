@@ -1,0 +1,212 @@
+import { ColorItem, ColorPalette, Meta } from "@storybook/blocks";
+
+import color from "@constants/colorPalette";
+
+<Meta title="Token/Color" />
+
+<br />
+<br />
+<br />
+<br />
+
+# Color
+
+치스톡에서 사용되는 컬러들을 정의합니다.  
+치스톡의 컬러 정책은 [Google Material UI](https://m3.material.io/)의 Color 정책을 참고하여 설정되었습니다.
+
+<br />
+
+## **Color Palette**
+
+<br />
+
+### Light Mode
+
+---
+
+<ColorPalette>
+  <ColorItem
+    title="Core"
+    subtitle="주요색"
+    colors={{
+      primary: color.blue[50],
+      secondary: color.blue[20],
+      tertiary: color.blue[70],
+    }}
+  />
+  <ColorItem
+    title="Core On"
+    subtitle="주요색 위 콘텐츠 색"
+    colors={{
+      "primary-on": color.white,
+      "secondary-on": color.white,
+      "tertiary-on": color.blue[10],
+    }}
+  />
+  <ColorItem
+    title="Core Fixed"
+    subtitle="고정 주요색"
+    colors={{
+      "primary-fixed": color.blue[50],
+      "secondary-fixed": color.blue[20],
+      "tertiary-fixed": color.blue[70],
+    }}
+  />
+  <ColorItem
+    title="Core On Fixed"
+    subtitle="고정 주요색 위 콘텐츠 색"
+    colors={{
+      "primary-fixed-on": color.white,
+      "secondary-fixed-on": color.white,
+      "tertiary-fixed-on": color.blue[10],
+    }}
+  />
+  <ColorItem
+    title="Surface"
+    subtitle="배경색"
+    colors={{
+      surface: color.neutral[90],
+      "surface-variant": color.white,
+      "surface-variant-high": color.neutral[80],
+      "surface-variant-highest": color.neutral[70],
+    }}
+  />
+  <ColorItem
+    title="Surface On"
+    subtitle="배경색 위 콘텐츠 색"
+    colors={{
+      "surface-on": color.neutral[0],
+      "surface-on-variant": color.neutral[30],
+    }}
+  />
+  <ColorItem
+    title="Border"
+    subtitle="선 색"
+    colors={{
+      outline: color.neutral[40],
+      "outline-variant": color.neutral[80],
+    }}
+  />
+  <ColorItem
+    title="Custom"
+    subtitle="추가색"
+    colors={{
+      red: color.red[40],
+      "red-variant": color.red[30],
+      yellow: color.yellow[50],
+      green: color.green[30],
+      magenta: color.magenta[50],
+    }}
+  />
+  <ColorItem
+    title="Custom On"
+    subtitle="추가색 위 콘텐츠 색"
+    colors={{
+      "red-on": color.white,
+      "red-variant-on": color.white,
+      "yellow-on": color.neutral[0],
+      "green-on": color.neutral[0],
+      "magenta-on": color.neutral[0],
+    }}
+  />
+</ColorPalette>
+
+### Dark Mode
+
+---
+
+<ColorPalette>
+  <ColorItem
+    title="Core"
+    subtitle="주요색"
+    colors={{
+      primary: color.blue[60],
+      secondary: color.blue[80],
+      tertiary: color.blue[10],
+    }}
+  />
+  <ColorItem
+    title="Core On"
+    subtitle="주요색 위 콘텐츠 색"
+    colors={{
+      "primary-on": color.neutral[0],
+      "secondary-on": color.neutral[10],
+      "tertiary-on": color.blue[90],
+    }}
+  />
+  <ColorItem
+    title="Core Fixed"
+    subtitle="고정 주요색"
+    colors={{
+      "primary-fixed": color.blue[50],
+      "secondary-fixed": color.blue[20],
+      "tertiary-fixed": color.blue[70],
+    }}
+  />
+  <ColorItem
+    title="Core On Fixed"
+    subtitle="고정 주요색 위 콘텐츠 색"
+    colors={{
+      "primary-fixed-on": color.white,
+      "secondary-fixed-on": color.white,
+      "tertiary-fixed-on": color.blue[10],
+    }}
+  />
+  <ColorItem
+    title="Surface"
+    subtitle="배경색"
+    colors={{
+      surface: color.blue[5],
+      "surface-variant": color.neutral[10],
+      "surface-variant-high": color.neutral[20],
+      "surface-variant-highest": color.neutral[30],
+    }}
+  />
+  <ColorItem
+    title="Surface On"
+    subtitle="배경색 위 콘텐츠 색"
+    colors={{
+      "surface-on": color.white,
+      "surface-on-variant": color.neutral[70],
+    }}
+  />
+  <ColorItem
+    title="Border"
+    subtitle="선 색"
+    colors={{
+      outline: color.neutral[60],
+      "outline-variant": color.neutral[20],
+    }}
+  />
+  <ColorItem
+    title="Custom"
+    subtitle="추가색"
+    colors={{
+      red: color.red[60],
+      "red-variant": color.red[80],
+      yellow: color.yellow[60],
+      green: color.green[40],
+      magenta: color.magenta[60],
+    }}
+  />
+  <ColorItem
+    title="Custom On"
+    subtitle="추가색 위 콘텐츠 색"
+    colors={{
+      "red-on": color.neutral[0],
+      "red-variant-on": color.neutral[0],
+      "yellow-on": color.neutral[0],
+      "green-on": color.neutral[0],
+      "magenta-on": color.neutral[0],
+    }}
+  />
+</ColorPalette>
+
+## **접근성**
+
+W3C의 웹 접근성 지침인 WCAG 2.1에 따라 명암비를 준수하도록 설정되었습니다.  
+배경색과 콘텐츠 색(On)은 최소 4.5의 명암비를 갖도록 설정되었으며, 일부 vatiant 색상에 대하여 최소 3의 명암비를 갖도록 설정되었습니다.  
+또한, 표면색(Surface)과 컴포넌트(Core, Custom) 색 역시 최소 3의 명암비를 갖도록 설정되었습니다.
+
+<br />
+<br />

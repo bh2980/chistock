@@ -1,0 +1,149 @@
+import { Canvas, Meta, Title } from "@storybook/blocks";
+
+import Text from "@atoms/Text/Text";
+
+<Meta title="Token/Typography" />
+
+<br />
+<br />
+<br />
+<br />
+
+# Typography
+
+치스톡에 사용되는 서체를 정의합니다.
+
+**Font:** Pretandard  
+**Weights:** 400(regular), 700(bold)
+
+<br />
+
+## **Size**
+
+<Canvas withSource="none">
+  <table style={{ borderCollapse: "separate", borderSpacing: "32rem" }}>
+    <thead>
+      <tr style={{ textAlign: "left" }}>
+        <th>
+          <Text size="xl" weight="bold">
+            Size
+          </Text>
+        </th>
+        <th>
+          <Text size="xl" weight="bold">
+            Font Size
+          </Text>
+        </th>
+        <th>
+          <Text size="xl" weight="bold">
+            Line Height
+          </Text>
+        </th>
+        <th>
+          <Text size="xl" weight="bold">
+            Sample
+          </Text>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <Text class="text-xs">xs</Text>
+        </td>
+        <td>
+          <Text class="text-xs">12px</Text>
+        </td>
+        <td>
+          <Text class="text-xs">20px</Text>
+        </td>
+        <td>
+          <Text class="text-xs">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <Text class="text-s">s</Text>
+        </td>
+        <td>
+          <Text class="text-s">14px</Text>
+        </td>
+        <td>
+          <Text class="text-s">20px</Text>
+        </td>
+        <td>
+          <Text class="text-s">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <Text class="text-m">m</Text>
+        </td>
+        <td>
+          <Text class="text-m">16px</Text>
+        </td>
+        <td>
+          <Text class="text-m">24px</Text>
+        </td>
+        <td>
+          <Text class="text-m">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <Text class="text-l">l</Text>
+        </td>
+        <td>
+          <Text class="text-l">20px</Text>
+        </td>
+        <td>
+          <Text class="text-l">32px</Text>
+        </td>
+        <td>
+          <Text class="text-l">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <Text class="text-xl">xl</Text>
+        </td>
+        <td>
+          <Text class="text-xl">24px</Text>
+        </td>
+        <td>
+          <Text class="text-xl">36px</Text>
+        </td>
+        <td>
+          <Text class="text-xl">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <Text class="text-2xl">2xl</Text>
+        </td>
+        <td>
+          <Text class="text-2xl">32px</Text>
+        </td>
+        <td>
+          <Text class="text-2xl">48px</Text>
+        </td>
+        <td>
+          <Text class="text-2xl">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</Canvas>
+
+<br />
+
+## **접근성**
+
+W3C의 웹 접근성 지침인 WCAG 2.1에서는 Line Height를 글씨 크기의 최소 1.5배 이상으로 규정하고 있습니다.  
+이에 맞춰 치스톡의 Typography 역시 Line Height가 Font Size의 1.5배 이상으로 설정되었습니다.  
+(예외 : s 사이즈 1.42배)
+
+글씨가 너무 작아 읽지 못하는 상황을 피하기 위해 xs 사이즈의 사용을 지양하기 바랍니다.
+
+<br />
+<br />

@@ -1,0 +1,86 @@
+import { Canvas, Meta } from "@storybook/blocks";
+
+<Meta title="Token/Stroke" />
+
+<br />
+<br />
+<br />
+<br />
+
+# Stroke
+
+치스톡에 사용되는 선을 정의합니다.
+
+<br />
+
+## **Stroke Width**
+
+<Canvas withSource="none">
+  <div className="flex gap-2xl ml-xl">
+    <div className="flex flex-col gap-l">
+      <div className="flex items-center h-[48px] text-l font-bold">s</div>
+      <div className="flex items-center h-[48px] text-l font-bold">m</div>
+    </div>
+    <div className="flex flex-col gap-l">
+      <div className="flex items-center h-[48px] text-l">1px</div>
+      <div className="flex items-center h-[48px] text-l">3px</div>
+    </div>
+    <div className="flex flex-col gap-l">
+      <div className="flex gap-2xl items-center h-[48px]">
+        <div className="w-[480px] border-t-s border-[#3B5F97]" />
+      </div>
+      <div className="flex gap-2xl items-center h-[48px]">
+        <div className="w-[480px] border-t-m border-[#3B5F97]" />
+      </div>
+    </div>
+  </div>
+</Canvas>
+
+## **Stroke Color**
+
+<br />
+### Light Mode
+
+<Canvas withSource="none">
+  <div className="flex gap-2xl ml-xl">
+    <div className="flex flex-col gap-l">
+      <div className="flex items-center h-[48px] text-l font-bold">outline</div>
+      <div className="flex items-center h-[48px] text-l font-bold">outline-variant</div>
+    </div>
+    <div className="flex flex-col gap-l">
+      <div className="flex gap-2xl items-center h-[48px]">
+        <div className="w-[480px] border-t-m border-[#3B5F97]" />
+      </div>
+      <div class="flex gap-2xl items-center h-[48px]">
+        <div class="w-[480px] border-t-m border-[#CED9E8]" />
+      </div>
+    </div>
+  </div>
+</Canvas>
+
+### Dark Mode
+
+<Canvas withSource="none">
+  <div className="flex gap-2xl ml-xl">
+    <div className="flex flex-col gap-l">
+      <div className="flex items-center h-[48px] text-l font-bold">outline</div>
+      <div className="flex items-center h-[48px] text-l font-bold">outline-variant</div>
+    </div>
+    <div className="flex flex-col gap-l">
+      <div className="flex gap-2xl items-center h-[48px]">
+        <div className="w-[480px] border-t-m border-[#88A4C8]" />
+      </div>
+      <div class="flex gap-2xl items-center h-[48px]">
+        <div class="w-[480px] border-t-m border-[#2A3F5B]" />
+      </div>
+    </div>
+  </div>
+</Canvas>
+
+## **접근성**
+
+WCAG 2.1에 따라 배경 대비 명확한 구분선이 필요한 경우 최소 3의 명도대비를 준수하는 outline 컬러를 사용합니다.  
+명확한 구분이 필요하지 않거나, 필요에 따라 outline-variant를 사용합니다.
+
+<br />
+<br />
