@@ -5,12 +5,18 @@ import classMerge from "@utils/classMerge";
 import { twJoin } from "tailwind-merge";
 
 import { PolymorphicPropsTypeWithInnerRef } from "@customTypes/polymorphicType";
+import { NonNullableProps } from "@customTypes/utilType";
 
-export type ButtonPropsType = {
+export type ButtonPropsType = NonNullableProps<
+  VariantProps<typeof buttonVariants>
+> & {
+  /** disabled props 설명
+   * @default false
+   */
   disabled?: boolean;
   icon?: React.ReactElement;
   iconPosition?: "before" | "after";
-} & VariantProps<typeof buttonVariants>;
+};
 
 export const has = (item: unknown) => !!item;
 
@@ -46,6 +52,7 @@ const buttonDisabledVariants = cva(
   "text-surface-on/30 grayscale pointer-events-none",
   {
     variants: {
+      /** variant props 설명 */
       variant: {
         primary: "bg-surface-on/10",
         secondary: "bg-surface-on/10",
@@ -92,7 +99,10 @@ const IconWrapper = ({
   );
 };
 
-const Button = <T extends React.ElementType>({
+/**
+ * Button 컴포넌트
+ */
+const Button = <T extends React.ElementType = "button">({
   children,
   renderAs,
   className,
@@ -104,12 +114,12 @@ const Button = <T extends React.ElementType>({
   disabled,
   ...props
 }: PolymorphicPropsTypeWithInnerRef<T, ButtonPropsType>) => {
-  const ButtonComponent = renderAs || "button";
+  const Root = renderAs || "button";
 
   const isIconButton = has(icon) && !has(children);
 
   return (
-    <ButtonComponent
+    <Root
       ref={innerRef}
       className={classMerge(
         twJoin([
@@ -133,7 +143,7 @@ const Button = <T extends React.ElementType>({
         </IconWrapper>
       )}
       <Overlay />
-    </ButtonComponent>
+    </Root>
   );
 };
 
