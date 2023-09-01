@@ -22,6 +22,8 @@
     "baseUrl": "./src",
     "paths": {
       "@atoms/*": ["./components/atoms/*"],
+      "@story/*": ["./components/story/*"],
+      "@tokens/*": ["./components/tokens/*"],
       "@assets/*": ["./assets/*"],
       "@constants/*": ["./constants/*"],
       "@customTypes/*": ["./customTypes/*"],
