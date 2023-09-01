@@ -4,7 +4,7 @@ import { createThemes } from "tw-colors";
 import color from "./src/constants/colorPalette";
 
 export default {
-  content: ["./src/components/**/*.{js,ts,jsx,tsx,mdx}", "./src/app/**/*.{js,ts,jsx,tsx,mdx}"],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     fontSize: {
       inherit: "inherit",
