@@ -1,38 +1,20 @@
 import { VariantProps, cva } from "class-variance-authority";
 import { Suspense, lazy, useMemo } from "react";
 
-import classMerge from "@utils/classMerge";
+import { NonNullableProps } from "@customTypes/utilType";
+
 import ICON_MAP from "@constants/iconMap";
+import { textColorVariants } from "@constants/textColor";
+
+import classMerge from "@utils/classMerge";
 
 const iconVariants = cva("stroke-2", {
   variants: {
-    color: {
-      transparent: "text-transparent",
-      current: "text-current",
-      primary: "text-primary",
-      primaryFixed: "text-primary-fixed",
-      secondary: "text-secondary",
-      secondaryFixed: "text-secondary-fixed",
-      tertiary: "text-tertiary",
-      tertiaryFixed: "text-tertiary-fixed",
-      red: "text-red",
-      yellow: "text-yellow",
-      green: "text-green",
-      magenta: "text-magenta",
-      onSurface: "text-surface-on",
-      onSub: "text-surface-on-variant",
-      onPrimary: "text-primary-on",
-      onPrimaryFixed: "text-primary-fixed-on",
-      onSecondary: "text-secondary-on",
-      onSecondaryFixed: "text-secondary-fixed-on",
-      onTertiary: "text-tertiary-on",
-      onTertiaryFixed: "text-tertiary-fixed-on",
-      onRed: "text-red-on",
-      onRedSub: "text-red-variant-on",
-      onYellow: "text-yellow-on",
-      onGreen: "text-green-on",
-      onMagenta: "text-magenta-on",
-    },
+    /**
+     * 아이콘의 크기를 선택하는 속성
+     *
+     * @default inherit
+     *  */
     size: {
       inherit: "w-[1em] h-[1em]",
       s: "w-s h-s",
@@ -44,22 +26,27 @@ const iconVariants = cva("stroke-2", {
     },
   },
   defaultVariants: {
-    color: "current",
     size: "inherit",
   },
 });
 
 type IconPropsType = {
+  /** 렌더링할 아이콘을 선택하는 속성 */
   icon: keyof typeof ICON_MAP;
-} & VariantProps<typeof iconVariants> &
+} & NonNullableProps<VariantProps<typeof iconVariants>> &
+  VariantProps<typeof textColorVariants> &
   React.SVGAttributes<SVGElement>;
 
+/** SVG 아이콘을 불러와 React Component 형태로 표시하는 컴포넌트입니다. */
 const Icon = ({ icon, className, color, size, ...props }: IconPropsType) => {
   const IconComponent = useMemo(() => lazy(ICON_MAP[icon]), [icon]);
 
   return (
-    <Suspense fallback={<div className={classMerge([iconVariants({ color: "transparent", size })])} />}>
-      <IconComponent className={classMerge([iconVariants({ color, size }), className])} {...props} />
+    <Suspense fallback={<div className={classMerge([iconVariants({ size })])} />}>
+      <IconComponent
+        className={classMerge([iconVariants({ size }), textColorVariants({ color }), className])}
+        {...props}
+      />
     </Suspense>
   );
 };
