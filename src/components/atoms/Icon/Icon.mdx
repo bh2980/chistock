@@ -1,0 +1,70 @@
+import { ArgTypes, Canvas, Description, Meta, Primary, Stories } from "@storybook/blocks";
+
+import Highlighter from "@story/Highlighter";
+
+import * as IconStories from "./Icon.stories";
+
+<Meta of={IconStories} />
+
+<br />
+<br />
+<br />
+<br />
+
+# Icon
+
+<Description of={IconStories} />
+
+화면에 보여지는 보라색은 <Highlighter color="red">Icon에서 설정한 색상이 아닌 부모 컴포넌트의 텍스트 색상</Highlighter>입니다.
+
+<br />
+
+## **Default**
+
+<Primary />
+
+<ArgTypes />
+
+## **Stories**
+
+<br />
+
+### <Highlighter>**Icon**</Highlighter>
+
+<Description of={IconStories.IconCategory} />
+
+자세한 아이콘 종류는 Iconography를 참조하세요.
+
+[Iconography](?path=/docs/token-icon--docs)
+
+<Canvas of={IconStories.IconCategory} />
+
+### **Size**
+
+<Description of={IconStories.IconSize} />
+
+<Canvas of={IconStories.IconSize} />
+
+### **Color**
+
+**<Highlighter color="red">콘텐츠(On) 색상은 가시성을 위해 배경색을 설정하였습니다.</Highlighter>**
+
+<Description of={IconStories.IconColor} />
+
+자세한 색상 종류는 Color를 참조하세요.
+
+[Color로 이동](?path=/docs/token-color--docs)
+
+<Canvas of={IconStories.IconColor} />
+
+### **Playground**
+
+Playground에서 Icon 컴포넌트를 직접 테스트해보세요.
+
+[Icon Playground로 이동](?path=/story/atom-icon--playground)
+
+<Description of={IconStories.Playground} />
+<Canvas of={IconStories.Playground} />
+
+<br />
+<br />
