@@ -1,4 +1,4 @@
-import { PolymorphicPropsType } from "@customTypes/polymorphicType";
+import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
 /** Box를 반환하는 함수입니다.
  *
@@ -13,11 +13,12 @@ export const createBox = <T extends React.ElementType>() => Box<T>;
  */
 const Box = <T extends React.ElementType = "div">({
   renderAs,
+  innerRef,
   ...props
-}: PolymorphicPropsType<T>) => {
+}: PolymorphicPropsWithInnerRefType<T>) => {
   const Root = renderAs || "div";
 
-  return <Root {...props}></Root>;
+  return <Root ref={innerRef} {...props}></Root>;
 };
 
 export default Box;
