@@ -1,40 +1,27 @@
-import React, { PropsWithChildren } from "react";
-import { VariantProps, cva } from "class-variance-authority";
-
-import classMerge from "@utils/classMerge";
+import { cva } from "class-variance-authority";
 import { twJoin } from "tailwind-merge";
 
-import { PolymorphicPropsTypeWithInnerRef } from "@customTypes/polymorphicType";
-import { NonNullableProps } from "@customTypes/utilType";
+import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
-export type ButtonPropsType = NonNullableProps<
-  VariantProps<typeof buttonVariants>
-> & {
-  /** disabled props 설명
-   * @default false
-   */
-  disabled?: boolean;
-  icon?: React.ReactElement;
-  iconPosition?: "before" | "after";
-};
+import classMerge from "@utils/classMerge";
+
+import { createBox } from "@atoms/Box/Box";
+
+import { AlternateAs, ButtonBaseType, DefaultType, IconWrapperPropsType } from "./Button.types";
 
 export const has = (item: unknown) => !!item;
 
-type IconWrapperPropsType = PropsWithChildren &
-  Pick<ButtonPropsType, "iconPosition"> & {
-    isIconButton?: boolean;
-  };
-
-const buttonVariants = cva(
+export const buttonVariants = cva(
   "relative flex justify-center items-center overflow-hidden rounded-m py-xs",
   {
     variants: {
+      /** vatiants 설명 */
       variant: {
         primary: "bg-primary text-primary-on",
         secondary: "bg-secondary text-secondary-on",
         danger: "bg-red text-red-on",
         text: "text-surface-on-variant",
-      },
+      } /** size 설명 */,
       size: {
         s: "h-[32rem] px-s text-s",
         m: "h-[40rem] px-m text-m",
@@ -48,23 +35,20 @@ const buttonVariants = cva(
   }
 );
 
-const buttonDisabledVariants = cva(
-  "text-surface-on/30 grayscale pointer-events-none",
-  {
-    variants: {
-      /** variant props 설명 */
-      variant: {
-        primary: "bg-surface-on/10",
-        secondary: "bg-surface-on/10",
-        danger: "bg-surface-on/10",
-        text: "bg-transparent",
-      },
+const buttonDisabledVariants = cva("text-surface-on/30 grayscale pointer-events-none", {
+  variants: {
+    /** variant props 설명 */
+    variant: {
+      primary: "bg-surface-on/10",
+      secondary: "bg-surface-on/10",
+      danger: "bg-surface-on/10",
+      text: "bg-transparent",
     },
-    defaultVariants: {
-      variant: "secondary",
-    },
-  }
-);
+  },
+  defaultVariants: {
+    variant: "secondary",
+  },
+});
 
 const iconButtonPadding = cva("aspect-square", {
   variants: {
@@ -82,11 +66,7 @@ const Overlay = () => {
   );
 };
 
-const IconWrapper = ({
-  iconPosition,
-  isIconButton,
-  children,
-}: IconWrapperPropsType) => {
+const IconWrapper = ({ iconPosition, isIconButton, children }: IconWrapperPropsType) => {
   return (
     <span
       className={twJoin(
@@ -102,7 +82,11 @@ const IconWrapper = ({
 /**
  * Button 컴포넌트
  */
-const Button = <T extends React.ElementType = "button">({
+
+const Button = <
+  T extends DefaultType | AlternateAs = DefaultType,
+  A extends AlternateAs = AlternateAs
+>({
   children,
   renderAs,
   className,
@@ -110,17 +94,16 @@ const Button = <T extends React.ElementType = "button">({
   size,
   icon,
   iconPosition = "before",
-  innerRef,
   disabled,
   ...props
-}: PolymorphicPropsTypeWithInnerRef<T, ButtonPropsType>) => {
-  const Root = renderAs || "button";
-
+}: PolymorphicPropsWithInnerRefType<T, ButtonBaseType, A>) => {
   const isIconButton = has(icon) && !has(children);
+
+  const Root = createBox<DefaultType | AlternateAs>();
 
   return (
     <Root
-      ref={innerRef}
+      renderAs={renderAs || "button"}
       className={classMerge(
         twJoin([
           buttonVariants({ variant, size }),
