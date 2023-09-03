@@ -1,4 +1,5 @@
 import { VariantProps } from "class-variance-authority";
+import Link from "next/link";
 
 import { NonNullableProps } from "@customTypes/utilType";
 
@@ -14,7 +15,7 @@ export type TextDefault = "span";
  *
  * 필요 시 추가 후 사용
  */
-export type TextAlterAs = "div" | "a" | "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+export type TextAlterAs = "div" | "a" | "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | typeof Link;
 
 /**
  * Text 컴포넌트 기본 Props 타입
