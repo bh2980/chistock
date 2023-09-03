@@ -7,7 +7,12 @@ import classMerge from "@utils/classMerge";
 
 import { createBox } from "@atoms/Box/Box";
 
-import { AlternateAs, ButtonBaseType, DefaultType, IconWrapperPropsType } from "./Button.types";
+import {
+  ButtonAlterAs,
+  ButtonBasePropsType,
+  ButtonDefault,
+  IconWrapperPropsType,
+} from "./Button.types";
 
 export const has = (item: unknown) => !!item;
 
@@ -84,8 +89,8 @@ const IconWrapper = ({ iconPosition, isIconButton, children }: IconWrapperPropsT
  */
 
 const Button = <
-  T extends DefaultType | AlternateAs = DefaultType,
-  A extends AlternateAs = AlternateAs
+  T extends ButtonDefault | ButtonAlterAs = ButtonDefault,
+  A extends ButtonAlterAs = ButtonAlterAs
 >({
   children,
   renderAs,
@@ -96,10 +101,10 @@ const Button = <
   iconPosition = "before",
   disabled,
   ...props
-}: PolymorphicPropsWithInnerRefType<T, ButtonBaseType, A>) => {
+}: PolymorphicPropsWithInnerRefType<T, ButtonBasePropsType, A>) => {
   const isIconButton = has(icon) && !has(children);
 
-  const Root = createBox<DefaultType | AlternateAs>();
+  const Root = createBox<ButtonDefault | ButtonAlterAs>();
 
   return (
     <Root

@@ -5,10 +5,13 @@ import { NonNullableProps } from "@customTypes/utilType";
 
 import { buttonVariants } from "./Button";
 
-export type DefaultType = "button";
-export type AlternateAs = "a" | typeof Link;
+/** Button 컴포넌트 기본 타입 */
+export type ButtonDefault = "button";
 
-export type ButtonBaseType = NonNullableProps<VariantProps<typeof buttonVariants>> & {
+/** Button 컴포넌트가 렌더링될 수 있는 다른 타입 */
+export type ButtonAlterAs = "a" | typeof Link;
+
+export type ButtonBasePropsType = NonNullableProps<VariantProps<typeof buttonVariants>> & {
   /** disabled props 설명
    * @default false
    */
