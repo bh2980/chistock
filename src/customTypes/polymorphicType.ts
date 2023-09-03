@@ -12,7 +12,7 @@
  * AsPropsType<'div', 'a' | 'button'>
  */
 type AsPropsType<T extends React.ElementType, A extends React.ElementType = T> = {
-  /** 렌더링할 태그 타입 */
+  /** 렌더링할 태그 속성 */
   renderAs?: T | A;
 };
 
@@ -26,7 +26,11 @@ type AsPropsType<T extends React.ElementType, A extends React.ElementType = T> =
  * InnreRefType<'div'>
  */
 type InnerRefType<T extends React.ElementType> = {
-  /** ref를 대체하는 타입 Type */
+  /**
+   * ref를 대체하는 속성
+   *
+   * @type React.ComponentPropsWithRef<T>["ref"]
+   * */
   innerRef?: React.ComponentPropsWithRef<T>["ref"];
 };
 
