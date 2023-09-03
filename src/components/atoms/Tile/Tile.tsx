@@ -10,7 +10,7 @@ import { TileAlterAs, TileBasePropsType, TileDefault } from "./Tile.types";
 
 export const tileVariants = cva("flex border border-outline-variant text-m", {
   variants: {
-    backgroundColor: {
+    variant: {
       default: "bg-surface-variant text-surface-on",
       primary: "bg-primary text-primary-on",
       secondary: "bg-secondary text-secondary-on",
@@ -21,7 +21,6 @@ export const tileVariants = cva("flex border border-outline-variant text-m", {
       s: "rounded-s",
       m: "rounded-m",
       l: "rounded-l",
-      circle: "rounded-circle",
     },
     padding: {
       none: "",
@@ -45,7 +44,7 @@ export const tileVariants = cva("flex border border-outline-variant text-m", {
     },
   },
   defaultVariants: {
-    backgroundColor: "default",
+    variant: "default",
     rounded: "m",
     padding: "2xl",
     shadow: "xs",
@@ -59,7 +58,7 @@ const Tile = <
   children,
   renderAs,
   className,
-  backgroundColor,
+  variant,
   width,
   height,
   rounded,
@@ -76,7 +75,7 @@ const Tile = <
         width,
         height,
         tileVariants({
-          backgroundColor,
+          variant,
           rounded,
           padding,
           shadow,
