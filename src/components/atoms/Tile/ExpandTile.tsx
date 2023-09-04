@@ -4,7 +4,7 @@ import { useState } from "react";
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 import { TailwindMaxHeightClassType } from "@customTypes/tailwindFormatType";
 
-import classMerge from "@utils/classMerge";
+import { classMerge } from "@utils/utils";
 
 import Button from "@atoms/Button/Button";
 import Tile from "@atoms/Tile/Tile";

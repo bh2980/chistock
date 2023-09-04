@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 import * as NextImage from "next/image";
 
-import classMerge from "@utils/classMerge";
+import { classMerge } from "@utils/utils";
 
 import { ImagePropsType } from "./Image.types";
 

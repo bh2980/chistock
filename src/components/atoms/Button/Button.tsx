@@ -3,7 +3,7 @@ import { twJoin } from "tailwind-merge";
 
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
-import classMerge from "@utils/classMerge";
+import { classMerge } from "@utils/utils";
 
 import { createBox } from "@atoms/Box/Box";
 
@@ -85,15 +85,15 @@ const IconWrapper = ({ iconPosition, isIconButton, children }: IconWrapperPropsT
 };
 
 /**
- * Button 컴포넌트
+ * 버튼을 표시합니다.
+ *
+ * 다형성 컴포넌트로 `a`, `button`, `next/Link`로 렌더링할 수 있습니다.
  */
-
 const Button = <
   T extends ButtonDefault | ButtonAlterAs = ButtonDefault,
   A extends ButtonAlterAs = ButtonAlterAs
 >({
   children,
-  renderAs,
   className,
   variant,
   size,
@@ -108,7 +108,6 @@ const Button = <
 
   return (
     <ButtonRoot
-      renderAs={renderAs}
       className={classMerge(
         twJoin([
           buttonVariants({ variant, size }),
