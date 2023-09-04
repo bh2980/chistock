@@ -1,26 +1,17 @@
-import { VariantProps, cva } from "class-variance-authority";
+import { cva } from "class-variance-authority";
+
+import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
+
+import { textColorVariants } from "@constants/textColor";
 
 import classMerge from "@utils/classMerge";
-import { PolymorphicPropsTypeWithInnerRef } from "@customTypes/polymorphicType";
 
-type TextPropsType = VariantProps<typeof textVariants>;
+import { createBox } from "@atoms/Box/Box";
+
+import { TextAlterAs, TextBasePropsType, TextDefault } from "./Text.types";
 
 export const textVariants = cva("", {
   variants: {
-    color: {
-      current: "text-current",
-      onSurface: "text-surface-on",
-      onSub: "text-surface-on-variant",
-      onPrimary: "text-primary-on",
-      onPrimaryFixed: "text-primary-fixed-on",
-      onSecondary: "text-secondary-on",
-      onSecondaryFixed: "text-secondary-fixed-on",
-      onTertiary: "text-tertiary-on",
-      onTertiaryFixed: "text-tertiary-fixed-on",
-      onRed: "text-red-on",
-      onRedSub: "text-red-variant-on",
-      onYellow: "text-yellow-on",
-    },
     size: {
       inherit: "text-inherit",
       xs: "text-xs",
@@ -36,32 +27,37 @@ export const textVariants = cva("", {
     },
   },
   defaultVariants: {
-    color: "current",
     size: "inherit",
     weight: "regular",
   },
 });
 
-const Text = <T extends React.ElementType>({
+const Text = <
+  T extends TextDefault | TextAlterAs = TextDefault,
+  A extends TextAlterAs = TextAlterAs
+>({
   children,
   renderAs,
   className,
   color,
   size,
   weight,
-  innerRef,
   ...props
-}: PolymorphicPropsTypeWithInnerRef<T, TextPropsType>) => {
-  const TextComponent = renderAs || "span";
+}: PolymorphicPropsWithInnerRefType<T, TextBasePropsType, A>) => {
+  const TextRoot = createBox<TextDefault | TextAlterAs>("span");
 
   return (
-    <TextComponent
-      ref={innerRef}
-      className={classMerge([textVariants({ color, size, weight }), className])}
+    <TextRoot
+      renderAs={renderAs}
+      className={classMerge([
+        textVariants({ size, weight }),
+        textColorVariants({ color }),
+        className,
+      ])}
       {...props}
     >
       {children}
-    </TextComponent>
+    </TextRoot>
   );
 };
 

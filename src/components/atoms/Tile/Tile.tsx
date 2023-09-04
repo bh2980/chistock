@@ -1,31 +1,26 @@
-import { VariantProps, cva } from "class-variance-authority";
+import { cva } from "class-variance-authority";
 
-import { PolymorphicPropsTypeWithInnerRef } from "@customTypes/polymorphicType";
+import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
+
 import classMerge from "@utils/classMerge";
 
-export type TilePropsType = VariantProps<typeof tileVariants>;
+import { createBox } from "@atoms/Box/Box";
 
-const tileVariants = cva("flex border border-outline-variant text-m", {
+import { TileAlterAs, TileBasePropsType, TileDefault } from "./Tile.types";
+
+export const tileVariants = cva("flex border border-outline-variant text-m", {
   variants: {
-    backgroundColor: {
-      default: "bg-surface-variant",
-      primary: "bg-primary",
-      secondary: "bg-secondary",
+    variant: {
+      default: "bg-surface-variant text-surface-on",
+      primary: "bg-primary text-primary-on",
+      secondary: "bg-secondary text-secondary-on",
     },
-    width: {
-      auto: "w-auto",
-      full: "w-full",
-      "desktop-4": "w-desktop-4",
-      "desktop-8": "w-desktop-8",
-      "desktop-12": "w-desktop-12",
-    },
-    borderRadius: {
+    rounded: {
       none: "rounded-none",
       xs: "rounded-xs",
       s: "rounded-s",
       m: "rounded-m",
       l: "rounded-l",
-      circle: "rounded-circle",
     },
     padding: {
       none: "",
@@ -49,45 +44,48 @@ const tileVariants = cva("flex border border-outline-variant text-m", {
     },
   },
   defaultVariants: {
-    backgroundColor: "default",
-    width: "auto",
-    borderRadius: "m",
+    variant: "default",
+    rounded: "m",
     padding: "2xl",
     shadow: "xs",
   },
 });
 
-const Tile = <T extends React.ElementType>({
+const Tile = <
+  T extends TileDefault | TileAlterAs = TileDefault,
+  A extends TileAlterAs = TileAlterAs
+>({
   children,
   renderAs,
   className,
-  backgroundColor,
+  variant,
   width,
-  borderRadius,
+  height,
+  rounded,
   padding,
   shadow,
-  innerRef,
   ...props
-}: PolymorphicPropsTypeWithInnerRef<T, TilePropsType>) => {
-  const TileComponent = renderAs || "article";
+}: PolymorphicPropsWithInnerRefType<T, TileBasePropsType, A>) => {
+  const TileRoot = createBox<TileDefault | TileAlterAs>("div");
 
   return (
-    <TileComponent
-      ref={innerRef}
+    <TileRoot
+      renderAs={renderAs}
       className={classMerge([
-        className,
+        width,
+        height,
         tileVariants({
-          backgroundColor,
-          width,
-          borderRadius,
+          variant,
+          rounded,
           padding,
           shadow,
         }),
+        className,
       ])}
       {...props}
     >
       {children}
-    </TileComponent>
+    </TileRoot>
   );
 };
 
