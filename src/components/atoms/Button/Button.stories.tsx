@@ -1,92 +1,166 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import Link from "next/link";
 
-import Button from "@atoms/Button/Button";
+import ICON_MAP from "@constants/iconMap";
+
+import { exceptProperty } from "@utils/utils";
+
+import StoryWrapper from "@story/StoryWrapper";
+
 import Icon from "@atoms/Icon/Icon";
-import Text from "@atoms/Text/Text";
-import Image from "@atoms/Image/Image";
+
+import Button from "./Button";
 
 const meta = {
   title: "Atom/Button",
   component: Button,
   parameters: {
     layout: "centered",
-    componentSubtitle: "컴포넌트 부제목",
   },
-  // tags: ["autodocs"],
+  argTypes: {
+    renderAs: {
+      table: {
+        defaultValue: { summary: "button" },
+        type: {
+          summary: `"button" | "a" | "next/Link"`,
+        },
+      },
+    },
+    ...exceptProperty(["onClick", "onMouseEnter", "onTouchStart", "innerRef"]),
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-/** 스토리 설명 */
-export const ButtonTag: Story = {
-  render: (args) => <Button {...args}>LABEL</Button>,
+export const Default: Story = {
+  render: () => <Button>Button</Button>,
 };
 
-export const IconTextBtn: Story = {
-  args: {
-    icon: <Icon icon="plus" />,
-  },
-  render: (args) => <Button {...args}>Add Wishlist</Button>,
-};
-
-export const TextIconBtn: Story = {
-  args: {
-    icon: <Icon icon="moon" />,
-    iconPosition: "after",
-    onClick: () => {
-      const $html = document.getElementsByTagName("html");
-      $html[0].classList.toggle("theme-light");
-      $html[0].classList.toggle("theme-dark");
-    },
-  },
-  render: (args) => <Button {...args}>Switch to Dark Mode</Button>,
-};
-
-export const BtnWithClass: Story = {
-  args: {
-    className: "w-desktop-4 uppercase justify-between",
-    icon: <Icon icon="setting" />,
-    iconPosition: "after",
-  },
-  render: (args) => <Button {...args}>Setting</Button>,
-};
-
-export const IconBtn: Story = {
-  args: {
-    icon: <Icon icon="chevron-up" />,
-  },
-  render: (args) => <Button {...args}></Button>,
-};
-
-export const TextedIconBtn: Story = {
-  args: {
-    icon: <>👏</>,
-  },
-  render: (args) => (
-    <Button {...args}>
-      <Text>Clap</Text>
-    </Button>
+/**
+ * `variant` 속성을 이용해 버튼을 다양한 형태로 사용할 수 있습니다.
+ *
+ * - `primary` : 페이지 상에서 핵심적인 동작에 사용합니다.
+ * - `secondry` : 일반적으로 렌더링되는 기본 버튼 상태입니다.
+ * - `text` : 우선순위가 낮거나 글씨만 보여져야하는 버튼에서 사용합니다.
+ * - `danger` : 경고 혹은 위험할 수 있는 상황에 사용합니다.
+ *
+ * 기본값으로 `secondary`가 설정되어있습니다.
+ */
+export const ButtonVariant: Story = {
+  name: "Variant",
+  render: () => (
+    <StoryWrapper>
+      <Button variant="primary">버튼</Button>
+      <Button>버튼</Button>
+      <Button variant="text">버튼</Button>
+      <Button variant="danger">버튼</Button>
+    </StoryWrapper>
   ),
 };
 
-export const ImageIconATagBtn: Story = {
+/**
+ * `size` 속성을 통해 버튼의 크기를 조절할 수 있습니다.
+ *
+ * - `s` : 버튼 태그
+ * - `m` : a 태그
+ * - `l` : next/Link 태그
+ *
+ * 기본값으로 `m`이 설정되어있습니다.
+ */
+export const ButtonSize: Story = {
+  name: "Size",
+  render: () => (
+    <StoryWrapper>
+      <Button size="s">버튼</Button>
+      <Button>버튼</Button>
+      <Button size="l">버튼</Button>
+    </StoryWrapper>
+  ),
+};
+
+/**
+ * `icon` 및 `iconPosition` 속성을 이용해 버튼에 아이콘을 위치시킬 수 있습니다.
+ *
+ * - `before` : 아이콘을 글자 앞에 위치
+ * - `after` : 아이콘을 글자 뒤에 위치
+ *
+ * 기본값으로 `before`가 설정되어 있습니다.
+ */
+export const ButtonIcon: Story = {
+  name: "Icon",
+  render: () => (
+    <StoryWrapper>
+      <Button icon={<Icon icon="moon" />} iconPosition="before">
+        다크 모드
+      </Button>
+      <Button icon={<Icon icon="moon" />} iconPosition="after">
+        다크 모드
+      </Button>
+      <Button icon={<Icon icon="moon" />} />
+    </StoryWrapper>
+  ),
+};
+
+/**
+ * 버튼은 다양한 상태를 가질 수 있습니다.
+ *
+ * - `disabled` : `disabled` 속성을 이용해 버튼을 비활성화할 수 있습니다.
+ */
+export const ButtonState: Story = {
+  name: "State",
+  render: () => (
+    <StoryWrapper>
+      <Button disabled>버튼</Button>
+    </StoryWrapper>
+  ),
+};
+
+/**
+ * `renderAs` 속성을 이용해 버튼을 다양한 태그로 렌더링할 수 있습니다.
+ *
+ * - `button` : 버튼 태그
+ * - `a` : a 태그
+ * - `Link` : next/Link 태그
+ *
+ * 기본값으로 `button`이 설정되어있습니다.
+ */
+export const ButtonRenderAs: Story = {
+  name: "RenderAs",
+  render: () => (
+    <StoryWrapper>
+      <Button>button 태그 버튼</Button>
+      <Button renderAs={"a"}>a 태그 버튼</Button>
+      <Button renderAs={Link} href="/">
+        next/Link 버튼
+      </Button>
+    </StoryWrapper>
+  ),
+};
+
+/**
+ * Playground에서 Image 컴포넌트를 직접 테스트해보세요.
+ *
+ * [Button Playground로 이동](?path=/story/atom-button--playground)
+ */
+export const Playground: Story = {
+  argTypes: {
+    renderAs: {
+      options: ["button", "a"],
+      control: { type: "select" },
+    },
+    icon: {
+      options: [undefined, ...Object.keys(ICON_MAP)],
+    },
+    ...exceptProperty(["innerRef"]),
+  },
   args: {
-    renderAs: "a",
-    href: "https://bh2980.tistory.com/category/%ED%86%A0%EC%9D%B4%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/chistock",
-    target: "_blank",
-    className: "bg-[#EA531E] text-[#FFFFFF]",
-    icon: (
-      <Image
-        src="https://www.basicincomeparty.kr/wp-content/uploads/2020/11/tistory-logo-fill_white.png"
-        alt="chistock logo"
-        rounded={"circle"}
-      />
-    ),
+    disabled: false,
   },
   render: (args) => (
-    <Button {...args}>
-      <Text>제주도랏맨의 블로그</Text>
+    //@ts-ignore
+    <Button {...args} icon={args.icon && <Icon icon={args.icon} />}>
+      버튼
     </Button>
   ),
 };
