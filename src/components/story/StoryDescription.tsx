@@ -20,14 +20,14 @@ const StoryDescription = ({
     <>
       {highlight ? (
         <Highlighter>
-          <Markdown style={{ margin: 0 }}>{`### ${of.displayName}`}</Markdown>
+          <Markdown style={{ margin: 0 }}>{`### ${of.name || of.displayName}`}</Markdown>
         </Highlighter>
       ) : (
-        <Markdown>{`### ${of.displayName}`}</Markdown>
+        <Markdown>{`### ${of.name || of.displayName}`}</Markdown>
       )}
 
       <Description of={of} />
-      {children}
+      <p>{children}</p>
       <Canvas of={of} />
     </>
   );
