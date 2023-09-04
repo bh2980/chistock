@@ -18,6 +18,7 @@ const preview: Preview = {
     },
   },
   decorators: [
+    //@ts-ignore
     withThemeByClassName({
       themes: {
         light: "theme-light",
