@@ -1,8 +1,8 @@
 type HighlighterPropsType = React.PropsWithChildren & {
-  color: keyof typeof HighlighterColor;
+  color?: keyof typeof HighlighterColor;
 };
 
-const HighlighterColor = {
+export const HighlighterColor = {
   yellow: "#fff5b1",
   gray: "#f6f8fa",
   blue: "#f1f8ff",
@@ -15,11 +15,12 @@ const HighlighterColor = {
 /** Storybook 문서에서 형광펜을 표시하기 위한 컴포넌트입니다. */
 const Highlighter = ({ children, color = "yellow" }: HighlighterPropsType) => {
   return (
-    <span
+    <div
+      className="inline-flex justify-center items-center"
       style={{ backgroundColor: HighlighterColor[color], padding: "0px 4px", fontSize: "inherit" }}
     >
       {children}
-    </span>
+    </div>
   );
 };
 
