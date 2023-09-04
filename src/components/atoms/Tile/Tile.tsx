@@ -66,11 +66,11 @@ const Tile = <
   shadow,
   ...props
 }: PolymorphicPropsWithInnerRefType<T, TileBasePropsType, A>) => {
-  const Root = createBox<TileDefault | TileAlterAs>();
+  const TileRoot = createBox<TileDefault | TileAlterAs>("div");
 
   return (
-    <Root
-      renderAs={renderAs || "div"}
+    <TileRoot
+      renderAs={renderAs}
       className={classMerge([
         width,
         height,
@@ -85,7 +85,7 @@ const Tile = <
       {...props}
     >
       {children}
-    </Root>
+    </TileRoot>
   );
 };
 

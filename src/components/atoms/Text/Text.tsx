@@ -44,11 +44,11 @@ const Text = <
   weight,
   ...props
 }: PolymorphicPropsWithInnerRefType<T, TextBasePropsType, A>) => {
-  const TextRoot = createBox<TextDefault | TextAlterAs>();
+  const TextRoot = createBox<TextDefault | TextAlterAs>("span");
 
   return (
     <TextRoot
-      renderAs={renderAs || "span"}
+      renderAs={renderAs}
       className={classMerge([
         textVariants({ size, weight }),
         textColorVariants({ color }),

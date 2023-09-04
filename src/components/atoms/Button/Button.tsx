@@ -104,11 +104,11 @@ const Button = <
 }: PolymorphicPropsWithInnerRefType<T, ButtonBasePropsType, A>) => {
   const isIconButton = has(icon) && !has(children);
 
-  const Root = createBox<ButtonDefault | ButtonAlterAs>();
+  const ButtonRoot = createBox<ButtonDefault | ButtonAlterAs>("button");
 
   return (
-    <Root
-      renderAs={renderAs || "button"}
+    <ButtonRoot
+      renderAs={renderAs}
       className={classMerge(
         twJoin([
           buttonVariants({ variant, size }),
@@ -131,7 +131,7 @@ const Button = <
         </IconWrapper>
       )}
       <Overlay />
-    </Root>
+    </ButtonRoot>
   );
 };
 
