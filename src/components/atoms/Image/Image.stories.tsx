@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
+import { exceptProperty } from "@utils/utils";
+
 import StoryWrapper from "@story/StoryWrapper";
 
 import Image from "./Image";
@@ -10,74 +12,21 @@ const meta = {
   parameters: {
     layout: "centered",
   },
-  // tags: ["autodocs"],
-  argTypes: {
-    loading: {
-      table: {
-        disable: true,
-      },
-    },
-    loader: {
-      table: {
-        disable: true,
-      },
-    },
-    quality: {
-      table: {
-        disable: true,
-      },
-    },
-    priority: {
-      table: {
-        disable: true,
-      },
-    },
-    blurDataURL: {
-      table: {
-        disable: true,
-      },
-    },
-    unoptimized: {
-      table: {
-        disable: true,
-      },
-    },
-    onLoadingComplete: {
-      table: {
-        disable: true,
-      },
-    },
-    layout: {
-      table: {
-        disable: true,
-      },
-    },
-    objectFit: {
-      table: {
-        disable: true,
-      },
-    },
-    objectPosition: {
-      table: {
-        disable: true,
-      },
-    },
-    lazyBoundary: {
-      table: {
-        disable: true,
-      },
-    },
-    lazyRoot: {
-      table: {
-        disable: true,
-      },
-    },
-    fill: {
-      table: {
-        disable: true,
-      },
-    },
-  },
+  argTypes: exceptProperty([
+    "loading",
+    "loader",
+    "quality",
+    "priority",
+    "blurDataURL",
+    "unoptimized",
+    "onLoadingComplete",
+    "layout",
+    "objectFit",
+    "objectPosition",
+    "lazyBoundary",
+    "lazyRoot",
+    "fill",
+  ]),
 } satisfies Meta<typeof Image>;
 
 export default meta;
