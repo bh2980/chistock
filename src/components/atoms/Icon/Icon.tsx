@@ -6,7 +6,7 @@ import { NonNullableProps } from "@customTypes/utilType";
 import ICON_MAP from "@constants/iconMap";
 import { textColorVariants } from "@constants/textColor";
 
-import classMerge from "@utils/classMerge";
+import { classMerge } from "@utils/utils";
 
 const iconVariants = cva("stroke-2", {
   variants: {

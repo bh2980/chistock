@@ -2,7 +2,7 @@ import { cva } from "class-variance-authority";
 
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
-import classMerge from "@utils/classMerge";
+import { classMerge } from "@utils/utils";
 
 import { createBox } from "@atoms/Box/Box";
 

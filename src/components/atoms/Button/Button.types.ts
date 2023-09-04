@@ -12,13 +12,16 @@ export type ButtonDefault = "button";
 export type ButtonAlterAs = "a" | typeof Link;
 
 export type ButtonBasePropsType = NonNullableProps<VariantProps<typeof buttonVariants>> & {
-  /** disabled props 설명
+  /** 버튼 비활성화 여부
    * @default false
    */
   disabled?: boolean;
-  /** Icon 컴포넌트 타입 */
+  /** 렌더링할 Icon 컴포넌트
+   *
+   * @type Icon
+   */
   icon?: React.ReactElement;
-  /** 아이콘 위치 */
+  /** 버튼 내 아이콘 위치 */
   iconPosition?: "before" | "after";
 };
 

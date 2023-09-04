@@ -1,6 +1,6 @@
 import { twJoin, twMerge } from "tailwind-merge";
 
-import classMerge from "@utils/classMerge";
+import { classMerge } from "@utils/utils";
 
 import { DividerPropsType } from "./Divider.types";
 

@@ -1,4 +1,4 @@
-import classMerge from "@utils/classMerge";
+import { classMerge } from "@utils/utils";
 
 type StoryWapperPropsType = {
   className?: string | undefined;

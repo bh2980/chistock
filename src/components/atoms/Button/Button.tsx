@@ -3,7 +3,7 @@ import { twJoin } from "tailwind-merge";
 
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
-import classMerge from "@utils/classMerge";
+import { classMerge } from "@utils/utils";
 
 import { createBox } from "@atoms/Box/Box";
 
@@ -17,16 +17,23 @@ import {
 export const has = (item: unknown) => !!item;
 
 export const buttonVariants = cva(
-  "relative flex justify-center items-center overflow-hidden rounded-m py-xs",
+  "relative flex justify-center items-center overflow-hidden rounded-m py-xs cursor-pointer",
   {
     variants: {
-      /** vatiants 설명 */
+      /**
+       * 버튼의 형태
+       * @default secondary
+       * */
       variant: {
         primary: "bg-primary text-primary-on",
         secondary: "bg-secondary text-secondary-on",
         danger: "bg-red text-red-on",
-        text: "text-surface-on-variant",
-      } /** size 설명 */,
+        text: "text-inherit",
+      },
+      /**
+       * 버튼의 크기
+       * @default m
+       * */
       size: {
         s: "h-[32rem] px-s text-s",
         m: "h-[40rem] px-m text-m",
@@ -42,7 +49,6 @@ export const buttonVariants = cva(
 
 const buttonDisabledVariants = cva("text-surface-on/30 grayscale pointer-events-none", {
   variants: {
-    /** variant props 설명 */
     variant: {
       primary: "bg-surface-on/10",
       secondary: "bg-surface-on/10",
@@ -85,15 +91,13 @@ const IconWrapper = ({ iconPosition, isIconButton, children }: IconWrapperPropsT
 };
 
 /**
- * Button 컴포넌트
+ * 버튼을 표시합니다.
  */
-
 const Button = <
   T extends ButtonDefault | ButtonAlterAs = ButtonDefault,
   A extends ButtonAlterAs = ButtonAlterAs
 >({
   children,
-  renderAs,
   className,
   variant,
   size,
@@ -108,7 +112,6 @@ const Button = <
 
   return (
     <ButtonRoot
-      renderAs={renderAs}
       className={classMerge(
         twJoin([
           buttonVariants({ variant, size }),
