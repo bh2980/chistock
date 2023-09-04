@@ -1,9 +1,9 @@
 import {
-  Canvas,
-  Meta,
   ArgTypes,
+  Canvas,
   Controls,
   Description,
+  Meta,
   Primary,
   Source,
   Stories,
@@ -11,93 +11,43 @@ import {
   Subtitle,
   Title,
 } from "@storybook/blocks";
-import * as ButtonStories from "./Button.stories";
 
-{/* Button Stories의 Meta를 가져와서 설정합니다. */}
+import Highlighter from "@story/Highlighter";
+import StoryDescription from "@story/StoryDescription";
+
+import * as ButtonStories from "./Button.stories";
 
 <Meta of={ButtonStories} />
 
-# Storybook 예제
+<br />
+<br />
+<br />
+<br />
 
-### Title
+# Button
 
-타이틀을 불러옵니다.
+<Description of={ButtonStories} />
 
-<Title />
+<br />
 
----
-
-### Subtitle
-
-JSDoc으로 설정된 Subtitle을 불러옵니다.
-
-<Subtitle />
-
----
-
-### Description
-
-스토리에 설정된 JSDoc 설명을 불러옵니다.
-
-<Description of={ButtonStories.ButtonTag} />
-
----
-
-### Primary
-
-스토리 파일에 처음 정의된 스토리를 가져와서 보여줍니다.
-JSDoc으로 설정한 주석은 불러와지지 않습니다.
+## **Default**
 
 <Primary />
 
----
-
-### Story
-
-스토리 파일에 정의된 특정 스토리를 가져와서 인라인으로 보여줍니다.
-JSDoc으로 설정한 주석은 불러와지지 않습니다.
-
-<Story of={ButtonStories.ButtonTag} />
-<br />
-<br />
-
----
-
-### Canvas
-
-스토리 파일에 정의된 특정 스토리를 가져와서 Canvas 안에 담아 보여줍니다.
-JSDoc으로 설정한 주석은 불러와지지 않습니다.
-
-<Canvas of={ButtonStories.ButtonTag} />
-
----
-
-### Source
-
-스토리 파일이 작성된 코드를 가져옵니다
-
-<Source of={ButtonStories.ButtonTag} />
-
----
-
-### ArgTypes
-
-argsTypes 테이블입니다.
-
 <ArgTypes />
 
----
+## **Stories**
 
-### Controls
+<br />
 
-Controls 테이블입니다.
+<StoryDescription of={ButtonStories.ButtonVariant} />
+<StoryDescription of={ButtonStories.ButtonSize} />
+<StoryDescription of={ButtonStories.ButtonIcon} />
+<StoryDescription of={ButtonStories.ButtonState} />
+<StoryDescription of={ButtonStories.ButtonRenderAs} />
+<StoryDescription of={ButtonStories.Playground}>
+  ⚠️ <Highlighter color="red">**renderAs 속성에서 next/Link는 제공하지 않습니다.**</Highlighter>
+</StoryDescription>
 
-<Controls />
-
----
-
-### Stories
-
-스토리들입니다.
-
-<Stories />
+<br />
+<br />
