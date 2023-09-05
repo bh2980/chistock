@@ -12,10 +12,10 @@ import Tile from "@atoms/Tile/Tile";
 import { TileAlterAs, TileBasePropsType, TileDefault } from "./Tile.types";
 
 /** ExpandTile 기본 Props 타입 */
-export type ExpandTileBasePropsType = {
+export type ExpandTileBasePropsType = Omit<TileBasePropsType, "height"> & {
   collapseHeight: TailwindMaxHeightClassType;
-  expandHeight: TailwindMaxHeightClassType;
-} & TileBasePropsType;
+  expandHeight?: TailwindMaxHeightClassType;
+};
 
 const expandTileVariants = cva("", {
   variants: {
@@ -40,6 +40,7 @@ const expandTileVariants = cva("", {
 const CLOSE_TEXT = "닫기";
 const EXPAND_TEXT = "더 보기";
 
+/** 길이를 확장할 수 있는 타일 */
 const ExpandTile = <
   T extends TileDefault | TileAlterAs = TileDefault,
   A extends TileAlterAs = TileAlterAs
