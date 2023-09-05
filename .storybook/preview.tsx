@@ -1,7 +1,9 @@
 import { withThemeByClassName } from "@storybook/addon-styling";
 import type { Preview } from "@storybook/react";
+import React from "react";
 
 import "../src/app/globals.css";
+import StorybookTemplate from "./StorybookTemplate";
 import "./storybook.css";
 
 const preview: Preview = {
@@ -15,6 +17,10 @@ const preview: Preview = {
     },
     options: {
       storySort: { order: ["Token", "Atom"] },
+    },
+    docs: {
+      page: StorybookTemplate,
+      autodocs: "tag",
     },
   },
   decorators: [

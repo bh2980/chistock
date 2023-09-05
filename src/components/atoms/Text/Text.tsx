@@ -12,8 +12,11 @@ import { TextAlterAs, TextBasePropsType, TextDefault } from "./Text.types";
 
 export const textVariants = cva("", {
   variants: {
+    /** 텍스트 크기
+     * @default inherit
+     */
     size: {
-      inherit: "text-inherit",
+      inherit: "text-sizeInherit",
       xs: "text-xs",
       s: "text-s",
       m: "text-m",
@@ -21,6 +24,9 @@ export const textVariants = cva("", {
       xl: "text-xl",
       "2xl": "text-2xl",
     },
+    /** 텍스트 굵기
+     * @default regular
+     */
     weight: {
       regular: "font-regular",
       bold: "font-bold",
@@ -32,12 +38,12 @@ export const textVariants = cva("", {
   },
 });
 
+/** Text를 렌더링합니다. */
 const Text = <
   T extends TextDefault | TextAlterAs = TextDefault,
   A extends TextAlterAs = TextAlterAs
 >({
   children,
-  renderAs,
   className,
   color,
   size,
@@ -48,7 +54,6 @@ const Text = <
 
   return (
     <TextRoot
-      renderAs={renderAs}
       className={classMerge([
         textVariants({ size, weight }),
         textColorVariants({ color }),

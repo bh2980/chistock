@@ -27,6 +27,7 @@ const meta = {
     "lazyRoot",
     "fill",
   ]),
+  tags: ["autodocs"],
 } satisfies Meta<typeof Image>;
 
 export default meta;
@@ -84,6 +85,11 @@ export const ImageRadius: Story = {
   ),
 };
 
+/**
+ * Playground에서 Image 컴포넌트를 직접 테스트해보세요.
+ *
+ * [Image Playground로 이동](?path=/story/atom-image--playground)
+ */
 export const Playground: Story = {
   argTypes: {
     width: {
