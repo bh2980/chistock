@@ -62,6 +62,7 @@ export const tileVariants = cva("flex border border-outline-variant text-m", {
   },
 });
 
+/** 레이아웃의 단위가 되는 컴포넌트 */
 const Tile = <
   T extends TileDefault | TileAlterAs = TileDefault,
   A extends TileAlterAs = TileAlterAs
