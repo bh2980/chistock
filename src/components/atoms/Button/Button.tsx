@@ -5,7 +5,7 @@ import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
 import { classMerge } from "@utils/utils";
 
-import { createBox } from "@atoms/Box/Box";
+import Box from "@atoms/Box/Box";
 
 import {
   ButtonAlterAs,
@@ -98,6 +98,7 @@ const Button = <
   A extends ButtonAlterAs = ButtonAlterAs
 >({
   children,
+  renderAs,
   className,
   variant,
   size,
@@ -108,10 +109,9 @@ const Button = <
 }: PolymorphicPropsWithInnerRefType<T, ButtonBasePropsType, A>) => {
   const isIconButton = has(icon) && !has(children);
 
-  const ButtonRoot = createBox<ButtonDefault | ButtonAlterAs>("button");
-
   return (
-    <ButtonRoot
+    <Box<ButtonDefault | ButtonAlterAs>
+      renderAs={renderAs || "button"}
       className={classMerge(
         twJoin([
           buttonVariants({ variant, size }),
@@ -134,7 +134,7 @@ const Button = <
         </IconWrapper>
       )}
       <Overlay />
-    </ButtonRoot>
+    </Box>
   );
 };
 

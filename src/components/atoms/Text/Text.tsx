@@ -6,7 +6,7 @@ import { textColorVariants } from "@constants/textColor";
 
 import { classMerge } from "@utils/utils";
 
-import { createBox } from "@atoms/Box/Box";
+import Box from "@atoms/Box/Box";
 
 import { TextAlterAs, TextBasePropsType, TextDefault } from "./Text.types";
 
@@ -44,16 +44,16 @@ const Text = <
   A extends TextAlterAs = TextAlterAs
 >({
   children,
+  renderAs,
   className,
   color,
   size,
   weight,
   ...props
 }: PolymorphicPropsWithInnerRefType<T, TextBasePropsType, A>) => {
-  const TextRoot = createBox<TextDefault | TextAlterAs>("span");
-
   return (
-    <TextRoot
+    <Box<TextDefault | TextAlterAs>
+      renderAs={renderAs || "span"}
       className={classMerge([
         textVariants({ size, weight }),
         textColorVariants({ color }),
@@ -62,7 +62,7 @@ const Text = <
       {...props}
     >
       {children}
-    </TextRoot>
+    </Box>
   );
 };
 
