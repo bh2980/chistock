@@ -1,7 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import ExpandTile from "./ExpandTile";
+import { exceptProperty } from "@utils/utils";
+
+import StoryWrapper from "@story/StoryWrapper";
+
 import Text from "@atoms/Text/Text";
+
+import ExpandTile from "./ExpandTile";
 
 const meta = {
   title: "Atom/Tile/ExpandTile",
@@ -9,106 +14,159 @@ const meta = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
   argTypes: {
-    width: {
-      options: ["auto", "full", "desktop-4", "desktop-8", "desktop-12"],
-      control: { type: "radio" },
+    renderAs: {
+      table: {
+        defaultValue: { summary: `"div"` },
+      },
     },
-    borderRadius: {
-      options: ["none", "xs", "s", "m", "l"],
-      control: { type: "radio" },
-    },
-    padding: {
-      options: ["none", "3xs", "2xs", "xs", "s", "m", "l", "xl", "2xl", "3xl"],
-      control: { type: "radio" },
-    },
-    shadow: {
-      options: ["none", "xs", "s", "m", "l", "xl"],
-      control: { type: "radio" },
-    },
+    ...exceptProperty(["innerRef"]),
   },
-  args: {
-    width: "desktop-4",
-    borderRadius: "m",
-    padding: "2xl",
-    shadow: "xs",
-    collapseHeight: "max-h-[256rem]",
-  },
+  tags: ["autodocs"],
 } satisfies Meta<typeof ExpandTile>;
 
 export default meta;
 type Story = StoryObj<typeof ExpandTile>;
 
+const ExpaneTileChildren = () => {
+  return (
+    <div className="flex flex-col gap-xs">
+      <div className="flex justify-between">
+        <Text>제목</Text>
+        <Text>본문</Text>
+      </div>
+      <div className="flex justify-between">
+        <Text>제목</Text>
+        <Text>본문</Text>
+      </div>
+      <div className="flex justify-between">
+        <Text>제목</Text>
+        <Text>본문</Text>
+      </div>
+      <div className="flex justify-between">
+        <Text>제목</Text>
+        <Text>본문</Text>
+      </div>
+      <div className="flex justify-between">
+        <Text>제목</Text>
+        <Text>본문</Text>
+      </div>
+      <div className="flex justify-between">
+        <Text>제목</Text>
+        <Text>본문</Text>
+      </div>
+      <div className="flex justify-between">
+        <Text>제목</Text>
+        <Text>본문</Text>
+      </div>
+      <div className="flex justify-between">
+        <Text>제목</Text>
+        <Text>본문</Text>
+      </div>
+      <div className="flex justify-between">
+        <Text>제목</Text>
+        <Text>본문</Text>
+      </div>
+      <div className="flex justify-between">
+        <Text>제목</Text>
+        <Text>본문</Text>
+      </div>
+      <div className="flex justify-between">
+        <Text>제목</Text>
+        <Text>본문</Text>
+      </div>
+      <div className="flex justify-between">
+        <Text>제목</Text>
+        <Text>본문</Text>
+      </div>
+    </div>
+  );
+};
+
+/**
+ * ExpandTile은 Tile을 확장하여 만든 컴포넌트로 대부분의 속성을 Tile과 공유합니다.
+ *
+ * 하단에 나오지 않은 속성에 대한 설명은 Tile 컴포넌트를 참조하세요.
+ *
+ * [Tile 컴포넌트 가기](?path=/docs/atom-tile-tile--docs)
+ */
 export const Default: Story = {
+  render: () => (
+    <ExpandTile width="w-desktop-4" collapseHeight="max-h-[256rem]">
+      <ExpaneTileChildren />
+    </ExpandTile>
+  ),
+};
+
+/**
+ * `collapseHeight` 속성을 통해 확장 전 타일의 길이를 지정할 수 있습니다.
+ *
+ * **필수적으로 지정해야하는 속성**입니다.
+ */
+export const ExpandTileCollapseHeight: Story = {
+  name: "CollapseHeight",
+  render: () => (
+    <StoryWrapper>
+      <ExpandTile width="w-desktop-4" collapseHeight="max-h-[160rem]">
+        <ExpaneTileChildren />
+      </ExpandTile>
+      <ExpandTile width="w-desktop-4" collapseHeight="max-h-[256rem]">
+        <ExpaneTileChildren />
+      </ExpandTile>
+    </StoryWrapper>
+  ),
+};
+
+/**
+ * `expandHeight` 속성을 통해 확장 전 타일의 길이를 지정할 수 있습니다.
+ *
+ * 기본값으로 `max-h-screen`이 지정되어 있습니다.
+ */
+export const ExpandTileExpandHeight: Story = {
+  name: "ExpandHeight",
+  render: () => (
+    <StoryWrapper>
+      <ExpandTile width="w-desktop-4" collapseHeight="max-h-[256rem]" expandHeight="max-h-[320rem]">
+        <ExpaneTileChildren />
+      </ExpandTile>
+      <ExpandTile width="w-desktop-4" collapseHeight="max-h-[256rem]" expandHeight="max-h-screen">
+        <ExpaneTileChildren />
+      </ExpandTile>
+    </StoryWrapper>
+  ),
+};
+
+/**
+ * Playground에서 Expand Tile 컴포넌트를 직접 테스트해보세요.
+ *
+ * [Expand Tile Playground로 이동](?path=/story/atom-tile-expandtile--playground)
+ */
+export const Playground: Story = {
+  argTypes: {
+    renderAs: {
+      options: ["div", "header", "footer", "nav", "aside", "main", "section", "article"],
+      control: { type: "select" },
+    },
+    width: {
+      options: ["w-[200rem]", "w-[400rem]"],
+      control: { type: "select" },
+    },
+    collapseHeight: {
+      options: ["max-h-[160rem]", "max-h-[256rem]"],
+      control: { type: "select" },
+    },
+    expandHeight: {
+      options: ["max-h-[320rem]", "max-h-[400rem]", "max-h-screen"],
+      control: { type: "select" },
+    },
+  },
+  args: {
+    width: "w-[200rem]",
+    collapseHeight: "max-h-[256rem]",
+  },
   render: (args) => (
     <ExpandTile {...args}>
-      <div className="flex flex-col gap-xs">
-        <div className="flex justify-between">
-          <Text>제목</Text>
-          <Text>본문</Text>
-        </div>
-        <div className="flex justify-between">
-          <Text>제목</Text>
-          <Text>본문</Text>
-        </div>
-        <div className="flex justify-between">
-          <Text>제목</Text>
-          <Text>본문</Text>
-        </div>
-        <div className="flex justify-between">
-          <Text>제목</Text>
-          <Text>본문</Text>
-        </div>
-        <div className="flex justify-between">
-          <Text>제목</Text>
-          <Text>본문</Text>
-        </div>
-        <div className="flex justify-between">
-          <Text>제목</Text>
-          <Text>본문</Text>
-        </div>
-        <div className="flex justify-between">
-          <Text>제목</Text>
-          <Text>본문</Text>
-        </div>
-        <div className="flex justify-between">
-          <Text>제목</Text>
-          <Text>본문</Text>
-        </div>
-        <div className="flex justify-between">
-          <Text>제목</Text>
-          <Text>본문</Text>
-        </div>
-        <div className="flex justify-between">
-          <Text>제목</Text>
-          <Text>본문</Text>
-        </div>
-        <div className="flex justify-between">
-          <Text>제목</Text>
-          <Text>본문</Text>
-        </div>
-        <div className="flex justify-between">
-          <Text>제목</Text>
-          <Text>본문</Text>
-        </div>
-        <div className="flex justify-between">
-          <Text>제목</Text>
-          <Text>본문</Text>
-        </div>
-        <div className="flex justify-between">
-          <Text>제목</Text>
-          <Text>본문</Text>
-        </div>
-        <div className="flex justify-between">
-          <Text>제목</Text>
-          <Text>본문</Text>
-        </div>
-        <div className="flex justify-between">
-          <Text>제목</Text>
-          <Text>본문</Text>
-        </div>
-      </div>
+      <ExpaneTileChildren />
     </ExpandTile>
   ),
 };
