@@ -12,10 +12,10 @@ import Tile from "@atoms/Tile/Tile";
 import { TileAlterAs, TileBasePropsType, TileDefault } from "./Tile.types";
 
 /** ExpandTile 기본 Props 타입 */
-export type ExpandTileBasePropsType = {
+export type ExpandTileBasePropsType = Omit<TileBasePropsType, "height"> & {
   collapseHeight: TailwindMaxHeightClassType;
   expandHeight?: TailwindMaxHeightClassType;
-} & TileBasePropsType;
+};
 
 const expandTileVariants = cva("", {
   variants: {
