@@ -4,24 +4,32 @@ import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
 import { classMerge } from "@utils/utils";
 
-import { createBox } from "@atoms/Box/Box";
+import Box from "@atoms/Box/Box";
 
 import { TileAlterAs, TileBasePropsType, TileDefault } from "./Tile.types";
 
 export const tileVariants = cva("flex border border-outline-variant text-m", {
   variants: {
+    /** Tile의 형태
+     * @default default
+     */
     variant: {
       default: "bg-surface-variant text-surface-on",
       primary: "bg-primary text-primary-on",
       secondary: "bg-secondary text-secondary-on",
     },
+    /** Tile의 테두리 반경
+     * @default m
+     */
     rounded: {
       none: "rounded-none",
-      xs: "rounded-xs",
       s: "rounded-s",
       m: "rounded-m",
       l: "rounded-l",
     },
+    /** Tile의 padding
+     * @default 2xl
+     */
     padding: {
       none: "",
       "3xs": "p-3xs",
@@ -34,6 +42,9 @@ export const tileVariants = cva("flex border border-outline-variant text-m", {
       "2xl": "p-2xl",
       "3xl": "p-3xl",
     },
+    /** Tile의 그림자
+     * @default xs
+     */
     shadow: {
       none: "shadow-none",
       xs: "shadow-xs",
@@ -66,11 +77,9 @@ const Tile = <
   shadow,
   ...props
 }: PolymorphicPropsWithInnerRefType<T, TileBasePropsType, A>) => {
-  const TileRoot = createBox<TileDefault | TileAlterAs>("div");
-
   return (
-    <TileRoot
-      renderAs={renderAs}
+    <Box<TileDefault | TileAlterAs>
+      renderAs={renderAs || "div"}
       className={classMerge([
         width,
         height,
@@ -85,7 +94,7 @@ const Tile = <
       {...props}
     >
       {children}
-    </TileRoot>
+    </Box>
   );
 };
 
