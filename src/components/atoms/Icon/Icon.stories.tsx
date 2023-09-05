@@ -10,6 +10,7 @@ const meta = {
   parameters: {
     layout: "centered",
   },
+  tags: ["autodocs"],
 } satisfies Meta<typeof Icon>;
 
 export default meta;
@@ -20,7 +21,7 @@ export const Default: Story = {
     icon: "sun",
   },
   render: (args) => (
-    <div className="text-[#7b4bff] text-[56rem]">
+    <div className="text-[56rem]">
       <Icon {...args} />
     </div>
   ),
@@ -29,7 +30,7 @@ export const Default: Story = {
 /** Icon 종류를 설정합니다. */
 export const IconCategory: Story = {
   render: () => (
-    <StoryWrapper className="text-[#7b4bff] text-[56rem]" direction="vertical">
+    <StoryWrapper className="text-[56rem]" direction="vertical">
       <StoryWrapper>
         <Icon icon="arrow-path" />
         <Icon icon="chevron-down" />
@@ -61,7 +62,7 @@ export const IconCategory: Story = {
  */
 export const IconSize: Story = {
   render: () => (
-    <StoryWrapper className="text-[#7b4bff] text-[56rem]" direction="vertical">
+    <StoryWrapper className="text-[56rem]" direction="vertical">
       <Icon icon="sun" />
       <StoryWrapper>
         <Icon icon="sun" size="s" />
@@ -91,7 +92,7 @@ export const IconSize: Story = {
  */
 export const IconColor: Story = {
   render: () => (
-    <StoryWrapper className="text-[#7b4bff] text-[56rem]" direction="vertical">
+    <StoryWrapper className="text-[56rem]" direction="vertical">
       <StoryWrapper>
         <Icon icon="sun" />
         <Icon icon="sun" color="transparent" />
@@ -130,12 +131,17 @@ export const IconColor: Story = {
   ),
 };
 
+/**
+ * Playground에서 Icon 컴포넌트를 직접 테스트해보세요.
+ *
+ * [Icon Playground로 이동](?path=/story/atom-icon--playground)
+ */
 export const Playground: Story = {
   args: {
     icon: "sun",
   },
   render: (args) => (
-    <div className="text-[#7b4bff] text-[56rem]">
+    <div className="text-[56rem]">
       <Icon {...args} />
     </div>
   ),

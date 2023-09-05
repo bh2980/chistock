@@ -10,6 +10,7 @@ const meta = {
   parameters: {
     layout: "centered",
   },
+  tags: ["autodocs"],
 } satisfies Meta<typeof Divider>;
 
 export default meta;
@@ -84,6 +85,11 @@ export const DividerColor: Story = {
   ),
 };
 
+/**
+ * Playground에서 Divider 컴포넌트를 직접 테스트해보세요.
+ *
+ * [Divider Playground로 이동](?path=/story/atom-divider--playground)
+ */
 export const Playground: Story = {
   argTypes: {
     length: {

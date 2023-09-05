@@ -17,6 +17,7 @@ const meta = {
   parameters: {
     layout: "centered",
   },
+  tags: ["autodocs"],
   argTypes: {
     renderAs: {
       table: {
@@ -139,7 +140,7 @@ export const ButtonRenderAs: Story = {
 };
 
 /**
- * Playground에서 Image 컴포넌트를 직접 테스트해보세요.
+ * Playground에서 Button 컴포넌트를 직접 테스트해보세요.
  *
  * [Button Playground로 이동](?path=/story/atom-button--playground)
  */

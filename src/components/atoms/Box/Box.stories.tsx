@@ -8,6 +8,14 @@ const meta = {
   parameters: {
     layout: "centered",
   },
+  tags: ["autodocs"],
+  argTypes: {
+    renderAs: {
+      table: {
+        defaultValue: { summary: "div" },
+      },
+    },
+  },
 } satisfies Meta<typeof Box>;
 
 export default meta;
@@ -21,6 +29,11 @@ export const Default: Story = {
   ),
 };
 
+/**
+ * Playground에서 Box 컴포넌트를 직접 테스트해보세요.
+ *
+ * [Box Playground로 이동](?path=/story/atom-box--playground)
+ */
 export const Playground: Story = {
   argTypes: {
     renderAs: {
