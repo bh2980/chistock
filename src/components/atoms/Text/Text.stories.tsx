@@ -1,5 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
+import { exceptProperty } from "@utils/utils";
+
+import StoryWrapper from "@story/StoryWrapper";
+
 import Text from "./Text";
 
 const meta = {
@@ -8,59 +12,198 @@ const meta = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
   argTypes: {
-    color: {
-      options: [
-        "current",
-        "onSurface",
-        "onSub",
-        "onPrimary",
-        "onPrimaryFixed",
-        "onSecondary",
-        "onSecondaryFixed",
-        "onTertiary",
-        "onTertiaryFixed",
-        "onRed",
-        "onRedSub",
-        "onYellow",
-      ],
-      control: { type: "radio" },
+    renderAs: {
+      table: {
+        defaultValue: { summary: `"span"` },
+        type: {
+          summary: `"div" | "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "a" | "next/Link"`,
+        },
+      },
     },
-    size: {
-      options: ["xs", "s", "m", "l", "xl", "2xl"],
-      control: { type: "radio" },
-    },
-    weight: {
-      options: ["regular", "bold"],
-      control: { type: "radio" },
-    },
+    ...exceptProperty(["onMouseEnter", "onTouchStart", "onClick", "innerRef"]),
   },
-  args: {
-    color: "current",
-    size: "m",
-    weight: "regular",
-  },
+  tags: ["autodocs"],
 } satisfies Meta<typeof Text>;
 
 export default meta;
 type Story = StoryObj<typeof Text>;
 
 export const Default: Story = {
-  render: (args) => (
-    <div className="text-[#f58f00]">
-      <Text {...args}>텍스트 예시</Text>
-    </div>
+  render: () => (
+    <StoryWrapper>
+      <Text size="2xl">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+    </StoryWrapper>
   ),
 };
 
-export const H1: Story = {
-  args: {
-    renderAs: "h1",
+/**
+ * `size` 속성을 이용해 텍스트의 크기를 조절할 수 있습니다.
+ *
+ * - `inherit` : 부모의 텍스트 크기 상속
+ * - `xs` : 12px / 20px
+ * - `s` : 14px / 20px
+ * - `m` : 16px / 24px
+ * - `l` : 20px / 32px
+ * - `xl` : 24px / 36px
+ * - `2xl` : 32px / 48px
+ *
+ * 기본값은 `inherit`으로 설정되어있습니다.
+ */
+export const TextSize: Story = {
+  name: "Size",
+  render: () => (
+    <StoryWrapper className="text-[48px]" direction="vertical">
+      <Text>가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+      <Text size="xs">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+      <Text size="s">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+      <Text size="m">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+      <Text size="l">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+      <Text size="xl">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+      <Text size="2xl">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+    </StoryWrapper>
+  ),
+};
+
+/**
+ * `weight` 속성을 이용해 텍스트의 굵기를 조절할 수 있습니다.
+ *
+ * - `regular` : 일반적인 굵기
+ * - `bold` : 굵은 굵기
+ *
+ * 기본값은 `regular`으로 설정되어있습니다.
+ */
+export const TextWeight: Story = {
+  name: "Weight",
+  render: () => (
+    <StoryWrapper className="text-2xl" direction="vertical">
+      <Text>가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+      <Text weight="bold">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+    </StoryWrapper>
+  ),
+};
+
+/**
+ * color 속성을 이용하여 텍스트의 색상을 설정할 수 있습니다.
+ *
+ * 색상 26가지의 색상을 가집니다.
+ * 가시성을 위해 콘텐츠 색(On) 밑에는 배경이 설정되어 있습니다.
+ *
+ *
+ * - `inherit`: 부모 컴포넌트의 텍스트 색 상속
+ * - `transparent`: 투명색
+ *
+ *
+ * - `onSurface` : surface 위 콘텐츠 색
+ * - `onSurfaceVariant` : surface 위 콘텐츠 색 변형
+ *
+ *
+ * - `유채색`
+ * - `유채색 위 콘텐츠 색(On)`
+ *
+ * 더 자세한 색상 정보는 [Color 문서](?path=/docs/token-color--docs)를 참조하세요.
+ */
+export const TextColor: Story = {
+  name: "Color",
+  render: () => (
+    <StoryWrapper className="text-xl" direction="vertical">
+      <StoryWrapper>
+        <Text color="inherit">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+        <Text color="transparent">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+      </StoryWrapper>
+      <StoryWrapper>
+        <Text color="onSurface" className="bg-surface">
+          가느다란 몸 부수어 쥔 총칼, 터, 평화
+        </Text>
+        <Text color="onSurfaceVariant" className="bg-surface">
+          가느다란 몸 부수어 쥔 총칼, 터, 평화
+        </Text>
+      </StoryWrapper>
+      <StoryWrapper>
+        <Text color="primary">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+        <Text color="onPrimary" className="bg-primary">
+          가느다란 몸 부수어 쥔 총칼, 터, 평화
+        </Text>
+      </StoryWrapper>
+      <StoryWrapper>
+        <Text color="secondary">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+        <Text color="onSecondary" className="bg-secondary">
+          가느다란 몸 부수어 쥔 총칼, 터, 평화
+        </Text>
+      </StoryWrapper>
+      <StoryWrapper>
+        <Text color="tertiary">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+        <Text color="onTertiary" className="bg-tertiary">
+          가느다란 몸 부수어 쥔 총칼, 터, 평화
+        </Text>
+      </StoryWrapper>
+      <StoryWrapper>
+        <Text color="primaryFixed">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+        <Text color="onPrimaryFixed" className="bg-primary-fixed">
+          가느다란 몸 부수어 쥔 총칼, 터, 평화
+        </Text>
+      </StoryWrapper>
+      <StoryWrapper>
+        <Text color="secondaryFixed">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+        <Text color="onSecondaryFixed" className="bg-secondary-fixed">
+          가느다란 몸 부수어 쥔 총칼, 터, 평화
+        </Text>
+      </StoryWrapper>
+      <StoryWrapper>
+        <Text color="tertiaryFixed">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+        <Text color="onTertiaryFixed" className="bg-tertiary-fixed">
+          가느다란 몸 부수어 쥔 총칼, 터, 평화
+        </Text>
+      </StoryWrapper>
+      <StoryWrapper>
+        <Text color="red">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+        <Text color="onRed" className="bg-red">
+          가느다란 몸 부수어 쥔 총칼, 터, 평화
+        </Text>
+      </StoryWrapper>
+      <StoryWrapper>
+        <Text color="redVariant">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+
+        <Text color="onRedVariant" className="bg-red-variant">
+          가느다란 몸 부수어 쥔 총칼, 터, 평화
+        </Text>
+      </StoryWrapper>
+      <StoryWrapper>
+        <Text color="yellow">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+        <Text color="onYellow" className="bg-yellow">
+          가느다란 몸 부수어 쥔 총칼, 터, 평화
+        </Text>
+      </StoryWrapper>
+      <StoryWrapper>
+        <Text color="green">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+        <Text color="onGreen" className="bg-green">
+          가느다란 몸 부수어 쥔 총칼, 터, 평화
+        </Text>
+      </StoryWrapper>
+      <StoryWrapper>
+        <Text color="magenta">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+        <Text color="onMagenta" className="bg-magenta">
+          가느다란 몸 부수어 쥔 총칼, 터, 평화
+        </Text>
+      </StoryWrapper>
+    </StoryWrapper>
+  ),
+};
+
+/**
+ * Playground에서 Text 컴포넌트를 직접 테스트해보세요.
+ *
+ * [Text Playground로 이동](?path=/story/atom-text--playground)
+ */
+export const Playground: Story = {
+  argTypes: {
+    renderAs: {
+      options: ["span", "div", "h1", "h2", "h3", "h4", "h5", "h6", "p", "a"],
+    },
   },
   render: (args) => (
-    <div>
-      <Text {...args}>텍스트 예시</Text>
-    </div>
+    <StoryWrapper className="text-[48px]" direction="vertical">
+      <Text {...args}>가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+    </StoryWrapper>
   ),
 };
