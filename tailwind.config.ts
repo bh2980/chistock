@@ -7,7 +7,6 @@ export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     fontSize: {
-      inherit: "inherit",
       xs: ["12rem", "20rem"],
       s: ["14rem", "20rem"],
       m: ["16rem", "24rem"],
@@ -57,6 +56,9 @@ export default {
       transparent: "transparent",
     },
     extend: {
+      fontSize: {
+        sizeInherit: "1em",
+      },
       width: {
         "desktop-4": "336rem",
         "desktop-8": "688rem",
