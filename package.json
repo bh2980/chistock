@@ -10,7 +10,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test": "jest --watchAll",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",
@@ -43,6 +44,7 @@
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "autoprefixer": "^10.4.15",
+    "chromatic": "^7.1.0",
     "eslint": "^8.47.0",
     "eslint-config-next": "^13.4.19",
     "eslint-config-prettier": "^8.8.0",
@@ -68,5 +70,7 @@
       "eslint --fix",
       "prettier --write"
     ]
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "chistock@0.1.0"
 }
