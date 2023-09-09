@@ -69,7 +69,7 @@ export default {
   plugins: [
     //Color - State - Background/Content
     createThemes({
-      light: {
+      dark: {
         primary: {
           DEFAULT: color.blue[50],
           on: color.white,
@@ -131,7 +131,7 @@ export default {
           on: color.neutral[0],
         },
       },
-      dark: {
+      light: {
         primary: {
           DEFAULT: color.blue[60],
           on: color.neutral[0],
