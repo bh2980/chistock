@@ -11,9 +11,9 @@
  * // { renderAs? : 'div' | 'a' | 'button' }
  * AsPropsType<'div', 'a' | 'button'>
  */
-type AsPropsType<T extends React.ElementType, A extends React.ElementType = T> = {
+type AsPropsType<T extends React.ElementType> = {
   /** 렌더링할 태그 속성 */
-  renderAs?: T | A;
+  renderAs?: T;
 };
 
 /**
@@ -47,7 +47,7 @@ export type PolymorphicPropsType<
   T extends React.ElementType,
   Props = object,
   AlternateAs extends React.ElementType = T
-> = AsPropsType<T, AlternateAs> & Props & Omit<React.ComponentPropsWithoutRef<T>, keyof Props>;
+> = AsPropsType<T | AlternateAs> & Props & Omit<React.ComponentPropsWithoutRef<T>, keyof Props>;
 
 /**
  * 다형성 컴포넌트 Props 타입에 innerRef 속성을 추가한 타입
@@ -62,7 +62,4 @@ export type PolymorphicPropsWithInnerRefType<
   T extends React.ElementType,
   Props = object,
   AlternateAs extends React.ElementType = T
-> = AsPropsType<T, AlternateAs> &
-  InnerRefType<T> &
-  Props &
-  Omit<React.ComponentPropsWithoutRef<T>, keyof Props>;
+> = PolymorphicPropsType<T, Props, AlternateAs> & InnerRefType<T>;
