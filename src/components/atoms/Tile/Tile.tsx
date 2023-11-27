@@ -18,7 +18,9 @@ export const tileVariants = cva("flex border border-outline-variant text-m", {
     variant: {
       default: "bg-surface-variant text-surface-on",
       primary: "bg-primary text-primary-on",
+      primaryFixed: "bg-primary-fixed text-primary-fixed-on",
       secondary: "bg-secondary text-secondary-on",
+      secondaryFixed: "bg-secondary-fixed text-secondary-fixed-on",
     },
     /** Tile의 테두리 반경
      * @default m
@@ -80,6 +82,7 @@ const Tile = <
   shadow,
   justifyContent,
   itemAligns,
+  gap,
   ...props
 }: PolymorphicPropsWithInnerRefType<T, TileBasePropsType, A>) => {
   return (
@@ -94,7 +97,7 @@ const Tile = <
           padding,
           shadow,
         }),
-        flexAlignVariants({ justifyContent, itemAligns }),
+        flexAlignVariants({ justifyContent, itemAligns, gap }),
         className,
       ])}
       {...props}
