@@ -2,6 +2,8 @@ import { cva } from "class-variance-authority";
 
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
+import { flexAlignVariants } from "@constants/flexAlign";
+
 import { classMerge } from "@utils/utils";
 
 import Box from "@atoms/Box/Box";
@@ -28,7 +30,7 @@ export const tileVariants = cva("flex border border-outline-variant text-m", {
       l: "rounded-l",
     },
     /** Tile의 padding
-     * @default 2xl
+     * @default none
      */
     padding: {
       none: "",
@@ -57,7 +59,7 @@ export const tileVariants = cva("flex border border-outline-variant text-m", {
   defaultVariants: {
     variant: "default",
     rounded: "m",
-    padding: "2xl",
+    padding: "none",
     shadow: "xs",
   },
 });
@@ -76,6 +78,8 @@ const Tile = <
   rounded,
   padding,
   shadow,
+  justifyContent,
+  itemAligns,
   ...props
 }: PolymorphicPropsWithInnerRefType<T, TileBasePropsType, A>) => {
   return (
@@ -90,6 +94,7 @@ const Tile = <
           padding,
           shadow,
         }),
+        flexAlignVariants({ justifyContent, itemAligns }),
         className,
       ])}
       {...props}
