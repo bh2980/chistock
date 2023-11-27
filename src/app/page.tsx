@@ -108,13 +108,13 @@ export default function Home() {
               2023.07.13 07:13 기준
             </Text>
           </Stack>
-          <div className="flex gap-m">
+          <Stack gap="m" direction="row">
             <Text size="headline3" bold>
               거래량
             </Text>
             <Text size="headline3">상승률</Text>
             <Text size="headline3">하락률</Text>
-          </div>
+          </Stack>
           <Stack direction="row">
             <Stack className="w-1/2" gap="m">
               <Stack direction="row" justifyContent="between">
