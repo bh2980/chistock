@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Link from "next/link";
 
 import Chistock from "@assets/chistock.svg";
 
@@ -39,7 +40,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               justifyContent="between"
               padding="m"
             >
-              <Chistock />
+              <Link href={"/"}>
+                <Chistock />
+              </Link>
               <input
                 className="w-[320px] h-full outline-none bg-secondary-fixed rounded-m p-s"
                 placeholder="검색"
