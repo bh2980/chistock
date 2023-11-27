@@ -24,4 +24,9 @@ export type TextAlterAs = "div" | "a" | "p" | "h1" | "h2" | "h3" | "h4" | "h5" |
  */
 export type TextBasePropsType = NonNullableProps<
   VariantProps<typeof textColorVariants> & VariantProps<typeof textVariants>
->;
+> & {
+  /** 텍스트 굵기 여부
+   * @default false
+   */
+  bold?: boolean;
+};
