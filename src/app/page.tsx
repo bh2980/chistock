@@ -1,5 +1,3 @@
-import Chistock from "@assets/chistock.svg";
-
 import Button from "@atoms/Button/Button";
 import Divider from "@atoms/Divider/Divider";
 import Icon from "@atoms/Icon/Icon";
@@ -9,43 +7,7 @@ import Tile from "@atoms/Tile/Tile";
 
 export default function Home() {
   return (
-    <Stack
-      itemAligns="center"
-      justifyContent="center"
-      gap={"m"}
-      className="w-full min-h-screen bg-surface p-3xl"
-    >
-      <Stack gap="xs">
-        <Tile
-          height="h-[72px]"
-          width="w-desktop-12"
-          variant="primary"
-          itemAligns="center"
-          justifyContent="between"
-          padding="m"
-        >
-          <Chistock />
-          <input
-            className="w-[320px] h-full outline-none bg-secondary-fixed rounded-m p-s"
-            placeholder="검색"
-          />
-        </Tile>
-        <Tile
-          height="h-[32px]"
-          width="w-desktop-12"
-          variant="secondaryFixed"
-          justifyContent="center"
-          itemAligns="center"
-          gap="l"
-        >
-          <Text color="onSecondaryFixed">APPL 2,595.55 ▼ -1.30%</Text>
-          <Text color="onSecondaryFixed">TSLA 2,595.55 ▲ +1.30%</Text>
-          <Text color="onSecondaryFixed">APPL 2,595.55 ▼ -1.30%</Text>
-          <Text color="onSecondaryFixed">TSLA 2,595.55 ▲ +1.30%</Text>
-          <Text color="onSecondaryFixed">APPL 2,595.55 ▼ -1.30%</Text>
-        </Tile>
-      </Stack>
-      <Divider length="w-desktop-12" color="outlineVariant" thickness="s" />
+    <>
       <Stack direction="row" className="w-desktop-12 flex gap-m">
         <Tile width="w-desktop-8" padding="2xl">
           <Stack gap="m">
@@ -623,6 +585,6 @@ export default function Home() {
           </Stack>
         </Tile>
       </Stack>
-    </Stack>
+    </>
   );
 }
