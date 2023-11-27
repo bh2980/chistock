@@ -28,9 +28,25 @@ export const flexAlignVariants = cva("flex", {
       baseline: "items-baseline",
       stretch: "items-stretch",
     },
+    /** stack의 gap
+     * @default none
+     */
+    gap: {
+      none: "",
+      "3xs": "gap-3xs",
+      "2xs": "gap-2xs",
+      xs: "gap-xs",
+      s: "gap-s",
+      m: "gap-m",
+      l: "gap-l",
+      xl: "gap-xl",
+      "2xl": "gap-2xl",
+      "3xl": "gap-3xl",
+    },
   },
   defaultVariants: {
     justifyContent: "normal",
     itemAligns: "normal",
+    gap: "none",
   },
 });
