@@ -44,3 +44,7 @@ export const exceptProperty = (exceptProperties: string[]) => {
     return acc;
   }, {});
 };
+
+/** number를 인수로 받아서 `{number}px`, `{number}rem` 형태의 string을 만드는 함수 */
+export const makeNum2Unit = (num: undefined | number, unit: "px" | "rem" = "rem") =>
+  num !== undefined ? `${num}${unit}` : undefined;
