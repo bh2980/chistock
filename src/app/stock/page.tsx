@@ -1,6 +1,6 @@
 "use client";
 
-import Button from "@atoms/Button/Button";
+import Button from "@atoms/Button/Button/Button";
 import Divider from "@atoms/Divider/Divider";
 import Icon from "@atoms/Icon/Icon";
 import Stack from "@atoms/Stack/Stack";

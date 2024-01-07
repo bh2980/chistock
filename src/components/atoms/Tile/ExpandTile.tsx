@@ -6,7 +6,7 @@ import { TailwindMaxHeightClassType } from "@customTypes/tailwindFormatType";
 
 import { classMerge } from "@utils/utils";
 
-import Button from "@atoms/Button/Button";
+import Button from "@atoms/Button/Button/Button";
 import Tile from "@atoms/Tile/Tile";
 
 import { TileAlterAs, TileBasePropsType, TileDefault } from "./Tile.types";

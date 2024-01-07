@@ -21,7 +21,9 @@ export type ButtonBasePropsType = NonNullableProps<VariantProps<typeof buttonVar
    * @type Icon
    */
   icon?: React.ReactElement;
-  /** 버튼 내 아이콘 위치 */
+  /** 버튼 내 아이콘 위치
+   * @default before
+   */
   iconPosition?: "before" | "after";
 };
 
