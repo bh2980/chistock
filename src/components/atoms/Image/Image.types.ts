@@ -1,7 +1,6 @@
 import { VariantProps } from "class-variance-authority";
 import { ImageProps } from "next/image";
 
-import { TailwindHeightClassType, TailwindWidthClassType } from "@customTypes/tailwindFormatType";
 import { NonNullableProps } from "@customTypes/utilType";
 
 import { ImageVariants } from "./Image";
@@ -15,9 +14,9 @@ type ImageBasePropsType = {
    *
    * width만 설정 시 가로 세로 비율이 1:1로 렌더링됩니다.
    */
-  width: TailwindWidthClassType;
+  width: number;
   /** 이미지 세로 크기 */
-  height?: TailwindHeightClassType;
+  height?: number;
 };
 
 /** ImagePropsType에서 제거할 속성 */
