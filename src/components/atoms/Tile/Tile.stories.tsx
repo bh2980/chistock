@@ -140,7 +140,7 @@ export const TileRounded: Story = {
  * - `2xl` : 32px
  * - `3xl` : 40px
  *
- * 기본값으로 `2xl`가 설정되어있습니다.
+ * 기본값으로 `none`가 설정되어있습니다.
  */
 export const TilePadding: Story = {
   name: "Padding",

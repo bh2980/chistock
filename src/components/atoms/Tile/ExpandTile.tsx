@@ -6,13 +6,16 @@ import { TailwindMaxHeightClassType } from "@customTypes/tailwindFormatType";
 
 import { classMerge } from "@utils/utils";
 
-import Button from "@atoms/Button/Button";
+import Button from "@atoms/Button/Button/Button";
 import Tile from "@atoms/Tile/Tile";
 
 import { TileAlterAs, TileBasePropsType, TileDefault } from "./Tile.types";
 
 /** ExpandTile 기본 Props 타입 */
-export type ExpandTileBasePropsType = Omit<TileBasePropsType, "height"> & {
+export type ExpandTileBasePropsType = Omit<
+  TileBasePropsType,
+  "height" | "justifyContent" | "itemAligns"
+> & {
   collapseHeight: TailwindMaxHeightClassType;
   expandHeight?: TailwindMaxHeightClassType;
 };

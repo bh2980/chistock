@@ -12,7 +12,7 @@ import Icon from "@atoms/Icon/Icon";
 import Button from "./Button";
 
 const meta = {
-  title: "Atom/Button",
+  title: "Atom/Button/Button",
   component: Button,
   parameters: {
     layout: "centered",

@@ -32,7 +32,7 @@ type Story = StoryObj<typeof Text>;
 export const Default: Story = {
   render: () => (
     <StoryWrapper>
-      <Text size="2xl">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+      <Text size="headline1">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
     </StoryWrapper>
   ),
 };
@@ -41,12 +41,12 @@ export const Default: Story = {
  * `size` 속성을 이용해 텍스트의 크기를 조절할 수 있습니다.
  *
  * - `inherit` : 부모의 텍스트 크기 상속
- * - `xs` : 12px / 20px
- * - `s` : 14px / 20px
- * - `m` : 16px / 24px
- * - `l` : 20px / 32px
- * - `xl` : 24px / 36px
- * - `2xl` : 32px / 48px
+ * - `healind1` : 32px / 48px
+ * - `headline2` : 24px / 36px
+ * - `headline3` : 20px / 32px
+ * - `body1` : 16px / 24px
+ * - `body2` : 14px / 20px
+ * - `body3` : 12px / 20px
  *
  * 기본값은 `inherit`으로 설정되어있습니다.
  */
@@ -55,30 +55,25 @@ export const TextSize: Story = {
   render: () => (
     <StoryWrapper className="text-[48px]" direction="vertical">
       <Text>가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
-      <Text size="xs">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
-      <Text size="s">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
-      <Text size="m">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
-      <Text size="l">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
-      <Text size="xl">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
-      <Text size="2xl">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+      <Text size="body3">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+      <Text size="body2">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+      <Text size="body1">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+      <Text size="headline3">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+      <Text size="headline2">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+      <Text size="headline1">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
     </StoryWrapper>
   ),
 };
 
 /**
- * `weight` 속성을 이용해 텍스트의 굵기를 조절할 수 있습니다.
- *
- * - `regular` : 일반적인 굵기
  * - `bold` : 굵은 굵기
- *
- * 기본값은 `regular`으로 설정되어있습니다.
  */
 export const TextWeight: Story = {
   name: "Weight",
   render: () => (
     <StoryWrapper className="text-2xl" direction="vertical">
       <Text>가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
-      <Text weight="bold">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+      <Text bold>가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
     </StoryWrapper>
   ),
 };

@@ -17,24 +17,16 @@ export const textVariants = cva("", {
      */
     size: {
       inherit: "text-sizeInherit",
-      xs: "text-xs",
-      s: "text-s",
-      m: "text-m",
-      l: "text-l",
-      xl: "text-xl",
-      "2xl": "text-2xl",
-    },
-    /** 텍스트 굵기
-     * @default regular
-     */
-    weight: {
-      regular: "font-regular",
-      bold: "font-bold",
+      body3: "text-xs",
+      body2: "text-s",
+      body1: "text-m",
+      headline3: "text-l",
+      headline2: "text-xl",
+      headline1: "text-2xl",
     },
   },
   defaultVariants: {
     size: "inherit",
-    weight: "regular",
   },
 });
 
@@ -48,15 +40,16 @@ const Text = <
   className,
   color,
   size,
-  weight,
+  bold,
   ...props
 }: PolymorphicPropsWithInnerRefType<T, TextBasePropsType, A>) => {
   return (
     <Box<TextDefault | TextAlterAs>
       renderAs={renderAs || "span"}
       className={classMerge([
-        textVariants({ size, weight }),
         textColorVariants({ color }),
+        textVariants({ size }),
+        bold && "font-bold",
         className,
       ])}
       {...props}
