@@ -1,6 +1,6 @@
 import { twJoin, twMerge } from "tailwind-merge";
 
-import { classMerge } from "@utils/utils";
+import { classMerge, makeNum2Unit } from "@utils/utils";
 
 import { DividerPropsType } from "./Divider.types";
 
@@ -27,9 +27,13 @@ const Divider = ({
           direction === "vertical" &&
             classMerge(["w-[0rem]", [thickness === "s" ? "border-l-s" : "border-l-m"]])
         ),
-        length,
         className
       )}
+      style={
+        direction === "horizontal"
+          ? { width: makeNum2Unit(length) }
+          : { height: makeNum2Unit(length) }
+      }
       {...props}
     />
   );

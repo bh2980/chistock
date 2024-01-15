@@ -1,5 +1,3 @@
-import { TailwindHeightClassType, TailwindWidthClassType } from "@customTypes/tailwindFormatType";
-
 /** 가로 방향 Divider가 가지는 속성 타입 */
 type HorizontalDividerType = {
   /** Divider의 방향을 결정하는 속성
@@ -8,13 +6,13 @@ type HorizontalDividerType = {
    */
   direction?: "horizontal";
   /** Divider의 길이를 결정하는 속성 */
-  length: TailwindWidthClassType;
+  length: number;
 };
 
 /** 세로 방향 Divider가 가지는 속성 타입 */
 type VerticalDividerType = {
   direction: "vertical";
-  length: TailwindHeightClassType;
+  length: number;
 };
 
 /** 방향에 따른 Divider 속성 타입 */
