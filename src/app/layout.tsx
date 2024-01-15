@@ -4,7 +4,9 @@ import Link from "next/link";
 
 import Chistock from "@assets/chistock.svg";
 
+import FloatingButton from "@atoms/Button/FloatingButton/FloatingButton";
 import Divider from "@atoms/Divider/Divider";
+import Icon from "@atoms/Icon/Icon";
 import Stack from "@atoms/Stack/Stack";
 import Text from "@atoms/Text/Text";
 import Tile from "@atoms/Tile/Tile";
@@ -24,7 +26,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko" className="theme-light">
-      <body className={`${Pretandard.className} text-m`}>
+      <body className={`${Pretandard.className} text-m relative`}>
         <Stack
           itemAligns="center"
           justifyContent="center"
@@ -66,6 +68,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Divider length="w-desktop-12" color="outlineVariant" thickness="s" />
           {children}
         </Stack>
+        <FloatingButton
+          position="fixed"
+          icon={<Icon icon="sun" />}
+          size="l"
+          bottom={48}
+          right={48}
+        />
       </body>
     </html>
   );
