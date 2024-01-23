@@ -1,16 +1,15 @@
-import { tv } from "tailwind-variants";
-
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
 import { textColorVariants } from "@constants/textColor";
 
-import { classMerge } from "@utils/utils";
+import { tv } from "@utils/utils";
 
 import Box from "@atoms/Box/Box";
 
 import { TextAlterAs, TextBasePropsType, TextDefault } from "./Text.types";
 
 export const textVariants = tv({
+  extend: textColorVariants,
   variants: {
     /** 텍스트 크기
      * @default inherit
@@ -24,9 +23,14 @@ export const textVariants = tv({
       headline2: "text-xl",
       headline1: "text-2xl",
     },
+    bold: {
+      true: "font-bold",
+      false: "",
+    },
   },
   defaultVariants: {
     size: "inherit",
+    bold: false,
   },
 });
 
@@ -46,12 +50,7 @@ const Text = <
   return (
     <Box<TextDefault | TextAlterAs>
       renderAs={renderAs || "span"}
-      className={classMerge([
-        textColorVariants({ color }),
-        textVariants({ size }),
-        bold && "font-bold",
-        className,
-      ])}
+      className={textVariants({ size, color, bold, className })}
       {...props}
     >
       {children}

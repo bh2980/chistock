@@ -1,6 +1,4 @@
-import clsx from "clsx";
-import { extendTailwindMerge } from "tailwind-merge";
-import { ClassNameValue } from "tailwind-merge";
+import { createTV } from "tailwind-variants";
 import resolveConfig from "tailwindcss/resolveConfig";
 
 import tailwindConfig from "@root/tailwind.config";
@@ -11,23 +9,20 @@ const customTailwindTheme = resolveConfig(tailwindConfig).theme;
 const getToken = (tokenName: Exclude<keyof typeof customTailwindTheme, "extend">) =>
   Object.keys(customTailwindTheme[tokenName]).filter((key) => key !== "DEFAULT");
 
-/** 커스텀 twMerge */
-const twMerge = extendTailwindMerge({
-  theme: {
-    colors: getToken("colors"),
-    spacing: getToken("spacing"),
-    borderRadius: getToken("borderRadius"),
-    borderWidth: getToken("borderWidth"),
-  },
-  classGroups: {
-    "font-size": [{ text: getToken("fontSize") }],
+/** tv에 twMerge 설정 적용 */
+export const tv = createTV({
+  twMergeConfig: {
+    theme: {
+      colors: getToken("colors"),
+      spacing: getToken("spacing"),
+      borderRadius: getToken("borderRadius"),
+      borderWidth: getToken("borderWidth"),
+    },
+    classGroups: {
+      "font-size": [{ text: getToken("fontSize") }],
+    },
   },
 });
-
-/** cx와 twMerge로 tailwind class를 충돌을 방지하면서 합치는 함수 */
-export const classMerge = (classes: ClassNameValue | ClassNameValue[]) => {
-  return twMerge(clsx(classes));
-};
 
 type AccType = { [key: string]: { table: { disable: true } } };
 

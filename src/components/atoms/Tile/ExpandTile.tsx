@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { tv } from "tailwind-variants";
 
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
-import { classMerge, makeNum2Unit } from "@utils/utils";
+import { makeNum2Unit, tv } from "@utils/utils";
 
 import Button from "@atoms/Button/Button/Button";
 import Tile from "@atoms/Tile/Tile";
@@ -13,13 +12,14 @@ import { TileAlterAs, TileBasePropsType, TileDefault } from "./Tile.types";
 /** ExpandTile 기본 Props 타입 */
 export type ExpandTileBasePropsType = Omit<
   TileBasePropsType,
-  "height" | "justifyContent" | "itemAligns"
+  "height" | "justifyContent" | "itemAligns" | "gap"
 > & {
   collapseHeight: number;
   expandHeight?: number | "100vh";
 };
 
 const expandTileVariants = tv({
+  base: "transition-[max-height]",
   variants: {
     padding: {
       none: "",
@@ -63,7 +63,7 @@ const ExpandTile = <
 
     return (
       <Tile
-        className={classMerge(["transition-[max-height]", expandTileVariants({ padding })])}
+        className={expandTileVariants({ padding })}
         style={{
           width: makeNum2Unit(width),
           maxHeight: isExpend
@@ -76,7 +76,7 @@ const ExpandTile = <
       >
         <div className="flex flex-col w-full relative gap-s">
           <div className="h-[calc(100%-32rem)] overflow-hidden">{children}</div>
-          <Button size="s" onClick={changeTileState} className="bg-transparent text-inherit">
+          <Button variant="text" size="s" onClick={changeTileState}>
             {isExpend ? CLOSE_TEXT : EXPAND_TEXT}
           </Button>
         </div>

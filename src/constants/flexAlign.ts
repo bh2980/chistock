@@ -1,4 +1,4 @@
-import { tv } from "tailwind-variants";
+import { tv } from "@utils/utils";
 
 export const flexAlignVariants = tv({
   base: "flex",

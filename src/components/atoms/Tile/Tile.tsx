@@ -1,17 +1,16 @@
-import { tv } from "tailwind-variants";
-
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
 import { flexAlignVariants } from "@constants/flexAlign";
 
-import { classMerge, makeNum2Unit } from "@utils/utils";
+import { makeNum2Unit, tv } from "@utils/utils";
 
 import Box from "@atoms/Box/Box";
 
 import { TileAlterAs, TileBasePropsType, TileDefault } from "./Tile.types";
 
 export const tileVariants = tv({
-  base: "flex border border-outline-variant text-m",
+  extend: flexAlignVariants,
+  base: "border border-outline-variant text-m",
   variants: {
     /** Tile의 형태
      * @default default
@@ -89,16 +88,16 @@ const Tile = <
   return (
     <Box<TileDefault | TileAlterAs>
       renderAs={renderAs || "div"}
-      className={classMerge([
-        tileVariants({
-          variant,
-          rounded,
-          padding,
-          shadow,
-        }),
-        flexAlignVariants({ justifyContent, itemAligns, gap }),
+      className={tileVariants({
+        variant,
+        rounded,
+        padding,
+        shadow,
+        justifyContent,
+        itemAligns,
+        gap,
         className,
-      ])}
+      })}
       style={{ width: makeNum2Unit(width), height: makeNum2Unit(height) }}
       {...props}
     >

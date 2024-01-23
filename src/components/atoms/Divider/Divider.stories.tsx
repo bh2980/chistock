@@ -91,14 +91,8 @@ export const DividerColor: Story = {
  * [Divider Playground로 이동](?path=/story/atom-divider--playground)
  */
 export const Playground: Story = {
-  argTypes: {
-    direction: { options: ["horizontal", "vertical"], control: { type: "radio" } },
-  },
   args: {
-    direction: "horizontal",
     length: 200,
-    color: "outline",
-    thickness: "m",
   },
   render: (args) => (
     <StoryWrapper direction="vertical">
