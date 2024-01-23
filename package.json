@@ -14,7 +14,6 @@
     "chromatic": "chromatic --exit-zero-on-changes"
   },
   "dependencies": {
-    "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "d3": "^7.8.5",
     "jotai": "^2.2.2",
