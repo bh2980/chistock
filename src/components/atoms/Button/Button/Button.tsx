@@ -1,5 +1,5 @@
-import { cva } from "class-variance-authority";
 import { twJoin } from "tailwind-merge";
+import { tv } from "tailwind-variants";
 
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
@@ -16,38 +16,37 @@ import {
 
 export const has = (item: unknown) => !!item;
 
-export const buttonVariants = cva(
-  "relative flex justify-center items-center overflow-hidden rounded-m py-xs cursor-pointer",
-  {
-    variants: {
-      /**
-       * 버튼의 형태
-       * @default secondary
-       * */
-      variant: {
-        primary: "bg-primary text-primary-on",
-        secondary: "bg-secondary text-secondary-on",
-        danger: "bg-red text-red-on",
-        text: "text-inherit",
-      },
-      /**
-       * 버튼의 크기
-       * @default m
-       * */
-      size: {
-        s: "h-[32rem] px-s text-s",
-        m: "h-[40rem] px-m text-m",
-        l: "h-[48rem] px-m text-xl",
-      },
+export const buttonVariants = tv({
+  base: "relative flex justify-center items-center overflow-hidden rounded-m py-xs cursor-pointer",
+  variants: {
+    /**
+     * 버튼의 형태
+     * @default secondary
+     * */
+    variant: {
+      primary: "bg-primary text-primary-on",
+      secondary: "bg-secondary text-secondary-on",
+      danger: "bg-red text-red-on",
+      text: "text-inherit",
     },
-    defaultVariants: {
-      variant: "secondary",
-      size: "m",
+    /**
+     * 버튼의 크기
+     * @default m
+     * */
+    size: {
+      s: "h-[32rem] px-s text-s",
+      m: "h-[40rem] px-m text-m",
+      l: "h-[48rem] px-m text-xl",
     },
-  }
-);
+  },
+  defaultVariants: {
+    variant: "secondary",
+    size: "m",
+  },
+});
 
-const buttonDisabledVariants = cva("text-surface-on/30 grayscale pointer-events-none", {
+const buttonDisabledVariants = tv({
+  base: "text-surface-on/30 grayscale pointer-events-none",
   variants: {
     variant: {
       primary: "bg-surface-on/10",
@@ -61,7 +60,8 @@ const buttonDisabledVariants = cva("text-surface-on/30 grayscale pointer-events-
   },
 });
 
-const iconButtonPadding = cva("aspect-square", {
+const iconButtonPadding = tv({
+  base: "aspect-square",
   variants: {
     size: {
       s: "p-xs",

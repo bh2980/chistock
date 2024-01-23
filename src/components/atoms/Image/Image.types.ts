@@ -1,5 +1,5 @@
-import { VariantProps } from "class-variance-authority";
 import { ImageProps } from "next/image";
+import { VariantProps } from "tailwind-variants";
 
 import { NonNullableProps } from "@customTypes/utilType";
 

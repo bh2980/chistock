@@ -1,5 +1,5 @@
-import { VariantProps } from "class-variance-authority";
 import Link from "next/link";
+import { VariantProps } from "tailwind-variants";
 
 import { NonNullableProps } from "@customTypes/utilType";
 

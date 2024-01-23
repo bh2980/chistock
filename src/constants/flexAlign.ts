@@ -1,6 +1,7 @@
-import { cva } from "class-variance-authority";
+import { tv } from "tailwind-variants";
 
-export const flexAlignVariants = cva("flex", {
+export const flexAlignVariants = tv({
+  base: "flex",
   variants: {
     /**
      * flex 가로 배치

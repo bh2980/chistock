@@ -1,4 +1,4 @@
-import { VariantProps } from "class-variance-authority";
+import { VariantProps } from "tailwind-variants";
 
 /** 객체 속성의 값들에서 Nullable한 값 제거하는 타입 */
 export type NonNullableProps<Obj> = {

@@ -1,4 +1,4 @@
-import { cva } from "class-variance-authority";
+import { tv } from "tailwind-variants";
 
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 import type { VariantPropsType } from "@customTypes/utilType";
@@ -19,7 +19,8 @@ export type StackDefault = "div";
 /** Stack이 렌더링 될 수 있는 다른 타입 */
 export type StackAlterAs = "main" | "section" | "article";
 
-const stackVariants = cva("flex", {
+const stackVariants = tv({
+  base: "flex",
   variants: {
     /** stack의 방향
      * @default column
