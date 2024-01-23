@@ -6,9 +6,8 @@ import { NonNullableProps } from "@customTypes/utilType";
 import ICON_MAP from "@constants/iconMap";
 import { textColorVariants } from "@constants/textColor";
 
-import { classMerge } from "@utils/utils";
-
 const iconVariants = tv({
+  extend: textColorVariants,
   base: "stroke-2",
   variants: {
     /**
@@ -43,11 +42,8 @@ const Icon = ({ icon, className, color, size, ...props }: IconPropsType) => {
   const IconComponent = useMemo(() => lazy(ICON_MAP[icon]), [icon]);
 
   return (
-    <Suspense fallback={<div className={classMerge([iconVariants({ size })])} />}>
-      <IconComponent
-        className={classMerge([iconVariants({ size }), textColorVariants({ color }), className])}
-        {...props}
-      />
+    <Suspense fallback={<div className={iconVariants({ size })} />}>
+      <IconComponent className={iconVariants({ size, color, className })} {...props} />
     </Suspense>
   );
 };
