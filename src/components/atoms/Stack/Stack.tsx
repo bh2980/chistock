@@ -26,7 +26,7 @@ const stackVariants = tv({
      * @default column
      */
     direction: {
-      row: "",
+      row: "flex-row",
       "row-reverse": "flex-row-reverse",
       column: "flex-col",
       "column-reverse": "flex-col-reverse",
