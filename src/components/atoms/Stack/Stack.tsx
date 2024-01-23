@@ -5,8 +5,6 @@ import type { VariantPropsType } from "@customTypes/utilType";
 
 import { flexAlignVariants } from "@constants/flexAlign";
 
-import { classMerge } from "@utils/utils";
-
 import Box from "@atoms/Box/Box";
 
 // stack 고유 props
@@ -20,7 +18,7 @@ export type StackDefault = "div";
 export type StackAlterAs = "main" | "section" | "article";
 
 const stackVariants = tv({
-  base: "flex",
+  extend: flexAlignVariants,
   variants: {
     /** stack의 방향
      * @default column
@@ -51,11 +49,7 @@ const Stack = <
 }: PolymorphicPropsWithInnerRefType<T, StackBasePropsType, A>) => {
   return (
     <Box<StackDefault | StackAlterAs>
-      className={classMerge([
-        stackVariants({ direction }),
-        flexAlignVariants({ justifyContent, itemAligns, gap }),
-        className,
-      ])}
+      className={stackVariants({ direction, justifyContent, itemAligns, gap, className })}
       {...props}
     >
       {children}
