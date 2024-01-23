@@ -1,9 +1,6 @@
-import { twJoin } from "tailwind-merge";
 import { tv } from "tailwind-variants";
 
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
-
-import { classMerge } from "@utils/utils";
 
 import Box from "@atoms/Box/Box";
 
@@ -27,7 +24,7 @@ export const buttonVariants = tv({
       primary: "bg-primary text-primary-on",
       secondary: "bg-secondary text-secondary-on",
       danger: "bg-red text-red-on",
-      text: "text-inherit",
+      text: "bg-transparent text-inherit",
     },
     /**
      * 버튼의 크기
@@ -38,37 +35,65 @@ export const buttonVariants = tv({
       m: "h-[40rem] px-m text-m",
       l: "h-[48rem] px-m text-xl",
     },
+    isIconButton: {
+      true: "",
+    },
+    disabled: {
+      true: "",
+    },
   },
+  compoundVariants: [
+    {
+      isIconButton: true,
+      size: "s",
+      className: "aspect-square p-xs",
+    },
+    {
+      isIconButton: true,
+      size: ["m", "l"],
+      className: "aspect-square p-s",
+    },
+    {
+      disabled: true,
+      isIconButton: [true, false],
+      variant: ["primary", "secondary", "danger", "text"],
+      className: "text-surface-on/30 grayscale pointer-events-none",
+    },
+    {
+      disabled: true,
+      variant: ["primary", "secondary", "danger"],
+      className: "bg-surface-on/10",
+    },
+  ],
   defaultVariants: {
     variant: "secondary",
     size: "m",
   },
 });
 
-const buttonDisabledVariants = tv({
-  base: "text-surface-on/30 grayscale pointer-events-none",
+const iconWraperVariant = tv({
+  base: "leading-none",
   variants: {
-    variant: {
-      primary: "bg-surface-on/10",
-      secondary: "bg-surface-on/10",
-      danger: "bg-surface-on/10",
-      text: "bg-transparent",
+    isIconButton: {
+      false: "",
+    },
+    iconPosition: {
+      before: "",
+      after: "",
     },
   },
-  defaultVariants: {
-    variant: "secondary",
-  },
-});
-
-const iconButtonPadding = tv({
-  base: "aspect-square",
-  variants: {
-    size: {
-      s: "p-xs",
-      m: "p-s",
-      l: "p-s",
+  compoundVariants: [
+    {
+      isIconButton: false,
+      iconPosition: "before",
+      className: "mr-xs",
     },
-  },
+    {
+      isIconButton: false,
+      iconPosition: "after",
+      className: "ml-xs",
+    },
+  ],
 });
 
 const Overlay = () => {
@@ -78,16 +103,7 @@ const Overlay = () => {
 };
 
 const IconWrapper = ({ iconPosition, isIconButton, children }: IconWrapperPropsType) => {
-  return (
-    <span
-      className={twJoin(
-        "leading-none",
-        !isIconButton && [iconPosition === "before" ? "mr-xs" : "ml-xs"]
-      )}
-    >
-      {children}
-    </span>
-  );
+  return <span className={iconWraperVariant({ iconPosition, isIconButton })}>{children}</span>;
 };
 
 /**
@@ -112,14 +128,7 @@ const Button = <
   return (
     <Box<ButtonDefault | ButtonAlterAs>
       renderAs={renderAs || "button"}
-      className={classMerge(
-        twJoin([
-          buttonVariants({ variant, size }),
-          isIconButton && iconButtonPadding({ size }),
-          className,
-          disabled && buttonDisabledVariants({ variant }),
-        ])
-      )}
+      className={buttonVariants({ variant, size, isIconButton, disabled, className })}
       {...props}
     >
       {icon && iconPosition === "before" && (
