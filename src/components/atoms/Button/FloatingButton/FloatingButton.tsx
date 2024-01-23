@@ -37,7 +37,9 @@ const FloatingButton = ({
     <Tile
       renderAs="div"
       shadow="xl"
-      className="w-fit h-fit rounded-circle flex justify-center items-center overflow-hidden"
+      justifyContent="center"
+      itemAligns="center"
+      className="w-fit h-fit rounded-circle overflow-hidden"
       style={{
         position,
         // TODO %나 string 형태 대응
