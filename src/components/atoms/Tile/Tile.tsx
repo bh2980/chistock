@@ -4,7 +4,7 @@ import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
 import { flexAlignVariants } from "@constants/flexAlign";
 
-import { classMerge } from "@utils/utils";
+import { classMerge, makeNum2Unit } from "@utils/utils";
 
 import Box from "@atoms/Box/Box";
 
@@ -89,8 +89,6 @@ const Tile = <
     <Box<TileDefault | TileAlterAs>
       renderAs={renderAs || "div"}
       className={classMerge([
-        width,
-        height,
         tileVariants({
           variant,
           rounded,
@@ -100,6 +98,7 @@ const Tile = <
         flexAlignVariants({ justifyContent, itemAligns, gap }),
         className,
       ])}
+      style={{ width: makeNum2Unit(width), height: makeNum2Unit(height) }}
       {...props}
     >
       {children}

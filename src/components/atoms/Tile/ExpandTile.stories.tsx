@@ -92,7 +92,7 @@ const ExpaneTileChildren = () => {
  */
 export const Default: Story = {
   render: () => (
-    <ExpandTile width="w-desktop-4" collapseHeight="max-h-[256rem]">
+    <ExpandTile width={200} collapseHeight={256}>
       <ExpaneTileChildren />
     </ExpandTile>
   ),
@@ -107,10 +107,10 @@ export const ExpandTileCollapseHeight: Story = {
   name: "CollapseHeight",
   render: () => (
     <StoryWrapper>
-      <ExpandTile width="w-desktop-4" collapseHeight="max-h-[160rem]">
+      <ExpandTile width={200} collapseHeight={160}>
         <ExpaneTileChildren />
       </ExpandTile>
-      <ExpandTile width="w-desktop-4" collapseHeight="max-h-[256rem]">
+      <ExpandTile width={200} collapseHeight={256}>
         <ExpaneTileChildren />
       </ExpandTile>
     </StoryWrapper>
@@ -126,10 +126,10 @@ export const ExpandTileExpandHeight: Story = {
   name: "ExpandHeight",
   render: () => (
     <StoryWrapper>
-      <ExpandTile width="w-desktop-4" collapseHeight="max-h-[256rem]" expandHeight="max-h-[320rem]">
+      <ExpandTile width={200} collapseHeight={256} expandHeight={320}>
         <ExpaneTileChildren />
       </ExpandTile>
-      <ExpandTile width="w-desktop-4" collapseHeight="max-h-[256rem]" expandHeight="max-h-screen">
+      <ExpandTile width={200} collapseHeight={256}>
         <ExpaneTileChildren />
       </ExpandTile>
     </StoryWrapper>
@@ -142,27 +142,18 @@ export const ExpandTileExpandHeight: Story = {
  * [Expand Tile Playground로 이동](?path=/story/atom-tile-expandtile--playground)
  */
 export const Playground: Story = {
+  args: {
+    width: 400,
+    collapseHeight: 200,
+  },
   argTypes: {
     renderAs: {
       options: ["div", "header", "footer", "nav", "aside", "main", "section", "article"],
       control: { type: "select" },
     },
-    width: {
-      options: ["w-[200rem]", "w-[400rem]"],
-      control: { type: "select" },
-    },
-    collapseHeight: {
-      options: ["max-h-[160rem]", "max-h-[256rem]"],
-      control: { type: "select" },
-    },
     expandHeight: {
-      options: ["max-h-[320rem]", "max-h-[400rem]", "max-h-screen"],
-      control: { type: "select" },
+      control: { type: "number" },
     },
-  },
-  args: {
-    width: "w-[200rem]",
-    collapseHeight: "max-h-[256rem]",
   },
   render: (args) => (
     <ExpandTile {...args}>

@@ -2,9 +2,8 @@ import { cva } from "class-variance-authority";
 import { useState } from "react";
 
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
-import { TailwindMaxHeightClassType } from "@customTypes/tailwindFormatType";
 
-import { classMerge } from "@utils/utils";
+import { classMerge, makeNum2Unit } from "@utils/utils";
 
 import Button from "@atoms/Button/Button/Button";
 import Tile from "@atoms/Tile/Tile";
@@ -16,8 +15,8 @@ export type ExpandTileBasePropsType = Omit<
   TileBasePropsType,
   "height" | "justifyContent" | "itemAligns"
 > & {
-  collapseHeight: TailwindMaxHeightClassType;
-  expandHeight?: TailwindMaxHeightClassType;
+  collapseHeight: number;
+  expandHeight?: number | "100vh";
 };
 
 const expandTileVariants = cva("", {
@@ -49,14 +48,14 @@ const ExpandTile = <
   A extends TileAlterAs = TileAlterAs
 >({
   children,
+  width,
   collapseHeight,
-  expandHeight = "max-h-screen",
+  expandHeight = "100vh",
   padding,
   ...props
 }: PolymorphicPropsWithInnerRefType<T, ExpandTileBasePropsType, A>) => {
   {
     const [isExpend, setIsExpand] = useState(false);
-    const { variant } = props;
 
     const changeTileState = () => {
       setIsExpand((current) => !current);
@@ -64,21 +63,20 @@ const ExpandTile = <
 
     return (
       <Tile
-        className={classMerge([
-          isExpend ? expandHeight : collapseHeight,
-          "transition-[max-height]",
-          expandTileVariants({ padding }),
-        ])}
+        className={classMerge(["transition-[max-height]", expandTileVariants({ padding })])}
+        style={{
+          width: makeNum2Unit(width),
+          maxHeight: isExpend
+            ? expandHeight === "100vh"
+              ? expandHeight
+              : makeNum2Unit(expandHeight)
+            : collapseHeight,
+        }}
         {...props}
       >
         <div className="flex flex-col w-full relative gap-s">
           <div className="h-[calc(100%-32rem)] overflow-hidden">{children}</div>
-          <Button
-            variant={variant === undefined || variant === "default" ? "text" : variant}
-            size="s"
-            onClick={changeTileState}
-            className="bg-transparent"
-          >
+          <Button size="s" onClick={changeTileState} className="bg-transparent text-inherit">
             {isExpend ? CLOSE_TEXT : EXPAND_TEXT}
           </Button>
         </div>
