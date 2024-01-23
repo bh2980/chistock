@@ -5,7 +5,7 @@ import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
  *
  * T를 통해 컴포넌트의 타입을 지정할 수 있습니다.
  */
-const Box = <T extends React.ElementType = "div">({
+const Slot = <T extends React.ElementType = "div">({
   renderAs,
   innerRef,
   ...props
@@ -15,4 +15,4 @@ const Box = <T extends React.ElementType = "div">({
   return <Root ref={innerRef} {...props}></Root>;
 };
 
-export default Box;
+export default Slot;

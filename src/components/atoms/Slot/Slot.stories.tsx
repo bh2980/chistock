@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import Box from "./Box";
+import Slot from "./Slot";
 
 const meta = {
-  title: "Atom/Box",
-  component: Box,
+  title: "Atom/Slot",
+  component: Slot,
   parameters: {
     layout: "centered",
   },
@@ -16,23 +16,23 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Box>;
+} satisfies Meta<typeof Slot>;
 
 export default meta;
-type Story = StoryObj<typeof Box>;
+type Story = StoryObj<typeof Slot>;
 
 export const Default: Story = {
   render: (args) => (
-    <Box className="border-dashed border p-xl" {...args}>
-      Box
-    </Box>
+    <Slot className="border-dashed border p-xl" {...args}>
+      Slot
+    </Slot>
   ),
 };
 
 /**
- * Playground에서 Box 컴포넌트를 직접 테스트해보세요.
+ * Playground에서 Slot 컴포넌트를 직접 테스트해보세요.
  *
- * [Box Playground로 이동](?path=/story/atom-box--playground)
+ * [Slot Playground로 이동](?path=/story/atom-slot--playground)
  */
 export const Playground: Story = {
   argTypes: {
@@ -42,8 +42,8 @@ export const Playground: Story = {
     },
   },
   render: (args) => (
-    <Box className="border-dashed border p-xl" {...args}>
+    <Slot className="border-dashed border p-xl" {...args}>
       {args.renderAs || "div"} 태그
-    </Box>
+    </Slot>
   ),
 };
