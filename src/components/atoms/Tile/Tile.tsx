@@ -4,7 +4,7 @@ import { flexAlignVariants } from "@constants/flexAlign";
 
 import { makeNum2Unit, tv } from "@utils/utils";
 
-import Box from "@atoms/Box/Box";
+import Slot from "@atoms/Slot/Slot";
 
 import { TileAlterAs, TileBasePropsType, TileDefault } from "./Tile.types";
 
@@ -86,7 +86,7 @@ const Tile = <
   ...props
 }: PolymorphicPropsWithInnerRefType<T, TileBasePropsType, A>) => {
   return (
-    <Box<TileDefault | TileAlterAs>
+    <Slot<TileDefault | TileAlterAs>
       renderAs={renderAs || "div"}
       className={tileVariants({
         variant,
@@ -102,7 +102,7 @@ const Tile = <
       {...props}
     >
       {children}
-    </Box>
+    </Slot>
   );
 };
 

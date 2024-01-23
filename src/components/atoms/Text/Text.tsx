@@ -4,7 +4,7 @@ import { textColorVariants } from "@constants/textColor";
 
 import { tv } from "@utils/utils";
 
-import Box from "@atoms/Box/Box";
+import Slot from "@atoms/Slot/Slot";
 
 import { TextAlterAs, TextBasePropsType, TextDefault } from "./Text.types";
 
@@ -48,13 +48,13 @@ const Text = <
   ...props
 }: PolymorphicPropsWithInnerRefType<T, TextBasePropsType, A>) => {
   return (
-    <Box<TextDefault | TextAlterAs>
+    <Slot<TextDefault | TextAlterAs>
       renderAs={renderAs || "span"}
       className={textVariants({ size, color, bold, className })}
       {...props}
     >
       {children}
-    </Box>
+    </Slot>
   );
 };
 

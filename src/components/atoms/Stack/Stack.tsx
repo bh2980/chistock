@@ -5,7 +5,7 @@ import { flexAlignVariants } from "@constants/flexAlign";
 
 import { tv } from "@utils/utils";
 
-import Box from "@atoms/Box/Box";
+import Slot from "@atoms/Slot/Slot";
 
 // stack 고유 props
 type StackBasePropsType = VariantPropsType<typeof stackVariants> &
@@ -48,12 +48,12 @@ const Stack = <
   ...props
 }: PolymorphicPropsWithInnerRefType<T, StackBasePropsType, A>) => {
   return (
-    <Box<StackDefault | StackAlterAs>
+    <Slot<StackDefault | StackAlterAs>
       className={stackVariants({ direction, justifyContent, itemAligns, gap, className })}
       {...props}
     >
       {children}
-    </Box>
+    </Slot>
   );
 };
 
