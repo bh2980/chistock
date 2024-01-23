@@ -1,4 +1,4 @@
-import { tv } from "tailwind-variants";
+import { tv } from "@utils/utils";
 
 /** Text가 가질 수 있는 색상 Class 모음 객체 */
 export const textColor = {

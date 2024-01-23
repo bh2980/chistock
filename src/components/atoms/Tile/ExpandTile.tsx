@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { tv } from "tailwind-variants";
 
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
-import { makeNum2Unit } from "@utils/utils";
+import { makeNum2Unit, tv } from "@utils/utils";
 
 import Button from "@atoms/Button/Button/Button";
 import Tile from "@atoms/Tile/Tile";
@@ -77,7 +76,7 @@ const ExpandTile = <
       >
         <div className="flex flex-col w-full relative gap-s">
           <div className="h-[calc(100%-32rem)] overflow-hidden">{children}</div>
-          <Button size="s" onClick={changeTileState} className="bg-transparent text-inherit">
+          <Button variant="text" size="s" onClick={changeTileState}>
             {isExpend ? CLOSE_TEXT : EXPAND_TEXT}
           </Button>
         </div>

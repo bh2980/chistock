@@ -1,8 +1,8 @@
-import { tv } from "tailwind-variants";
-
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
 import { textColorVariants } from "@constants/textColor";
+
+import { tv } from "@utils/utils";
 
 import Box from "@atoms/Box/Box";
 

@@ -1,6 +1,6 @@
-import { tv } from "tailwind-variants";
-
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
+
+import { tv } from "@utils/utils";
 
 import Box from "@atoms/Box/Box";
 
@@ -55,7 +55,6 @@ export const buttonVariants = tv({
     },
     {
       disabled: true,
-      isIconButton: [true, false],
       variant: ["primary", "secondary", "danger", "text"],
       className: "text-surface-on/30 grayscale pointer-events-none",
     },

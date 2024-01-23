@@ -1,10 +1,8 @@
-import { tv } from "tailwind-variants";
-
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
 import { flexAlignVariants } from "@constants/flexAlign";
 
-import { makeNum2Unit } from "@utils/utils";
+import { makeNum2Unit, tv } from "@utils/utils";
 
 import Box from "@atoms/Box/Box";
 

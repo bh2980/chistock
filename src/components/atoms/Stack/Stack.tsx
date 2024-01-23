@@ -1,9 +1,9 @@
-import { tv } from "tailwind-variants";
-
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 import type { VariantPropsType } from "@customTypes/utilType";
 
 import { flexAlignVariants } from "@constants/flexAlign";
+
+import { tv } from "@utils/utils";
 
 import Box from "@atoms/Box/Box";
 

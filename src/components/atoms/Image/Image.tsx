@@ -1,7 +1,6 @@
 import * as NextImage from "next/image";
-import { tv } from "tailwind-variants";
 
-import { makeNum2Unit } from "@utils/utils";
+import { makeNum2Unit, tv } from "@utils/utils";
 
 import { ImagePropsType } from "./Image.types";
 

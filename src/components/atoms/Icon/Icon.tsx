@@ -1,10 +1,12 @@
 import { Suspense, lazy, useMemo } from "react";
-import { VariantProps, tv } from "tailwind-variants";
+import { VariantProps } from "tailwind-variants";
 
 import { NonNullableProps } from "@customTypes/utilType";
 
 import ICON_MAP from "@constants/iconMap";
 import { textColorVariants } from "@constants/textColor";
+
+import { tv } from "@utils/utils";
 
 const iconVariants = tv({
   extend: textColorVariants,

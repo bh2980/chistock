@@ -3,10 +3,10 @@ import { VariantProps } from "tailwind-variants";
 
 import { NonNullableProps } from "@customTypes/utilType";
 
-import { ImageVariants } from "./Image";
+import { imageVariants } from "./Image";
 
 /** cva로 만든 Image Variants의 Type */
-type ImageVariantsType = NonNullableProps<VariantProps<typeof ImageVariants>>;
+type ImageVariantsType = NonNullableProps<VariantProps<typeof imageVariants>>;
 
 /** Image 기본 Props Type */
 type ImageBasePropsType = {
