@@ -18,7 +18,7 @@ type Story = StoryObj<typeof Divider>;
 
 export const Default: Story = {
   args: {
-    length: "w-desktop-4",
+    length: 100,
   },
   render: (args) => <Divider {...args} />,
 };
@@ -32,9 +32,9 @@ export const Default: Story = {
 export const DividerLength: Story = {
   render: () => (
     <StoryWrapper direction="vertical">
-      <Divider length="w-[200rem]" />
-      <Divider length="w-[400rem]" />
-      <Divider length="w-[800rem]" />
+      <Divider length={200} />
+      <Divider length={400} />
+      <Divider length={800} />
     </StoryWrapper>
   ),
 };
@@ -47,8 +47,8 @@ export const DividerLength: Story = {
 export const DividerDirection: Story = {
   render: () => (
     <StoryWrapper>
-      <Divider length="w-[200rem]" />
-      <Divider direction="vertical" length="h-[200rem]" />
+      <Divider length={200} />
+      <Divider direction="vertical" length={200} />
     </StoryWrapper>
   ),
 };
@@ -63,8 +63,8 @@ export const DividerDirection: Story = {
 export const DividerWidth: Story = {
   render: () => (
     <StoryWrapper direction="vertical">
-      <Divider length="w-[200rem]" thickness="s" />
-      <Divider length="w-[200rem]" />
+      <Divider length={200} thickness="s" />
+      <Divider length={200} />
     </StoryWrapper>
   ),
 };
@@ -79,8 +79,8 @@ export const DividerWidth: Story = {
 export const DividerColor: Story = {
   render: () => (
     <StoryWrapper direction="vertical">
-      <Divider length="w-[200rem]" />
-      <Divider length="w-[200rem]" color="outlineVariant" />
+      <Divider length={200} />
+      <Divider length={200} color="outlineVariant" />
     </StoryWrapper>
   ),
 };
@@ -92,15 +92,11 @@ export const DividerColor: Story = {
  */
 export const Playground: Story = {
   argTypes: {
-    length: {
-      options: ["w-[200rem]", "w-[400rem]", "w-[800rem]", "h-[200rem]", "h-[400rem]", "h-[800rem]"],
-      control: { type: "select" },
-    },
     direction: { options: ["horizontal", "vertical"], control: { type: "radio" } },
   },
   args: {
     direction: "horizontal",
-    length: "w-[200rem]",
+    length: 200,
     color: "outline",
     thickness: "m",
   },

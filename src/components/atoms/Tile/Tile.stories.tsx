@@ -75,9 +75,9 @@ export const TileSize: Story = {
   render: () => (
     <StoryWrapper>
       <Tile>타일 예시</Tile>
-      <Tile width="w-[256rem]">타일 예시</Tile>
-      <Tile height="h-[256rem]">타일 예시</Tile>
-      <Tile width="w-[256rem]" height="h-[256rem]">
+      <Tile width={256}>타일 예시</Tile>
+      <Tile height={256}>타일 예시</Tile>
+      <Tile width={256} height={256}>
         타일 예시
       </Tile>
     </StoryWrapper>
@@ -199,14 +199,6 @@ export const Playground: Story = {
   argTypes: {
     renderAs: {
       options: ["div", "header", "footer", "nav", "aside", "main", "section", "article"],
-      control: { type: "select" },
-    },
-    width: {
-      options: ["w-auto", "w-[200rem]", "w-[400rem]"],
-      control: { type: "select" },
-    },
-    height: {
-      options: ["h-auto", "h-[200rem]", "h-[400rem]"],
       control: { type: "select" },
     },
   },

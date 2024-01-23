@@ -1,7 +1,7 @@
 import { cva } from "class-variance-authority";
 import * as NextImage from "next/image";
 
-import { classMerge } from "@utils/utils";
+import { classMerge, makeNum2Unit } from "@utils/utils";
 
 import { ImagePropsType } from "./Image.types";
 
@@ -44,7 +44,10 @@ const Image = ({
   ...props
 }: ImagePropsType) => {
   return (
-    <div className={classMerge([ImageVariants({ rounded }), width, height, className])}>
+    <div
+      className={classMerge([ImageVariants({ rounded }), className])}
+      style={{ width: makeNum2Unit(width), height: makeNum2Unit(height) }}
+    >
       <NextImage.default style={{ objectFit: "cover" }} alt={alt} fill={fill} {...props} />
     </div>
   );

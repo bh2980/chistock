@@ -1,4 +1,3 @@
-import { TailwindHeightClassType, TailwindWidthClassType } from "@customTypes/tailwindFormatType";
 import { VariantPropsType } from "@customTypes/utilType";
 
 import { flexAlignVariants } from "@constants/flexAlign";
@@ -18,8 +17,8 @@ export type TileAlterAs = "header" | "footer" | "nav" | "aside" | "main" | "sect
  */
 export type TileBasePropsType = {
   /** Tile의 가로 크기 */
-  width?: TailwindWidthClassType;
+  width?: number;
   /** Tile의 세로 크기 */
-  height?: TailwindHeightClassType;
+  height?: number;
 } & VariantPropsType<typeof tileVariants> &
   VariantPropsType<typeof flexAlignVariants>;

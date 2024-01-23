@@ -34,7 +34,7 @@ export default meta;
 type Story = StoryObj<typeof Image>;
 
 export const Default: Story = {
-  render: () => <Image width="w-[200rem]" alt="chistock 이미지" src="https://url.kr/kd35ap" />,
+  render: () => <Image width={200} alt="chistock 이미지" src="https://url.kr/kd35ap" />,
 };
 
 /**
@@ -46,13 +46,8 @@ export const Default: Story = {
 export const ImageSize: Story = {
   render: () => (
     <StoryWrapper>
-      <Image width="w-[100rem]" alt="chistock 이미지" src="https://url.kr/kd35ap" />
-      <Image
-        width="w-[200rem]"
-        height="h-[100rem]"
-        alt="chistock 이미지"
-        src="https://url.kr/kd35ap"
-      />
+      <Image width={100} alt="chistock 이미지" src="https://url.kr/kd35ap" />
+      <Image width={200} height={100} alt="chistock 이미지" src="https://url.kr/kd35ap" />
     </StoryWrapper>
   ),
 };
@@ -70,17 +65,12 @@ export const ImageSize: Story = {
 export const ImageRadius: Story = {
   render: () => (
     <StoryWrapper>
-      <Image rounded="none" width="w-[100rem]" alt="chistock 이미지" src="https://url.kr/kd35ap" />
-      <Image rounded="xs" width="w-[100rem]" alt="chistock 이미지" src="https://url.kr/kd35ap" />
-      <Image rounded="s" width="w-[100rem]" alt="chistock 이미지" src="https://url.kr/kd35ap" />
-      <Image rounded="m" width="w-[100rem]" alt="chistock 이미지" src="https://url.kr/kd35ap" />
-      <Image rounded="l" width="w-[100rem]" alt="chistock 이미지" src="https://url.kr/kd35ap" />
-      <Image
-        rounded="circle"
-        width="w-[100rem]"
-        alt="chistock 이미지"
-        src="https://url.kr/kd35ap"
-      />
+      <Image rounded="none" width={100} alt="chistock 이미지" src="https://url.kr/kd35ap" />
+      <Image rounded="xs" width={100} alt="chistock 이미지" src="https://url.kr/kd35ap" />
+      <Image rounded="s" width={100} alt="chistock 이미지" src="https://url.kr/kd35ap" />
+      <Image rounded="m" width={100} alt="chistock 이미지" src="https://url.kr/kd35ap" />
+      <Image rounded="l" width={100} alt="chistock 이미지" src="https://url.kr/kd35ap" />
+      <Image rounded="circle" width={100} alt="chistock 이미지" src="https://url.kr/kd35ap" />
     </StoryWrapper>
   ),
 };
@@ -92,20 +82,12 @@ export const ImageRadius: Story = {
  */
 export const Playground: Story = {
   argTypes: {
-    width: {
-      options: ["w-[200rem]", "w-[400rem]", "w-[800rem]"],
-      control: { type: "select" },
-    },
-    height: {
-      options: ["h-[200rem]", "h-[400rem]", "h-[800rem]"],
-      control: { type: "select" },
-    },
     src: {
       control: { type: "text" },
     },
   },
   args: {
-    width: "w-[200rem]",
+    width: 200,
     src: "https://url.kr/kd35ap",
     alt: "chistock",
   },
