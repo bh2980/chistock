@@ -1,11 +1,11 @@
 import * as NextImage from "next/image";
 import { tv } from "tailwind-variants";
 
-import { classMerge, makeNum2Unit } from "@utils/utils";
+import { makeNum2Unit } from "@utils/utils";
 
 import { ImagePropsType } from "./Image.types";
 
-export const ImageVariants = tv({
+export const imageVariants = tv({
   base: "relative min-w-[1em] overflow-hidden aspect-square",
   variants: {
     /** 이미지의 테두리 반경을 조절합니다
@@ -41,15 +41,22 @@ const Image = ({
   height,
   rounded,
   alt,
+  src,
   fill = true,
   ...props
 }: ImagePropsType) => {
   return (
     <div
-      className={classMerge([ImageVariants({ rounded }), className])}
+      className={imageVariants({ rounded, className })}
       style={{ width: makeNum2Unit(width), height: makeNum2Unit(height) }}
     >
-      <NextImage.default style={{ objectFit: "cover" }} alt={alt} fill={fill} {...props} />
+      <NextImage.default
+        style={{ objectFit: "cover" }}
+        src={src}
+        alt={alt}
+        fill={fill}
+        {...props}
+      />
     </div>
   );
 };
