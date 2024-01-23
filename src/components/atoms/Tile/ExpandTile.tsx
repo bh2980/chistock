@@ -1,5 +1,5 @@
-import { cva } from "class-variance-authority";
 import { useState } from "react";
+import { tv } from "tailwind-variants";
 
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
@@ -19,7 +19,7 @@ export type ExpandTileBasePropsType = Omit<
   expandHeight?: number | "100vh";
 };
 
-const expandTileVariants = cva("", {
+const expandTileVariants = tv({
   variants: {
     padding: {
       none: "",

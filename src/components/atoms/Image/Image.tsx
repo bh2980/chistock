@@ -1,11 +1,12 @@
-import { cva } from "class-variance-authority";
 import * as NextImage from "next/image";
+import { tv } from "tailwind-variants";
 
 import { classMerge, makeNum2Unit } from "@utils/utils";
 
 import { ImagePropsType } from "./Image.types";
 
-export const ImageVariants = cva("relative min-w-[1em] overflow-hidden aspect-square", {
+export const ImageVariants = tv({
+  base: "relative min-w-[1em] overflow-hidden aspect-square",
   variants: {
     /** 이미지의 테두리 반경을 조절합니다
      *

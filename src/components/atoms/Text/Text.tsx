@@ -1,4 +1,4 @@
-import { cva } from "class-variance-authority";
+import { tv } from "tailwind-variants";
 
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
@@ -10,7 +10,7 @@ import Box from "@atoms/Box/Box";
 
 import { TextAlterAs, TextBasePropsType, TextDefault } from "./Text.types";
 
-export const textVariants = cva("", {
+export const textVariants = tv({
   variants: {
     /** 텍스트 크기
      * @default inherit

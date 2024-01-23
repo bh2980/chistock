@@ -1,5 +1,5 @@
-import { VariantProps, cva } from "class-variance-authority";
 import { Suspense, lazy, useMemo } from "react";
+import { VariantProps, tv } from "tailwind-variants";
 
 import { NonNullableProps } from "@customTypes/utilType";
 
@@ -8,7 +8,8 @@ import { textColorVariants } from "@constants/textColor";
 
 import { classMerge } from "@utils/utils";
 
-const iconVariants = cva("stroke-2", {
+const iconVariants = tv({
+  base: "stroke-2",
   variants: {
     /**
      * 아이콘의 크기를 선택하는 속성

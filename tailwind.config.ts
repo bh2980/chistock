@@ -1,7 +1,11 @@
+import { defaultConfig } from "tailwind-variants";
 import type { Config } from "tailwindcss";
 import { createThemes } from "tw-colors";
 
 import color from "./src/constants/colorPalette";
+
+// tailwind-variants(tv) twMerge 비활성화
+defaultConfig.twMerge = false;
 
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],

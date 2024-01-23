@@ -1,4 +1,4 @@
-import { cx } from "class-variance-authority";
+import clsx from "clsx";
 import { extendTailwindMerge } from "tailwind-merge";
 import { ClassNameValue } from "tailwind-merge";
 import resolveConfig from "tailwindcss/resolveConfig";
@@ -26,7 +26,7 @@ const twMerge = extendTailwindMerge({
 
 /** cx와 twMerge로 tailwind class를 충돌을 방지하면서 합치는 함수 */
 export const classMerge = (classes: ClassNameValue | ClassNameValue[]) => {
-  return twMerge(cx(classes));
+  return twMerge(clsx(classes));
 };
 
 type AccType = { [key: string]: { table: { disable: true } } };

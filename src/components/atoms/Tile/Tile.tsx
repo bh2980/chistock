@@ -1,4 +1,4 @@
-import { cva } from "class-variance-authority";
+import { tv } from "tailwind-variants";
 
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
@@ -10,7 +10,8 @@ import Box from "@atoms/Box/Box";
 
 import { TileAlterAs, TileBasePropsType, TileDefault } from "./Tile.types";
 
-export const tileVariants = cva("flex border border-outline-variant text-m", {
+export const tileVariants = tv({
+  base: "flex border border-outline-variant text-m",
   variants: {
     /** Tile의 형태
      * @default default
