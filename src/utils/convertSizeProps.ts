@@ -1,4 +1,4 @@
-type sizeProps = {
+export type sizeProps = {
   width?: number | string;
   maxWidth?: number | string;
   minWidth?: number | string;
