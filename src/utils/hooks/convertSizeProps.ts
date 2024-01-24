@@ -5,6 +5,10 @@ type sizeProps = {
   height?: number | string;
   maxHeight?: number | string;
   minHeight?: number | string;
+  top?: number | string;
+  bottom?: number | string;
+  left?: number | string;
+  right?: number | string;
   style?: React.CSSProperties;
 } & { [key: string]: unknown };
 
@@ -12,7 +16,7 @@ type sizeProps = {
 export const convertCSSSize = (input: number | string | undefined) => {
   if (input === undefined) return input;
 
-  if (typeof input === "number" || /^[0-9]+$/.exec(input)) {
+  if (typeof input === "number" || /^-?[0-9]+$/.exec(input)) {
     return `${input}rem`;
   }
 
@@ -26,7 +30,20 @@ export const convertCSSSize = (input: number | string | undefined) => {
  * 단위 변환 및 inline style css로 넣어주는 props
  */
 const convertSizeProps = (props: sizeProps) => {
-  const { width, maxWidth, minWidth, height, maxHeight, minHeight, style, ...rest } = props;
+  const {
+    width,
+    maxWidth,
+    minWidth,
+    height,
+    maxHeight,
+    minHeight,
+    top,
+    bottom,
+    left,
+    right,
+    style,
+    ...rest
+  } = props;
 
   return {
     style: {
@@ -36,6 +53,10 @@ const convertSizeProps = (props: sizeProps) => {
       height: convertCSSSize(height),
       maxHeight: convertCSSSize(maxHeight),
       minHeight: convertCSSSize(minHeight),
+      top: convertCSSSize(top),
+      bottom: convertCSSSize(bottom),
+      left: convertCSSSize(left),
+      right: convertCSSSize(right),
       ...style,
     },
     ...rest,
