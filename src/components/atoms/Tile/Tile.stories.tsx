@@ -202,5 +202,6 @@ export const Playground: Story = {
       control: { type: "select" },
     },
   },
+  parameters: { a11y: { disable: true } },
   render: (args) => <Tile {...args}>타일 예시</Tile>,
 };

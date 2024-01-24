@@ -140,6 +140,7 @@ export const Playground: Story = {
   args: {
     icon: "sun",
   },
+  parameters: { a11y: { disable: true } },
   render: (args) => (
     <div className="text-[56rem]">
       <Icon {...args} />

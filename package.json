@@ -9,6 +9,7 @@
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "test-storybook": "test-storybook",
     "test": "jest --watchAll",
     "prepare": "husky install",
     "chromatic": "chromatic --exit-zero-on-changes"
@@ -23,6 +24,7 @@
     "tailwind-variants": "^0.1.20"
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "^7.6.10",
     "@storybook/addon-essentials": "7.1.0",
     "@storybook/addon-interactions": "7.1.0",
     "@storybook/addon-links": "7.1.0",
@@ -31,6 +33,7 @@
     "@storybook/blocks": "7.1.0",
     "@storybook/nextjs": "7.1.0",
     "@storybook/react": "7.1.0",
+    "@storybook/test-runner": "^0.16.0",
     "@storybook/testing-library": "0.2.0",
     "@svgr/webpack": "^8.0.1",
     "@testing-library/jest-dom": "^6.1.2",
@@ -43,6 +46,7 @@
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "autoprefixer": "^10.4.15",
+    "axe-playwright": "^2.0.1",
     "chromatic": "^7.1.0",
     "eslint": "^8.47.0",
     "eslint-config-next": "^13.4.19",

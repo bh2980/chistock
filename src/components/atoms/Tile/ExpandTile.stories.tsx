@@ -155,6 +155,7 @@ export const Playground: Story = {
       control: { type: "number" },
     },
   },
+  parameters: { a11y: { disable: true } },
   render: (args) => (
     <ExpandTile {...args}>
       <ExpaneTileChildren />

@@ -91,5 +91,6 @@ export const Playground: Story = {
     src: "https://url.kr/kd35ap",
     alt: "chistock",
   },
+  parameters: { a11y: { disable: true } },
   render: (args) => <Image {...args} />,
 };
