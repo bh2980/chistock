@@ -58,6 +58,10 @@ describe("2. useSizeProps 검증", () => {
       height: "100",
       minHeight: "100px",
       maxHeight: "calc(100% - 32px)",
+      top: -100,
+      bottom: "-100",
+      left: "-100%",
+      right: "-100px",
     };
 
     const expectOutput = {
@@ -68,6 +72,10 @@ describe("2. useSizeProps 검증", () => {
         height: "100rem",
         minHeight: "100rem",
         maxHeight: "calc(100% - 32rem)",
+        top: "-100rem",
+        bottom: "-100rem",
+        left: "-100%",
+        right: "-100rem",
       },
     };
 
