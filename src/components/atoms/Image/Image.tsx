@@ -1,6 +1,7 @@
 import * as NextImage from "next/image";
 
-import { makeNum2Unit, tv } from "@utils/utils";
+import { convertCSSSize } from "@utils/hooks/convertSizeProps";
+import { tv } from "@utils/utils";
 
 import { ImagePropsType } from "./Image.types";
 
@@ -44,16 +45,15 @@ const Image = ({
   fill = true,
   ...props
 }: ImagePropsType) => {
+  const containerStyle = { width: convertCSSSize(width), height: convertCSSSize(height) };
+
   return (
-    <div
-      className={imageVariants({ rounded, className })}
-      style={{ width: makeNum2Unit(width), height: makeNum2Unit(height) }}
-    >
+    <div className={imageVariants({ rounded, className })} style={containerStyle}>
       <NextImage.default
-        style={{ objectFit: "cover" }}
         src={src}
         alt={alt}
         fill={fill}
+        style={{ objectFit: "cover" }}
         {...props}
       />
     </div>
