@@ -111,7 +111,7 @@ export default {
           variant: color.neutral[80],
         },
         red: {
-          DEFAULT: color.red[50],
+          DEFAULT: color.red[40],
           on: color.white,
           variant: {
             DEFAULT: color.red[30],
