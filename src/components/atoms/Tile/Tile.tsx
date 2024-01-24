@@ -2,7 +2,7 @@ import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
 import { flexAlignVariants } from "@constants/flexAlign";
 
-import { makeNum2Unit, tv } from "@utils/utils";
+import { tv } from "@utils/utils";
 
 import Slot from "@atoms/Slot/Slot";
 
@@ -75,8 +75,6 @@ const Tile = <
   renderAs,
   className,
   variant,
-  width,
-  height,
   rounded,
   padding,
   shadow,
@@ -98,7 +96,6 @@ const Tile = <
         gap,
         className,
       })}
-      style={{ width: makeNum2Unit(width), height: makeNum2Unit(height) }}
       {...props}
     >
       {children}
