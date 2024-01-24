@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
-import { makeNum2Unit, tv } from "@utils/utils";
+import { tv } from "@utils/utils";
 
 import Button from "@atoms/Button/Button/Button";
 import Tile from "@atoms/Tile/Tile";
@@ -12,11 +12,8 @@ import { TileAlterAs, TileBasePropsType, TileDefault } from "./Tile.types";
 /** ExpandTile 기본 Props 타입 */
 export type ExpandTileBasePropsType = Omit<
   TileBasePropsType,
-  "height" | "justifyContent" | "itemAligns" | "gap"
-> & {
-  collapseHeight: number;
-  expandHeight?: number | "100vh";
-};
+  "justifyContent" | "itemAligns" | "gap"
+>;
 
 const expandTileVariants = tv({
   base: "transition-[max-height]",
@@ -33,6 +30,9 @@ const expandTileVariants = tv({
       "2xl": "px-2xl pt-2xl pb-m",
       "3xl": "px-3xl pt-3xl pb-l",
     },
+    isExpand: {
+      true: "!max-h-screen",
+    },
   },
   defaultVariants: {
     padding: "2xl",
@@ -48,36 +48,23 @@ const ExpandTile = <
   A extends TileAlterAs = TileAlterAs
 >({
   children,
-  width,
-  collapseHeight,
-  expandHeight = "100vh",
   padding,
+  className,
   ...props
 }: PolymorphicPropsWithInnerRefType<T, ExpandTileBasePropsType, A>) => {
   {
-    const [isExpend, setIsExpand] = useState(false);
+    const [isExpand, setIsExpand] = useState(false);
 
     const changeTileState = () => {
       setIsExpand((current) => !current);
     };
 
     return (
-      <Tile
-        className={expandTileVariants({ padding })}
-        style={{
-          width: makeNum2Unit(width),
-          maxHeight: isExpend
-            ? expandHeight === "100vh"
-              ? expandHeight
-              : makeNum2Unit(expandHeight)
-            : collapseHeight,
-        }}
-        {...props}
-      >
+      <Tile className={expandTileVariants({ padding, isExpand, className })} {...props}>
         <div className="flex flex-col w-full relative gap-s">
           <div className="h-[calc(100%-32rem)] overflow-hidden">{children}</div>
           <Button variant="text" size="s" onClick={changeTileState}>
-            {isExpend ? CLOSE_TEXT : EXPAND_TEXT}
+            {isExpand ? CLOSE_TEXT : EXPAND_TEXT}
           </Button>
         </div>
       </Tile>
