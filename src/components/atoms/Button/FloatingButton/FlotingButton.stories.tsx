@@ -62,7 +62,7 @@ export const Size: Story = {
 
 export const IconButton: Story = {
   render: () => (
-    <StoryWrapper className="flex h-[100px]">
+    <StoryWrapper className="flex w-[400px] h-[100px]">
       <FloatingButton icon={<Icon icon="moon" />} size="l" />
       <FloatingButton icon={<Icon icon="moon" />} size="l">
         Dark Mode
