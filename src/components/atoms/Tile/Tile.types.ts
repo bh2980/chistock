@@ -1,7 +1,5 @@
 import { VariantPropsType } from "@customTypes/utilType";
 
-import { flexAlignVariants } from "@constants/flexAlign";
-
 import { tileVariants } from "./Tile";
 
 /** 기본 Tile 타입 */
@@ -15,10 +13,4 @@ export type TileAlterAs = "header" | "footer" | "nav" | "aside" | "main" | "sect
  *
  * 태그와 관련 없는 Tile 컴포넌트 고유 속성들
  */
-export type TileBasePropsType = {
-  /** Tile의 가로 크기 */
-  width?: number;
-  /** Tile의 세로 크기 */
-  height?: number;
-} & VariantPropsType<typeof tileVariants> &
-  VariantPropsType<typeof flexAlignVariants>;
+export type TileBasePropsType = VariantPropsType<typeof tileVariants>;

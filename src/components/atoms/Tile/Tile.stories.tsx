@@ -68,23 +68,6 @@ export const TileRenderAs: Story = {
 };
 
 /**
- * `width`, `height` 속성을 이용해 타일의 크기를 지정할 수 있습니다.
- */
-export const TileSize: Story = {
-  name: "Size",
-  render: () => (
-    <StoryWrapper>
-      <Tile>타일 예시</Tile>
-      <Tile width={256}>타일 예시</Tile>
-      <Tile height={256}>타일 예시</Tile>
-      <Tile width={256} height={256}>
-        타일 예시
-      </Tile>
-    </StoryWrapper>
-  ),
-};
-
-/**
  * `variant` 속성을 이용해 타일을 다양한 형태로 사용할 수 있습니다.
  *
  * - `default` : 가장 기본적인 형태의 타일

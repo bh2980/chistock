@@ -1,6 +1,6 @@
 import * as NextImage from "next/image";
 
-import { makeNum2Unit, tv } from "@utils/utils";
+import { tv } from "@utils/utils";
 
 import { ImagePropsType } from "./Image.types";
 
@@ -34,28 +34,10 @@ export const imageVariants = tv({
  *
  * @todo 정적 이미지일 경우 width, height를 받을 필요 없도록
  */
-const Image = ({
-  className,
-  width,
-  height,
-  rounded,
-  alt,
-  src,
-  fill = true,
-  ...props
-}: ImagePropsType) => {
+const Image = ({ className, rounded, alt, src, fill = true, ...props }: ImagePropsType) => {
   return (
-    <div
-      className={imageVariants({ rounded, className })}
-      style={{ width: makeNum2Unit(width), height: makeNum2Unit(height) }}
-    >
-      <NextImage.default
-        style={{ objectFit: "cover" }}
-        src={src}
-        alt={alt}
-        fill={fill}
-        {...props}
-      />
+    <div className={imageVariants({ rounded, className })}>
+      <NextImage.default src={src} alt={alt} fill={fill} objectFit="cover" {...props} />
     </div>
   );
 };

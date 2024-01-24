@@ -1,4 +1,4 @@
-import { makeNum2Unit, tv } from "@utils/utils";
+import { tv } from "@utils/utils";
 
 import { DividerPropsType } from "./Divider.types";
 
@@ -51,25 +51,8 @@ const dividerVariants = tv({
  *
  * `div` 태그를 사용하여 구현됩니다.
  */
-const Divider = ({
-  className,
-  length,
-  direction,
-  thickness,
-  color,
-  ...props
-}: DividerPropsType) => {
-  return (
-    <div
-      className={dividerVariants({ color, thickness, direction, className })}
-      style={
-        direction === "horizontal" || direction === undefined
-          ? { width: makeNum2Unit(length) }
-          : { height: makeNum2Unit(length) }
-      }
-      {...props}
-    />
-  );
+const Divider = ({ className, direction, thickness, color, ...props }: DividerPropsType) => {
+  return <div className={dividerVariants({ color, thickness, direction, className })} {...props} />;
 };
 
 export default Divider;

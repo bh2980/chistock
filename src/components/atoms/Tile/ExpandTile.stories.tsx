@@ -92,14 +92,14 @@ const ExpaneTileChildren = () => {
  */
 export const Default: Story = {
   render: () => (
-    <ExpandTile width={200} collapseHeight={256}>
+    <ExpandTile className="w-[200rem] max-h-[256rem]">
       <ExpaneTileChildren />
     </ExpandTile>
   ),
 };
 
 /**
- * `collapseHeight` 속성을 통해 확장 전 타일의 길이를 지정할 수 있습니다.
+ * `max-h-` class를 통해 확장 전 타일의 길이를 지정할 수 있습니다.
  *
  * **필수적으로 지정해야하는 속성**입니다.
  */
@@ -107,29 +107,10 @@ export const ExpandTileCollapseHeight: Story = {
   name: "CollapseHeight",
   render: () => (
     <StoryWrapper>
-      <ExpandTile width={200} collapseHeight={160}>
+      <ExpandTile className="w-[200rem] max-h-[160rem]">
         <ExpaneTileChildren />
       </ExpandTile>
-      <ExpandTile width={200} collapseHeight={256}>
-        <ExpaneTileChildren />
-      </ExpandTile>
-    </StoryWrapper>
-  ),
-};
-
-/**
- * `expandHeight` 속성을 통해 확장 전 타일의 길이를 지정할 수 있습니다.
- *
- * 기본값으로 `max-h-screen`이 지정되어 있습니다.
- */
-export const ExpandTileExpandHeight: Story = {
-  name: "ExpandHeight",
-  render: () => (
-    <StoryWrapper>
-      <ExpandTile width={200} collapseHeight={256} expandHeight={320}>
-        <ExpaneTileChildren />
-      </ExpandTile>
-      <ExpandTile width={200} collapseHeight={256}>
+      <ExpandTile className="w-[200rem] max-h-[256rem]">
         <ExpaneTileChildren />
       </ExpandTile>
     </StoryWrapper>
@@ -143,16 +124,12 @@ export const ExpandTileExpandHeight: Story = {
  */
 export const Playground: Story = {
   args: {
-    width: 400,
-    collapseHeight: 200,
+    className: "w-[200rem] max-h-[256rem]",
   },
   argTypes: {
     renderAs: {
       options: ["div", "header", "footer", "nav", "aside", "main", "section", "article"],
       control: { type: "select" },
-    },
-    expandHeight: {
-      control: { type: "number" },
     },
   },
   parameters: { a11y: { disable: true } },

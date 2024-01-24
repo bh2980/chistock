@@ -1,9 +1,7 @@
-import { flexAlignVariants } from "@constants/flexAlign";
-
 import { tv } from "@utils/utils";
 
 const storyWrapperVariant = tv({
-  extend: flexAlignVariants,
+  base: "flex justify-center items-center gap-xl",
   variants: {
     direction: {
       horizontal: "flex-row",
@@ -11,9 +9,6 @@ const storyWrapperVariant = tv({
     },
   },
   defaultVariants: {
-    justifyContent: "center",
-    itemAligns: "center",
-    gap: "2xl",
     direction: "horizontal",
   },
 });
