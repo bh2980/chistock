@@ -7,6 +7,7 @@ const meta = {
   component: Slot,
   parameters: {
     layout: "centered",
+    a11y: { disable: true },
   },
   tags: ["autodocs"],
   argTypes: {

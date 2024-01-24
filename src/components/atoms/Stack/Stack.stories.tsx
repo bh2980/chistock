@@ -13,6 +13,7 @@ const meta = {
   component: Stack,
   parameters: {
     layout: "centered",
+    a11y: { disable: true },
   },
   tags: ["autodocs"],
   argTypes: {

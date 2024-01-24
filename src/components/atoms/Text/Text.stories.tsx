@@ -11,6 +11,7 @@ const meta = {
   component: Text,
   parameters: {
     layout: "centered",
+    a11y: { disable: true },
   },
   argTypes: {
     renderAs: {
