@@ -9,12 +9,6 @@ import Tile from "@atoms/Tile/Tile";
 
 import { TileAlterAs, TileBasePropsType, TileDefault } from "./Tile.types";
 
-/** ExpandTile 기본 Props 타입 */
-export type ExpandTileBasePropsType = Omit<
-  TileBasePropsType,
-  "justifyContent" | "itemAligns" | "gap"
->;
-
 const expandTileVariants = tv({
   base: "transition-[max-height]",
   variants: {
@@ -51,7 +45,7 @@ const ExpandTile = <
   padding,
   className,
   ...props
-}: PolymorphicPropsWithInnerRefType<T, ExpandTileBasePropsType, A>) => {
+}: PolymorphicPropsWithInnerRefType<T, TileBasePropsType, A>) => {
   {
     const [isExpand, setIsExpand] = useState(false);
 

@@ -1,7 +1,5 @@
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
-import { flexAlignVariants } from "@constants/flexAlign";
-
 import { tv } from "@utils/utils";
 
 import Slot from "@atoms/Slot/Slot";
@@ -9,8 +7,7 @@ import Slot from "@atoms/Slot/Slot";
 import { TileAlterAs, TileBasePropsType, TileDefault } from "./Tile.types";
 
 export const tileVariants = tv({
-  extend: flexAlignVariants,
-  base: "border border-outline-variant text-m",
+  base: "flex border border-outline-variant text-m",
   variants: {
     /** Tile의 형태
      * @default default
@@ -78,24 +75,12 @@ const Tile = <
   rounded,
   padding,
   shadow,
-  justifyContent,
-  itemAligns,
-  gap,
   ...props
 }: PolymorphicPropsWithInnerRefType<T, TileBasePropsType, A>) => {
   return (
     <Slot<TileDefault | TileAlterAs>
       renderAs={renderAs || "div"}
-      className={tileVariants({
-        variant,
-        rounded,
-        padding,
-        shadow,
-        justifyContent,
-        itemAligns,
-        gap,
-        className,
-      })}
+      className={tileVariants({ variant, rounded, padding, shadow, className })}
       {...props}
     >
       {children}
