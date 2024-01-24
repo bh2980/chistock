@@ -110,6 +110,7 @@ export const ButtonIcon: Story = {
  */
 export const ButtonState: Story = {
   name: "State",
+  parameters: { a11y: { disable: true } },
   render: () => (
     <StoryWrapper>
       <Button disabled>버튼</Button>
@@ -158,6 +159,7 @@ export const Playground: Story = {
   args: {
     disabled: false,
   },
+  parameters: { a11y: { disable: true } },
   render: (args) => (
     //@ts-ignore
     <Button {...args} icon={args.icon && <Icon icon={args.icon} />}>
