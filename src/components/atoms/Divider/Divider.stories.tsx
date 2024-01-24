@@ -19,7 +19,7 @@ type Story = StoryObj<typeof Divider>;
 
 export const Default: Story = {
   args: {
-    length: 100,
+    className: "w-[200rem]",
   },
   render: (args) => <Divider {...args} />,
 };
@@ -33,9 +33,9 @@ export const Default: Story = {
 export const DividerLength: Story = {
   render: () => (
     <StoryWrapper direction="vertical">
-      <Divider length={200} />
-      <Divider length={400} />
-      <Divider length={800} />
+      <Divider className="w-[200rem]" />
+      <Divider className="w-[400rem]" />
+      <Divider className="w-[800rem]" />
     </StoryWrapper>
   ),
 };
@@ -48,8 +48,8 @@ export const DividerLength: Story = {
 export const DividerDirection: Story = {
   render: () => (
     <StoryWrapper>
-      <Divider length={200} />
-      <Divider direction="vertical" length={200} />
+      <Divider className="w-[200rem]" />
+      <Divider direction="vertical" className="h-[200rem]" />
     </StoryWrapper>
   ),
 };
@@ -64,8 +64,8 @@ export const DividerDirection: Story = {
 export const DividerWidth: Story = {
   render: () => (
     <StoryWrapper direction="vertical">
-      <Divider length={200} thickness="s" />
-      <Divider length={200} />
+      <Divider className="w-[200rem]" thickness="s" />
+      <Divider className="w-[200rem]" />
     </StoryWrapper>
   ),
 };
@@ -80,8 +80,8 @@ export const DividerWidth: Story = {
 export const DividerColor: Story = {
   render: () => (
     <StoryWrapper direction="vertical">
-      <Divider length={200} />
-      <Divider length={200} color="outlineVariant" />
+      <Divider className="w-[200rem]" />
+      <Divider className="w-[200rem]" color="outlineVariant" />
     </StoryWrapper>
   ),
 };
@@ -93,7 +93,7 @@ export const DividerColor: Story = {
  */
 export const Playground: Story = {
   args: {
-    length: 200,
+    className: "w-[200rem]",
   },
   render: (args) => (
     <StoryWrapper direction="vertical">
