@@ -27,7 +27,7 @@ export const Default: Story = {
 /**
  * Divider는 구분선의 길이을 지정할 수 있는 length 속성을 가집니다.
  *
- * 이 속성은 필수 속성으로 tailwind class의 형태로 값을 받습니다.
+ * 기본적으로 `100%`로 설정되어 있습니다.
  *
  */
 export const DividerLength: Story = {

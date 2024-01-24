@@ -1,4 +1,5 @@
-import { makeNum2Unit, tv } from "@utils/utils";
+import { convertCSSSize } from "@utils/hooks/convertSizeProps";
+import { tv } from "@utils/utils";
 
 import { DividerPropsType } from "./Divider.types";
 
@@ -53,20 +54,21 @@ const dividerVariants = tv({
  */
 const Divider = ({
   className,
-  length,
-  direction,
+  length = "100%",
+  direction = "horizontal",
   thickness,
   color,
   ...props
 }: DividerPropsType) => {
+  const lengthStyle = {
+    width: direction === "horizontal" ? convertCSSSize(length) : undefined,
+    height: direction === "vertical" ? convertCSSSize(length) : undefined,
+  };
+
   return (
     <div
       className={dividerVariants({ color, thickness, direction, className })}
-      style={
-        direction === "horizontal" || direction === undefined
-          ? { width: makeNum2Unit(length) }
-          : { height: makeNum2Unit(length) }
-      }
+      style={lengthStyle}
       {...props}
     />
   );
