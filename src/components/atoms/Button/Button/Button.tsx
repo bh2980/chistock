@@ -128,6 +128,7 @@ const Button = <
     <Slot<ButtonDefault | ButtonAlterAs>
       renderAs={renderAs || "button"}
       className={buttonVariants({ variant, size, isIconButton, disabled, className })}
+      disabled={disabled}
       {...props}
     >
       {icon && iconPosition === "before" && (
