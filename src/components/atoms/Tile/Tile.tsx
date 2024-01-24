@@ -2,7 +2,8 @@ import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
 import { flexAlignVariants } from "@constants/flexAlign";
 
-import { makeNum2Unit, tv } from "@utils/utils";
+import convertSizeProps from "@utils/hooks/convertSizeProps";
+import { tv } from "@utils/utils";
 
 import Slot from "@atoms/Slot/Slot";
 
@@ -75,8 +76,6 @@ const Tile = <
   renderAs,
   className,
   variant,
-  width,
-  height,
   rounded,
   padding,
   shadow,
@@ -85,6 +84,8 @@ const Tile = <
   gap,
   ...props
 }: PolymorphicPropsWithInnerRefType<T, TileBasePropsType, A>) => {
+  const convertProps = convertSizeProps(props);
+
   return (
     <Slot<TileDefault | TileAlterAs>
       renderAs={renderAs || "div"}
@@ -98,8 +99,7 @@ const Tile = <
         gap,
         className,
       })}
-      style={{ width: makeNum2Unit(width), height: makeNum2Unit(height) }}
-      {...props}
+      {...convertProps}
     >
       {children}
     </Slot>
