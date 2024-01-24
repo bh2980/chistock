@@ -17,8 +17,9 @@ export type TileAlterAs = "header" | "footer" | "nav" | "aside" | "main" | "sect
  */
 export type TileBasePropsType = {
   /** Tile의 가로 크기 */
-  width?: number;
+  width?: number | string;
   /** Tile의 세로 크기 */
-  height?: number;
+  height?: number | string;
+  maxHeight?: number | string;
 } & VariantPropsType<typeof tileVariants> &
   VariantPropsType<typeof flexAlignVariants>;

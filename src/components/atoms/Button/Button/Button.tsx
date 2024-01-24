@@ -2,7 +2,7 @@ import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
 import { tv } from "@utils/utils";
 
-import Slot from "@atoms/Slot/Slot";
+import Box from "@atoms/Box/Box";
 
 import {
   ButtonAlterAs,
@@ -125,7 +125,7 @@ const Button = <
   const isIconButton = has(icon) && !has(children);
 
   return (
-    <Slot<ButtonDefault | ButtonAlterAs>
+    <Box<ButtonDefault | ButtonAlterAs>
       renderAs={renderAs || "button"}
       className={buttonVariants({ variant, size, isIconButton, disabled, className })}
       {...props}
@@ -142,7 +142,7 @@ const Button = <
         </IconWrapper>
       )}
       <Overlay />
-    </Slot>
+    </Box>
   );
 };
 

@@ -2,10 +2,10 @@ import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
 import { flexAlignVariants } from "@constants/flexAlign";
 
-import convertSizeProps from "@utils/hooks/convertSizeProps";
+import convertSizeProps from "@utils/convertSizeProps";
 import { tv } from "@utils/utils";
 
-import Slot from "@atoms/Slot/Slot";
+import Box from "@atoms/Box/Box";
 
 import { TileAlterAs, TileBasePropsType, TileDefault } from "./Tile.types";
 
@@ -87,7 +87,7 @@ const Tile = <
   const convertProps = convertSizeProps(props);
 
   return (
-    <Slot<TileDefault | TileAlterAs>
+    <Box<TileDefault | TileAlterAs>
       renderAs={renderAs || "div"}
       className={tileVariants({
         variant,
@@ -102,7 +102,7 @@ const Tile = <
       {...convertProps}
     >
       {children}
-    </Slot>
+    </Box>
   );
 };
 

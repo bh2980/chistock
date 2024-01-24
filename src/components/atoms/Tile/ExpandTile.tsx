@@ -2,9 +2,9 @@ import { useState } from "react";
 
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
-import { convertCSSSize } from "@utils/hooks/convertSizeProps";
 import { tv } from "@utils/utils";
 
+import Box from "@atoms/Box/Box";
 import Button from "@atoms/Button/Button/Button";
 import Tile from "@atoms/Tile/Tile";
 
@@ -49,7 +49,6 @@ const ExpandTile = <
   A extends TileAlterAs = TileAlterAs
 >({
   children,
-  width,
   collapseHeight,
   expandHeight = "100vh",
   padding,
@@ -62,15 +61,16 @@ const ExpandTile = <
       setIsExpand((current) => !current);
     };
 
-    const expantTileSizeStyle = {
-      width: convertCSSSize(width),
-      maxHeight: isExpend ? convertCSSSize(expandHeight) : convertCSSSize(collapseHeight),
-    };
-
     return (
-      <Tile className={expandTileVariants({ padding })} style={expantTileSizeStyle} {...props}>
+      <Tile
+        className={expandTileVariants({ padding })}
+        maxHeight={isExpend ? expandHeight : collapseHeight}
+        {...props}
+      >
         <div className="flex flex-col w-full relative gap-s">
-          <div className="h-[calc(100%-32rem)] overflow-hidden">{children}</div>
+          <Box height="calc(100% - 32rem)" className="overflow-hidden">
+            {children}
+          </Box>
           <Button variant="text" size="s" onClick={changeTileState}>
             {isExpend ? CLOSE_TEXT : EXPAND_TEXT}
           </Button>

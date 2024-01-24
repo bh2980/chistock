@@ -1,6 +1,6 @@
 import { PolymorphicPropsType } from "@customTypes/polymorphicType";
 
-import convertSizeProps from "@utils/hooks/convertSizeProps";
+import convertSizeProps from "@utils/convertSizeProps";
 import { tv } from "@utils/utils";
 
 import Button from "../Button/Button";
@@ -15,13 +15,13 @@ type FloatingButtonBaseProps = {
   /** 버튼의 배치 방식 */
   position?: "relative" | "absolute" | "fixed" | "sticky";
   /** 부모 컨테이너의 top과의 간격 */
-  top?: number;
+  top?: number | string;
   /** 부모 컨테이너 left과의 간격 */
-  left?: number;
+  left?: number | string;
   /** 부모 컨테이너 bottom과의 간격 */
-  bottom?: number;
+  bottom?: number | string;
   /** 부모 컨테이너 right과의 간격 */
-  right?: number;
+  right?: number | string;
 };
 
 const floatingButtonVariant = tv({

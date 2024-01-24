@@ -1,7 +1,8 @@
 import * as NextImage from "next/image";
 
-import { convertCSSSize } from "@utils/hooks/convertSizeProps";
 import { tv } from "@utils/utils";
+
+import Box from "@atoms/Box/Box";
 
 import { ImagePropsType } from "./Image.types";
 
@@ -45,18 +46,10 @@ const Image = ({
   fill = true,
   ...props
 }: ImagePropsType) => {
-  const containerStyle = { width: convertCSSSize(width), height: convertCSSSize(height) };
-
   return (
-    <div className={imageVariants({ rounded, className })} style={containerStyle}>
-      <NextImage.default
-        src={src}
-        alt={alt}
-        fill={fill}
-        style={{ objectFit: "cover" }}
-        {...props}
-      />
-    </div>
+    <Box width={width} height={height} className={imageVariants({ rounded, className })}>
+      <NextImage.default src={src} alt={alt} fill={fill} objectFit="cover" {...props} />
+    </Box>
   );
 };
 

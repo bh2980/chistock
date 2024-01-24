@@ -1,5 +1,6 @@
-import { convertCSSSize } from "@utils/hooks/convertSizeProps";
 import { tv } from "@utils/utils";
+
+import Box from "@atoms/Box/Box";
 
 import { DividerPropsType } from "./Divider.types";
 
@@ -10,8 +11,8 @@ const dividerVariants = tv({
       outlineVariant: "border-outline-variant",
     },
     direction: {
-      horizontal: "h-[0rem]",
-      vertical: "w-[0rem]",
+      horizontal: "",
+      vertical: "",
     },
     thickness: {
       s: "",
@@ -60,15 +61,11 @@ const Divider = ({
   color,
   ...props
 }: DividerPropsType) => {
-  const lengthStyle = {
-    width: direction === "horizontal" ? convertCSSSize(length) : undefined,
-    height: direction === "vertical" ? convertCSSSize(length) : undefined,
-  };
-
   return (
-    <div
+    <Box
+      width={direction === "horizontal" ? length : undefined}
+      height={direction === "vertical" ? length : undefined}
       className={dividerVariants({ color, thickness, direction, className })}
-      style={lengthStyle}
       {...props}
     />
   );
