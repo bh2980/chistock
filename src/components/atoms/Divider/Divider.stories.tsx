@@ -25,7 +25,7 @@ export const Default: Story = {
 };
 
 /**
- * Divider는 구분선의 길이을 지정할 수 있는 length 속성을 가집니다.
+ * Divider는 `w-` 혹은 `h-` class를 통해 길이를 지정할 수 있습니다.
  *
  * 이 속성은 필수 속성으로 tailwind class의 형태로 값을 받습니다.
  *
@@ -61,7 +61,7 @@ export const DividerDirection: Story = {
  *
  * 기본값으로 `m`이 설정되어 있습니다.
  */
-export const DividerWidth: Story = {
+export const DividerThickness: Story = {
   render: () => (
     <StoryWrapper direction="vertical">
       <Divider className="w-[200rem]" thickness="s" />

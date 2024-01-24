@@ -38,10 +38,10 @@ export const Default: Story = {
 };
 
 /**
- * Image는 width와 height를 통해 크기를 지정할 수 있습니다.
+ * Image는 `w-` 혹은 `h-` class를 통해 크기를 지정할 수 있습니다.
  *
- * - `width`: 필수 속성으로 width만 지정 시 기본적으로 1:1의 비율로 렌더링됩니다.
- * - `height`: 선택 속성으로 필요 시 지정합니다.
+ * **width는 필수로 지정해야합니다 **
+ *
  */
 export const ImageSize: Story = {
   render: () => (
