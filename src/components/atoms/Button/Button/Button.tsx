@@ -120,15 +120,25 @@ const Button = <
   icon,
   iconPosition = "before",
   disabled,
+  role,
+  tabIndex,
+  onClick,
   ...props
 }: PolymorphicPropsWithInnerRefType<T, ButtonBasePropsType, A>) => {
   const isIconButton = has(icon) && !has(children);
+
+  const asRole = renderAs === "button" ? role : "button";
+  const asTabIndex = renderAs === "button" ? tabIndex : 0;
+  const asOnClick = renderAs === "a" && disabled ? undefined : onClick;
 
   return (
     <Slot<ButtonDefault | ButtonAlterAs>
       renderAs={renderAs || "button"}
       className={buttonVariants({ variant, size, isIconButton, disabled, className })}
       disabled={disabled}
+      role={asRole}
+      tabIndex={asTabIndex}
+      onClick={asOnClick}
       {...props}
     >
       {icon && iconPosition === "before" && (
