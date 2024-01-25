@@ -5,7 +5,7 @@ import Button from "./Button";
 
 describe("Button", () => {
   describe("button 태그로 렌더링", () => {
-    it("정상 렌더링", () => {
+    it("에러 없이 렌더링되어야 합니다.", () => {
       render(<Button>Button</Button>);
       const button = screen.getByRole("button");
 
@@ -13,7 +13,7 @@ describe("Button", () => {
       expect(button).toHaveTextContent("Button");
     });
 
-    it("focus 가능", async () => {
+    it("tab으로 focus가 되어야합니다.", async () => {
       render(<Button>Button</Button>);
       const button = screen.getByRole("button");
 
@@ -23,8 +23,7 @@ describe("Button", () => {
       expect(button).toHaveFocus();
     });
 
-    // focus 후 space 시 함수 호출 -> focus 유지
-    it("space 키로 함수 실행", async () => {
+    it("space 키로 onClick 함수를 실행해야합니다.", async () => {
       const onClick = jest.fn();
 
       render(<Button onClick={onClick}>Button</Button>);
@@ -38,8 +37,7 @@ describe("Button", () => {
       expect(button).toHaveFocus();
     });
 
-    // enter 시 함수 호출 -> focus 유지
-    it("enter 키로 함수 실행", async () => {
+    it("enter 키로 onClick 함수를 실행해야합니다.", async () => {
       const onClick = jest.fn();
 
       render(<Button onClick={onClick}>Button</Button>);
@@ -53,8 +51,7 @@ describe("Button", () => {
       expect(button).toHaveFocus();
     });
 
-    // click 시 함수 호출 -> focus 유지
-    it("click 시 함수 실행", async () => {
+    it("click 시 onClick 함수를 실행해야합니다.", async () => {
       const onClick = jest.fn();
 
       render(<Button onClick={onClick}>Button</Button>);
@@ -66,7 +63,27 @@ describe("Button", () => {
       expect(button).toHaveFocus();
     });
 
-    it("disabled 시 focus 불가", async () => {
+    it("아이콘 버튼에서는 자식이 렌더링되면 안됩니다.", async () => {
+      render(
+        <Button isIconButton label="테스트 라벨">
+          Button
+        </Button>
+      );
+      const button = screen.getByRole("button");
+
+      expect(button).not.toHaveTextContent("Button");
+    });
+
+    //disabled
+
+    it("disabled 속성이 정상적으로 적용되어야합니다..", async () => {
+      render(<Button disabled>Button</Button>);
+      const button = screen.getByRole("button");
+
+      expect(button).toBeDisabled();
+    });
+
+    it("disabled시 focus가 잡히지않아야 합니다.", async () => {
       render(<Button disabled>Button</Button>);
       const button = screen.getByRole("button");
 
@@ -76,7 +93,7 @@ describe("Button", () => {
       expect(button).not.toHaveFocus();
     });
 
-    it("disabled 시 클릭 불가", async () => {
+    it("disabled시 click이 불가능해야합니다.", async () => {
       const onClick = jest.fn();
 
       render(
@@ -89,6 +106,22 @@ describe("Button", () => {
       await userEvent.click(button);
 
       expect(onClick).not.toHaveBeenCalled();
+    });
+
+    //accessibility
+
+    it("disabled 시 aria-disabled를 가져야합니다.", async () => {
+      render(<Button disabled>Button</Button>);
+      const button = screen.getByRole("button");
+
+      expect(button).toHaveAttribute("aria-disabled");
+    });
+
+    it("아이콘 버튼에서는 aria-label을 가져야합니다.", async () => {
+      render(<Button isIconButton label="테스트 라벨" />);
+      const button = screen.getByRole("button");
+
+      expect(button).toHaveAttribute("aria-label");
     });
   });
 
@@ -111,8 +144,7 @@ describe("Button", () => {
       expect(button).toHaveFocus();
     });
 
-    // focus 후 space 시 함수 호출 -> focus 유지
-    it("space로 버튼을 실행할 수 있어야합니다.", async () => {
+    it("space 키로 onClick 함수를 실행해야합니다.", async () => {
       const onClick = jest.fn();
 
       render(
@@ -130,8 +162,7 @@ describe("Button", () => {
       expect(button).toHaveFocus();
     });
 
-    // enter 시 함수 호출 -> focus 유지
-    it("enter로 버튼을 실행할 수 있어야합니다.", async () => {
+    it("enter 키로 onClick 함수를 실행해야합니다.", async () => {
       const onClick = jest.fn();
 
       render(
@@ -149,8 +180,7 @@ describe("Button", () => {
       expect(button).toHaveFocus();
     });
 
-    // click 시 함수 호출 -> focus 유지
-    it("click으로 버튼을 실행할 수 있어야합니다.", async () => {
+    it("click 시 onClick 함수를 실행해야합니다.", async () => {
       const onClick = jest.fn();
 
       render(
@@ -166,6 +196,19 @@ describe("Button", () => {
       expect(button).toHaveFocus();
     });
 
+    it("아이콘 버튼에서는 자식이 렌더링되면 안됩니다.", async () => {
+      render(
+        <Button renderAs="a" isIconButton label="테스트 라벨">
+          Button
+        </Button>
+      );
+      const button = screen.getByRole("button");
+
+      expect(button).not.toHaveTextContent("Button");
+    });
+
+    //disabled
+
     it("disabled시 focus가 잡히지않아야 합니다.", async () => {
       render(
         <Button renderAs="a" disabled>
@@ -180,7 +223,7 @@ describe("Button", () => {
       expect(button).not.toHaveFocus();
     });
 
-    it("disabled시 클릭이 불가능해야합니다.", async () => {
+    it("disabled시 click이 불가능해야합니다.", async () => {
       const onClick = jest.fn();
 
       render(
@@ -193,6 +236,26 @@ describe("Button", () => {
       await userEvent.click(button);
 
       expect(onClick).not.toHaveBeenCalled();
+    });
+
+    //accessibility
+
+    it("disabled 시 aria-disabled를 가져야합니다.", async () => {
+      render(
+        <Button renderAs="a" disabled>
+          Button
+        </Button>
+      );
+      const button = screen.getByRole("button");
+
+      expect(button).toHaveAttribute("aria-disabled");
+    });
+
+    it("아이콘 버튼에서는 aria-label을 가져야합니다.", async () => {
+      render(<Button renderAs="a" isIconButton label="테스트 라벨" />);
+      const button = screen.getByRole("button");
+
+      expect(button).toHaveAttribute("aria-label");
     });
   });
 });
