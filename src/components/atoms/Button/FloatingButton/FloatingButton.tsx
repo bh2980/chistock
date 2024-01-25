@@ -1,11 +1,8 @@
-import { PolymorphicPropsType } from "@customTypes/polymorphicType";
-
 import { tv } from "@utils/utils";
 
-import Button from "../Button/Button";
-import { ButtonBasePropsType } from "../Button/Button.types";
+import Button, { type ButtonProps } from "../Button";
 
-type FloatingButtonProps = PolymorphicPropsType<"button", ButtonBasePropsType> & {
+export type FloatingButtonProps = ButtonProps<"button"> & {
   variant?: "primary" | "text";
   renderAs?: "button";
 };
