@@ -24,9 +24,10 @@ export type ButtonBasePropsType = NonNullableProps<VariantProps<typeof buttonVar
    * @default before
    */
   iconPosition?: "before" | "after";
-};
-
-export type IconWrapperPropsType = React.PropsWithChildren & {
-  isIconButton?: boolean;
-  iconPosition?: "before" | "after";
-};
+} & (
+    | {
+        isIconButton?: false;
+        label?: string;
+      }
+    | { isIconButton: true; label: string }
+  );

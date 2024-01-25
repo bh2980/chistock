@@ -87,8 +87,7 @@ export const ButtonSize: Story = {
  *
  * 기본값으로 `before`가 설정되어 있습니다.
  */
-export const ButtonIcon: Story = {
-  name: "Icon",
+export const ButtonWithIcon: Story = {
   render: () => (
     <StoryWrapper>
       <Button icon={<Icon icon="moon" />} iconPosition="before">
@@ -97,7 +96,20 @@ export const ButtonIcon: Story = {
       <Button icon={<Icon icon="moon" />} iconPosition="after">
         다크 모드
       </Button>
-      <Button icon={<Icon icon="moon" />} />
+      <Button icon={<Icon icon="moon" />} label="다크 모드" isIconButton />
+    </StoryWrapper>
+  ),
+};
+
+/**
+ * Icon을 단독으로 사용하는 경우 isIconButton 속성을 사용합니다.
+ *
+ * isIconButton 속성을 사용할 경우 `label` 속성을 필수로 작성해야합니다.
+ */
+export const IconButton: Story = {
+  render: () => (
+    <StoryWrapper>
+      <Button icon={<Icon icon="moon" />} label="다크 모드" isIconButton />
     </StoryWrapper>
   ),
 };
@@ -113,24 +125,6 @@ export const ButtonState: Story = {
   render: () => (
     <StoryWrapper>
       <Button disabled>버튼</Button>
-    </StoryWrapper>
-  ),
-};
-
-/**
- * `renderAs` 속성을 이용해 버튼을 다양한 태그로 렌더링할 수 있습니다.
- *
- * - `button` : 버튼 태그
- * - `a` : a 태그
- *
- * 기본값으로 `button`이 설정되어있습니다.
- */
-export const ButtonRenderAs: Story = {
-  name: "RenderAs",
-  render: () => (
-    <StoryWrapper>
-      <Button>button 태그 버튼</Button>
-      <Button renderAs={"a"}>a 태그 버튼</Button>
     </StoryWrapper>
   ),
 };

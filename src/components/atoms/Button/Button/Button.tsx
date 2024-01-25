@@ -4,14 +4,7 @@ import { tv } from "@utils/utils";
 
 import Slot from "@atoms/Slot/Slot";
 
-import {
-  ButtonAlterAs,
-  ButtonBasePropsType,
-  ButtonDefault,
-  IconWrapperPropsType,
-} from "./Button.types";
-
-export const has = (item: unknown) => !!item;
+import { ButtonAlterAs, ButtonBasePropsType, ButtonDefault } from "./Button.types";
 
 export const buttonVariants = tv({
   base: "relative flex justify-center items-center overflow-hidden rounded-m py-xs cursor-pointer",
@@ -31,28 +24,18 @@ export const buttonVariants = tv({
      * @default m
      * */
     size: {
-      s: "h-[32rem] px-s text-s",
-      m: "h-[40rem] px-m text-m",
-      l: "h-[48rem] px-m text-xl",
+      s: "h-[32rem] px-s text-s gap-xs",
+      m: "h-[40rem] px-m text-m gap-s",
+      l: "h-[48rem] px-m text-xl gap-s",
     },
     isIconButton: {
-      true: "",
+      true: "aspect-square p-0",
     },
     disabled: {
       true: "",
     },
   },
   compoundVariants: [
-    {
-      isIconButton: true,
-      size: "s",
-      className: "aspect-square p-xs",
-    },
-    {
-      isIconButton: true,
-      size: ["m", "l"],
-      className: "aspect-square p-s",
-    },
     {
       disabled: true,
       variant: ["primary", "secondary", "danger", "text"],
@@ -70,39 +53,10 @@ export const buttonVariants = tv({
   },
 });
 
-const iconWraperVariant = tv({
-  base: "leading-none",
-  variants: {
-    isIconButton: {
-      false: "",
-    },
-    iconPosition: {
-      before: "",
-      after: "",
-    },
-  },
-  compoundVariants: [
-    {
-      isIconButton: false,
-      iconPosition: "before",
-      className: "mr-xs",
-    },
-    {
-      isIconButton: false,
-      iconPosition: "after",
-      className: "ml-xs",
-    },
-  ],
-});
-
 const Overlay = () => {
   return (
-    <div className="absolute top-[0rem] left-[0rem] w-full h-full bg-current opacity-0 hover:opacity-20 active:opacity-10" />
+    <div className="absolute top-0 left-0 w-full h-full bg-current opacity-0 hover:opacity-20 active:opacity-10" />
   );
-};
-
-const IconWrapper = ({ iconPosition, isIconButton, children }: IconWrapperPropsType) => {
-  return <span className={iconWraperVariant({ iconPosition, isIconButton })}>{children}</span>;
 };
 
 /**
@@ -112,23 +66,21 @@ const Button = <
   T extends ButtonDefault | ButtonAlterAs = ButtonDefault,
   A extends ButtonAlterAs = ButtonAlterAs
 >({
-  children,
   renderAs,
   className,
+  children,
   variant,
   size,
   icon,
   iconPosition = "before",
+  isIconButton,
   disabled,
-  role,
-  tabIndex,
+  label,
   onClick,
   ...props
 }: PolymorphicPropsWithInnerRefType<T, ButtonBasePropsType, A>) => {
-  const isIconButton = has(icon) && !has(children);
-
-  const asRole = renderAs === "button" ? role : "button";
-  const asTabIndex = renderAs === "button" ? tabIndex : 0;
+  const asRole = renderAs === "a" ? "button" : undefined;
+  const asTabIndex = renderAs === "a" ? 0 : undefined;
   const asOnClick = renderAs === "a" && disabled ? undefined : onClick;
 
   return (
@@ -139,19 +91,12 @@ const Button = <
       role={asRole}
       tabIndex={asTabIndex}
       onClick={asOnClick}
+      aria-label={label}
       {...props}
     >
-      {icon && iconPosition === "before" && (
-        <IconWrapper iconPosition={iconPosition} isIconButton={isIconButton}>
-          {icon}
-        </IconWrapper>
-      )}
-      {children}
-      {icon && iconPosition === "after" && (
-        <IconWrapper iconPosition={iconPosition} isIconButton={isIconButton}>
-          {icon}
-        </IconWrapper>
-      )}
+      {iconPosition === "before" && icon}
+      {!isIconButton && children}
+      {iconPosition === "after" && icon}
       <Overlay />
     </Slot>
   );

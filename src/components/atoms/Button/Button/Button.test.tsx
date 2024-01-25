@@ -93,7 +93,7 @@ describe("Button", () => {
   });
 
   describe("a 태그로 렌더링", () => {
-    it("정상 렌더링", () => {
+    it("에러 없이 렌더링되어야 합니다.", () => {
       render(<Button renderAs="a">Button</Button>);
       const button = screen.getByRole("button");
 
@@ -101,7 +101,7 @@ describe("Button", () => {
       expect(button).toHaveTextContent("Button");
     });
 
-    it("focus 가능", async () => {
+    it("tab으로 focus가 되어야합니다.", async () => {
       render(<Button renderAs="a">Button</Button>);
       const button = screen.getByRole("button");
 
@@ -112,7 +112,7 @@ describe("Button", () => {
     });
 
     // focus 후 space 시 함수 호출 -> focus 유지
-    it("space 키로 함수 실행", async () => {
+    it("space로 버튼을 실행할 수 있어야합니다.", async () => {
       const onClick = jest.fn();
 
       render(
@@ -131,7 +131,7 @@ describe("Button", () => {
     });
 
     // enter 시 함수 호출 -> focus 유지
-    it("enter 키로 함수 실행", async () => {
+    it("enter로 버튼을 실행할 수 있어야합니다.", async () => {
       const onClick = jest.fn();
 
       render(
@@ -150,7 +150,7 @@ describe("Button", () => {
     });
 
     // click 시 함수 호출 -> focus 유지
-    it("click 시 함수 실행", async () => {
+    it("click으로 버튼을 실행할 수 있어야합니다.", async () => {
       const onClick = jest.fn();
 
       render(
@@ -166,7 +166,7 @@ describe("Button", () => {
       expect(button).toHaveFocus();
     });
 
-    it("disabled 시 focus 불가", async () => {
+    it("disabled시 focus가 잡히지않아야 합니다.", async () => {
       render(
         <Button renderAs="a" disabled>
           Button
@@ -180,7 +180,7 @@ describe("Button", () => {
       expect(button).not.toHaveFocus();
     });
 
-    it("disabled 시 클릭 불가", async () => {
+    it("disabled시 클릭이 불가능해야합니다.", async () => {
       const onClick = jest.fn();
 
       render(
