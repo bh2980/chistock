@@ -121,10 +121,12 @@ export const IconButton: Story = {
  */
 export const ButtonState: Story = {
   name: "State",
-  parameters: { a11y: { disable: true } },
   render: () => (
     <StoryWrapper>
       <Button disabled>버튼</Button>
+      <Button renderAs="a" disabled>
+        버튼
+      </Button>
     </StoryWrapper>
   ),
 };
