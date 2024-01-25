@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Link from "next/link";
 
 import ICON_MAP from "@constants/iconMap";
 
@@ -23,7 +22,7 @@ const meta = {
       table: {
         defaultValue: { summary: "button" },
         type: {
-          summary: `"button" | "a" | "next/Link"`,
+          summary: `"button" | "a"`,
         },
       },
     },
@@ -63,9 +62,9 @@ export const ButtonVariant: Story = {
 /**
  * `size` 속성을 통해 버튼의 크기를 조절할 수 있습니다.
  *
- * - `s` : 버튼 태그
- * - `m` : a 태그
- * - `l` : next/Link 태그
+ * - `s`
+ * - `m`
+ * - `l`
  *
  * 기본값으로 `m`이 설정되어있습니다.
  */
@@ -123,7 +122,6 @@ export const ButtonState: Story = {
  *
  * - `button` : 버튼 태그
  * - `a` : a 태그
- * - `Link` : next/Link 태그
  *
  * 기본값으로 `button`이 설정되어있습니다.
  */
@@ -133,9 +131,6 @@ export const ButtonRenderAs: Story = {
     <StoryWrapper>
       <Button>button 태그 버튼</Button>
       <Button renderAs={"a"}>a 태그 버튼</Button>
-      <Button renderAs={Link} href="/">
-        next/Link 버튼
-      </Button>
     </StoryWrapper>
   ),
 };
