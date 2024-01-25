@@ -1,8 +1,9 @@
 import { VariantProps } from "tailwind-variants";
 
-import { NonNullableProps } from "@customTypes/utilType";
+import type { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
+import type { NonNullableProps } from "@customTypes/utilType";
 
-import { buttonVariants } from "./Button";
+import { buttonVariants } from "./Button.styles";
 
 /** Button 컴포넌트 기본 타입 */
 export type ButtonDefault = "button";
@@ -31,3 +32,9 @@ export type ButtonBasePropsType = NonNullableProps<VariantProps<typeof buttonVar
       }
     | { isIconButton: true; label: string }
   );
+
+/** Button Props 타입 */
+export type ButtonProps<
+  T extends React.ElementType,
+  A extends React.ElementType = T
+> = PolymorphicPropsWithInnerRefType<T, ButtonBasePropsType, A>;
