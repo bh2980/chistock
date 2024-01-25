@@ -19,6 +19,7 @@ export default {
       bold: "700",
     },
     spacing: {
+      0: "0rem",
       "3xs": "2rem",
       "2xs": "4rem",
       xs: "8rem",

@@ -1,21 +1,18 @@
-import { PolymorphicPropsType } from "@customTypes/polymorphicType";
-
 import { tv } from "@utils/utils";
 
-import Button from "../Button/Button";
-import { ButtonBasePropsType } from "../Button/Button.types";
+import Button, { type ButtonProps } from "../Button";
 
-type FloatingButtonProps = Omit<
-  PolymorphicPropsType<"button", ButtonBasePropsType>,
-  "variant" | "renderAs"
->;
+export type FloatingButtonProps = ButtonProps<"button"> & {
+  variant?: "primary" | "text";
+  renderAs?: "button";
+};
 
 const floatingButtonVariant = tv({
-  base: "absolute bg-surface-variant text-surface-on rounded-circle border border-outline-variant overflow-hidden shadow-xl",
+  base: "absolute rounded-circle border border-outline-variant overflow-hidden shadow-xl",
 });
 
-const FloatingButton = ({ className, ...props }: FloatingButtonProps) => {
-  return <Button variant="text" className={floatingButtonVariant({ className })} {...props} />;
+const FloatingButton = ({ className, variant = "text", ...props }: FloatingButtonProps) => {
+  return <Button variant={variant} className={floatingButtonVariant({ className })} {...props} />;
 };
 
 export default FloatingButton;

@@ -9,6 +9,10 @@ const createJestConfig = nextJest({
 const customJestConfig = {
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
   testEnvironment: "jest-environment-jsdom",
+  moduleNameMapper: {
+    "^@atoms/(.*)$": "<rootDir>/src/components/atoms/$1",
+    // 필요한 경우 다른 모듈에 대한 alias 추가
+  },
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
