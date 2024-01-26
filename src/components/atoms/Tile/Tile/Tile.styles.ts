@@ -1,10 +1,4 @@
-import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
-
 import { tv } from "@utils/utils";
-
-import Slot from "@atoms/Slot/Slot";
-
-import { TileAlterAs, TileBasePropsType, TileDefault } from "./Tile.types";
 
 export const tileVariants = tv({
   base: "flex border border-outline-variant text-m",
@@ -62,30 +56,3 @@ export const tileVariants = tv({
     shadow: "xs",
   },
 });
-
-/** 레이아웃의 단위가 되는 컴포넌트 */
-const Tile = <
-  T extends TileDefault | TileAlterAs = TileDefault,
-  A extends TileAlterAs = TileAlterAs
->({
-  children,
-  renderAs,
-  className,
-  variant,
-  rounded,
-  padding,
-  shadow,
-  ...props
-}: PolymorphicPropsWithInnerRefType<T, TileBasePropsType, A>) => {
-  return (
-    <Slot<TileDefault | TileAlterAs>
-      renderAs={renderAs || "div"}
-      className={tileVariants({ variant, rounded, padding, shadow, className })}
-      {...props}
-    >
-      {children}
-    </Slot>
-  );
-};
-
-export default Tile;

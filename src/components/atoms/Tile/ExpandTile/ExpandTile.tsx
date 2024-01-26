@@ -5,9 +5,9 @@ import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 import { tv } from "@utils/utils";
 
 import Button from "@atoms/Button/Button/Button";
-import Tile from "@atoms/Tile/Tile";
+import Tile from "@atoms/Tile/Tile/Tile";
 
-import { TileAlterAs, TileBasePropsType, TileDefault } from "./Tile.types";
+import { TileAlterAs, TileBasePropsType, TileDefault } from "../Tile/Tile.types";
 
 const expandTileVariants = tv({
   base: "transition-[max-height]",

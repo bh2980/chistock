@@ -4,7 +4,7 @@ import { exceptProperty } from "@utils/utils";
 
 import StoryWrapper from "@story/StoryWrapper";
 
-import Tile from "./Tile";
+import Tile from "../Tile/Tile";
 
 const meta = {
   title: "Atom/Tile/Tile",
