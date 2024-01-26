@@ -73,7 +73,7 @@ export default {
     createThemes({
       light: {
         primary: {
-          DEFAULT: color.blue[50],
+          DEFAULT: color.red[50],
           on: color.white,
           fixed: {
             DEFAULT: color.blue[50],
