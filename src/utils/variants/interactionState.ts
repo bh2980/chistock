@@ -29,7 +29,6 @@ export const interactionStateVariants = tv({
       true: [
         "focus-visible:before:opacity-20",
         "focus-visible:outline",
-        "focus-visible:outline-4",
         "focus-visible:outline-offset-4",
         "focus-visible:outline-surface-on",
       ],
