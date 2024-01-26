@@ -39,19 +39,19 @@ export const interactionStateVariants = tv({
       true: ["cursor-not-allowed", "bg-[#c6c6c6]", "text-[#8c8c8c]"],
     },
     hover: {
-      true: "",
+      true: "hover:before:opacity-20",
     },
     press: {
-      true: "",
+      true: "press:before:opacity-40",
     },
   },
   compoundVariants: [
     {
-      disabled: false,
+      disabled: true,
       hover: true,
-      className: "hover:before:opacity-20",
+      className: "hover:before:opacity-0",
     },
-    { disabled: false, press: true, className: "press:before:opacity-30" },
+    { disabled: true, press: true, className: "press:before:opacity-0" },
   ],
   defaultVariants: {
     disabled: false,
