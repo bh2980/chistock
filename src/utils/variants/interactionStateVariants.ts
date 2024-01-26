@@ -1,6 +1,24 @@
 import { tv } from "tailwind-variants";
 
+export const focusVariants = tv({
+  variants: {
+    focusVisible: {
+      true: [
+        "focus-visible:before:opacity-20",
+        "focus-visible:outline",
+        "focus-visible:outline-4",
+        "focus-visible:outline-offset-4",
+        "focus-visible:outline-surface-on",
+      ],
+    },
+  },
+  defaultVariants: {
+    focusVisible: true,
+  },
+});
+
 export const interactionStateVariants = tv({
+  extend: focusVariants,
   base: [
     "relative",
     "overflow-hidden",
@@ -22,15 +40,6 @@ export const interactionStateVariants = tv({
     press: {
       true: "",
     },
-    focusVisible: {
-      true: [
-        "focus-visible:before:opacity-20",
-        "focus-visible:outline",
-        "focus-visible:outline-4",
-        "focus-visible:outline-offset-4",
-        "focus-visible:outline-surface-on",
-      ],
-    },
   },
   compoundVariants: [
     {
@@ -44,6 +53,5 @@ export const interactionStateVariants = tv({
     disabled: false,
     hover: true,
     press: true,
-    focusVisible: true,
   },
 });
