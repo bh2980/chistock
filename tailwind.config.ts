@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 import { createThemes } from "tw-colors";
 
 import color from "./src/constants/colorPalette";
@@ -194,6 +195,9 @@ export default {
           on: color.neutral[0],
         },
       },
+    }),
+    plugin(({ addVariant }) => {
+      addVariant("press", "&:active");
     }),
   ],
 } satisfies Config;
