@@ -2,6 +2,9 @@ import { tv } from "tailwind-variants";
 
 export const focusVariants = tv({
   variants: {
+    focus: {
+      true: "focus:before:opacity-20",
+    },
     focusVisible: {
       true: [
         "focus-visible:before:opacity-20",
@@ -13,6 +16,7 @@ export const focusVariants = tv({
     },
   },
   defaultVariants: {
+    focus: false,
     focusVisible: true,
   },
 });
