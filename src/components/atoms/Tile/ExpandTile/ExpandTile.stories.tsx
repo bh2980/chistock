@@ -6,7 +6,7 @@ import StoryWrapper from "@story/StoryWrapper";
 
 import Text from "@atoms/Text/Text";
 
-import ExpandTile from "./ExpandTile";
+import ExpandTile from "../ExpandTile/ExpandTile";
 
 const meta = {
   title: "Atom/Tile/ExpandTile",
