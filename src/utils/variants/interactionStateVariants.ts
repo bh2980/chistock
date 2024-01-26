@@ -15,33 +15,30 @@ export const interactionStateVariants = tv({
   variants: {
     disabled: {
       true: ["cursor-not-allowed", "bg-[#c6c6c6]", "text-[#8c8c8c]"],
-      false: [],
     },
     hover: {
-      true: "hover:before:opacity-20",
-      false: [],
+      true: "",
     },
     press: {
-      true: "press:before:opacity-30",
-      false: [],
+      true: "",
     },
     focusVisible: {
       true: [
         "focus-visible:before:opacity-20",
         "focus-visible:outline",
+        "focus-visible:outline-4",
         "focus-visible:outline-offset-4",
         "focus-visible:outline-surface-on",
       ],
-      false: [],
     },
   },
   compoundVariants: [
     {
-      disabled: true,
+      disabled: false,
       hover: true,
-      className: [],
+      className: "hover:before:opacity-20",
     },
-    { disabled: true, press: true, className: [] },
+    { disabled: false, press: true, className: "press:before:opacity-30" },
   ],
   defaultVariants: {
     disabled: false,
