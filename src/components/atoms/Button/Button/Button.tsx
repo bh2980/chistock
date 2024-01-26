@@ -1,6 +1,6 @@
 import Slot from "@atoms/Slot/Slot";
 
-import { buttonVariants, overlayVariants } from "./Button.styles";
+import { buttonVariants } from "./Button.styles";
 import type { ButtonAlterAs, ButtonDefault, ButtonProps } from "./Button.types";
 import convertButtonProps from "./Button.utils";
 
@@ -31,7 +31,6 @@ const Button = <
       {iconPosition === "before" && icon}
       {children}
       {iconPosition === "after" && icon}
-      <div className={overlayVariants({ disabled })} />
     </Slot>
   );
 };

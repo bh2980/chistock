@@ -1,7 +1,10 @@
 import { tv } from "tailwind-variants";
 
+import { interactionStateVariants } from "@utils/variants/interactionState";
+
 export const buttonVariants = tv({
-  base: "relative flex justify-center items-center overflow-hidden rounded-m py-xs cursor-pointer",
+  extend: interactionStateVariants,
+  base: "relative flex justify-center items-center rounded-m py-xs cursor-pointer",
   variants: {
     /**
      * 버튼의 형태
@@ -11,7 +14,7 @@ export const buttonVariants = tv({
       primary: "bg-primary text-primary-on",
       secondary: "bg-secondary text-secondary-on",
       danger: "bg-red text-red-on",
-      text: "bg-transparent text-inherit",
+      text: "bg-transparent text-primary",
     },
     /**
      * 버튼의 크기
@@ -25,36 +28,16 @@ export const buttonVariants = tv({
     isIconButton: {
       true: "aspect-square p-0",
     },
-    disabled: {
-      true: "cursor-not-allowed",
-    },
   },
   compoundVariants: [
     {
       disabled: true,
-      variant: ["primary", "secondary", "danger", "text"],
-      className: "text-surface-on/30 grayscale",
-    },
-    {
-      disabled: true,
-      variant: ["primary", "secondary", "danger"],
-      className: "bg-surface-on/10",
+      variant: ["text"],
+      className: "bg-transparent",
     },
   ],
   defaultVariants: {
     variant: "secondary",
     size: "m",
-  },
-});
-
-export const overlayVariants = tv({
-  base: "absolute top-0 left-0 w-full h-full bg-current opacity-0 hover:opacity-20 active:opacity-10",
-  variants: {
-    disabled: {
-      true: "pointer-events-none",
-    },
-  },
-  defaultVariants: {
-    disabled: false,
   },
 });
