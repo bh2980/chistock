@@ -1,8 +1,7 @@
 import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
-import { textColorVariants } from "@constants/textColor";
-
 import { tv } from "@utils/utils";
+import { textColorVariants } from "@utils/variants/testColorVariants";
 
 import Slot from "@atoms/Slot/Slot";
 

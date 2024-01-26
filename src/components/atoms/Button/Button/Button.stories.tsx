@@ -121,12 +121,89 @@ export const IconButton: Story = {
  */
 export const ButtonState: Story = {
   name: "State",
+  parameters: {
+    pseudo: {
+      hover: ".hover",
+      active: ".press",
+      focusVisible: ".focusVisible",
+    },
+  },
   render: () => (
-    <StoryWrapper>
-      <Button disabled>버튼</Button>
-      <Button renderAs="a" disabled>
-        버튼
-      </Button>
+    <StoryWrapper className="flex-col">
+      <StoryWrapper>
+        <Button variant="primary">버튼</Button>
+        <Button variant="primary" disabled>
+          버튼
+        </Button>
+        <Button
+          variant="primary"
+          disabled
+          icon={<Icon icon="moon" />}
+          isIconButton
+          label="다크 모드"
+        />
+        <Button variant="primary" className="hover">
+          버튼
+        </Button>
+        <Button variant="primary" className="press">
+          버튼
+        </Button>
+        <Button variant="primary" className="focusVisible">
+          버튼
+        </Button>
+      </StoryWrapper>
+      <StoryWrapper>
+        <Button>버튼</Button>
+        <Button disabled>버튼</Button>
+        <Button disabled icon={<Icon icon="moon" />} isIconButton label="다크 모드" />
+        <Button className="hover">버튼</Button>
+        <Button className="press">버튼</Button>
+        <Button className="focusVisible">버튼</Button>
+      </StoryWrapper>
+      <StoryWrapper>
+        <Button variant="danger">버튼</Button>
+        <Button variant="danger" disabled>
+          버튼
+        </Button>
+        <Button
+          variant="danger"
+          disabled
+          icon={<Icon icon="moon" />}
+          isIconButton
+          label="다크 모드"
+        />
+        <Button variant="danger" className="hover">
+          버튼
+        </Button>
+        <Button variant="danger" className="press">
+          버튼
+        </Button>
+        <Button variant="danger" className="focusVisible">
+          버튼
+        </Button>
+      </StoryWrapper>
+      <StoryWrapper>
+        <Button variant="text">버튼</Button>
+        <Button variant="text" disabled>
+          버튼
+        </Button>
+        <Button
+          variant="text"
+          disabled
+          icon={<Icon icon="moon" />}
+          isIconButton
+          label="다크 모드"
+        />
+        <Button variant="text" className="hover">
+          버튼
+        </Button>
+        <Button variant="text" className="press">
+          버튼
+        </Button>
+        <Button variant="text" className="focusVisible">
+          버튼
+        </Button>
+      </StoryWrapper>
     </StoryWrapper>
   ),
 };

@@ -3,7 +3,7 @@ import { VariantProps } from "tailwind-variants";
 
 import { NonNullableProps } from "@customTypes/utilType";
 
-import { textColorVariants } from "@constants/textColor";
+import { textColorVariants } from "@utils/variants/testColorVariants";
 
 import { textVariants } from "./Text";
 

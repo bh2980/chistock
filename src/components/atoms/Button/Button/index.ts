@@ -1,4 +1,5 @@
 import Button from "./Button";
+import { buttonVariants } from "./Button.styles";
 
 // export type
 export type {
@@ -7,6 +8,9 @@ export type {
   ButtonDefault,
   ButtonAlterAs,
 } from "./Button.types";
+
+// export styles
+export { buttonVariants };
 
 // export component
 export default Button;
