@@ -30,7 +30,7 @@ export type ButtonBasePropsType = NonNullableProps<VariantProps<typeof buttonVar
         isIconButton?: false;
         label?: string;
       }
-    | { isIconButton: true; label: string }
+    | { isIconButton: true; label: string; icon: React.ReactElement }
   );
 
 /** Button Props 타입 */
