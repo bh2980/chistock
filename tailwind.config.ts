@@ -69,6 +69,15 @@ export default {
     },
   },
   plugins: [
+    plugin(({ addVariant }) => {
+      // //InteractionState
+      addVariant("interaction", "& .interactionState");
+      addVariant("interactionHover", "&:hover .interactionState");
+      addVariant("interactionFocus", "&:focus .interactionState");
+      addVariant("interactionFocusVisible", "&:focus-visible .interactionState");
+      addVariant("interactionPress", "&:active .interactionState");
+      // hover보다 press가 뒤에 있어야 함. -> CSS 파일 내에서 뒤에 나오는 규칙이 우선 적용
+    }),
     //Color - State - Background/Content
     createThemes({
       light: {
@@ -195,9 +204,6 @@ export default {
           on: color.neutral[0],
         },
       },
-    }),
-    plugin(({ addVariant }) => {
-      addVariant("press", "&:active");
     }),
   ],
 } satisfies Config;

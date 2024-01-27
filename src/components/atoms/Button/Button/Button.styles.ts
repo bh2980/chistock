@@ -1,6 +1,6 @@
 import { tv } from "tailwind-variants";
 
-import { interactionStateVariants } from "@utils/variants/interactionStateVariants";
+import { interactionStateVariants } from "@atoms/InteractionState";
 
 export const buttonVariants = tv({
   extend: interactionStateVariants,
