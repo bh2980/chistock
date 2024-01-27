@@ -1,3 +1,4 @@
+import InteractionState from "@atoms/InteractionState";
 import Slot from "@atoms/Slot/Slot";
 
 import { buttonVariants } from "./Button.styles";
@@ -28,6 +29,7 @@ const Button = <
       })}
       {...otherProps}
     >
+      <InteractionState />
       {iconPosition === "before" && icon}
       {children}
       {iconPosition === "after" && icon}
