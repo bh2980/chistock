@@ -13,18 +13,19 @@ export const focusVariants = tv({
   ],
   variants: {
     focus: {
-      true: [
-        "focus:outline",
-        "focus:outline-2",
-        "focus:outline-offset-4",
-        "focus:outline-primary",
+      outline: [
+        "focus-within:outline",
+        "focus-within:outline-2",
+        "focus-within:outline-offset-4",
+        "focus-within:outline-primary",
         "interactionFocus:opacity-20",
       ],
-      false: [],
+      default: ["interactionFocus:opacity-20"],
+      none: [],
     },
   },
   defaultVariants: {
-    focus: false,
+    focus: "none",
   },
 });
 
@@ -50,16 +51,18 @@ export const interactionStateVariants = tv({
       false: [],
     },
     hover: {
-      true: "interactionHover:opacity-20",
+      true: "interactionHover:opacity-10",
       false: [],
     },
     press: {
-      true: "interactionPress:opacity-40",
+      true: "interactionPress:opacity-20",
       false: [],
     },
     focus: {
       // 상위 extend 속성의 경우 컴포넌트에서 focus 속성을 인식 못함. -> 빈 focus 속성을 넣어줌.
-      false: [],
+      outline: "",
+      default: "",
+      none: "",
     },
   },
   compoundVariants: [
