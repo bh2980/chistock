@@ -7,25 +7,26 @@ export const focusVariants = tv({
   base: [
     "focus-visible:outline",
     "focus-visible:outline-2",
-    "focus-visible:outline-offset-4",
     "focus-visible:outline-primary",
     "interactionFocusVisible:opacity-20",
   ],
   variants: {
     focus: {
-      outline: [
+      true: [
         "focus-within:outline",
         "focus-within:outline-2",
-        "focus-within:outline-offset-4",
         "focus-within:outline-primary",
         "interactionFocus:opacity-20",
       ],
-      default: ["interactionFocus:opacity-20"],
-      none: [],
+      false: [],
+    },
+    focusOutlineOffset: {
+      true: "focus-visible:outline-offset-4 focus-within:outline-offset-4",
     },
   },
   defaultVariants: {
-    focus: "none",
+    focus: false,
+    focusOutlineOffset: false,
   },
 });
 
@@ -60,9 +61,10 @@ export const interactionStateVariants = tv({
     },
     focus: {
       // 상위 extend 속성의 경우 컴포넌트에서 focus 속성을 인식 못함. -> 빈 focus 속성을 넣어줌.
-      outline: "",
-      default: "",
-      none: "",
+      true: "",
+    },
+    focusOutlineOffset: {
+      true: "",
     },
   },
   compoundVariants: [
