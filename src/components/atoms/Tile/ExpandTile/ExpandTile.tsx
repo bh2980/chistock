@@ -1,13 +1,11 @@
 import { useState } from "react";
 
-import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
-
 import { tv } from "@utils/utils";
 
 import Button from "@atoms/Button/Button/Button";
 import Tile from "@atoms/Tile/Tile/Tile";
 
-import { TileAlterAs, TileBasePropsType, TileDefault } from "../Tile/Tile.types";
+import { TileAlterAs, TileDefault, TileProps } from "../Tile/Tile.types";
 
 const expandTileVariants = tv({
   base: "transition-[max-height]",
@@ -45,7 +43,7 @@ const ExpandTile = <
   padding,
   className,
   ...props
-}: PolymorphicPropsWithInnerRefType<T, TileBasePropsType, A>) => {
+}: TileProps<T, A>) => {
   {
     const [isExpand, setIsExpand] = useState(false);
 
