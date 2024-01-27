@@ -15,7 +15,7 @@ const textfieldVariants = tv({
       true: "interactionFocus:opacity-0 interactionFocusVisible:opacity-0 focus-within:outline-offset-0",
     },
     error: {
-      true: ["!bg-red/20", "!text-red", "!outline-red"],
+      true: ["!bg-red/20", "!text-red", "!outline-red", "outline", "outline-1"],
     },
     haveLabel: {
       true: "h-[64px]",
