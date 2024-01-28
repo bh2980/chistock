@@ -1,7 +1,7 @@
 import type { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
 
 export type TextFieldBaseProps = {
-  label: string;
+  label?: string;
   leadingIcon?: React.ReactNode;
   trailingIcon?: React.ReactNode;
   helperText?: string;
