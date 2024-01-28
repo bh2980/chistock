@@ -26,7 +26,16 @@ const TextField = ({
 
   return (
     <div className={containerVariants({ disabled, error, fullWidth })}>
-      <label className={textFieldVariants({ focus: true, error, disabled, haveLabel, className })}>
+      <label
+        className={textFieldVariants({
+          focus: true,
+          error,
+          disabled,
+          haveLabel,
+          fullWidth,
+          className,
+        })}
+      >
         <InteractionState />
         {leadingIcon}
         <div className="relative flex flex-col w-full h-full">

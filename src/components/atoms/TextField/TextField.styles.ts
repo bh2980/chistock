@@ -3,7 +3,7 @@ import { tv } from "@utils/utils";
 import { interactionStateVariants } from "@atoms/InteractionState";
 
 export const containerVariants = tv({
-  base: "flex flex-col gap-xs text-surface-on-variant w-[320rem]",
+  base: "flex flex-col gap-xs text-surface-on-variant",
   variants: {
     error: { true: "text-red" },
     disabled: { true: "text-disabled-on" },
@@ -23,7 +23,7 @@ export const textFieldVariants = tv({
     "justify-between",
     "items-center",
     "gap-m",
-    "w-full",
+    "w-[320rem]",
     "bg-surface-variant-highest",
     "px-l",
     "py-xs",
@@ -43,6 +43,7 @@ export const textFieldVariants = tv({
       true: "h-[68rem]",
       false: "h-[40rem]",
     },
+    fullWidth: { true: "w-full" },
   },
   defaultVariants: {
     error: false,
