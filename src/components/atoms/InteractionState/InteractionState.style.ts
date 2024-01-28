@@ -48,7 +48,7 @@ export const interactionStateVariants = tv({
   ],
   variants: {
     disabled: {
-      true: ["cursor-not-allowed", "bg-[#c6c6c6]", "text-[#8c8c8c]"],
+      true: ["cursor-not-allowed", "bg-disabled", "text-disabled-on"],
       false: [],
     },
     hover: {
