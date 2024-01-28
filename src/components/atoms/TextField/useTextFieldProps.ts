@@ -6,15 +6,16 @@ import { TextFieldProps } from "./TextField.types";
 const useTextFieldProps = (props: TextFieldProps) => {
   const idRef = useRef(props.id);
 
-  const { label, ...otherProps } = props;
+  const { label, placeholder, ...otherProps } = props;
 
   const haveLabel = !!label;
+  const tempPlaceholder = placeholder ? placeholder : "";
 
   if (!idRef.current) {
     idRef.current = `id-${uuid()}`;
   }
 
-  return { id: idRef.current, label, haveLabel, ...otherProps };
+  return { id: idRef.current, label, haveLabel, placeholder: tempPlaceholder, ...otherProps };
 };
 
 export default useTextFieldProps;
