@@ -59,9 +59,6 @@ export const labelVariants = tv({
     "transition-['font-size']",
     "peer-placeholder-shown:text-m",
     "peer-placeholder-shown:top-m",
-    "peer-focus:text-primary",
-    "peer-focus:top-2xs",
-    "peer-focus:text-xs",
   ],
   variants: {
     error: {
@@ -69,6 +66,10 @@ export const labelVariants = tv({
     },
     required: {
       true: ["after:content-['*']", "after:text-red"],
+    },
+    readOnly: {
+      true: "",
+      false: ["peer-focus:text-primary", "peer-focus:top-2xs", "peer-focus:text-xs"],
     },
   },
   defaultVariants: {
@@ -80,7 +81,7 @@ export const inputVariants = tv({
   base: ["peer", "w-full", "h-[32rem]", "bg-transparent", "text-m", "text-surface-on"],
   variants: {
     haveLabel: {
-      true: ["absolute bottom-0", "placeholder:invisible", "focus:placeholder:visible"],
+      true: ["absolute bottom-0"],
       false: "mt-[2rem]",
     },
     error: { true: "text-red" },
@@ -88,9 +89,25 @@ export const inputVariants = tv({
       true: ["cursor-not-allowed text-disabled-on", "placeholder:text-disabled-on"],
       false: "placeholder:text-surface-on-variant",
     },
+    readOnly: {
+      true: "",
+    },
   },
+  compoundVariants: [
+    {
+      haveLabel: true,
+      readOnly: false,
+      className: "placeholder:invisible focus:placeholder:visible",
+    },
+    {
+      haveLabel: true,
+      readOnly: true,
+      className: "placeholder:invisible",
+    },
+  ],
   defaultVariants: {
     error: false,
     disabled: false,
+    readOnly: false,
   },
 });

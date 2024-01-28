@@ -20,6 +20,7 @@ const TextField = ({
   placeholder = "대체 텍스트",
   fullWidth,
   disabled,
+  readOnly = true,
   ...props
 }: TextFieldProps) => {
   const haveLabel = !!label;
@@ -31,12 +32,13 @@ const TextField = ({
         {leadingIcon}
         <div className="relative flex flex-col w-full h-full">
           <input
-            className={inputVariants({ disabled, error, haveLabel })}
+            className={inputVariants({ disabled, error, haveLabel, readOnly })}
             placeholder={placeholder}
             disabled={disabled}
+            readOnly={readOnly}
             {...props}
           />
-          {label && <Text className={labelVariants({ error, required })}>{label}</Text>}
+          {label && <Text className={labelVariants({ error, required, readOnly })}>{label}</Text>}
         </div>
         {trailingIcon}
       </label>
