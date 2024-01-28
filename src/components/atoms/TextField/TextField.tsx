@@ -36,7 +36,7 @@ const textfieldVariants = tv({
       true: ["!bg-red/20", "!outline-red", "outline", "outline-1"],
     },
     haveLabel: {
-      true: "h-[64px]",
+      true: "h-[68px]",
       false: "h-[40px]",
     },
   },
@@ -52,7 +52,7 @@ const labelVariants = tv({
     "text-xs",
     "transition-['font-size']",
     "peer-placeholder-shown:text-m",
-    "peer-placeholder-shown:top-s",
+    "peer-placeholder-shown:top-m",
     "peer-focus:text-primary",
     "peer-focus:top-2xs",
     "peer-focus:text-xs",
