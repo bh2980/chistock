@@ -31,8 +31,9 @@ export const textFieldVariants = tv({
     "text-m",
     "rounded-m",
     "cursor-text",
-    "border",
-    "border-outline",
+    "outline",
+    "outline-1",
+    "outline-outline",
   ],
   variants: {
     focus: {
