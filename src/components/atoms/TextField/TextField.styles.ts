@@ -47,6 +47,8 @@ export const textFieldVariants = tv({
   },
   defaultVariants: {
     error: false,
+    haveLabel: false,
+    fullWidth: false,
   },
 });
 
@@ -69,12 +71,20 @@ export const labelVariants = tv({
       true: ["after:content-['*']", "after:text-red"],
     },
     readOnly: {
-      true: "",
+      true: [],
       false: ["peer-focus:text-primary", "peer-focus:top-2xs", "peer-focus:text-xs"],
     },
   },
+  compoundVariants: [
+    {
+      error: true,
+      readOnly: false,
+      className: "peer-focus:text-red peer-focus:top-2xs peer-focus:text-xs",
+    },
+  ],
   defaultVariants: {
-    error: false,
+    required: false,
+    readOnly: false,
   },
 });
 
@@ -91,7 +101,7 @@ export const inputVariants = tv({
       false: "placeholder:text-surface-on-variant",
     },
     readOnly: {
-      true: "",
+      true: [],
     },
   },
   compoundVariants: [
@@ -107,6 +117,7 @@ export const inputVariants = tv({
     },
   ],
   defaultVariants: {
+    haveLabel: false,
     error: false,
     disabled: false,
     readOnly: false,
