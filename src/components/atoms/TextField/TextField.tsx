@@ -6,9 +6,10 @@ import InteractionState, { interactionStateVariants } from "@atoms/InteractionSt
 import Text from "@atoms/Text/Text";
 
 const containerVariants = tv({
-  base: "flex flex-col gap-xs text-surface-on-variant",
+  base: "flex flex-col gap-xs text-surface-on-variant w-[320rem]",
   variants: {
     error: { true: "!text-red" },
+    fullWidth: { true: "w-full" },
   },
 });
 
@@ -19,7 +20,7 @@ const textfieldVariants = tv({
     "justify-between",
     "items-center",
     "gap-m",
-    "w-[320px]",
+    "w-full",
     "bg-surface-variant-high",
     "px-l",
     "py-xs",
@@ -36,8 +37,8 @@ const textfieldVariants = tv({
       true: ["!bg-red/20", "!outline-red", "outline", "outline-1"],
     },
     haveLabel: {
-      true: "h-[68px]",
-      false: "h-[40px]",
+      true: "h-[68rem]",
+      false: "h-[40rem]",
     },
   },
 });
@@ -93,6 +94,7 @@ type TextFielsBaseProps = {
   trailingIcon?: React.ReactNode;
   helperText?: string;
   error?: boolean;
+  fullWidth?: boolean;
 };
 
 const TextField = ({
@@ -101,21 +103,22 @@ const TextField = ({
   leadingIcon,
   trailingIcon,
   helperText = "helperText",
-  required = true,
+  required,
   error,
   placeholder = "대체 텍스트",
+  fullWidth,
   ...props
 }: PolymorphicPropsWithInnerRefType<"input", TextFielsBaseProps>) => {
   const haveLabel = !!label;
 
   return (
-    <div className={containerVariants({ error })}>
-      <label className={textfieldVariants({ haveLabel, error, className, focus: true })}>
+    <div className={containerVariants({ error, fullWidth })}>
+      <label className={textfieldVariants({ error, haveLabel, className, focus: true })}>
         <InteractionState />
         {leadingIcon}
         <div className="relative flex flex-col w-full h-full">
           <input
-            className={inputVariants({ haveLabel, error })}
+            className={inputVariants({ error, haveLabel })}
             placeholder={placeholder}
             {...props}
           />
