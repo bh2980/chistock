@@ -96,7 +96,6 @@ export const ButtonWithIcon: Story = {
       <Button icon={<Icon icon="moon" />} iconPosition="after">
         다크 모드
       </Button>
-      <Button icon={<Icon icon="moon" />} label="다크 모드" isIconButton />
     </StoryWrapper>
   ),
 };
