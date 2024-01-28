@@ -11,16 +11,15 @@ import { TextFieldProps } from "./TextField.types";
 
 const TextField = ({
   className,
-  label = "레이블",
+  label,
   leadingIcon,
   trailingIcon,
-  helperText = "helperText",
+  helperText,
   required,
   error,
-  placeholder = "대체 텍스트",
   fullWidth,
   disabled,
-  readOnly = true,
+  readOnly,
   ...props
 }: TextFieldProps) => {
   const haveLabel = !!label;
@@ -33,7 +32,6 @@ const TextField = ({
         <div className="relative flex flex-col w-full h-full">
           <input
             className={inputVariants({ disabled, error, haveLabel, readOnly })}
-            placeholder={placeholder}
             disabled={disabled}
             readOnly={readOnly}
             {...props}
