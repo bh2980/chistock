@@ -26,6 +26,7 @@ const Button = <
         isIconButton,
         disabled,
         className,
+        focusOutlineOffset: true,
       })}
       {...otherProps}
     >

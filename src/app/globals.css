@@ -16,4 +16,10 @@
   rect {
     stroke-width: inherit;
   }
+
+  a,
+  input,
+  button {
+    outline: none;
+  }
 }

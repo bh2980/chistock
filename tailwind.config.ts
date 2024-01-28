@@ -56,6 +56,8 @@ export default {
       inherit: "inherit",
       current: "currentColor",
       transparent: "transparent",
+      black: color.black,
+      white: color.white,
     },
     extend: {
       fontSize: {
@@ -72,9 +74,9 @@ export default {
     plugin(({ addVariant }) => {
       // //InteractionState
       addVariant("interaction", "& .interactionState");
-      addVariant("interactionHover", "&:hover .interactionState");
-      addVariant("interactionFocus", "&:focus .interactionState");
+      addVariant("interactionFocus", "&:focus-within .interactionState");
       addVariant("interactionFocusVisible", "&:focus-visible .interactionState");
+      addVariant("interactionHover", "&:hover .interactionState");
       addVariant("interactionPress", "&:active .interactionState");
       // hover보다 press가 뒤에 있어야 함. -> CSS 파일 내에서 뒤에 나오는 규칙이 우선 적용
     }),
@@ -141,6 +143,10 @@ export default {
           DEFAULT: color.magenta[50],
           on: color.neutral[0],
         },
+        disabled: {
+          DEFAULT: "rgba(18, 18, 18, 0.1)",
+          on: "rgba(18, 18, 18, 0.3)",
+        },
       },
       dark: {
         primary: {
@@ -202,6 +208,10 @@ export default {
         magenta: {
           DEFAULT: color.magenta[60],
           on: color.neutral[0],
+        },
+        disabled: {
+          DEFAULT: "rgba(249, 249, 251, 0.1)",
+          on: "rgba(249, 249, 251, 0.3)",
         },
       },
     }),
