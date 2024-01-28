@@ -8,7 +8,7 @@ export const focusVariants = tv({
     "focus-visible:outline",
     "focus-visible:outline-2",
     "focus-visible:outline-primary",
-    "interactionFocusVisible:opacity-20",
+    "interactionFocusVisible:opacity-10",
   ],
   variants: {
     focus: {
@@ -16,7 +16,7 @@ export const focusVariants = tv({
         "focus-within:outline",
         "focus-within:outline-2",
         "focus-within:outline-primary",
-        "interactionFocus:opacity-20",
+        "interactionFocus:opacity-10",
       ],
       false: [],
     },
