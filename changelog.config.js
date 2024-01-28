@@ -1,18 +1,7 @@
 module.exports = {
   disableEmoji: false,
   format: "{type}: {emoji}{subject}",
-  list: [
-    "feat",
-    "fix",
-    "fixTypo",
-    "docs",
-    "style",
-    "design",
-    "refactor",
-    "test",
-    "chore",
-    "ci",
-  ],
+  list: ["feat", "fix", "fix typo", "docs", "style", "design", "refactor", "test", "chore", "ci"],
   maxMessageLength: 64,
   minMessageLength: 3,
   questions: ["type", "subject", "body", "issues"],
@@ -28,7 +17,7 @@ module.exports = {
       emoji: "🐛",
       value: "fix",
     },
-    fixTypo: {
+    "fix typo": {
       description: "오타 수정",
       emoji: "✏️",
       value: "fix typo",
