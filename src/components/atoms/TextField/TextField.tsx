@@ -12,7 +12,11 @@ const textfieldVariants = tv({
   base: "flex justify-between items-center gap-m text-left w-[320px] px-l bg-surface-variant-high rounded-m py-xs cursor-text text-m",
   variants: {
     focus: {
-      true: "interactionFocus:opacity-0 interactionFocusVisible:opacity-0 focus-within:outline-offset-0",
+      true: [
+        "interactionFocus:opacity-0",
+        "interactionFocusVisible:opacity-0",
+        "focus-within:outline-offset-0",
+      ],
     },
     error: {
       true: ["!bg-red/20", "!text-red", "!outline-red", "outline", "outline-1"],
@@ -38,7 +42,7 @@ const labelVariants = tv({
 });
 
 const inputVariants = tv({
-  base: "w-full h-[32rem] text-inherit bg-transparent text-sizeInherit text-m",
+  base: "w-full h-[32rem] bg-transparent text-m text-surface-on placeholder:text-surface-on-variant placeholder:invisible focus:placeholder:visible",
   variants: {
     haveLabel: {
       true: "peer absolute bottom-0",
@@ -47,7 +51,7 @@ const inputVariants = tv({
 });
 
 const helperTextVariants = tv({
-  base: "ml-xs text-surface-on-variant",
+  base: "ml-xs",
   variants: {
     error: {
       true: "text-red",
@@ -70,8 +74,8 @@ const TextField = ({
   trailingIcon,
   helperText = "helperText",
   required = true,
-  error = true,
-  placeholder = "placeholder",
+  error,
+  placeholder = "대체 텍스트",
   ...props
 }: PolymorphicPropsWithInnerRefType<"input", TextFielsBaseProps>) => {
   const [inputValue, setInputValue] = useState("");
@@ -85,7 +89,7 @@ const TextField = ({
 
   return (
     <>
-      <div className="flex flex-col gap-xs">
+      <div className="flex flex-col gap-xs text-surface-on-variant">
         <label className={textfieldVariants({ haveLabel, error, focus: true, className })}>
           <InteractionState />
           {leadingIcon}
@@ -94,7 +98,7 @@ const TextField = ({
               className={inputVariants({ haveLabel })}
               value={inputValue}
               onChange={onChange}
-              placeholder={label ? undefined : placeholder}
+              placeholder={placeholder}
               {...props}
             />
             {label && (
