@@ -12,6 +12,11 @@ const containerVariants = tv({
     disabled: { true: "text-disabled-on" },
     fullWidth: { true: "w-full" },
   },
+  defaultVariants: {
+    disabled: false,
+    error: false,
+    fullWidth: false,
+  },
 });
 
 const textfieldVariants = tv({
@@ -22,7 +27,7 @@ const textfieldVariants = tv({
     "items-center",
     "gap-m",
     "w-full",
-    "bg-surface-variant-high",
+    "bg-surface-variant-highest",
     "px-l",
     "py-xs",
     "text-left",
@@ -41,6 +46,9 @@ const textfieldVariants = tv({
       true: "h-[68rem]",
       false: "h-[40rem]",
     },
+  },
+  defaultVariants: {
+    error: false,
   },
 });
 
@@ -66,28 +74,27 @@ const labelVariants = tv({
       true: ["after:content-['*']", "after:text-red"],
     },
   },
+  defaultVariants: {
+    error: false,
+  },
 });
 
 const inputVariants = tv({
-  base: [
-    "peer",
-    "w-full",
-    "h-[32rem]",
-    "bg-transparent",
-    "text-m",
-    "text-surface-on",
-    "placeholder:text-surface-on-variant",
-    "placeholder:invisible",
-    "focus:placeholder:visible",
-  ],
+  base: ["peer", "w-full", "h-[32rem]", "bg-transparent", "text-m", "text-surface-on"],
   variants: {
     haveLabel: {
-      true: "absolute bottom-0",
+      true: ["absolute bottom-0", "placeholder:invisible", "focus:placeholder:visible"],
+      false: "mt-[2rem]",
     },
     error: { true: "text-red" },
     disabled: {
-      true: "cursor-not-allowed text-disabled-on",
+      true: ["cursor-not-allowed text-disabled-on", "placeholder:text-disabled-on"],
+      false: "placeholder:text-surface-on-variant",
     },
+  },
+  defaultVariants: {
+    error: false,
+    disabled: false,
   },
 });
 
@@ -107,10 +114,10 @@ const TextField = ({
   trailingIcon,
   helperText = "helperText",
   required,
-  error = false,
+  error,
   placeholder = "대체 텍스트",
   fullWidth,
-  disabled = true,
+  disabled,
   ...props
 }: PolymorphicPropsWithInnerRefType<"input", TextFielsBaseProps>) => {
   const haveLabel = !!label;
