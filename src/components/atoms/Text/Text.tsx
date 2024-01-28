@@ -1,37 +1,7 @@
-import { PolymorphicPropsWithInnerRefType } from "@customTypes/polymorphicType";
-
-import { tv } from "@utils/utils";
-import { textColorVariants } from "@utils/variants/testColorVariants";
-
 import Slot from "@atoms/Slot/Slot";
 
-import { TextAlterAs, TextBasePropsType, TextDefault } from "./Text.types";
-
-export const textVariants = tv({
-  extend: textColorVariants,
-  variants: {
-    /** 텍스트 크기
-     * @default inherit
-     */
-    size: {
-      inherit: "text-sizeInherit",
-      body3: "text-xs",
-      body2: "text-s",
-      body1: "text-m",
-      headline3: "text-l",
-      headline2: "text-xl",
-      headline1: "text-2xl",
-    },
-    bold: {
-      true: "font-bold",
-      false: "",
-    },
-  },
-  defaultVariants: {
-    size: "inherit",
-    bold: false,
-  },
-});
+import { textVariants } from "./Text.styles";
+import type { TextAlterAs, TextDefault, TextProps } from "./Text.types";
 
 /** Text를 렌더링합니다. */
 const Text = <
@@ -45,7 +15,7 @@ const Text = <
   size,
   bold,
   ...props
-}: PolymorphicPropsWithInnerRefType<T, TextBasePropsType, A>) => {
+}: TextProps<T, A>) => {
   return (
     <Slot<TextDefault | TextAlterAs>
       renderAs={renderAs || "span"}

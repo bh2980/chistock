@@ -6,7 +6,8 @@ import { NonNullableProps } from "@customTypes/utilType";
 import ICON_MAP from "@constants/iconMap";
 
 import { tv } from "@utils/utils";
-import { textColorVariants } from "@utils/variants/testColorVariants";
+
+import { textColorVariants } from "@atoms/Text/Text.styles";
 
 const iconVariants = tv({
   extend: textColorVariants,
