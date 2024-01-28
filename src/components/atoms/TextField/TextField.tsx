@@ -61,6 +61,9 @@ const labelVariants = tv({
     error: {
       true: "peer-focus:text-red",
     },
+    required: {
+      true: ["after:content-['*']", "after:text-red"],
+    },
   },
 });
 
@@ -116,12 +119,7 @@ const TextField = ({
             placeholder={placeholder}
             {...props}
           />
-          {label && (
-            <Text className={labelVariants({ error })}>
-              {label}
-              {required && <Text color="red">*</Text>}
-            </Text>
-          )}
+          {label && <Text className={labelVariants({ error, required })}>{label}</Text>}
         </div>
         {trailingIcon}
       </label>
