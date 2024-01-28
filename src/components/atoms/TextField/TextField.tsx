@@ -8,21 +8,27 @@ import {
   textFieldVariants,
 } from "./TextField.styles";
 import { TextFieldProps } from "./TextField.types";
+import useTextFieldProps from "./useTextFieldProps";
 
-const TextField = ({
-  className,
-  label,
-  leadingIcon,
-  trailingIcon,
-  helperText,
-  required,
-  error,
-  fullWidth,
-  disabled,
-  readOnly,
-  ...props
-}: TextFieldProps) => {
-  const haveLabel = !!label;
+const TextField = (props: TextFieldProps) => {
+  const {
+    id,
+    className,
+    disabled,
+    error,
+    readOnly,
+    required,
+    haveLabel,
+    fullWidth,
+    label,
+    helperText,
+    leadingIcon,
+    trailingIcon,
+    inputClass,
+    labelClass,
+    helperTextClass,
+    ...inputProps
+  } = useTextFieldProps(props);
 
   return (
     <div className={containerVariants({ disabled, error, fullWidth })}>
@@ -35,22 +41,34 @@ const TextField = ({
           fullWidth,
           className,
         })}
+        htmlFor={id}
       >
         <InteractionState />
         {leadingIcon}
         <div className="relative flex flex-col w-full h-full">
           <input
-            className={inputVariants({ disabled, error, haveLabel, readOnly })}
+            id={id}
+            className={inputVariants({
+              disabled,
+              error,
+              haveLabel,
+              readOnly,
+              className: inputClass,
+            })}
             disabled={disabled}
             readOnly={readOnly}
-            {...props}
+            {...inputProps}
           />
-          {label && <Text className={labelVariants({ error, required, readOnly })}>{label}</Text>}
+          {label && (
+            <Text className={labelVariants({ error, required, readOnly, className: labelClass })}>
+              {label}
+            </Text>
+          )}
         </div>
         {trailingIcon}
       </label>
       {helperText && (
-        <Text size="body2" className="ml-xs">
+        <Text size="body2" className={`ml-xs ${helperTextClass}`}>
           {helperText}
         </Text>
       )}

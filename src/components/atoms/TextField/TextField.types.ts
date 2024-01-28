@@ -7,6 +7,9 @@ export type TextFieldBaseProps = {
   helperText?: string;
   error?: boolean;
   fullWidth?: boolean;
+  labelClass?: string;
+  inputClass?: string;
+  helperTextClass?: string;
 };
 
 export type TextFieldProps = PolymorphicPropsWithInnerRefType<"input", TextFieldBaseProps>;
