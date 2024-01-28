@@ -56,6 +56,8 @@ export default {
       inherit: "inherit",
       current: "currentColor",
       transparent: "transparent",
+      black: color.black,
+      white: color.white,
     },
     extend: {
       fontSize: {
@@ -141,6 +143,10 @@ export default {
           DEFAULT: color.magenta[50],
           on: color.neutral[0],
         },
+        disabled: {
+          DEFAULT: "rgba(18, 18, 18, 0.1)",
+          on: "rgba(18, 18, 18, 0.3)",
+        },
       },
       dark: {
         primary: {
@@ -202,6 +208,10 @@ export default {
         magenta: {
           DEFAULT: color.magenta[60],
           on: color.neutral[0],
+        },
+        disabled: {
+          DEFAULT: "rgba(249, 249, 251, 0.1)",
+          on: "rgba(249, 249, 251, 0.3)",
         },
       },
     }),
