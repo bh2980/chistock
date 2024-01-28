@@ -8,7 +8,8 @@ import Text from "@atoms/Text/Text";
 const containerVariants = tv({
   base: "flex flex-col gap-xs text-surface-on-variant w-[320rem]",
   variants: {
-    error: { true: "!text-red" },
+    error: { true: "text-red" },
+    disabled: { true: "text-disabled-on" },
     fullWidth: { true: "w-full" },
   },
 });
@@ -49,7 +50,6 @@ const labelVariants = tv({
     "flex",
     "gap-3xs",
     "top-2xs",
-    "text-primary",
     "text-xs",
     "transition-['font-size']",
     "peer-placeholder-shown:text-m",
@@ -85,6 +85,9 @@ const inputVariants = tv({
       true: "absolute bottom-0",
     },
     error: { true: "text-red" },
+    disabled: {
+      true: "cursor-not-allowed text-disabled-on",
+    },
   },
 });
 
@@ -104,22 +107,24 @@ const TextField = ({
   trailingIcon,
   helperText = "helperText",
   required,
-  error,
+  error = false,
   placeholder = "대체 텍스트",
   fullWidth,
+  disabled = true,
   ...props
 }: PolymorphicPropsWithInnerRefType<"input", TextFielsBaseProps>) => {
   const haveLabel = !!label;
 
   return (
-    <div className={containerVariants({ error, fullWidth })}>
-      <label className={textfieldVariants({ error, haveLabel, className, focus: true })}>
+    <div className={containerVariants({ disabled, error, fullWidth })}>
+      <label className={textfieldVariants({ focus: true, error, disabled, haveLabel, className })}>
         <InteractionState />
         {leadingIcon}
         <div className="relative flex flex-col w-full h-full">
           <input
-            className={inputVariants({ error, haveLabel })}
+            className={inputVariants({ disabled, error, haveLabel })}
             placeholder={placeholder}
+            disabled={disabled}
             {...props}
           />
           {label && <Text className={labelVariants({ error, required })}>{label}</Text>}
