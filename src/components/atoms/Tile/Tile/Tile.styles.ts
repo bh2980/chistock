@@ -7,7 +7,7 @@ export const tileVariants = tv({
      * @default default
      */
     variant: {
-      default: "bg-surface-variant text-surface-on",
+      default: "bg-surface-container text-surface-on",
       primary: "bg-primary text-primary-on",
       secondary: "bg-secondary text-secondary-on",
     },
