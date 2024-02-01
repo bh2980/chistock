@@ -7,12 +7,16 @@ import color from "./src/constants/colorPalette";
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
+    screens: {
+      tablet: "600px",
+      desktop: "1280px",
+    },
     fontSize: {
-      xs: ["12rem", "20rem"],
-      s: ["14rem", "20rem"],
+      xs: ["10.67rem", "16rem"],
+      s: ["13.33rem", "20rem"],
       m: ["16rem", "24rem"],
-      l: ["20rem", "32rem"],
-      xl: ["24rem", "36rem"],
+      l: ["18.67rem", "28rem"],
+      xl: ["21.33rem", "32rem"],
       "2xl": ["32rem", "48rem"],
     },
     fontWeight: {
@@ -41,11 +45,8 @@ export default {
     },
     boxShadow: {
       none: "",
-      xs: "0rem 2rem 2rem 0rem rgba(10, 14, 21, 0.25)",
-      s: "0rem 4rem 4rem 0rem rgba(10, 14, 21, 0.25)",
-      m: "0rem 8rem 8rem 0rem rgba(10, 14, 21, 0.25)",
-      l: "0rem 12rem 12rem 0rem rgba(10, 14, 21, 0.25)",
-      xl: "0rem 16rem 16rem 0rem rgba(10, 14, 21, 0.25)",
+      ambient: "0rem 0rem 16rem 0rem rgba(0, 0, 0, 0.12)",
+      floating: "0rem 16rem 16rem 0rem rgba(0, 0, 0, 0.25)",
     },
     borderWidth: {
       DEFAULT: "1rem",
@@ -56,8 +57,8 @@ export default {
       inherit: "inherit",
       current: "currentColor",
       transparent: "transparent",
-      black: color.black,
-      white: color.white,
+      white: color.neutral[100],
+      black: color.neutral[0],
     },
     extend: {
       fontSize: {
@@ -84,64 +85,44 @@ export default {
     createThemes({
       light: {
         primary: {
-          DEFAULT: color.blue[50],
-          on: color.white,
-          fixed: {
-            DEFAULT: color.blue[50],
-            on: color.white,
+          DEFAULT: color.primary[40],
+          on: color.primary[100],
+          container: {
+            DEFAULT: color.primary[70],
+            on: color.primary[10],
           },
         },
         secondary: {
-          DEFAULT: color.blue[20],
-          on: color.white,
-          fixed: {
-            DEFAULT: color.blue[20],
-            on: color.white,
+          DEFAULT: color.secondary[20],
+          on: color.secondary[100],
+          container: {
+            DEFAULT: color.secondary[80],
+            on: color.secondary[10],
           },
         },
-        tertiary: {
-          DEFAULT: color.blue[70],
-          on: color.blue[10],
-          fixed: {
-            DEFAULT: color.blue[70],
-            on: color.blue[10],
+        error: {
+          DEFAULT: color.error[40],
+          on: color.error[100],
+          container: {
+            DEFAULT: color.error[90],
+            on: color.error[10],
           },
         },
         surface: {
-          DEFAULT: color.neutral[90],
-          variant: {
-            DEFAULT: color.white,
-            high: color.neutral[80],
-            highest: color.neutral[70],
+          DEFAULT: color.neutral[97],
+          container: {
+            DEFAULT: color.neutral[100],
+            high: color.neutral[95],
+            highest: color.neutral[92],
           },
           on: {
-            DEFAULT: color.neutral[0],
+            DEFAULT: color.neutral[15],
             variant: color.neutral[30],
           },
         },
         outline: {
           DEFAULT: color.neutral[40],
-          variant: color.neutral[80],
-        },
-        red: {
-          DEFAULT: color.red[40],
-          on: color.white,
-          variant: {
-            DEFAULT: color.red[30],
-            on: color.white,
-          },
-        },
-        yellow: {
-          DEFAULT: color.yellow[50],
-          on: color.neutral[0],
-        },
-        green: {
-          DEFAULT: color.green[50],
-          on: color.neutral[0],
-        },
-        magenta: {
-          DEFAULT: color.magenta[50],
-          on: color.neutral[0],
+          variant: color.neutral[60],
         },
         disabled: {
           DEFAULT: "rgba(18, 18, 18, 0.1)",
@@ -150,64 +131,44 @@ export default {
       },
       dark: {
         primary: {
-          DEFAULT: color.blue[60],
-          on: color.neutral[0],
-          fixed: {
-            DEFAULT: color.blue[50],
-            on: color.white,
+          DEFAULT: color.primary[70],
+          on: color.primary[0],
+          container: {
+            DEFAULT: color.primary[30],
+            on: color.primary[90],
           },
         },
         secondary: {
-          DEFAULT: color.blue[80],
-          on: color.neutral[10],
-          fixed: {
-            DEFAULT: color.blue[20],
-            on: color.white,
+          DEFAULT: color.secondary[80],
+          on: color.secondary[0],
+          container: {
+            DEFAULT: color.secondary[40],
+            on: color.secondary[90],
           },
         },
-        tertiary: {
-          DEFAULT: color.blue[10],
-          on: color.blue[90],
-          fixed: {
-            DEFAULT: color.blue[70],
-            on: color.blue[10],
+        error: {
+          DEFAULT: color.error[70],
+          on: color.error[0],
+          container: {
+            DEFAULT: color.error[20],
+            on: color.error[90],
           },
         },
         surface: {
-          DEFAULT: color.blue[5],
-          variant: {
-            DEFAULT: color.neutral[10],
+          DEFAULT: color.neutral[10],
+          container: {
+            DEFAULT: color.neutral[17],
             high: color.neutral[20],
-            highest: color.neutral[30],
+            highest: color.neutral[23],
           },
           on: {
-            DEFAULT: color.white,
-            variant: color.neutral[70],
+            DEFAULT: color.neutral[100],
+            variant: color.neutral[80],
           },
         },
         outline: {
-          DEFAULT: color.neutral[60],
-          variant: color.neutral[20],
-        },
-        red: {
-          DEFAULT: color.red[60],
-          on: color.neutral[0],
-          variant: {
-            DEFAULT: color.red[80],
-            on: color.neutral[0],
-          },
-        },
-        yellow: {
-          DEFAULT: color.yellow[60],
-          on: color.neutral[0],
-        },
-        green: {
-          DEFAULT: color.green[40],
-          on: color.neutral[0],
-        },
-        magenta: {
-          DEFAULT: color.magenta[60],
-          on: color.neutral[0],
+          DEFAULT: color.neutral[70],
+          variant: color.neutral[30],
         },
         disabled: {
           DEFAULT: "rgba(249, 249, 251, 0.1)",

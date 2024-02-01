@@ -5,7 +5,7 @@ import { interactionStateVariants } from "@atoms/InteractionState";
 export const containerVariants = tv({
   base: "flex flex-col gap-xs text-surface-on-variant",
   variants: {
-    error: { true: "text-red" },
+    error: { true: "text-error" },
     disabled: { true: "text-disabled-on" },
     fullWidth: { true: "w-full" },
   },
@@ -24,7 +24,7 @@ export const textFieldVariants = tv({
     "items-center",
     "gap-m",
     "w-[320rem]",
-    "bg-surface-variant-highest",
+    "bg-surface-container-highest",
     "px-l",
     "py-xs",
     "text-left",
@@ -40,7 +40,7 @@ export const textFieldVariants = tv({
       true: "interactionFocus:opacity-0 interactionFocusVisible:opacity-0",
     },
     error: {
-      true: ["!bg-red/20", "!outline-red", "outline", "outline-1"],
+      true: ["!bg-error-container", "!outline-error", "outline", "outline-1"],
     },
     haveLabel: {
       true: "h-[68rem]",
@@ -68,10 +68,10 @@ export const labelVariants = tv({
   ],
   variants: {
     error: {
-      true: "peer-focus:text-red",
+      true: "peer-focus:text-error",
     },
     required: {
-      true: ["after:content-['*']", "after:text-red"],
+      true: ["after:content-['*']", "after:text-error"],
     },
     readOnly: {
       true: [],
@@ -82,7 +82,7 @@ export const labelVariants = tv({
     {
       error: true,
       readOnly: false,
-      className: "peer-focus:text-red peer-focus:top-2xs peer-focus:text-xs",
+      className: "peer-focus:text-error peer-focus:top-2xs peer-focus:text-xs",
     },
   ],
   defaultVariants: {
@@ -98,7 +98,7 @@ export const inputVariants = tv({
       true: ["absolute bottom-0"],
       false: "mt-[2rem]",
     },
-    error: { true: "text-red" },
+    error: { true: "text-error" },
     disabled: {
       true: ["cursor-not-allowed text-disabled-on", "placeholder:text-disabled-on"],
       false: "placeholder:text-surface-on-variant",

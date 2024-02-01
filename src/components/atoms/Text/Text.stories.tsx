@@ -120,65 +120,25 @@ export const TextColor: Story = {
         <Text color="onPrimary" className="bg-primary">
           가느다란 몸 부수어 쥔 총칼, 터, 평화
         </Text>
+        <Text color="onPrimaryContainer" className="bg-primary-container">
+          가느다란 몸 부수어 쥔 총칼, 터, 평화
+        </Text>
       </StoryWrapper>
       <StoryWrapper>
         <Text color="secondary">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
         <Text color="onSecondary" className="bg-secondary">
           가느다란 몸 부수어 쥔 총칼, 터, 평화
         </Text>
-      </StoryWrapper>
-      <StoryWrapper>
-        <Text color="tertiary">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
-        <Text color="onTertiary" className="bg-tertiary">
+        <Text color="onSecondaryContainer" className="bg-secondary-container">
           가느다란 몸 부수어 쥔 총칼, 터, 평화
         </Text>
       </StoryWrapper>
       <StoryWrapper>
-        <Text color="primaryFixed">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
-        <Text color="onPrimaryFixed" className="bg-primary-fixed">
+        <Text color="error">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
+        <Text color="onError" className="bg-error">
           가느다란 몸 부수어 쥔 총칼, 터, 평화
         </Text>
-      </StoryWrapper>
-      <StoryWrapper>
-        <Text color="secondaryFixed">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
-        <Text color="onSecondaryFixed" className="bg-secondary-fixed">
-          가느다란 몸 부수어 쥔 총칼, 터, 평화
-        </Text>
-      </StoryWrapper>
-      <StoryWrapper>
-        <Text color="tertiaryFixed">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
-        <Text color="onTertiaryFixed" className="bg-tertiary-fixed">
-          가느다란 몸 부수어 쥔 총칼, 터, 평화
-        </Text>
-      </StoryWrapper>
-      <StoryWrapper>
-        <Text color="red">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
-        <Text color="onRed" className="bg-red">
-          가느다란 몸 부수어 쥔 총칼, 터, 평화
-        </Text>
-      </StoryWrapper>
-      <StoryWrapper>
-        <Text color="redVariant">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
-
-        <Text color="onRedVariant" className="bg-red-variant">
-          가느다란 몸 부수어 쥔 총칼, 터, 평화
-        </Text>
-      </StoryWrapper>
-      <StoryWrapper>
-        <Text color="yellow">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
-        <Text color="onYellow" className="bg-yellow">
-          가느다란 몸 부수어 쥔 총칼, 터, 평화
-        </Text>
-      </StoryWrapper>
-      <StoryWrapper>
-        <Text color="green">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
-        <Text color="onGreen" className="bg-green">
-          가느다란 몸 부수어 쥔 총칼, 터, 평화
-        </Text>
-      </StoryWrapper>
-      <StoryWrapper>
-        <Text color="magenta">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
-        <Text color="onMagenta" className="bg-magenta">
+        <Text color="onErrorContainer" className="bg-error-container">
           가느다란 몸 부수어 쥔 총칼, 터, 평화
         </Text>
       </StoryWrapper>

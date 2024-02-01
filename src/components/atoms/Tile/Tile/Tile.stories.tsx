@@ -148,32 +148,6 @@ export const TilePadding: Story = {
 };
 
 /**
- * `shadow` 속성을 이용해 타일의 그림자를 지정할 수 있습니다.
- *
- * - `none`
- * - `xs`
- * - `s`
- * - `m`
- * - `l`
- * - `xl`
- *
- * 기본값으로 `xs`가 설정되어있습니다.
- */
-export const TileShadow: Story = {
-  name: "Shadow",
-  render: () => (
-    <StoryWrapper>
-      <Tile shadow="none">타일 예시</Tile>
-      <Tile shadow="xs">타일 예시</Tile>
-      <Tile shadow="s">타일 예시</Tile>
-      <Tile shadow="m">타일 예시</Tile>
-      <Tile shadow="l">타일 예시</Tile>
-      <Tile shadow="xl">타일 예시</Tile>
-    </StoryWrapper>
-  ),
-};
-
-/**
  * Playground에서 Tile 컴포넌트를 직접 테스트해보세요.
  *
  * [Tile Playground로 이동](?path=/story/atom-tile-tile--playground)
