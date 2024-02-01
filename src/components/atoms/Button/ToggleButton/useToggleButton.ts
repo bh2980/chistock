@@ -17,7 +17,6 @@ const useToggleButton = ({ pressed = false, ...props }: ToggleButtonProps) => {
 
   return {
     styleVariant: { pressed: isPressed, ...styleVariant },
-    pressed: isPressed,
     "aria-pressed": isPressed,
     onClick: onToggleButtonClick,
     ...convertProps,
