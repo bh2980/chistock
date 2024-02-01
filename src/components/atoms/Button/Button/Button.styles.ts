@@ -13,7 +13,7 @@ export const buttonVariants = tv({
     variant: {
       primary: "bg-primary text-primary-on",
       secondary: "bg-secondary text-secondary-on",
-      danger: "bg-red text-red-on",
+      danger: "bg-error text-error-on",
       text: "bg-transparent text-primary",
     },
     /**

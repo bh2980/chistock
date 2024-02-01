@@ -8,7 +8,7 @@ export type FloatingButtonProps = ButtonProps<"button"> & {
 };
 
 const floatingButtonVariant = tv({
-  base: "absolute rounded-circle shadow-xl border border-outline-variant",
+  base: "absolute rounded-circle shadow-xl",
   variants: {
     variant: {
       primary: "bg-primary text-primary-on",
