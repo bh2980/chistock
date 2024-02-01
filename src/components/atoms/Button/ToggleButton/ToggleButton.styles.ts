@@ -6,10 +6,10 @@ const toggleButtonVariant = tv({
   extend: buttonVariants,
   variants: {
     variant: {
-      default: "bg-surface-container-highest text-surface-on",
+      default: "bg-surface-container-highest text-surface-on border border-outline",
     },
     pressed: {
-      true: "bg-primary-container text-primary-container-on",
+      true: "bg-primary-container text-primary-container-on border-primary [&_>_svg]:fill-primary-container-on",
     },
   },
   compoundVariants: [
