@@ -33,8 +33,11 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof Image>;
 
+const IMAGE_URL =
+  "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fdh6ap9%2Fbtsz6jE1NAF%2FU1bUIepR14dMID1g0Z8Wr1%2Fimg.png";
+
 export const Default: Story = {
-  render: () => <Image className="w-[200rem]" alt="chistock 이미지" src="https://url.kr/kd35ap" />,
+  render: () => <Image className="w-[200rem]" alt="chistock 이미지" src={IMAGE_URL} />,
 };
 
 /**
@@ -46,8 +49,8 @@ export const Default: Story = {
 export const ImageSize: Story = {
   render: () => (
     <StoryWrapper>
-      <Image className="w-[100rem]" alt="chistock 이미지" src="https://url.kr/kd35ap" />
-      <Image className="w-[200rem] h-[100rem]" alt="chistock 이미지" src="https://url.kr/kd35ap" />
+      <Image className="w-[100rem]" alt="chistock 이미지" src={IMAGE_URL} />
+      <Image className="w-[200rem] h-[100rem]" alt="chistock 이미지" src={IMAGE_URL} />
     </StoryWrapper>
   ),
 };
@@ -65,27 +68,12 @@ export const ImageSize: Story = {
 export const ImageRadius: Story = {
   render: () => (
     <StoryWrapper>
-      <Image
-        rounded="none"
-        className="w-[100rem]"
-        alt="chistock 이미지"
-        src="https://url.kr/kd35ap"
-      />
-      <Image
-        rounded="xs"
-        className="w-[100rem]"
-        alt="chistock 이미지"
-        src="https://url.kr/kd35ap"
-      />
-      <Image rounded="s" className="w-[100rem]" alt="chistock 이미지" src="https://url.kr/kd35ap" />
-      <Image rounded="m" className="w-[100rem]" alt="chistock 이미지" src="https://url.kr/kd35ap" />
-      <Image rounded="l" className="w-[100rem]" alt="chistock 이미지" src="https://url.kr/kd35ap" />
-      <Image
-        rounded="circle"
-        className="w-[100rem]"
-        alt="chistock 이미지"
-        src="https://url.kr/kd35ap"
-      />
+      <Image rounded="none" className="w-[100rem]" alt="chistock 이미지" src={IMAGE_URL} />
+      <Image rounded="xs" className="w-[100rem]" alt="chistock 이미지" src={IMAGE_URL} />
+      <Image rounded="s" className="w-[100rem]" alt="chistock 이미지" src={IMAGE_URL} />
+      <Image rounded="m" className="w-[100rem]" alt="chistock 이미지" src={IMAGE_URL} />
+      <Image rounded="l" className="w-[100rem]" alt="chistock 이미지" src={IMAGE_URL} />
+      <Image rounded="circle" className="w-[100rem]" alt="chistock 이미지" src={IMAGE_URL} />
     </StoryWrapper>
   ),
 };
@@ -103,7 +91,7 @@ export const Playground: Story = {
   },
   args: {
     className: "w-[100rem]",
-    src: "https://url.kr/kd35ap",
+    src: IMAGE_URL,
     alt: "chistock",
   },
   parameters: { a11y: { disable: true } },
