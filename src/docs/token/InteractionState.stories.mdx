@@ -29,7 +29,7 @@ Enabled 상태는 컴포넌트의 기본 상태를 나타내며, 컴포넌트가
     <Button variant="primary">Enabled</Button>
     <Button>Enabled</Button>
     <Button isIconButton label="활성 버튼" icon={<Icon icon="moon" />} />
-    <Button variant="danger">Enabled</Button>
+    <Button variant="error">Enabled</Button>
     <Button variant="text">Enabled</Button>
   </StoryWrapper>
 </Canvas>
@@ -50,7 +50,7 @@ Disabled 상태는 유저의 상호작용을 금지하는 상태입니다.
     </Button>
     <Button disabled>Disabled</Button>
     <Button isIconButton label="비활성 버튼" icon={<Icon icon="moon" />} disabled />
-    <Button variant="danger" disabled>
+    <Button variant="error" disabled>
       Disabled
     </Button>
     <Button variant="text" disabled>
@@ -81,7 +81,7 @@ Overlay의 배경색은 컴포넌트의 텍스트 색과 동일하며, 투명도
       <Button variant="primary">Hover</Button>
       <Button>Hover</Button>
       <Button isIconButton label="Hover 버튼" icon={<Icon icon="moon" />} />
-      <Button variant="danger">Hover</Button>
+      <Button variant="error">Hover</Button>
       <Button variant="text">Hover</Button>
     </StoryWrapper>
   </Story>
@@ -109,7 +109,7 @@ Overlay의 배경색은 컴포넌트의 텍스트 색과 동일하며, 투명도
       <Button variant="primary">Press</Button>
       <Button>Press</Button>
       <Button isIconButton label="Press 버튼" icon={<Icon icon="moon" />} />
-      <Button variant="danger">Press</Button>
+      <Button variant="error">Press</Button>
       <Button variant="text">Press</Button>
     </StoryWrapper>
   </Story>
@@ -146,7 +146,7 @@ Overlay의 배경색은 컴포넌트의 텍스트 색과 동일하며, 투명도
         icon={<Icon icon="moon" />}
         className={focusVariants({ focus: true })}
       />
-      <Button variant="danger" className={focusVariants({ focus: true })}>
+      <Button variant="error" className={focusVariants({ focus: true })}>
         Focus
       </Button>
       <Button variant="text" className={focusVariants({ focus: true })}>
