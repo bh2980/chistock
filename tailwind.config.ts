@@ -88,7 +88,7 @@ export default {
           DEFAULT: color.primary[40],
           on: color.primary[100],
           container: {
-            DEFAULT: color.primary[70],
+            DEFAULT: color.primary[80],
             on: color.primary[10],
           },
         },

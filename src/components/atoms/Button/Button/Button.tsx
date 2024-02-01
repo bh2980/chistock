@@ -3,7 +3,7 @@ import Slot from "@atoms/Slot/Slot";
 
 import { buttonVariants } from "./Button.styles";
 import type { ButtonAlterAs, ButtonDefault, ButtonProps } from "./Button.types";
-import convertButtonProps from "./Button.utils";
+import useButton from "./useButton";
 
 /**
  * 버튼을 표시합니다.
@@ -14,26 +14,12 @@ const Button = <
 >(
   props: ButtonProps<T, A>
 ) => {
-  const { children, className, variant, size, isIconButton, icon, iconPosition, ...otherProps } =
-    convertButtonProps(props);
-  const { disabled } = otherProps;
+  const { children, styleVariant, ...otherProps } = useButton(props);
 
   return (
-    <Slot<ButtonDefault | ButtonAlterAs>
-      className={buttonVariants({
-        variant,
-        size,
-        isIconButton,
-        disabled,
-        className,
-        focusOutlineOffset: true,
-      })}
-      {...otherProps}
-    >
+    <Slot<ButtonDefault | ButtonAlterAs> className={buttonVariants(styleVariant)} {...otherProps}>
       <InteractionState />
-      {iconPosition === "before" && icon}
       {children}
-      {iconPosition === "after" && icon}
     </Slot>
   );
 };

@@ -54,7 +54,7 @@ export const ButtonVariant: Story = {
       <Button variant="primary">버튼</Button>
       <Button>버튼</Button>
       <Button variant="text">버튼</Button>
-      <Button variant="danger">버튼</Button>
+      <Button variant="error">버튼</Button>
     </StoryWrapper>
   ),
 };
@@ -108,7 +108,9 @@ export const ButtonWithIcon: Story = {
 export const IconButton: Story = {
   render: () => (
     <StoryWrapper>
-      <Button icon={<Icon icon="moon" />} label="다크 모드" isIconButton />
+      <Button icon={<Icon icon="moon" />} label="다크 모드" isIconButton>
+        Button
+      </Button>
     </StoryWrapper>
   ),
 };
@@ -160,24 +162,24 @@ export const ButtonState: Story = {
         <Button className="focusVisible">버튼</Button>
       </StoryWrapper>
       <StoryWrapper>
-        <Button variant="danger">버튼</Button>
-        <Button variant="danger" disabled>
+        <Button variant="error">버튼</Button>
+        <Button variant="error" disabled>
           버튼
         </Button>
         <Button
-          variant="danger"
+          variant="error"
           disabled
           icon={<Icon icon="moon" />}
           isIconButton
           label="다크 모드"
         />
-        <Button variant="danger" className="hover">
+        <Button variant="error" className="hover">
           버튼
         </Button>
-        <Button variant="danger" className="press">
+        <Button variant="error" className="press">
           버튼
         </Button>
-        <Button variant="danger" className="focusVisible">
+        <Button variant="error" className="focusVisible">
           버튼
         </Button>
       </StoryWrapper>

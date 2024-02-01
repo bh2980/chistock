@@ -1,89 +1,71 @@
-import { render, screen } from "@testing-library/react";
+import { render, renderHook, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
+import type { ButtonAlterAs, ButtonDefault, ButtonProps } from ".";
 import Button from "./Button";
-import type { ButtonAlterAs, ButtonDefault, ButtonProps } from "./Button.types";
-import convertButtonProps from "./Button.utils";
+import useButton from "./useButton";
 
 describe("Button", () => {
-  describe("convertButtonProps 함수 테스트", () => {
+  describe("useButton 함수 테스트", () => {
     it("renderAs가 정의되지 않았을 때, renderAs의 기본값이 button이어야 합니다", () => {
       const props = {};
-      const resultProps = convertButtonProps(props);
+      const { result } = renderHook(() => useButton(props));
 
-      expect(resultProps.renderAs).toBe("button");
+      expect(result.current.renderAs).toBe("button");
     });
 
     it("renderAs가 a로 정의되었을 때, role이 button이어야 합니다", () => {
       const props = { renderAs: "a" as const };
-      const resultProps = convertButtonProps(props);
+      const { result } = renderHook(() => useButton(props));
 
-      expect(resultProps.role).toBe("button");
-    });
-
-    it("isIconButton이 true일 때, children이 undefined가 되어야합니다.", () => {
-      const props = {
-        isIconButton: true,
-        label: "테스트라벨",
-        children: [<div key="1">Test</div>, <div key="2">Test</div>],
-      };
-      const { children } = convertButtonProps(props);
-
-      expect(children).toBeUndefined();
-    });
-
-    it("iconPosition이 정의되지 않았을 때, iconPosition의 기본값이 before여야합니다.", () => {
-      const props = {};
-      const resultProps = convertButtonProps(props);
-
-      expect(resultProps.iconPosition).toBe("before");
+      expect(result.current.role).toBe("button");
     });
 
     it("renderAs가 'a'이고 disabled가 false일 때, tabIndex가 0이 되어야합니다.", () => {
       const props = { renderAs: "a" as const, disabled: false };
-      const resultProps = convertButtonProps(props);
+      const { result } = renderHook(() => useButton(props));
 
-      expect(resultProps.tabIndex).toBe(0);
+      expect(result.current.tabIndex).toBe(0);
     });
 
     it("disabled가 true일 때, aria-disabled가 true가 되어야합니다.", () => {
       const props = { disabled: true };
-      const resultProps = convertButtonProps(props);
+      const { result } = renderHook(() => useButton(props));
 
-      expect(resultProps["aria-disabled"]).toBe(true);
+      expect(result.current["aria-disabled"]).toBe(true);
     });
 
     it("label이 정의되었을 때, aria-label이 해당 label값을 가져야합니다.", () => {
       const label = "Test Label";
       const props = { label };
-      const resultProps = convertButtonProps(props);
+      const { result } = renderHook(() => useButton(props));
 
-      expect(resultProps["aria-label"]).toBe(label);
+      expect(result.current["aria-label"]).toBe(label);
     });
 
     it("renderAs가 'a'이고 disabled가 false일 때, onClick이 원래의 onClick함수를 가져야합니다.", () => {
       const onClick = jest.fn();
       const props = { renderAs: "a" as const, disabled: false, onClick };
-      const resultProps = convertButtonProps(props);
+      const { result } = renderHook(() => useButton(props));
 
-      expect(resultProps.onClick).toBe(onClick);
+      expect(result.current.onClick).toBe(onClick);
     });
 
     it("renderAs가 'a'이고 disabled가 true일 때, onClick이 undefined가 되어야합니다.", () => {
       const props = { renderAs: "a" as const, disabled: true, onClick: jest.fn() };
-      const resultProps = convertButtonProps(props);
+      const { result } = renderHook(() => useButton(props));
 
-      expect(resultProps.onClick).toBeUndefined();
+      expect(result.current.onClick).toBeUndefined();
     });
 
     it("otherProps가 정의되었을 때, 결과 객체에 otherProps가 포함되어야합니다.", () => {
       const otherProps = { dataTestId: "test" };
       const props = { ...otherProps };
-      const resultProps = convertButtonProps(
-        props as ButtonProps<ButtonDefault | ButtonAlterAs, ButtonAlterAs>
+      const { result } = renderHook(() =>
+        useButton(props as ButtonProps<ButtonDefault, ButtonAlterAs>)
       );
 
-      expect(resultProps).toHaveProperty("dataTestId", "test");
+      expect(result.current).toHaveProperty("dataTestId", "test");
     });
   });
 
@@ -148,7 +130,7 @@ describe("Button", () => {
 
     it("아이콘 버튼에서는 자식이 렌더링되면 안됩니다.", async () => {
       render(
-        <Button isIconButton label="테스트 라벨">
+        <Button icon={<span>⚠️</span>} isIconButton label="테스트 라벨">
           Button
         </Button>
       );
@@ -201,7 +183,7 @@ describe("Button", () => {
     });
 
     it("아이콘 버튼에서는 aria-label을 가져야합니다.", async () => {
-      render(<Button isIconButton label="테스트 라벨" />);
+      render(<Button icon={<span>⚠️</span>} isIconButton label="테스트 라벨" />);
       const button = screen.getByRole("button");
 
       expect(button).toHaveAttribute("aria-label");
@@ -281,7 +263,7 @@ describe("Button", () => {
 
     it("아이콘 버튼에서는 자식이 렌더링되면 안됩니다.", async () => {
       render(
-        <Button renderAs="a" isIconButton label="테스트 라벨">
+        <Button icon={<span>⚠️</span>} renderAs="a" isIconButton label="테스트 라벨">
           Button
         </Button>
       );
@@ -335,7 +317,7 @@ describe("Button", () => {
     });
 
     it("아이콘 버튼에서는 aria-label을 가져야합니다.", async () => {
-      render(<Button renderAs="a" isIconButton label="테스트 라벨" />);
+      render(<Button icon={<span>⚠️</span>} renderAs="a" isIconButton label="테스트 라벨" />);
       const button = screen.getByRole("button");
 
       expect(button).toHaveAttribute("aria-label");
