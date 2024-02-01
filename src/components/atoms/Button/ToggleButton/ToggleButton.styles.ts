@@ -5,20 +5,23 @@ import { buttonVariants } from "../Button";
 const toggleButtonVariant = tv({
   extend: buttonVariants,
   variants: {
-    pressed: {
-      true: "interaction:opacity-40",
-    },
     variant: {
-      text: "interactionHover:bg-surface-on",
+      default: "bg-surface-container-highest text-surface-on",
+    },
+    pressed: {
+      true: "bg-primary-container text-primary-container-on",
     },
   },
   compoundVariants: [
     {
       pressed: true,
       variant: "text",
-      className: "interaction:opacity-0 text-primary [&_>_svg]:fill-primary",
+      className: "bg-transparent text-primary [&_>_svg]:fill-primary",
     },
   ],
+  defaultVariants: {
+    variant: "default",
+  },
 });
 
 export default toggleButtonVariant;

@@ -26,25 +26,7 @@ export const PresseState: Story = {
   render: () => (
     <StoryWrapper className="flex flex-col">
       <StoryWrapper>
-        <ToggleButton variant="primary">
-          <Icon icon="moon" />
-          Button
-        </ToggleButton>
         <ToggleButton>
-          <Icon icon="moon" />
-          Button
-        </ToggleButton>
-        <ToggleButton variant="error">
-          <Icon icon="moon" />
-          Button
-        </ToggleButton>
-        <ToggleButton variant="text">
-          <Icon icon="moon" />
-          Button
-        </ToggleButton>
-      </StoryWrapper>
-      <StoryWrapper>
-        <ToggleButton variant="primary" pressed={true}>
           <Icon icon="moon" />
           Button
         </ToggleButton>
@@ -52,7 +34,9 @@ export const PresseState: Story = {
           <Icon icon="moon" />
           Button
         </ToggleButton>
-        <ToggleButton variant="error" pressed={true}>
+      </StoryWrapper>
+      <StoryWrapper>
+        <ToggleButton variant="text">
           <Icon icon="moon" />
           Button
         </ToggleButton>
