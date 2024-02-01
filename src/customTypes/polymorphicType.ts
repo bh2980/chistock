@@ -11,7 +11,7 @@
  * // { renderAs? : 'div' | 'a' | 'button' }
  * AsPropsType<'div', 'a' | 'button'>
  */
-type AsPropsType<T extends React.ElementType> = {
+export type AsPropsType<T extends React.ElementType> = {
   /** 렌더링할 태그 속성 */
   renderAs?: T;
 };
@@ -25,7 +25,7 @@ type AsPropsType<T extends React.ElementType> = {
  * // { innerRef?: RejObject<HTMLDivElement> | ... }
  * InnreRefType<'div'>
  */
-type InnerRefType<T extends React.ElementType> = {
+export type InnerRefType<T extends React.ElementType> = {
   /**
    * ref를 대체하는 속성
    *
