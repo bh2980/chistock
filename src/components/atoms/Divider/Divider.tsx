@@ -40,7 +40,7 @@ const dividerVariants = tv({
     },
   ],
   defaultVariants: {
-    color: "outline",
+    color: "outlineVariant",
     direction: "horizontal",
     thickness: "m",
   },
