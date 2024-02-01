@@ -72,16 +72,16 @@ export const DividerThickness: Story = {
 
 /** Divider는 색상 값으로 color 속성을 가집니다.
  *
- * - `outline` : 명확하게 구분되는 색상
- * - `outlineVariant` : 명확하게 구분되지 않거나 필요에 따라 사용하는 색상
+ * - `outline` : surface 색상과 4.5의 명암비를 이루는 색상
+ * - `outlineVariant` : surface 색상과 4.5의 명암비를 충족하지 못하는 색상 색상
  *
- * 기본값으로 `outline`이 설정되어 있습니다.
+ * 기본값으로 `outlineVariant`이 설정되어 있습니다.
  */
 export const DividerColor: Story = {
   render: () => (
     <StoryWrapper direction="vertical">
       <Divider className="w-[200rem]" />
-      <Divider className="w-[200rem]" color="outlineVariant" />
+      <Divider className="w-[200rem]" color="outline" />
     </StoryWrapper>
   ),
 };
