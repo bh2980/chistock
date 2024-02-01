@@ -13,8 +13,8 @@ export const buttonVariants = tv({
     variant: {
       primary: "bg-primary text-primary-on",
       secondary: "bg-secondary text-secondary-on",
-      danger: "bg-error text-error-on",
-      text: "bg-transparent text-primary",
+      error: "bg-error text-error-on",
+      text: "bg-transparent text-surface-on",
     },
     /**
      * 버튼의 크기
@@ -27,6 +27,12 @@ export const buttonVariants = tv({
     },
     isIconButton: {
       true: "aspect-square p-0",
+    },
+    disabled: {
+      true: "",
+    },
+    focusOutlineOffset: {
+      true: "",
     },
   },
   compoundVariants: [
