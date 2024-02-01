@@ -12,11 +12,11 @@ export default {
       desktop: "1280px",
     },
     fontSize: {
-      xs: ["12rem", "20rem"],
-      s: ["14rem", "20rem"],
+      xs: ["10.67rem", "16rem"],
+      s: ["13.33rem", "20rem"],
       m: ["16rem", "24rem"],
-      l: ["20rem", "32rem"],
-      xl: ["24rem", "36rem"],
+      l: ["18.67rem", "28rem"],
+      xl: ["21.33rem", "32rem"],
       "2xl": ["32rem", "48rem"],
     },
     fontWeight: {
