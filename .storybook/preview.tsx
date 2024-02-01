@@ -8,6 +8,31 @@ import "./storybook.css";
 
 const preview: Preview = {
   parameters: {
+    viewport: {
+      viewports: {
+        mobile: {
+          name: "mobile",
+          styles: {
+            width: "480px",
+            height: "100%",
+          },
+        },
+        tablet: {
+          name: "tablet",
+          styles: {
+            width: "600px",
+            height: "100%",
+          },
+        },
+        desktop: {
+          name: "desktop",
+          styles: {
+            width: "1280px",
+            height: "100%",
+          },
+        },
+      },
+    },
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {

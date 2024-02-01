@@ -7,6 +7,10 @@ import color from "./src/constants/colorPalette";
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
+    screens: {
+      tablet: "600px",
+      desktop: "1280px",
+    },
     fontSize: {
       xs: ["12rem", "20rem"],
       s: ["14rem", "20rem"],
