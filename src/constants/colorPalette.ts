@@ -63,7 +63,7 @@ const color = {
     90: "#DBE0F0",
     93: "F8FAFC",
     95: "#EBEEF7",
-    97: "F4F6FA",
+    97: "#F4F6FA",
     98: "#F8F9FC",
     100: "#FFFFFF",
   },
