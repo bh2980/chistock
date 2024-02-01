@@ -115,8 +115,8 @@ export default {
           DEFAULT: color.neutral[97],
           container: {
             DEFAULT: color.neutral[100],
-            high: color.neutral[97],
-            highest: color.neutral[95],
+            high: color.neutral[95],
+            highest: color.neutral[92],
           },
           on: {
             DEFAULT: color.neutral[15],
