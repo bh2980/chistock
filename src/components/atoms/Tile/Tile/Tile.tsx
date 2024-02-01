@@ -14,13 +14,12 @@ const Tile = <
   variant,
   rounded,
   padding,
-  shadow,
   ...props
 }: TileProps<T, A>) => {
   return (
     <Slot<TileDefault | TileAlterAs>
       renderAs={renderAs || "div"}
-      className={tileVariants({ variant, rounded, padding, shadow, className })}
+      className={tileVariants({ variant, rounded, padding, className })}
       {...props}
     >
       {children}

@@ -43,10 +43,16 @@ export const ButtonVariant: Story = {
   name: "Variant",
   render: () => (
     <StoryWrapper>
-      <FloatingButton variant="primary" className="relative">
+      <FloatingButton className="relative">버튼</FloatingButton>
+      <FloatingButton variant="primaryContainer" className="relative">
         버튼
       </FloatingButton>
-      <FloatingButton className="relative">버튼</FloatingButton>
+      <FloatingButton variant="secondary" className="relative">
+        버튼
+      </FloatingButton>
+      <FloatingButton variant="secondaryContainer" className="relative">
+        버튼
+      </FloatingButton>
     </StoryWrapper>
   ),
 };

@@ -1,7 +1,7 @@
 import { tv } from "@utils/utils";
 
 export const tileVariants = tv({
-  base: "flex text-m",
+  base: "flex text-m shadow-ambient",
   variants: {
     /** Tile의 형태
      * @default default
@@ -38,19 +38,10 @@ export const tileVariants = tv({
     /** Tile의 그림자
      * @default xs
      */
-    shadow: {
-      none: "shadow-none",
-      xs: "shadow-xs",
-      s: "shadow-s",
-      m: "shadow-m",
-      l: "shadow-l",
-      xl: "shadow-xl",
-    },
   },
   defaultVariants: {
     variant: "default",
     rounded: "m",
     padding: "none",
-    shadow: "xs",
   },
 });
