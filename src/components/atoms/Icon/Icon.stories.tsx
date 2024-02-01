@@ -102,30 +102,24 @@ export const IconColor: Story = {
         <Icon icon="sun" className="bg-surface rounded-circle" color="onSurfaceVariant" />
       </StoryWrapper>
       <StoryWrapper>
-        <Icon icon="sun" color="primary" />
-        <Icon icon="sun" color="primaryFixed" />
-        <Icon icon="sun" color="secondary" />
-        <Icon icon="sun" color="secondaryFixed" />
-        <Icon icon="sun" color="tertiary" />
-        <Icon icon="sun" color="tertiaryFixed" />
-        <Icon icon="sun" color="red" />
-        <Icon icon="sun" color="redVariant" />
-        <Icon icon="sun" color="yellow" />
-        <Icon icon="sun" color="green" />
-        <Icon icon="sun" color="magenta" />
+        <Icon icon="sun" className="bg-primary rounded-circle" color="onPrimary" />
+        <Icon
+          icon="sun"
+          className="bg-primary-container rounded-circle"
+          color="onPrimaryContainer"
+        />
       </StoryWrapper>
       <StoryWrapper>
-        <Icon icon="sun" className="bg-primary rounded-circle" color="onPrimary" />
-        <Icon icon="sun" className="bg-primary-fixed rounded-circle" color="onPrimaryFixed" />
         <Icon icon="sun" className="bg-secondary rounded-circle" color="onSecondary" />
-        <Icon icon="sun" className="bg-secondary-fixed rounded-circle" color="onSecondaryFixed" />
-        <Icon icon="sun" className="bg-tertiary rounded-circle" color="onTertiary" />
-        <Icon icon="sun" className="bg-tertiary-fixed rounded-circle" color="onTertiaryFixed" />
-        <Icon icon="sun" className="bg-red rounded-circle" color="onRed" />
-        <Icon icon="sun" className="bg-red-variant rounded-circle" color="onRedVariant" />
-        <Icon icon="sun" className="bg-yellow rounded-circle" color="onYellow" />
-        <Icon icon="sun" className="bg-green rounded-circle" color="onGreen" />
-        <Icon icon="sun" className="bg-magenta rounded-circle" color="onMagenta" />
+        <Icon
+          icon="sun"
+          className="bg-secondary-container rounded-circle"
+          color="onSecondaryContainer"
+        />
+      </StoryWrapper>
+      <StoryWrapper>
+        <Icon icon="sun" className="bg-error rounded-circle" color="onError" />
+        <Icon icon="sun" className="bg-error-container rounded-circle" color="onErrorContainer" />
       </StoryWrapper>
     </StoryWrapper>
   ),
