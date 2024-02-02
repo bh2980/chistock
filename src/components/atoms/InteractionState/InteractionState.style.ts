@@ -8,7 +8,7 @@ export const focusVariants = tv({
     "focus-visible:outline",
     "focus-visible:outline-2",
     "focus-visible:outline-primary",
-    "interactionFocusVisible:opacity-10",
+    "interactionFocusVisible:opacity-hocus",
   ],
   variants: {
     focus: {
@@ -16,7 +16,7 @@ export const focusVariants = tv({
         "focus-within:outline",
         "focus-within:outline-2",
         "focus-within:outline-primary",
-        "interactionFocus:opacity-10",
+        "interactionFocus:opacity-hocus",
       ],
       false: [],
     },
@@ -48,15 +48,14 @@ export const interactionStateVariants = tv({
   ],
   variants: {
     disabled: {
-      true: ["cursor-not-allowed", "bg-disabled", "text-disabled-on"],
       false: [],
     },
     hover: {
-      true: "interactionHover:opacity-10",
+      true: "interactionHover:opacity-hocus",
       false: [],
     },
     press: {
-      true: "interactionPress:opacity-20",
+      true: "interactionPress:opacity-press",
       false: [],
     },
     focus: {
@@ -70,10 +69,18 @@ export const interactionStateVariants = tv({
   compoundVariants: [
     {
       disabled: true,
-      hover: true,
-      className: "interaction:hidden",
+      hover: [true, false],
+      press: [true, false],
+      className: [
+        "cursor-not-allowed",
+        "bg-transparent",
+        "text-surface-on/40",
+        "border-opacity-disabled",
+        "interaction:opacity-disabled",
+        "interactionHover:opacity-disabled",
+        "interactionPress:opacity-disabled",
+      ],
     },
-    { disabled: true, press: true, className: "interaction:hidden" },
   ],
   defaultVariants: {
     disabled: false,
