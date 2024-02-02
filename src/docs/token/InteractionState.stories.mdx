@@ -5,6 +5,7 @@ import StoryWrapper from "@story/StoryWrapper";
 import Button from "@atoms/Button/Button";
 import Icon from "@atoms/Icon/Icon";
 import { focusVariants } from "@atoms/InteractionState";
+import TextField from "@atoms/TextField";
 
 <Meta title="Token/InteractionState" />
 
@@ -26,11 +27,8 @@ Enabled 상태는 컴포넌트의 기본 상태를 나타내며, 컴포넌트가
 
 <Canvas withSource="none">
   <StoryWrapper>
-    <Button variant="primary">Enabled</Button>
     <Button>Enabled</Button>
-    <Button isIconButton label="활성 버튼" icon={<Icon icon="moon" />} />
-    <Button variant="error">Enabled</Button>
-    <Button variant="text">Enabled</Button>
+    <TextField label="Label" />
   </StoryWrapper>
 </Canvas>
 
@@ -40,22 +38,15 @@ Disabled 상태는 유저의 상호작용을 금지하는 상태입니다.
 컴포넌트는 꺼져있고, 아무런 응답도 하지 않습니다.  
 커서는 금지 표시로 변경되어 상호작용 할 수 없음을 알립니다.
 
-컴포넌트의 배경색과 텍스트색, 투명도를 조절하여 구현합니다.  
-이는 컴포넌트에 따라 다르게 구현됩니다.
+컴포넌트의 배경색을 투명으로 변경하고, 상호작용을 표시하기 위한 div Overlay를 컴포넌트 위에 덮어씌워 구현합니다.  
+Overlay의 배경색은 surface-on 색상으로 투명도는 20%로 설정됩니다.  
+내부 텍스트 컬러는 surface-on 색상으로 40%의 투명도로 설정됩니다.  
+Border는 outline 색상으로 투명도 20%로 설정됩니다.
 
 <Canvas withSource="none">
   <StoryWrapper>
-    <Button variant="primary" disabled>
-      Disabled
-    </Button>
     <Button disabled>Disabled</Button>
-    <Button isIconButton label="비활성 버튼" icon={<Icon icon="moon" />} disabled />
-    <Button variant="error" disabled>
-      Disabled
-    </Button>
-    <Button variant="text" disabled>
-      Disabled
-    </Button>
+    <TextField label="Label" disabled />
   </StoryWrapper>
 </Canvas>
 
@@ -78,11 +69,8 @@ Overlay의 배경색은 컴포넌트의 텍스트 색과 동일하며, 투명도
     }}
   >
     <StoryWrapper>
-      <Button variant="primary">Hover</Button>
       <Button>Hover</Button>
-      <Button isIconButton label="Hover 버튼" icon={<Icon icon="moon" />} />
-      <Button variant="error">Hover</Button>
-      <Button variant="text">Hover</Button>
+      <TextField label="Label" />
     </StoryWrapper>
   </Story>
 </Canvas>
@@ -93,7 +81,7 @@ Press 상태는 사용자가 컴포넌트를 클릭 혹은 터치했음을 시�
 간혈적인 상태로 눌렀을 때 잠깐만 표시됩니다.
 
 상호작용을 표시하기 위한 div Overlay를 컴포넌트 위에 덮어씌워 구현합니다.  
-Overlay의 배경색은 컴포넌트의 텍스트 색과 동일하며, 투명도는 30%로 설정됩니다.
+Overlay의 배경색은 컴포넌트의 텍스트 색과 동일하며, 투명도는 20%로 설정됩니다.
 
 <Canvas withSource="none">
   <Story
@@ -106,11 +94,8 @@ Overlay의 배경색은 컴포넌트의 텍스트 색과 동일하며, 투명도
     }}
   >
     <StoryWrapper>
-      <Button variant="primary">Press</Button>
       <Button>Press</Button>
-      <Button isIconButton label="Press 버튼" icon={<Icon icon="moon" />} />
-      <Button variant="error">Press</Button>
-      <Button variant="text">Press</Button>
+      <TextField label="Label" />
     </StoryWrapper>
   </Story>
 </Canvas>
@@ -123,7 +108,9 @@ focus는 `none`, `default`, `outline`이 있으며, focusVisible은 `outline`으
 Focus ring은 컴포넌트 자체에서 구현하며, primary 색상을 사용합니다.
 
 Overlay는 div Overlay를 컴포넌트 위에 덮어씌워 구현합니다.  
-Overlay의 배경색은 컴포넌트의 텍스트 색과 동일하며, 투명도는 20%로 설정됩니다.
+Overlay의 배경색은 컴포넌트의 텍스트 색과 동일하며, 투명도는 10%로 설정됩니다.
+
+focusOutlineOffset 속성을 통해 Focus Ring과 컴포넌트 사이 간격 여부를 설정할 수 있습니다.
 
 <Canvas withSource="none">
   <Story
@@ -136,22 +123,8 @@ Overlay의 배경색은 컴포넌트의 텍스트 색과 동일하며, 투명도
     }}
   >
     <StoryWrapper>
-      <Button variant="primary" className={focusVariants({ focus: true })}>
-        Focus
-      </Button>
       <Button className={focusVariants({ focus: true })}>Focus</Button>
-      <Button
-        isIconButton
-        label="focus 버튼"
-        icon={<Icon icon="moon" />}
-        className={focusVariants({ focus: true })}
-      />
-      <Button variant="error" className={focusVariants({ focus: true })}>
-        Focus
-      </Button>
-      <Button variant="text" className={focusVariants({ focus: true })}>
-        Focus
-      </Button>
+      <TextField label="Label" />
     </StoryWrapper>
   </Story>
 </Canvas>
