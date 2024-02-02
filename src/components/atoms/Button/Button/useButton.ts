@@ -3,12 +3,14 @@ import { Children } from "react";
 import type { ButtonAlterAs, ButtonDefault, ButtonProps } from "./Button.types";
 
 const useButtonStyleVariant = (props: ButtonProps<ButtonDefault | ButtonAlterAs>) => {
-  const { variant, size, isIconButton, disabled, className } = props;
+  const { variant, color, size, rounded, isIconButton, disabled, className } = props;
 
   return {
     className,
     variant,
+    color,
     size,
+    rounded,
     disabled,
     isIconButton,
     focusOutlineOffset: true,
