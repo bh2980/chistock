@@ -30,19 +30,31 @@ export const PresseState: Story = {
           <Icon icon="moon" />
           Button
         </ToggleButton>
+        <ToggleButton isIconButton>
+          <Icon icon="moon" />
+        </ToggleButton>
         <ToggleButton pressed={true}>
           <Icon icon="moon" />
           Button
         </ToggleButton>
+        <ToggleButton isIconButton pressed={true}>
+          <Icon icon="moon" />
+        </ToggleButton>
       </StoryWrapper>
       <StoryWrapper>
-        <ToggleButton variant="text">
+        <ToggleButton variant="ghost">
           <Icon icon="moon" />
           Button
         </ToggleButton>
-        <ToggleButton variant="text" pressed={true}>
+        <ToggleButton variant="ghost" isIconButton>
+          <Icon icon="moon" />
+        </ToggleButton>
+        <ToggleButton variant="ghost" pressed={true}>
           <Icon icon="moon" />
           Button
+        </ToggleButton>
+        <ToggleButton variant="ghost" isIconButton pressed={true}>
+          <Icon icon="moon" />
         </ToggleButton>
       </StoryWrapper>
     </StoryWrapper>

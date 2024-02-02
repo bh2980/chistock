@@ -128,17 +128,6 @@ describe("Button", () => {
       expect(button).toHaveFocus();
     });
 
-    it("아이콘 버튼에서는 자식이 렌더링되면 안됩니다.", async () => {
-      render(
-        <Button icon={<span>⚠️</span>} isIconButton label="테스트 라벨">
-          Button
-        </Button>
-      );
-      const button = screen.getByRole("button");
-
-      expect(button).not.toHaveTextContent("Button");
-    });
-
     //disabled
 
     it("disabled 속성이 정상적으로 적용되어야합니다..", async () => {
@@ -183,7 +172,7 @@ describe("Button", () => {
     });
 
     it("아이콘 버튼에서는 aria-label을 가져야합니다.", async () => {
-      render(<Button icon={<span>⚠️</span>} isIconButton label="테스트 라벨" />);
+      render(<Button isIconButton label="테스트 라벨" />);
       const button = screen.getByRole("button");
 
       expect(button).toHaveAttribute("aria-label");
@@ -261,17 +250,6 @@ describe("Button", () => {
       expect(button).toHaveFocus();
     });
 
-    it("아이콘 버튼에서는 자식이 렌더링되면 안됩니다.", async () => {
-      render(
-        <Button icon={<span>⚠️</span>} renderAs="a" isIconButton label="테스트 라벨">
-          Button
-        </Button>
-      );
-      const button = screen.getByRole("button");
-
-      expect(button).not.toHaveTextContent("Button");
-    });
-
     //disabled
 
     it("disabled시 focus가 잡히지않아야 합니다.", async () => {
@@ -317,7 +295,7 @@ describe("Button", () => {
     });
 
     it("아이콘 버튼에서는 aria-label을 가져야합니다.", async () => {
-      render(<Button icon={<span>⚠️</span>} renderAs="a" isIconButton label="테스트 라벨" />);
+      render(<Button renderAs="a" isIconButton label="테스트 라벨" />);
       const button = screen.getByRole("button");
 
       expect(button).toHaveAttribute("aria-label");

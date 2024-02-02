@@ -4,13 +4,13 @@ import { tv } from "@utils/utils";
 
 import Button, { type ButtonProps } from "../Button";
 
-export type FloatingButtonProps = ButtonProps<"button"> &
+export type FloatingButtonProps = Omit<ButtonProps<"button">, "variant" | "rounded"> &
   VariantProps<typeof floatingButtonVariant> & {
     renderAs?: "button";
   };
 
 const floatingButtonVariant = tv({
-  base: "absolute rounded-circle shadow-floating",
+  base: "absolute shadow-floating z-50",
   variants: {
     variant: {
       primary: "bg-primary text-primary-on",
@@ -25,7 +25,13 @@ const floatingButtonVariant = tv({
 });
 
 const FloatingButton = ({ variant, className, ...props }: FloatingButtonProps) => {
-  return <Button className={floatingButtonVariant({ variant, className })} {...props} />;
+  return (
+    <Button
+      className={floatingButtonVariant({ variant, className })}
+      rounded="circular"
+      {...(props as ButtonProps<"button">)}
+    />
+  );
 };
 
 export default FloatingButton;
