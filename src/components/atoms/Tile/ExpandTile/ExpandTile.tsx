@@ -55,7 +55,7 @@ const ExpandTile = <
       <Tile className={expandTileVariants({ padding, isExpand, className })} {...props}>
         <div className="flex flex-col w-full relative gap-s">
           <div className="h-[calc(100%-32rem)] overflow-hidden">{children}</div>
-          <Button variant="text" size="s" onClick={changeTileState}>
+          <Button variant="ghost" size="s" onClick={changeTileState}>
             {isExpand ? CLOSE_TEXT : EXPAND_TEXT}
           </Button>
         </div>
