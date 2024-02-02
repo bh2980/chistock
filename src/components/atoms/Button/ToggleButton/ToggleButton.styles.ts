@@ -5,22 +5,26 @@ import { buttonVariants } from "../Button";
 const toggleButtonVariant = tv({
   extend: buttonVariants,
   variants: {
-    variant: {
-      default: "bg-surface-container-highest text-surface-on border border-outline",
-    },
+    variant: { outlined: "", ghost: "" },
     pressed: {
-      true: "bg-primary-container text-primary-container-on border-primary [&_>_svg]:fill-primary-container-on",
+      true: "[&_>_svg]:fill-current",
     },
   },
   compoundVariants: [
     {
       pressed: true,
-      variant: "text",
-      className: "bg-transparent text-primary [&_>_svg]:fill-primary",
+      variant: "outlined",
+      className: "bg-secondary-container text-secondary-container-on",
+    },
+    {
+      pressed: true,
+      variant: "ghost",
+      className: "bg-transparent text-primary",
     },
   ],
   defaultVariants: {
-    variant: "default",
+    pressed: false,
+    variant: "outlined",
   },
 });
 
