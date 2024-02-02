@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import ICON_MAP from "@constants/iconMap";
-
 import { exceptProperty } from "@utils/utils";
 
 import StoryWrapper from "@story/StoryWrapper";
@@ -113,19 +111,6 @@ export const ButtonSize: Story = {
   ),
 };
 
-export const ButtonWithIcon: Story = {
-  render: () => (
-    <StoryWrapper>
-      <Button icon={<Icon icon="moon" />} iconPosition="before">
-        다크 모드
-      </Button>
-      <Button icon={<Icon icon="moon" />} iconPosition="after">
-        다크 모드
-      </Button>
-    </StoryWrapper>
-  ),
-};
-
 /**
  * Icon을 단독으로 사용하는 경우 isIconButton 속성을 사용합니다.
  *
@@ -134,8 +119,8 @@ export const ButtonWithIcon: Story = {
 export const IconButton: Story = {
   render: () => (
     <StoryWrapper>
-      <Button icon={<Icon icon="moon" />} label="다크 모드" isIconButton>
-        Button
+      <Button label="다크 모드" isIconButton>
+        <Icon icon="moon" />
       </Button>
     </StoryWrapper>
   ),
@@ -203,9 +188,6 @@ export const Playground: Story = {
     renderAs: {
       options: ["button", "a"],
       control: { type: "select" },
-    },
-    icon: {
-      options: [undefined, ...Object.keys(ICON_MAP)],
     },
     ...exceptProperty(["innerRef"]),
   },
