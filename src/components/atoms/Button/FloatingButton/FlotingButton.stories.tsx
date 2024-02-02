@@ -43,15 +43,15 @@ export const ButtonVariant: Story = {
   name: "Variant",
   render: () => (
     <StoryWrapper>
-      <FloatingButton className="relative">버튼</FloatingButton>
+      <FloatingButton className="relative">Button</FloatingButton>
       <FloatingButton variant="primaryContainer" className="relative">
-        버튼
+        Button
       </FloatingButton>
       <FloatingButton variant="secondary" className="relative">
-        버튼
+        Button
       </FloatingButton>
       <FloatingButton variant="secondaryContainer" className="relative">
-        버튼
+        Button
       </FloatingButton>
     </StoryWrapper>
   ),
@@ -71,26 +71,15 @@ export const Position: Story = {
 export const Size: Story = {
   render: () => (
     <StoryWrapper className="flex h-[100px]">
-      <FloatingButton
-        className="relative"
-        icon={<Icon icon="moon" />}
-        size="s"
-        isIconButton
-        label="다크 모드"
-      />
-      <FloatingButton
-        className="relative"
-        icon={<Icon icon="moon" />}
-        isIconButton
-        label="다크 모드"
-      />
-      <FloatingButton
-        className="relative"
-        icon={<Icon icon="moon" />}
-        size="l"
-        isIconButton
-        label="다크 모드"
-      />
+      <FloatingButton className="relative" size="s" isIconButton label="다크 모드">
+        <Icon icon="moon" />
+      </FloatingButton>
+      <FloatingButton className="relative" size="m" isIconButton label="다크 모드">
+        <Icon icon="moon" />
+      </FloatingButton>
+      <FloatingButton className="relative" size="l" isIconButton label="다크 모드">
+        <Icon icon="moon" />
+      </FloatingButton>
     </StoryWrapper>
   ),
 };
@@ -98,14 +87,11 @@ export const Size: Story = {
 export const IconButton: Story = {
   render: () => (
     <StoryWrapper className="flex h-[100px]">
-      <FloatingButton
-        className="relative"
-        icon={<Icon icon="moon" />}
-        size="l"
-        isIconButton
-        label="다크 모드"
-      />
-      <FloatingButton className="relative" icon={<Icon icon="moon" />} size="l">
+      <FloatingButton className="relative" label="다크 모드" isIconButton>
+        <Icon icon="moon" />
+      </FloatingButton>
+      <FloatingButton className="relative">
+        <Icon icon="moon" />
         Dark Mode
       </FloatingButton>
     </StoryWrapper>
