@@ -61,6 +61,7 @@ export default {
       black: color.neutral[0],
     },
     extend: {
+      opacity: { hocus: ".1", disabled: ".2", press: ".2" },
       fontSize: {
         sizeInherit: "1em",
       },
