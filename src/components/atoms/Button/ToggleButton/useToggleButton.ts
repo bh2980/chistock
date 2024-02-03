@@ -13,7 +13,7 @@ const useToggleButton = ({ pressed = false, ...props }: ToggleButtonProps) => {
 
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    if (onClick) typedOnClick(e);
+    if (onClick) onClick(e);
   };
 
   return {
