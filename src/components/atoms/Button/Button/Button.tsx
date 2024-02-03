@@ -17,7 +17,7 @@ const Button = <
   const { children, styleVariant, ...otherProps } = useButton(props);
 
   return (
-    <Slot<ButtonDefault | ButtonAlterAs> className={buttonVariants(styleVariant)} {...otherProps}>
+    <Slot className={buttonVariants(styleVariant)} {...otherProps}>
       <InteractionState />
       {children}
     </Slot>
