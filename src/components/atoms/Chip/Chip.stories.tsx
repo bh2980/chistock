@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import Chip from "./Chip";
+import Chip, { ChipGroup } from "./Chip";
 
 const meta = {
   title: "Atom/Chip",
@@ -15,5 +15,12 @@ export default meta;
 type Story = StoryObj<typeof Chip>;
 
 export const Default: Story = {
-  render: () => <Chip />,
+  render: () => (
+    <ChipGroup defaultSelected="chip1">
+      <Chip value="chip1">Chip</Chip>
+      <Chip value="chip2">Chip</Chip>
+      <Chip value="chip3">Chip</Chip>
+      <Chip value="chip4">Chip</Chip>
+    </ChipGroup>
+  ),
 };
