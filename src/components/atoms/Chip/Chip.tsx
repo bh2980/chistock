@@ -9,7 +9,7 @@ import useChip from "./useChip";
 const ChipGroup = ({ multiSelect, defaultSelected, ...props }: ChipGroupProps) => {
   return (
     <ChipProvider multiSelect={multiSelect} defaultSelected={defaultSelected}>
-      <Slot className="flex gap-s" {...props} />
+      <Slot className="flex gap-s" role="group" {...props} />
     </ChipProvider>
   );
 };
