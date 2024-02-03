@@ -48,11 +48,6 @@ export default {
       ambient: "0rem 0rem 16rem 0rem rgba(0, 0, 0, 0.12)",
       floating: "0rem 16rem 16rem 0rem rgba(0, 0, 0, 0.25)",
     },
-    borderWidth: {
-      DEFAULT: "1rem",
-      s: "1rem",
-      m: "3rem",
-    },
     colors: {
       inherit: "inherit",
       current: "currentColor",
@@ -123,11 +118,7 @@ export default {
         },
         outline: {
           DEFAULT: color.neutral[40],
-          variant: color.neutral[60],
-        },
-        disabled: {
-          DEFAULT: "rgba(18, 18, 18, 0.1)",
-          on: "rgba(18, 18, 18, 0.3)",
+          variant: color.neutral[80],
         },
       },
       dark: {
@@ -170,10 +161,6 @@ export default {
         outline: {
           DEFAULT: color.neutral[70],
           variant: color.neutral[30],
-        },
-        disabled: {
-          DEFAULT: "rgba(249, 249, 251, 0.1)",
-          on: "rgba(249, 249, 251, 0.3)",
         },
       },
     }),
