@@ -2,7 +2,7 @@ import useID from "@utils/hook/useID";
 
 import { TextFieldProps } from "./TextField.types";
 
-const useTextFieldProps = (props: TextFieldProps) => {
+const useTextField = (props: TextFieldProps) => {
   const inputID = useID("input", props.id);
 
   const { label, placeholder, ...otherProps } = props;
@@ -13,4 +13,4 @@ const useTextFieldProps = (props: TextFieldProps) => {
   return { id: inputID, label, haveLabel, placeholder: tempPlaceholder, ...otherProps };
 };
 
-export default useTextFieldProps;
+export default useTextField;

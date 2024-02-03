@@ -8,7 +8,7 @@ import {
   textFieldVariants,
 } from "./TextField.styles";
 import { TextFieldProps } from "./TextField.types";
-import useTextFieldProps from "./useTextFieldProps";
+import useTextField from "./useTextField";
 
 const TextField = (props: TextFieldProps) => {
   const {
@@ -28,7 +28,7 @@ const TextField = (props: TextFieldProps) => {
     labelClass,
     helperTextClass,
     ...inputProps
-  } = useTextFieldProps(props);
+  } = useTextField(props);
 
   return (
     <div className={containerVariants({ disabled, error, fullWidth })}>
