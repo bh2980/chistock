@@ -1,15 +1,17 @@
-import { useContext } from "react";
-
 import { type ButtonProps, useButton } from "@atoms/Button/Button";
 
-import { ChipContext } from "./Chip";
 import { ChipProps } from "./Chip.types";
+import { useChipContext } from "./context/ChipContext";
 
-const useChip = ({ ...props }: ChipProps) => {
-  const { multiSelect, selectedChipList, dispatchSelectedChipList } = useContext(ChipContext);
+const useChip = (props: ChipProps) => {
+  const { multiSelect, selectedChipList, dispatchSelectedChipList } = useChipContext();
   const isSelected = selectedChipList.includes(props.value);
 
-  const { styleVariant, onClick, ...convertProps } = useButton(props as ButtonProps<"button">);
+  const {
+    styleVariant,
+    onClick: originOnClick,
+    ...convertProps
+  } = useButton(props as ButtonProps<"button">);
 
   const selectChip = (e: React.MouseEvent<HTMLButtonElement>) => {
     dispatchSelectedChipList({
@@ -27,9 +29,9 @@ const useChip = ({ ...props }: ChipProps) => {
   const changeChipState = (e: React.MouseEvent<HTMLButtonElement>) => {
     toggleClick(e);
 
-    const typedOnClick = onClick as React.MouseEventHandler<HTMLButtonElement>;
+    const typedOnClick = originOnClick as React.MouseEventHandler<HTMLButtonElement>;
 
-    if (onClick) typedOnClick(e);
+    if (originOnClick) typedOnClick(e);
   };
 
   return {

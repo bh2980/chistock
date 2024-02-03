@@ -1,4 +1,7 @@
-import { ChipAction } from "./ChipAction";
+export type ChipAction =
+  | { type: "SELECT"; payload: string }
+  | { type: "MULTISELECT"; payload: string }
+  | { type: "UNSELECT"; payload: string };
 
 function ChipReducer(state: string[], action: ChipAction) {
   switch (action.type) {
