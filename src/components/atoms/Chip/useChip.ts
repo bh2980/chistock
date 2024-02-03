@@ -29,9 +29,9 @@ const useChip = (props: ChipProps) => {
   const changeChipState = (e: React.MouseEvent<HTMLButtonElement>) => {
     toggleClick(e);
 
-    const typedOnClick = originOnClick as React.MouseEventHandler<HTMLButtonElement>;
-
-    if (originOnClick) typedOnClick(e);
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    if (originOnClick) originOnClick(e);
   };
 
   return {
