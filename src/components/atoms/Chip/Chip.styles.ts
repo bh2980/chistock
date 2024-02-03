@@ -6,6 +6,7 @@ export const chipVariants = tv({
   extend: buttonVariants,
   variants: {
     variant: {
+      filled: "",
       outlined: "text-surface-on-variant",
     },
     selected: {
@@ -13,15 +14,24 @@ export const chipVariants = tv({
     },
   },
   defaultVariants: {
-    variant: "outlined",
     size: "s",
     rounded: "circular",
   },
   compoundVariants: [
     {
-      selected: true,
+      selected: false,
+      variant: "filled",
+      className: "bg-surface-container-highest text-surface-on-variant",
+    },
+    {
+      selected: false,
       variant: "outlined",
-      className: "bg-secondary-container text-secondary-container-on border-secondary-container",
+      className: "text-surface-on-variant",
+    },
+    {
+      selected: true,
+      variant: ["filled", "outlined"],
+      className: "bg-secondary text-secondary-on",
     },
   ],
 });

@@ -6,13 +6,16 @@ import { ChipContext } from "./Chip";
 import { ChipProps } from "./Chip.types";
 
 const useChip = ({ ...props }: ChipProps) => {
-  const { selectedChipList, dispatchSelectedChipList } = useContext(ChipContext);
+  const { multiSelect, selectedChipList, dispatchSelectedChipList } = useContext(ChipContext);
   const isSelected = selectedChipList.includes(props.value);
 
   const { styleVariant, onClick, ...convertProps } = useButton(props as ButtonProps<"button">);
 
   const selectChip = (e: React.MouseEvent<HTMLButtonElement>) => {
-    dispatchSelectedChipList({ type: "SELECT", payload: e.currentTarget.value });
+    dispatchSelectedChipList({
+      type: multiSelect ? "MULTISELECT" : "SELECT",
+      payload: e.currentTarget.value,
+    });
   };
 
   const unselectChip = (e: React.MouseEvent<HTMLButtonElement>) => {

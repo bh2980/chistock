@@ -5,4 +5,7 @@ import type { ComponentPropsWithInnerRef } from "@customTypes/utilType";
 import chipVariants from "./Chip.styles";
 
 export type ChipProps = ComponentPropsWithInnerRef<"button"> &
-  VariantProps<typeof chipVariants> & { value: string };
+  Omit<VariantProps<typeof chipVariants>, "color" | "variant"> & {
+    value: string;
+    variant?: "filled" | "outlined";
+  };
