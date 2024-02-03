@@ -1,4 +1,7 @@
+import { ComponentPropsWithoutRef, ElementType } from "react";
 import { VariantProps } from "tailwind-variants";
+
+import { InnerRefType } from "./polymorphicType";
 
 /** 객체 속성의 값들에서 Nullable한 값 제거하는 타입 */
 export type NonNullableProps<Obj> = {
@@ -10,3 +13,6 @@ export type NonNullableProps<Obj> = {
 export type VariantPropsType<Component extends (...args: any) => any> = NonNullableProps<
   VariantProps<Component>
 >;
+
+export type ComponentPropsWithInnerRef<T extends ElementType> = ComponentPropsWithoutRef<T> &
+  InnerRefType<T>;
