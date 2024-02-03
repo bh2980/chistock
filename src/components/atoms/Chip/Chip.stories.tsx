@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import StoryWrapper from "@story/StoryWrapper";
 
-import Chip, { ChipGroup } from "./Chip";
+import Chip from "./Chip";
 
 const meta = {
   title: "Atom/Chip",
@@ -17,28 +17,49 @@ export default meta;
 type Story = StoryObj<typeof Chip>;
 
 export const Default: Story = {
+  render: () => <Chip value="chip1">Select A</Chip>,
+};
+
+export const Disabled: Story = {
   render: () => (
-    <ChipGroup defaultSelected="chip1">
+    <Chip value="chip1" disabled>
+      Select A
+    </Chip>
+  ),
+};
+
+export const ChipGroup: Story = {
+  render: () => (
+    <Chip.ChipGroup>
       <Chip value="chip1">Select A</Chip>
-      <Chip value="chip2" disabled>
-        Select B
-      </Chip>
+      <Chip value="chip2">Select B</Chip>
       <Chip value="chip3">Select C</Chip>
       <Chip value="chip4">Select D</Chip>
-    </ChipGroup>
+    </Chip.ChipGroup>
+  ),
+};
+
+export const DefaultSelected: Story = {
+  render: () => (
+    <Chip.ChipGroup defaultSelected="chip1">
+      <Chip value="chip1">Select A</Chip>
+      <Chip value="chip2">Select B</Chip>
+      <Chip value="chip3">Select C</Chip>
+      <Chip value="chip4">Select D</Chip>
+    </Chip.ChipGroup>
   ),
 };
 
 export const Variant: Story = {
   render: () => (
     <StoryWrapper direction="vertical">
-      <ChipGroup defaultSelected="chip1">
+      <Chip.ChipGroup defaultSelected="chip1">
         <Chip value="chip1">Select A</Chip>
         <Chip value="chip2">Select B</Chip>
         <Chip value="chip3">Select C</Chip>
         <Chip value="chip4">Select D</Chip>
-      </ChipGroup>
-      <ChipGroup defaultSelected="chip1">
+      </Chip.ChipGroup>
+      <Chip.ChipGroup defaultSelected="chip1">
         <Chip value="chip1" variant="outlined">
           Select A
         </Chip>
@@ -51,18 +72,18 @@ export const Variant: Story = {
         <Chip value="chip4" variant="outlined">
           Select D
         </Chip>
-      </ChipGroup>
+      </Chip.ChipGroup>
     </StoryWrapper>
   ),
 };
 
 export const MultiSelect: Story = {
   render: () => (
-    <ChipGroup defaultSelected={["chip1", "chip2"]} multiSelect>
+    <Chip.ChipGroup defaultSelected={["chip1", "chip2"]} multiSelect>
       <Chip value="chip1">Select A</Chip>
       <Chip value="chip2">Select B</Chip>
       <Chip value="chip3">Select C</Chip>
       <Chip value="chip4">Select D</Chip>
-    </ChipGroup>
+    </Chip.ChipGroup>
   ),
 };
