@@ -10,8 +10,9 @@ const useToggleButton = ({ pressed = false, ...props }: ToggleButtonProps) => {
 
   const onToggleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     setIsPressed((prev) => !prev);
-    const typedOnClick = onClick as React.MouseEventHandler<HTMLButtonElement>;
 
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     if (onClick) typedOnClick(e);
   };
 

@@ -48,6 +48,15 @@ export const interactionStateVariants = tv({
   ],
   variants: {
     disabled: {
+      true: [
+        "!cursor-not-allowed",
+        "!bg-transparent",
+        "!text-surface-on/40",
+        "!border-opacity-disabled",
+        "interaction:!opacity-disabled",
+        "interactionHover:!opacity-disabled",
+        "interactionPress:!opacity-disabled",
+      ],
       false: [],
     },
     hover: {
@@ -66,22 +75,6 @@ export const interactionStateVariants = tv({
       true: "",
     },
   },
-  compoundVariants: [
-    {
-      disabled: true,
-      hover: [true, false],
-      press: [true, false],
-      className: [
-        "cursor-not-allowed",
-        "bg-transparent",
-        "text-surface-on/40",
-        "border-opacity-disabled",
-        "interaction:opacity-disabled",
-        "interactionHover:opacity-disabled",
-        "interactionPress:opacity-disabled",
-      ],
-    },
-  ],
   defaultVariants: {
     disabled: false,
     hover: true,

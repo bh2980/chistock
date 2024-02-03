@@ -57,57 +57,48 @@ export const buttonVariants = tv({
     },
     //primary
     {
-      disabled: false,
       color: "primary",
       variant: "filled",
       className: "bg-primary text-primary-on",
     },
     {
-      disabled: false,
       color: "primary",
       variant: "outlined",
       className: "text-primary",
     },
     {
-      disabled: false,
       color: "primary",
       variant: "ghost",
       className: "text-primary",
     },
     //secondary
     {
-      disabled: false,
       color: "secondary",
       variant: "filled",
       className: "bg-secondary text-secondary-on",
     },
     {
-      disabled: false,
       color: "secondary",
       variant: "outlined",
       className: "text-secondary",
     },
     {
-      disabled: false,
       color: "secondary",
       variant: "ghost",
       className: "text-secondary",
     },
     //error
     {
-      disabled: false,
       color: "danger",
       variant: "filled",
       className: "bg-error text-error-on",
     },
     {
-      disabled: false,
       color: "danger",
       variant: "outlined",
       className: "text-error",
     },
     {
-      disabled: false,
       color: "danger",
       variant: "ghost",
       className: "text-error",
