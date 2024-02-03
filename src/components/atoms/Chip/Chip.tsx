@@ -12,7 +12,7 @@ import ChipReducer from "./ChipReducer";
 import useChip from "./useChip";
 
 type chipGroupBaseProps = {
-  defaultSelected?: string;
+  defaultSelected?: string | string[];
   multiSelect?: boolean;
 };
 
@@ -36,10 +36,13 @@ export const ChipContext = createContext<ChipContextType>({
 });
 
 export const ChipGroup = ({ multiSelect, defaultSelected, ...props }: ChipGroupProps) => {
-  const [selectedChipList, dispatchSelectedChipList] = useReducer(
-    ChipReducer,
-    defaultSelected ? [defaultSelected] : []
-  );
+  const initChipList = defaultSelected
+    ? typeof defaultSelected === "string"
+      ? [defaultSelected]
+      : defaultSelected
+    : [];
+
+  const [selectedChipList, dispatchSelectedChipList] = useReducer(ChipReducer, initChipList);
 
   return (
     <ChipContext.Provider value={{ multiSelect, selectedChipList, dispatchSelectedChipList }}>

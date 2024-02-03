@@ -58,11 +58,9 @@ export const Variant: Story = {
 
 export const MultiSelect: Story = {
   render: () => (
-    <ChipGroup defaultSelected="chip1" multiSelect>
+    <ChipGroup defaultSelected={["chip1", "chip2"]} multiSelect>
       <Chip value="chip1">Select A</Chip>
-      <Chip value="chip2" disabled>
-        Select B
-      </Chip>
+      <Chip value="chip2">Select B</Chip>
       <Chip value="chip3">Select C</Chip>
       <Chip value="chip4">Select D</Chip>
     </ChipGroup>
