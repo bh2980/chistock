@@ -117,13 +117,14 @@ focusOutlineOffset 속성을 통해 Focus Ring과 컴포넌트 사이 간격 여
     name="Focus"
     parameters={{
       pseudo: {
-        focusVisible: true,
+        focus: ["input"],
+        focusVisible: [".focus"],
       },
     }}
   >
     <StoryWrapper>
-      <Button className={focusVariants({ focus: true })}>Focus</Button>
-      <TextField label="Label" />
+      <Button className={focusVariants({ focus: true, className: "focus" })}>Focus</Button>
+      <TextField label="Label" className="focus" />
     </StoryWrapper>
   </Story>
 </Canvas>

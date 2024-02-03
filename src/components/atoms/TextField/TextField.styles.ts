@@ -31,16 +31,15 @@ export const textFieldVariants = tv({
     "text-m",
     "rounded-m",
     "cursor-text",
-    "outline",
-    "outline-1",
-    "outline-outline",
+    "border",
+    "border-outline",
   ],
   variants: {
     focus: {
-      true: "interactionFocus:opacity-0 interactionFocusVisible:opacity-0",
+      true: "interactionFocus:opacity-0 interactionFocusVisible:opacity-0 focus-within:border-none focus-visible:border-none",
     },
     error: {
-      true: ["!bg-error-container", "!outline-error", "outline", "outline-1"],
+      true: ["bg-error-container", "border-error", "!outline-error"],
     },
     haveLabel: {
       true: "h-[68rem]",
