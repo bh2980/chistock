@@ -1,6 +1,6 @@
 import Slot from "@atoms/Slot/Slot";
 
-import { dividerVariants } from "./Divider.style";
+import { dividerVariants } from "./Divider.styles";
 import type { DividerProps } from "./Divider.types";
 import useDivider from "./useDivider";
 
