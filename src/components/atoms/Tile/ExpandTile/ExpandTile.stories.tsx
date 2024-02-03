@@ -98,6 +98,14 @@ export const Default: Story = {
   ),
 };
 
+export const Expanded: Story = {
+  render: () => (
+    <ExpandTile className="w-[200rem] max-h-[256rem]" expanded>
+      <ExpaneTileChildren />
+    </ExpandTile>
+  ),
+};
+
 /**
  * `max-h-` class를 통해 확장 전 타일의 길이를 지정할 수 있습니다.
  *
@@ -117,6 +125,21 @@ export const ExpandTileCollapseHeight: Story = {
   ),
 };
 
+export const HideWithGradient: Story = {
+  render: () => (
+    <ExpandTile className="w-[200rem] max-h-[256rem]" hideWithGradient>
+      <ExpaneTileChildren />
+    </ExpandTile>
+  ),
+};
+
+export const ChangeButtonText: Story = {
+  render: () => (
+    <ExpandTile className="w-[200rem] max-h-[256rem]" closeText="close" expandText="more">
+      <ExpaneTileChildren />
+    </ExpandTile>
+  ),
+};
 /**
  * Playground에서 Expand Tile 컴포넌트를 직접 테스트해보세요.
  *
