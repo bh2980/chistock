@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import ToggleButton from ".";
+import ToggleButton from "..";
 
 describe("ToggleButton", () => {
   it("에러 없이 정상적으로 렌더링되어야 합니다.", () => {
