@@ -27,6 +27,8 @@
       "@assets/*": ["./assets/*"],
       "@constants/*": ["./constants/*"],
       "@customTypes/*": ["./customTypes/*"],
+      "@contexts/*": ["./contexts/*"],
+      "@hooks/*": ["./hooks/*"],
       "@utils/*": ["./utils/*"],
       "@src/*": ["./*"],
       "@root/*": ["../*"]
