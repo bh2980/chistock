@@ -1,4 +1,4 @@
-import { useSelectedListContext } from "@contexts/SelectedContext/SelectedListContext";
+import { useSelectedListContext } from "@contexts/SelectedContext";
 import type { ComponentProps } from "react";
 
 type useSelectedListProps = {
