@@ -1,4 +1,4 @@
-import usePressed from "@utils/hook/usePressed";
+import usePressed from "@hooks/usePressed";
 
 import { type ButtonProps, useButton } from "../Button";
 import type { ToggleButtonProps } from "./ToggleButton.types";
