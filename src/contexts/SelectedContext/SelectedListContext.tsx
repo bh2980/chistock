@@ -1,21 +1,7 @@
-import { Dispatch, createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer } from "react";
 
-import SelectedListReducer, { SelectedListAction } from "./SelectedListReducers";
-
-export type SelectedListDispatch = Dispatch<SelectedListAction>;
-
-export type SelectedListContextType = {
-  multiSelect?: boolean;
-  selectedList: string[];
-  dispatchSelectedList: SelectedListDispatch;
-};
-
-export type SelectListProviderBaseProps = {
-  defaultSelected?: string | string[];
-  multiSelect?: boolean;
-};
-
-export type SelectedListProviderProps = React.PropsWithChildren & SelectListProviderBaseProps;
+import type { SelectedListContextType, SelectedListProviderProps } from "./SelectedList.types";
+import SelectedListReducer from "./SelectedListReducers";
 
 const SelectedListContext = createContext<SelectedListContextType>({
   multiSelect: false,

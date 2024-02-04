@@ -1,7 +1,4 @@
-export type SelectedListAction =
-  | { type: "SELECT"; payload: string }
-  | { type: "MULTISELECT"; payload: string }
-  | { type: "UNSELECT"; payload: string };
+import type { SelectedListAction } from "./SelectedList.types";
 
 function SelectedListReducer(state: string[], action: SelectedListAction) {
   switch (action.type) {
