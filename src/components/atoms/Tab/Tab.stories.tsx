@@ -18,7 +18,7 @@ type Story = StoryObj<typeof Tab>;
 
 export const Default: Story = {
   render: () => (
-    <Tab.TabList defaultSelected={"tab2"}>
+    <Tab.TabList defaultSelected={"tab1"}>
       <Tab value="tab1">Tab</Tab>
       <Tab value="tab2">The Longest Tab</Tab>
       <Tab value="tab3">
