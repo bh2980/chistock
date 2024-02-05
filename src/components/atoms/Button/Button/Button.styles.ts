@@ -4,7 +4,7 @@ import { interactionStateVariants } from "@atoms/InteractionState";
 
 export const buttonVariants = tv({
   extend: interactionStateVariants,
-  base: "relative flex justify-center items-center py-xs cursor-pointer",
+  base: "relative flex justify-center items-center py-xs cursor-pointer select-none",
   variants: {
     /**
      * 버튼의 형태

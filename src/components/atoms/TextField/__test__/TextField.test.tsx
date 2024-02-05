@@ -1,50 +1,15 @@
 /* eslint-disable testing-library/no-node-access */
 
 /* eslint-disable testing-library/no-container */
-import { render, renderHook, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import Icon from "@atoms/Icon/Icon";
 
-import TextField from ".";
-import useTextField from "./useTextField";
+import TextField from "..";
 
 // eslint-disable-next-line react/display-name
 jest.mock("@atoms/Icon/Icon", () => ({ icon }: { icon: string }) => <div>{icon}</div>);
-
-describe("useTextFieldProps", () => {
-  it("id가 없을 경우 생성하여 부여합니다.", () => {
-    const props = {};
-
-    const { result } = renderHook(() => useTextField(props));
-
-    expect(result.current.id).not.toBeUndefined();
-  });
-
-  it("id가 있을 경우 id를 그대로 내보냅니다..", () => {
-    const props = { id: "myTestID" };
-
-    const { result } = renderHook(() => useTextField(props));
-
-    expect(result.current.id).toBe("myTestID");
-  });
-
-  it("label이 없을 경우, haveLabel는 false여야합니다.", () => {
-    const props = {};
-
-    const { result } = renderHook(() => useTextField(props));
-
-    expect(result.current.haveLabel).toBe(false);
-  });
-
-  it("label이 있을 경우, haveLabel는 true여야햡니다..", () => {
-    const props = { label: "myTestLabel" };
-
-    const { result } = renderHook(() => useTextField(props));
-
-    expect(result.current.haveLabel).toBe(true);
-  });
-});
 
 describe("TextField", () => {
   // normal rendering

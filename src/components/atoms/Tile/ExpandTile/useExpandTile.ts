@@ -1,6 +1,5 @@
+import useID from "@hooks/useID";
 import { useState } from "react";
-
-import useID from "@utils/hook/useID";
 
 import { TileAlterAs, TileDefault } from "../Tile";
 import { ExpandTileProps } from "./ExpandTile.types";

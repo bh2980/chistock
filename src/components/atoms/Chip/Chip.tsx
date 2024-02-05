@@ -1,16 +1,17 @@
+import { SelectedListProvider } from "@contexts/SelectedContext/SelectedListContext";
+
 import InteractionState from "@atoms/InteractionState";
 import Slot from "@atoms/Slot/Slot";
 
 import chipVariants from "./Chip.styles";
 import type { ChipGroupProps, ChipProps } from "./Chip.types";
-import { ChipProvider } from "./context/ChipContext";
 import useChip from "./useChip";
 
 const ChipGroup = ({ multiSelect, defaultSelected, ...props }: ChipGroupProps) => {
   return (
-    <ChipProvider multiSelect={multiSelect} defaultSelected={defaultSelected}>
+    <SelectedListProvider multiSelect={multiSelect} defaultSelected={defaultSelected}>
       <Slot className="flex gap-s" role="group" {...props} />
-    </ChipProvider>
+    </SelectedListProvider>
   );
 };
 

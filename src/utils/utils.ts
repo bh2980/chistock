@@ -17,7 +17,6 @@ export const tv = createTV({
       colors: getToken("colors"),
       spacing: getToken("spacing"),
       borderRadius: getToken("borderRadius"),
-      borderWidth: getToken("borderWidth"),
       //@ts-ignore
       opacity: getToken("opacity"),
     },

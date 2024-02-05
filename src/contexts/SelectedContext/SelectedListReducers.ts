@@ -1,9 +1,6 @@
-export type ChipAction =
-  | { type: "SELECT"; payload: string }
-  | { type: "MULTISELECT"; payload: string }
-  | { type: "UNSELECT"; payload: string };
+import type { SelectedListAction } from "./SelectedList.types";
 
-function ChipReducer(state: string[], action: ChipAction) {
+function SelectedListReducer(state: string[], action: SelectedListAction) {
   switch (action.type) {
     case "SELECT":
       return [action.payload];
@@ -14,4 +11,4 @@ function ChipReducer(state: string[], action: ChipAction) {
   }
 }
 
-export default ChipReducer;
+export default SelectedListReducer;
