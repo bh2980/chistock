@@ -10,3 +10,10 @@ export type TabProps = ComponentPropsWithInnerRef<"button"> &
 export type TabListProps = ComponentPropsWithInnerRef<"div"> & {
   defaultSelected: string;
 };
+
+// TODO 추후 제너릭으로 추상화하기
+export type useTabReturnType = ComponentPropsWithInnerRef<"button"> & {
+  styleVariant: VariantProps<typeof tabVariant>;
+};
+
+export type useTabListReturnType = ComponentPropsWithInnerRef<"div"> & TabListProps;

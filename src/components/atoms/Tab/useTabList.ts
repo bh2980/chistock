@@ -2,11 +2,11 @@ import useSelectedList from "@hooks/useSelected";
 import { useRef } from "react";
 import React from "react";
 
-import { ButtonProps, useButton } from "@atoms/Button/Button";
+import { type ButtonProps, useButton } from "@atoms/Button/Button";
 
-import type { TabListProps, TabProps } from "./Tab.types";
+import type { TabListProps, TabProps, useTabListReturnType, useTabReturnType } from "./Tab.types";
 
-const useTabList = ({ children, ...props }: TabListProps) => {
+const useTabList = ({ children, ...props }: TabListProps): useTabListReturnType => {
   const tabRefs = useRef<HTMLElement[]>([]);
   const childrenCount = React.Children.count(children);
 
@@ -55,7 +55,8 @@ const useTabList = ({ children, ...props }: TabListProps) => {
   };
 };
 
-const useTab = (props: TabProps) => {
+const useTab = (props: TabProps): useTabReturnType => {
+  //TODO ButtonProps와 유사한 type으로 바꿀 수 있으면 바꾸기
   const buttonProps = useButton(props as ButtonProps<"button">);
 
   const { styleVariant, onClick, tabIndex, ...selectedProps } = useSelectedList(buttonProps);
