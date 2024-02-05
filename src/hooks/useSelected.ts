@@ -35,6 +35,7 @@ const useSelectedList = (props: useSelectedListProps) => {
     styleVariant: { selected: isSelected, ...styleVariant },
     "aria-selected": isSelected,
     onClick: changeChipState,
+    value,
     ...otherProps,
   };
 };
