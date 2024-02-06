@@ -12,20 +12,20 @@ const useSelectedList = (props: useSelectedListProps) => {
 
   const { styleVariant, onClick, value, ...otherProps } = props;
 
-  const selectChip = () => {
+  const select = () => {
     dispatchSelectedList({
       type: multiSelect ? "MULTISELECT" : "SELECT",
       payload: value,
     });
   };
 
-  const unselectChip = () => {
+  const unselect = () => {
     dispatchSelectedList({ type: "UNSELECT", payload: value });
   };
 
-  const toggleClick = isSelected ? unselectChip : selectChip;
+  const toggleClick = isSelected ? unselect : select;
 
-  const changeChipState = (e: React.MouseEvent) => {
+  const changeSelectState = (e: React.MouseEvent) => {
     toggleClick();
 
     if (onClick) onClick(e);
@@ -34,7 +34,7 @@ const useSelectedList = (props: useSelectedListProps) => {
   return {
     styleVariant: { selected: isSelected, ...styleVariant },
     "aria-selected": isSelected,
-    onClick: changeChipState,
+    onClick: changeSelectState,
     value,
     ...otherProps,
   };

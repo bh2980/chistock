@@ -14,15 +14,8 @@ export const dividerVariants = tv({
   ],
   variants: {
     vertical: {
-      false: ["w-full", "items-center", "before:h-[0rem]", "after:h-[0rem]"],
-      true: [
-        "h-full",
-        "flex-col",
-        "justify-center",
-        "items-center",
-        "before:w-[0rem]",
-        "after:w-[0rem]",
-      ],
+      false: ["items-center", "before:h-[0rem]", "after:h-[0rem]"],
+      true: ["flex-col", "justify-center", "items-center", "before:w-[0rem]", "after:w-[0rem]"],
     },
     hasContent: {
       true: "",

@@ -7,6 +7,7 @@ import chipVariants from "./Chip.styles";
 import type { ChipGroupProps, ChipProps } from "./Chip.types";
 import useChip from "./useChip";
 
+// TODO dismiss 기능 만들기 role: toolbar?
 const ChipGroup = ({ multiSelect, defaultSelected, ...props }: ChipGroupProps) => {
   return (
     <SelectedListProvider multiSelect={multiSelect} defaultSelected={defaultSelected}>
@@ -15,6 +16,8 @@ const ChipGroup = ({ multiSelect, defaultSelected, ...props }: ChipGroupProps) =
   );
 };
 
+// TODO dismiss 기능 만들기
+// TODO interaction이 아니면 span interaction이면 button
 const Chip = (props: ChipProps) => {
   const { styleVariant, children, ...otherProps } = useChip(props);
 
