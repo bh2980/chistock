@@ -60,10 +60,16 @@ export default {
       fontSize: {
         sizeInherit: "1em",
       },
-      width: {
-        "desktop-4": "336rem",
-        "desktop-8": "688rem",
-        "desktop-12": "1040rem",
+      animation: {
+        fadeInOut: "fadeInOut 5s ease-in-out infinite",
+      },
+      keyframes: {
+        fadeInOut: {
+          "0%": { opacity: "0", transform: "translateY(100%)" },
+          "10%": { opacity: "1", transform: "translateY(0)" },
+          "90%": { opacity: "1", transform: "translateY(0)" },
+          "100%": { opacity: "0", transform: "translateY(-100%)" },
+        },
       },
     },
   },
