@@ -15,7 +15,7 @@ const StockChangeLabel = ({ change, changePercentage, ...labelProps }: StockChan
   const [showPercentage, setShowPercentage] = useState(false);
 
   useEffect(() => {
-    setContent(showPercentage ? `${changePercentage}%` : change);
+    setContent(showPercentage ? `${changePercentage.toFixed(1)}%` : change);
   }, [showPercentage, changePercentage, change]);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const StockChangeLabel = ({ change, changePercentage, ...labelProps }: StockChan
       <div className="animate-fadeInOut text-center">{content}</div>
       <div className="flex flex-col invisible">
         <div>{change}</div>
-        <div>{changePercentage}%</div>
+        <div>{changePercentage.toFixed(1)}%</div>
       </div>
     </Label>
   );
