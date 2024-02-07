@@ -15,7 +15,7 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof StockChangeLabel>;
 
-export const Default: Story = {
+export const Increase: Story = {
   render: () => <StockChangeLabel change={8050} changePercentage={29} />,
 };
 
