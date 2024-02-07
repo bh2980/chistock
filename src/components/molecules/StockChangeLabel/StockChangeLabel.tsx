@@ -7,16 +7,37 @@ type StockChangeLabelProps = { change: number; changePercentage: number } & Omit
   "children"
 >;
 
-const StockChangeLabel = ({ change, changePercentage, ...labelProps }: StockChangeLabelProps) => {
-  const isPositive = change > 0;
-  const labelVariant = isPositive ? "error" : "primary";
+enum NumberType {
+  POSITIVE,
+  ZERO,
+  NEGATIVE,
+}
 
-  const [content, setContent] = useState<string | number>(change);
-  const [showPercentage, setShowPercentage] = useState(false);
+const StockChangeLabel = ({ change, changePercentage, ...labelProps }: StockChangeLabelProps) => {
+  const [content, setContent] = useState<string | number>(changePercentage);
+  const [showPercentage, setShowPercentage] = useState(true);
+
+  const numType =
+    change > 0 ? NumberType.POSITIVE : change === 0 ? NumberType.ZERO : NumberType.NEGATIVE;
+
+  const labelVariant =
+    numType === NumberType.POSITIVE
+      ? "error"
+      : numType === NumberType.ZERO
+      ? "secondary"
+      : "primary";
+
+  const makeContent = () => {
+    if (showPercentage) {
+      return `${changePercentage.toFixed(1)}%`;
+    }
+
+    return numType === NumberType.ZERO ? "-" : change;
+  };
 
   useEffect(() => {
-    setContent(showPercentage ? `${changePercentage.toFixed(1)}%` : change);
-  }, [showPercentage, changePercentage, change]);
+    setContent(makeContent());
+  }, [showPercentage, numType, change, changePercentage]);
 
   useEffect(() => {
     const intervalId = setInterval(() => setShowPercentage((current) => !current), 5000);

@@ -22,3 +22,7 @@ export const Default: Story = {
 export const Decrease: Story = {
   render: () => <StockChangeLabel change={-1.75} changePercentage={-0.24} />,
 };
+
+export const NoChange: Story = {
+  render: () => <StockChangeLabel change={0} changePercentage={0} />,
+};
