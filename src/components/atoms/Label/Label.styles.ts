@@ -1,4 +1,4 @@
-import { tv } from "tailwind-variants";
+import { tv } from "@utils/utils";
 
 export const labelVariants = tv({
   base: "inline-block px-xs rounded-s",
