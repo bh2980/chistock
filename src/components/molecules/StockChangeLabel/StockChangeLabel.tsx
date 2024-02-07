@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
 
-import Label, { LabelProps } from "@atoms/Label";
+import Label from "@atoms/Label";
 
-type StockChangeLabelProps = { change: number; changePercentage: number } & Omit<
-  LabelProps,
-  "children"
->;
+import { type StockChangeLabelProps } from "./StockChangeLabel.types";
 
-enum NumberType {
+enum NumType {
   POSITIVE,
   ZERO,
   NEGATIVE,
@@ -17,22 +14,17 @@ const StockChangeLabel = ({ change, changePercentage, ...labelProps }: StockChan
   const [content, setContent] = useState<string | number>(changePercentage);
   const [showPercentage, setShowPercentage] = useState(true);
 
-  const numType =
-    change > 0 ? NumberType.POSITIVE : change === 0 ? NumberType.ZERO : NumberType.NEGATIVE;
+  const numType = change > 0 ? NumType.POSITIVE : change === 0 ? NumType.ZERO : NumType.NEGATIVE;
 
   const labelVariant =
-    numType === NumberType.POSITIVE
-      ? "error"
-      : numType === NumberType.ZERO
-      ? "secondary"
-      : "primary";
+    numType === NumType.POSITIVE ? "error" : numType === NumType.ZERO ? "secondary" : "primary";
 
   const makeContent = () => {
     if (showPercentage) {
       return `${changePercentage.toFixed(1)}%`;
     }
 
-    return numType === NumberType.ZERO ? "-" : change;
+    return numType === NumType.ZERO ? "-" : change;
   };
 
   useEffect(() => {
