@@ -1,18 +1,23 @@
 import { tv } from "@utils/utils";
 
+import { textVariants } from "@atoms/Text";
+
 export const stockPriceVariants = tv({
-  base: "inline-flex text-center overflow-hidden font-bold",
+  extend: textVariants,
+  base: "inline-flex text-center overflow-hidden whitespace-break-spaces",
   variants: {
+    color: {},
     size: {
-      xs: "text-xs h-[16rem]",
-      s: "text-s h-[20rem]",
-      m: "text-m h-[24rem]",
-      l: "text-l h-[28rem]",
-      xl: "text-xl h-[32rem]",
-      "2xl": "text-2xl h-[48rem]",
+      body3: "h-[16rem]",
+      body2: "h-[20rem]",
+      body1: "h-[24rem]",
+      headline3: "h-[28rem]",
+      headline2: "h-[32rem]",
+      headline1: "h-[48rem]",
     },
   },
   defaultVariants: {
-    size: "xl",
+    size: "headline2",
+    bold: true,
   },
 });
