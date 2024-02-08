@@ -5,7 +5,7 @@ import Text from "@atoms/Text";
 import { StockPriceProps } from "./Stock.types";
 import { stockPriceVariants } from "./StockPrice.styles";
 
-const AnimatedNumber = ({ number }: { number: number }) => {
+const MovingNumber = ({ number }: { number: number }) => {
   const numberContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -44,7 +44,7 @@ const StockPrice = ({ price, size, color, prefix, postfix, decimalPoint = 0 }: S
 
   const makeAnimatedNumber = (char: string, idx: number) => {
     if (!isNumber(char)) return char;
-    return <AnimatedNumber key={`AnimatedNumber-${idx}`} number={Number(char)} />;
+    return <MovingNumber key={`MovingNumber-${idx}`} number={Number(char)} />;
   };
 
   return (
