@@ -38,3 +38,6 @@ next-env.d.ts
 # log file
 *.log
 
+# jest snapshot
+__snapshots__/
+*.snap
