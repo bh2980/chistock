@@ -4,8 +4,9 @@ import Text from "@atoms/Text";
 
 import { StockPriceProps } from "./Stock.types";
 import { stockPriceVariants } from "./StockPrice.styles";
+import { useStockPrice } from "./useStockPrice";
 
-const MovingNumber = ({ number }: { number: number }) => {
+export const MovingNumber = ({ number }: { number: number }) => {
   const numberContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -32,25 +33,21 @@ const MovingNumber = ({ number }: { number: number }) => {
   );
 };
 
-const StockPrice = ({ price, size, color, prefix, postfix, decimalPoint = 0 }: StockPriceProps) => {
-  const makeFormatPrice = (price: number) => {
-    const underDecimalPoint = (price % 1).toFixed(decimalPoint).replace("0.", "");
-    const formatInteger = Math.floor(price).toLocaleString();
-
-    return decimalPoint > 0 ? `${formatInteger}.${underDecimalPoint}` : formatInteger;
-  };
-
-  const isNumber = (char: string) => char.match(/[0-9]/);
-
-  const makeAnimatedNumber = (char: string, idx: number) => {
-    if (!isNumber(char)) return char;
-    return <MovingNumber key={`MovingNumber-${idx}`} number={Number(char)} />;
-  };
+const StockPrice = ({
+  size,
+  color,
+  price,
+  prefix,
+  postfix,
+  decimalPoint = 0,
+  ...props
+}: StockPriceProps) => {
+  const { renderAnimatedPrice } = useStockPrice();
 
   return (
-    <Text className={stockPriceVariants({ size, color })}>
+    <Text className={stockPriceVariants({ size, color })} {...props}>
       {prefix}
-      {Array.from(makeFormatPrice(price)).map(makeAnimatedNumber)}
+      {renderAnimatedPrice(price, decimalPoint)}
       {postfix}
     </Text>
   );
