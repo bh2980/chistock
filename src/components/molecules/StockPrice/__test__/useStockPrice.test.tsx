@@ -20,11 +20,7 @@ describe("useStockPrice", () => {
 
     // 숫자 문자인 경우 테스트
     const resultWithNumber = result.current.makeString2MovingNumber("5", 0);
-    expect(resultWithNumber).toMatchInlineSnapshot(`
-      <MovingNumber
-        number={5}
-      />
-    `);
+    expect(resultWithNumber).toMatchSnapshot();
 
     // 숫자가 아닌 문자인 경우 테스트
     const resultWithChar = result.current.makeString2MovingNumber("A", 1);
@@ -36,49 +32,10 @@ describe("useStockPrice", () => {
 
     // 소수점 이하 두 자리까지 포함하는 경우 테스트
     const resultWithDecimal = result.current.renderAnimatedPrice(1234.5678, 2);
-    expect(resultWithDecimal).toMatchInlineSnapshot(`
-      [
-        <MovingNumber
-          number={1}
-        />,
-        ",",
-        <MovingNumber
-          number={2}
-        />,
-        <MovingNumber
-          number={3}
-        />,
-        <MovingNumber
-          number={4}
-        />,
-        ".",
-        <MovingNumber
-          number={5}
-        />,
-        <MovingNumber
-          number={7}
-        />,
-      ]
-    `);
+    expect(resultWithDecimal).toMatchSnapshot();
 
     // 소수점 없이 정수만 있는 경우 테스트
     const resultWithoutDecimal = result.current.renderAnimatedPrice(5678, 0);
-    expect(resultWithoutDecimal).toMatchInlineSnapshot(`
-      [
-        <MovingNumber
-          number={5}
-        />,
-        ",",
-        <MovingNumber
-          number={6}
-        />,
-        <MovingNumber
-          number={7}
-        />,
-        <MovingNumber
-          number={8}
-        />,
-      ]
-    `);
+    expect(resultWithoutDecimal).toMatchSnapshot();
   });
 });
