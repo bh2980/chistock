@@ -16,15 +16,15 @@ export default meta;
 type Story = StoryObj<typeof StockPrice>;
 
 export const Default: Story = {
-  render: () => <StockPrice price={1200.0} />,
+  render: () => <StockPrice price={1200} />,
 };
 
 export const PrefixPostfix: Story = {
-  render: () => <StockPrice price={1200.0} prefix="₩" postfix="원" />,
+  render: () => <StockPrice price={1200} prefix="₩ " postfix="원" />,
 };
 
-export const DecimalPlaces: Story = {
-  render: () => <StockPrice price={1200.0} />,
+export const DecimalPoint: Story = {
+  render: () => <StockPrice price={1200} decimalPoint={7} />,
 };
 
 const AnimatedStockPriceWrapper = () => {
@@ -38,7 +38,7 @@ const AnimatedStockPriceWrapper = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  return <StockPrice price={currentPrice} prefix="$" />;
+  return <StockPrice price={currentPrice} prefix="$ " decimalPoint={2} />;
 };
 
 export const Animated: Story = {
