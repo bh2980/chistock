@@ -16,21 +16,29 @@ export default meta;
 type Story = StoryObj<typeof StockPrice>;
 
 export const Default: Story = {
-  render: () => <StockPrice price={1200} />,
+  render: () => <StockPrice price={1200.0} />,
+};
+
+export const PrefixPostfix: Story = {
+  render: () => <StockPrice price={1200.0} prefix="₩" postfix="원" />,
+};
+
+export const DecimalPlaces: Story = {
+  render: () => <StockPrice price={1200.0} />,
 };
 
 const AnimatedStockPriceWrapper = () => {
-  const [currentPrice, setCurrentPrice] = useState(8123);
+  const [currentPrice, setCurrentPrice] = useState(8123.123);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentPrice(Math.floor(Math.random() * 10000));
+      setCurrentPrice(Math.random() * 10000);
     }, 2000);
 
     return () => clearInterval(intervalId);
   }, []);
 
-  return <StockPrice price={currentPrice} />;
+  return <StockPrice price={currentPrice} prefix="$" />;
 };
 
 export const Animated: Story = {
