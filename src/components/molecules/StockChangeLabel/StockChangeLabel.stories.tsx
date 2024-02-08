@@ -9,7 +9,6 @@ const meta = {
     layout: "centered",
   },
   tags: ["autodocs"],
-  render: (args, { loaded: { change } }) => <StockChangeLabel {...args} {...change} />,
 } satisfies Meta<typeof StockChangeLabel>;
 
 export default meta;
