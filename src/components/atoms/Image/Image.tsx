@@ -1,29 +1,7 @@
 import * as NextImage from "next/image";
 
-import { tv } from "@utils/utils";
-
-import { ImagePropsType } from "./Image.types";
-
-export const imageVariants = tv({
-  base: "relative min-w-[1em] overflow-hidden aspect-square",
-  variants: {
-    /** 이미지의 테두리 반경을 조절합니다
-     *
-     * @default m
-     */
-    rounded: {
-      none: "rounded-none",
-      xs: "rounded-xs",
-      s: "rounded-s",
-      m: "rounded-m",
-      l: "rounded-l",
-      circle: "rounded-circle",
-    },
-  },
-  defaultVariants: {
-    rounded: "m",
-  },
-});
+import { imageVariants } from "./Image.styles";
+import type { ImagePropsType } from "./Image.types";
 
 /**
  * next/image를 사용하여 이미지를 렌더링하는 컴포넌트입니다.
