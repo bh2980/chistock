@@ -10,6 +10,7 @@ const config: StorybookConfig = {
     "@storybook/addon-styling",
     "@storybook/addon-a11y",
     "storybook-addon-pseudo-states",
+    "@storybook/addon-measure",
   ],
   framework: {
     name: "@storybook/nextjs",
