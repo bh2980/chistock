@@ -11,6 +11,7 @@ const customJestConfig = {
   testEnvironment: "jest-environment-jsdom",
   moduleNameMapper: {
     "^@atoms/(.*)$": "<rootDir>/src/components/atoms/$1",
+    "^@molecules/(.*)$": "<rootDir>/src/components/molecules/$1",
     "^@hooks/(.*)$": "<rootDir>/src/hooks/$1",
     "^@contexts/(.*)$": "<rootDir>/src/contexts/$1",
     // 필요한 경우 다른 모듈에 대한 alias 추가
