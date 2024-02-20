@@ -8,7 +8,7 @@ const StockChangeLabel = ({ change, changePercentage, ...labelProps }: StockChan
     useStockChangeLabel({ change, changePercentage });
 
   return (
-    <Label variant={labelVariant} className="overflow-hidden" {...labelProps}>
+    <Label variant={labelVariant} className="overflow-hidden font-bold" {...labelProps}>
       <div className="animate-fadeInOut text-center">{content}</div>
       <div className="flex flex-col invisible">
         <div>{makeChangeString()}</div>
