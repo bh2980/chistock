@@ -2,19 +2,19 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import StoryWrapper from "@story/StoryWrapper";
 
-import StockInfoItem from "./StockItem";
+import StockItem from "./StockItem";
 
 const meta = {
   title: "Molecules/StockItem",
-  component: StockInfoItem,
+  component: StockItem,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof StockInfoItem>;
+} satisfies Meta<typeof StockItem>;
 
 export default meta;
-type Story = StoryObj<typeof StockInfoItem>;
+type Story = StoryObj<typeof StockItem>;
 
 const IMAGE_URL =
   "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fdh6ap9%2Fbtsz6jE1NAF%2FU1bUIepR14dMID1g0Z8Wr1%2Fimg.png";
@@ -22,7 +22,7 @@ const IMAGE_URL =
 export const Default: Story = {
   render: () => (
     <div className="w-[360rem]">
-      <StockInfoItem
+      <StockItem
         src={IMAGE_URL}
         companyName="Apple Inc"
         ticker="AAPL"
@@ -38,7 +38,7 @@ export const Default: Story = {
 export const Size: Story = {
   render: () => (
     <StoryWrapper className="w-[360rem] gap-2xl" direction="vertical">
-      <StockInfoItem
+      <StockItem
         size="md"
         src={IMAGE_URL}
         companyName="Apple Inc"
@@ -48,7 +48,7 @@ export const Size: Story = {
         changePercentage={20.5}
         market="NASDAQ"
       />
-      <StockInfoItem
+      <StockItem
         size="lg"
         src={IMAGE_URL}
         companyName="Apple Inc"
@@ -65,7 +65,7 @@ export const Size: Story = {
 export const TickerAccent: Story = {
   render: () => (
     <div className="w-[360rem]">
-      <StockInfoItem
+      <StockItem
         tickerAccent
         src={IMAGE_URL}
         companyName="Apple Inc"
@@ -82,7 +82,7 @@ export const TickerAccent: Story = {
 export const NoMarket: Story = {
   render: () => (
     <div className="w-[360rem]">
-      <StockInfoItem
+      <StockItem
         tickerAccent
         src={IMAGE_URL}
         companyName="Apple Inc"
@@ -99,7 +99,7 @@ export const NoMarket: Story = {
 export const NoImage: Story = {
   render: () => (
     <div className="w-[360rem]">
-      <StockInfoItem
+      <StockItem
         src={IMAGE_URL}
         companyName="Apple Inc"
         ticker="AAPL"
