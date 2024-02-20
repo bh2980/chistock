@@ -9,7 +9,7 @@ export const useStockItem = (props: StockInfoItemProps) => {
     subtitle: !tickerAccent ? ticker : companyName,
     size,
     tickerAccent,
-    StockChangeLabelSize: size === "md" ? ("s" as const) : ("m" as const),
-    StockPriceSize: size === "md" ? ("headline3" as const) : ("headline2" as const),
+    stockChangeLabelSize: size === "md" ? ("s" as const) : ("m" as const),
+    stockPriceSize: size === "md" ? ("headline3" as const) : ("headline2" as const),
   };
 };
