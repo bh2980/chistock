@@ -65,10 +65,10 @@ export default {
       },
       keyframes: {
         fadeInOut: {
-          "0%": { opacity: "0", transform: "translateY(100%)" },
-          "10%": { opacity: "1", transform: "translateY(0)" },
-          "90%": { opacity: "1", transform: "translateY(0)" },
-          "100%": { opacity: "0", transform: "translateY(-100%)" },
+          "0%": { opacity: "0" },
+          "10%": { opacity: "1" },
+          "90%": { opacity: "1" },
+          "100%": { opacity: "0" },
         },
       },
     },
