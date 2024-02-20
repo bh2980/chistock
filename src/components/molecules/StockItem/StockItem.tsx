@@ -8,7 +8,7 @@ import { stockInfoItemVariants } from "./StockItem.styles";
 import { StockInfoItemProps } from "./StockItem.types";
 import { useStockItem } from "./useStockItem";
 
-const StockInfoItem = (props: StockInfoItemProps) => {
+const StockItem = (props: StockInfoItemProps) => {
   const {
     src,
     title,
@@ -19,8 +19,8 @@ const StockInfoItem = (props: StockInfoItemProps) => {
     changePercentage,
     tickerAccent,
     size,
-    StockPriceSize,
-    StockChangeLabelSize,
+    stockPriceSize,
+    stockChangeLabelSize,
   } = useStockItem(props);
 
   const {
@@ -55,15 +55,15 @@ const StockInfoItem = (props: StockInfoItemProps) => {
         </div>
       </div>
       <div className={stockPriceContainer()}>
-        <StockPrice price={currentPrice} prefix="$ " decimalPoint={2} size={StockPriceSize} />
+        <StockPrice price={currentPrice} prefix="$ " decimalPoint={2} size={stockPriceSize} />
         <StockChangeLabel
           change={change}
           changePercentage={changePercentage}
-          size={StockChangeLabelSize}
+          size={stockChangeLabelSize}
         />
       </div>
     </div>
   );
 };
 
-export default StockInfoItem;
+export default StockItem;
