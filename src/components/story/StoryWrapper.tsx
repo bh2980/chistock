@@ -1,4 +1,4 @@
-import { tv } from "@utils/utils";
+import { tv } from "@utils/customTV";
 
 const storyWrapperVariant = tv({
   base: "flex justify-center items-center gap-xl",

@@ -1,6 +1,6 @@
-import { tv } from "tailwind-variants";
-
 import { textColor } from "@constants/textColor";
+
+import { tv } from "@utils/customTV";
 
 /** 텍스트 색상 지정용 cva 함수 */
 export const textColorVariants = tv({

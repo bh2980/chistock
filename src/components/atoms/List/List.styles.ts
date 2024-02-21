@@ -1,4 +1,4 @@
-import { tv } from "tailwind-variants";
+import { tv } from "@utils/customTV";
 
 export const listVariant = tv({
   base: "flex w-full",

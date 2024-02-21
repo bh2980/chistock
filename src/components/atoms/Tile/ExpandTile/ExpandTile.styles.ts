@@ -1,4 +1,4 @@
-import { tv } from "tailwind-variants";
+import { tv } from "@utils/customTV";
 
 import { tileVariants } from "../Tile";
 

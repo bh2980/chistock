@@ -5,7 +5,7 @@ import { NonNullableProps } from "@customTypes/utilType";
 
 import ICON_MAP from "@constants/iconMap";
 
-import { tv } from "@utils/utils";
+import { tv } from "@utils/customTV";
 
 import { textColorVariants } from "@atoms/Text/Text.styles";
 

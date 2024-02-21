@@ -1,4 +1,4 @@
-import { tv } from "tailwind-variants";
+import { tv } from "@utils/customTV";
 
 /** focus 상태 variants
  * focus가 필요한 element에서 상속받아 사용합니다.

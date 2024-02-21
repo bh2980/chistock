@@ -1,4 +1,4 @@
-import { tv } from "@utils/utils";
+import { tv } from "@utils/customTV";
 
 export const tileVariants = tv({
   base: "flex text-m shadow-ambient",
