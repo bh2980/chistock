@@ -1,4 +1,4 @@
-export type StockInfoItemProps = {
+export type StockItemProps = {
   src?: string;
   companyName: string;
   ticker: string;

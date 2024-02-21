@@ -95,12 +95,10 @@ export const NoMarket: Story = {
   ),
 };
 
-// TODO StockLogo 만들고 수정
 export const NoImage: Story = {
   render: () => (
     <div className="w-[360rem]">
       <StockItem
-        src={IMAGE_URL}
         companyName="Apple Inc"
         ticker="AAPL"
         currentPrice={189.57}
