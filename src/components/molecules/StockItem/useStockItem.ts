@@ -1,6 +1,6 @@
-import type { StockInfoItemProps } from "./StockItem.types";
+import type { StockItemProps } from "./StockItem.types";
 
-export const useStockItem = (props: StockInfoItemProps) => {
+export const useStockItem = (props: StockItemProps) => {
   const { ticker, companyName, tickerAccent, size = "md", ...otherProps } = props;
 
   return {
