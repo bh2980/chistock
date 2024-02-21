@@ -1,14 +1,17 @@
+import StockLogo from "@molecules/StockLogo/StockLogo";
+
 import Divider from "@atoms/Divider/Divider";
-import Image from "@atoms/Image/Image";
 import Text from "@atoms/Text";
 
 import StockChangeLabel from "../StockChangeLabel";
 import StockPrice from "../StockPrice";
-import { stockInfoItemVariants } from "./StockItem.styles";
-import { StockInfoItemProps } from "./StockItem.types";
+import { stockItemVariants } from "./StockItem.styles";
+import { StockItemProps } from "./StockItem.types";
 import { useStockItem } from "./useStockItem";
 
-const StockItem = (props: StockInfoItemProps) => {
+const StockItem = (props: StockItemProps) => {
+  const { companyName, ticker } = props;
+
   const {
     src,
     title,
@@ -34,13 +37,12 @@ const StockItem = (props: StockInfoItemProps) => {
     subtitleText,
     marketText,
     tickerMarketDivider,
-  } = stockInfoItemVariants({ tickerAccent, size });
+  } = stockItemVariants({ tickerAccent, size });
 
   return (
     <div className={root()}>
       <div className={stockInfoContainer()}>
-        {/** //TODO stockLogo로 change */}
-        {src && <Image src={src} alt={`logo image`} className={stockLogo()} />}
+        <StockLogo src={src} alt={`${companyName} logo`} ticker={ticker} className={stockLogo()} />
         <div className={stockTextContainer()}>
           <Text className={titleText()}>{title}</Text>
           <div className={subtitleContainer()}>

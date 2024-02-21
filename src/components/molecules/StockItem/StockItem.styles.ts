@@ -1,6 +1,6 @@
 import { tv } from "@utils/utils";
 
-export const stockInfoItemVariants = tv({
+export const stockItemVariants = tv({
   slots: {
     root: "flex w-full justify-between",
     stockInfoContainer: "flex gap-m",
