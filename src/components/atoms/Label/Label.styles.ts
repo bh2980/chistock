@@ -1,4 +1,4 @@
-import { tv } from "@utils/utils";
+import { tv } from "@utils/customTV";
 
 export const labelVariants = tv({
   base: "inline-block px-xs rounded-s",
