@@ -88,6 +88,7 @@ export default {
       light: {
         primary: {
           DEFAULT: color.primary[40],
+          inverse: color.primary[70],
           on: color.primary[100],
           container: {
             DEFAULT: color.primary[80],
@@ -112,6 +113,7 @@ export default {
         },
         surface: {
           DEFAULT: color.neutral[97],
+          inverse: color.neutral[10],
           container: {
             DEFAULT: color.neutral[100],
             high: color.neutral[95],
@@ -119,7 +121,11 @@ export default {
           },
           on: {
             DEFAULT: color.neutral[15],
-            variant: color.neutral[30],
+            inverse: color.neutral[100],
+            variant: {
+              DEFAULT: color.neutral[30],
+              inverse: color.neutral[80],
+            },
           },
         },
         outline: {
@@ -130,6 +136,7 @@ export default {
       dark: {
         primary: {
           DEFAULT: color.primary[70],
+          inverse: color.primary[40],
           on: color.primary[0],
           container: {
             DEFAULT: color.primary[30],
@@ -154,6 +161,7 @@ export default {
         },
         surface: {
           DEFAULT: color.neutral[10],
+          inverse: color.neutral[97],
           container: {
             DEFAULT: color.neutral[17],
             high: color.neutral[20],
@@ -161,7 +169,8 @@ export default {
           },
           on: {
             DEFAULT: color.neutral[100],
-            variant: color.neutral[80],
+            inverse: color.neutral[15],
+            variant: { DEFAULT: color.neutral[80], inverse: color.neutral[30] },
           },
         },
         outline: {
