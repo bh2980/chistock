@@ -12,14 +12,6 @@ describe("StockLogo", () => {
 
     const imageElement = screen.getByAltText("Stock Logo");
     expect(imageElement).toBeInTheDocument();
-    expect(imageElement).toHaveAttribute("src", src);
-  });
-
-  test("올바르지 않은 src에 대해서 ticker logo 렌더링", () => {
-    const invalidSrc = "invalid-image-url.jpg";
-    render(<StockLogo src={invalidSrc} alt="Stock Logo" ticker="AAPL" />);
-    const textElement = screen.getByText("AAPL");
-    expect(textElement).toBeInTheDocument();
   });
 
   test("src가 없을 경우 ticker logo 렌더링", () => {

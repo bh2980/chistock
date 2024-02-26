@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { exceptProperty } from "@utils/utils";
+import { exceptProperty } from "@utils/exceptProperty";
 
 import StoryWrapper from "@story/StoryWrapper";
 

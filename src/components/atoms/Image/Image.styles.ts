@@ -1,4 +1,4 @@
-import { tv } from "@utils/utils";
+import { tv } from "@utils/customTV";
 
 export const imageVariants = tv({
   base: "relative min-w-[1em] overflow-hidden aspect-square",

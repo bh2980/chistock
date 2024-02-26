@@ -1,6 +1,6 @@
 import { VariantProps } from "tailwind-variants";
 
-import { tv } from "@utils/utils";
+import { tv } from "@utils/customTV";
 
 import Button, { type ButtonProps } from "../Button";
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { tv } from "@utils/utils";
+import { tv } from "@utils/customTV";
 
 import Image, { type ImagePropsType } from "@atoms/Image";
 import Text from "@atoms/Text";

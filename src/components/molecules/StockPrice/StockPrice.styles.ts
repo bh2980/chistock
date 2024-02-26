@@ -1,4 +1,4 @@
-import { tv } from "@utils/utils";
+import { tv } from "@utils/customTV";
 
 import { textVariants } from "@atoms/Text";
 

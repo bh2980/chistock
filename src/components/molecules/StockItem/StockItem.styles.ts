@@ -1,4 +1,4 @@
-import { tv } from "@utils/utils";
+import { tv } from "@utils/customTV";
 
 export const stockItemVariants = tv({
   slots: {
