@@ -1,19 +1,22 @@
+import { getFormatNumber } from "@utils/getFormatNumber";
+
 import Label from "@atoms/Label";
 
 import type { StockChangeLabelProps } from "./StockChangeLabel.types";
-import { useStockChangeLabel } from "./useStockChangeLabel";
 
-const StockChangeLabel = ({ change, changePercentage, ...labelProps }: StockChangeLabelProps) => {
-  const { labelVariant, content, makeChangeString, makeChangePercentageString } =
-    useStockChangeLabel({ change, changePercentage });
+const StockChangeLabel = ({ changePercentage, ...labelProps }: StockChangeLabelProps) => {
+  const labelVariant =
+    changePercentage > 0
+      ? ("error" as const)
+      : changePercentage === 0
+      ? ("secondary" as const)
+      : ("primary" as const);
+
+  const prefix = changePercentage > 0 ? "+" : "";
 
   return (
-    <Label variant={labelVariant} className="overflow-hidden font-bold" {...labelProps}>
-      <div className="animate-fadeInOut text-center">{content}</div>
-      <div className="flex flex-col invisible">
-        <div>{makeChangeString()}</div>
-        <div>{makeChangePercentageString()}</div>
-      </div>
+    <Label variant={labelVariant} {...labelProps}>
+      {getFormatNumber({ number: changePercentage, decimalPoint: 1, prefix, postfix: "%" })}
     </Label>
   );
 };

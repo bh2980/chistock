@@ -15,13 +15,13 @@ export default meta;
 type Story = StoryObj<typeof StockChangeLabel>;
 
 export const Increase: Story = {
-  render: () => <StockChangeLabel change={8050} changePercentage={29} />,
+  render: () => <StockChangeLabel changePercentage={29} />,
 };
 
 export const Decrease: Story = {
-  render: () => <StockChangeLabel change={-8050} changePercentage={-29} />,
+  render: () => <StockChangeLabel changePercentage={-29} />,
 };
 
 export const NoChange: Story = {
-  render: () => <StockChangeLabel change={0} changePercentage={0} />,
+  render: () => <StockChangeLabel changePercentage={0} />,
 };
