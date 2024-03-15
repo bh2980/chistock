@@ -18,7 +18,6 @@ const StockItem = (props: StockItemProps) => {
     subtitle,
     market,
     currentPrice,
-    change,
     changePercentage,
     tickerAccent,
     size,
@@ -58,11 +57,7 @@ const StockItem = (props: StockItemProps) => {
       </div>
       <div className={stockPriceContainer()}>
         <StockPrice price={currentPrice} prefix="$ " decimalPoint={2} size={stockPriceSize} />
-        <StockChangeLabel
-          change={change}
-          changePercentage={changePercentage}
-          size={stockChangeLabelSize}
-        />
+        <StockChangeLabel changePercentage={changePercentage} size={stockChangeLabelSize} />
       </div>
     </div>
   );
