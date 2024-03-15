@@ -23,12 +23,12 @@ export const textVariants = tv({
      */
     size: {
       inherit: "text-sizeInherit",
-      body3: "text-xs",
-      body2: "text-s",
-      body1: "text-m",
-      headline3: "text-l",
-      headline2: "text-xl",
-      headline1: "text-2xl",
+      body3: "text-body3",
+      body2: "text-body2",
+      body1: "text-body1",
+      headline3: "text-headline3",
+      headline2: "text-headline2",
+      headline1: "text-headline1",
     },
     bold: {
       true: "font-bold",

@@ -13,9 +13,9 @@ export const labelVariants = tv({
       errorContainer: "bg-error-container text-error-container-on border border-error",
     },
     size: {
-      xs: "text-xs h-[16rem]",
-      s: "text-s h-[20rem]",
-      m: "text-m h-[24rem]",
+      xs: "text-body3 h-[16rem]",
+      s: "text-body2 h-[20rem]",
+      m: "text-body1 h-[24rem]",
     },
   },
   defaultVariants: {

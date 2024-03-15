@@ -12,12 +12,12 @@ export default {
       desktop: "1280px",
     },
     fontSize: {
-      xs: ["10.67rem", "16rem"],
-      s: ["13.33rem", "20rem"],
-      m: ["16rem", "24rem"],
-      l: ["18.67rem", "28rem"],
-      xl: ["21.33rem", "32rem"],
-      "2xl": ["32rem", "48rem"],
+      body3: ["10.67rem", "16rem"],
+      body2: ["13.33rem", "20rem"],
+      body1: ["16rem", "24rem"],
+      headline3: ["18.67rem", "28rem"],
+      headline2: ["21.33rem", "32rem"],
+      headline1: ["32rem", "48rem"],
     },
     fontWeight: {
       regular: "400",

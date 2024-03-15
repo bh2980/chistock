@@ -28,7 +28,7 @@ export const textFieldVariants = tv({
     "px-l",
     "py-xs",
     "text-left",
-    "text-m",
+    "text-body1",
     "rounded-m",
     "cursor-text",
     "border",
@@ -60,9 +60,9 @@ export const labelVariants = tv({
     "flex",
     "gap-3xs",
     "top-2xs",
-    "text-xs",
+    "text-body3",
     "transition-['font-size']",
-    "peer-placeholder-shown:text-m",
+    "peer-placeholder-shown:text-body1",
     "peer-placeholder-shown:top-m",
   ],
   variants: {
@@ -74,14 +74,14 @@ export const labelVariants = tv({
     },
     readOnly: {
       true: [],
-      false: ["peer-focus:text-primary", "peer-focus:top-2xs", "peer-focus:text-xs"],
+      false: ["peer-focus:text-primary", "peer-focus:top-2xs", "peer-focus:text-body3"],
     },
   },
   compoundVariants: [
     {
       error: true,
       readOnly: false,
-      className: "peer-focus:text-error peer-focus:top-2xs peer-focus:text-xs",
+      className: "peer-focus:text-error peer-focus:top-2xs peer-focus:text-body3",
     },
   ],
   defaultVariants: {
@@ -91,7 +91,7 @@ export const labelVariants = tv({
 });
 
 export const inputVariants = tv({
-  base: ["peer", "w-full", "h-[32rem]", "bg-transparent", "text-m", "text-surface-on"],
+  base: ["peer", "w-full", "h-[32rem]", "bg-transparent", "text-body1", "text-surface-on"],
   variants: {
     haveLabel: {
       true: ["absolute bottom-0"],
