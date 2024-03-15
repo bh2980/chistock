@@ -20,7 +20,7 @@ export default meta;
 type Story = StoryObj<typeof List>;
 
 const Item = ({ content }: { content: string }) => {
-  return <div className="flex text-m p-m">{content}</div>;
+  return <div className="flex text-body1 p-m">{content}</div>;
 };
 
 export const Default: Story = {

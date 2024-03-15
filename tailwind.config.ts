@@ -12,12 +12,12 @@ export default {
       desktop: "1280px",
     },
     fontSize: {
-      xs: ["10.67rem", "16rem"],
-      s: ["13.33rem", "20rem"],
-      m: ["16rem", "24rem"],
-      l: ["18.67rem", "28rem"],
-      xl: ["21.33rem", "32rem"],
-      "2xl": ["32rem", "48rem"],
+      body3: ["10.67rem", "16rem"],
+      body2: ["13.33rem", "20rem"],
+      body1: ["16rem", "24rem"],
+      headline3: ["18.67rem", "28rem"],
+      headline2: ["21.33rem", "32rem"],
+      headline1: ["32rem", "48rem"],
     },
     fontWeight: {
       regular: "400",
@@ -76,11 +76,11 @@ export default {
   plugins: [
     plugin(({ addVariant }) => {
       // //InteractionState
-      addVariant("interaction", "& .interactionState");
-      addVariant("interactionFocus", "&:focus-within .interactionState");
-      addVariant("interactionFocusVisible", "&:focus-visible .interactionState");
-      addVariant("interactionHover", "&:hover .interactionState");
-      addVariant("interactionPress", "&:active .interactionState");
+      addVariant("interaction", "& > .interactionState");
+      addVariant("interactionFocus", "&:focus-within > .interactionState");
+      addVariant("interactionFocusVisible", "&:focus-visible > .interactionState");
+      addVariant("interactionHover", "&:hover > .interactionState");
+      addVariant("interactionPress", "&:active > .interactionState");
       // hover보다 press가 뒤에 있어야 함. -> CSS 파일 내에서 뒤에 나오는 규칙이 우선 적용
     }),
     //Color - State - Background/Content

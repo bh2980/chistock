@@ -17,7 +17,7 @@ const List = (props: ListProps) => {
             <div>
               {rating ? (
                 <div className="flex items-center">
-                  <div className="w-[16rem] text-center text-m text-surface-on-variant m-xs">
+                  <div className="w-[16rem] text-center text-body1 text-surface-on-variant m-xs">
                     {idx + 1}
                   </div>
                   {child}

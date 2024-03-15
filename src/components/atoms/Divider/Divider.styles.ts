@@ -3,7 +3,7 @@ import { tv } from "@utils/customTV";
 export const dividerVariants = tv({
   base: [
     "flex",
-    "text-s",
+    "text-body2",
     "text-surface-on-variant",
     "before:grow",
     "before:border",

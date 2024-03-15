@@ -29,9 +29,9 @@ export const buttonVariants = tv({
      * @default m
      * */
     size: {
-      s: "h-[32rem] px-s text-s gap-xs",
-      m: "h-[40rem] px-m text-m gap-s",
-      l: "h-[48rem] px-m text-xl gap-s",
+      s: "h-[32rem] px-s text-body2 gap-xs",
+      m: "h-[40rem] px-m text-body1 gap-s",
+      l: "h-[48rem] px-m text-headline3 gap-s",
     },
     rounded: {
       rounded: "rounded-m",

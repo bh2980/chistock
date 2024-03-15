@@ -1,7 +1,7 @@
 import { tv } from "@utils/customTV";
 
 export const tileVariants = tv({
-  base: "flex text-m shadow-ambient",
+  base: "flex text-body1 shadow-ambient",
   variants: {
     /** Tile의 형태
      * @default default

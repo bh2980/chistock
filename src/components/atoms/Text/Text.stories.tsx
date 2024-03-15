@@ -72,7 +72,7 @@ export const TextSize: Story = {
 export const TextWeight: Story = {
   name: "Weight",
   render: () => (
-    <StoryWrapper className="text-2xl" direction="vertical">
+    <StoryWrapper className="text-headline1" direction="vertical">
       <Text>가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
       <Text bold>가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
     </StoryWrapper>
@@ -102,7 +102,7 @@ export const TextWeight: Story = {
 export const TextColor: Story = {
   name: "Color",
   render: () => (
-    <StoryWrapper className="text-xl" direction="vertical">
+    <StoryWrapper className="text-headline2" direction="vertical">
       <StoryWrapper>
         <Text color="inherit">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
         <Text color="transparent">가느다란 몸 부수어 쥔 총칼, 터, 평화</Text>
