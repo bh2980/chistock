@@ -16,7 +16,7 @@ describe("StockChangeLabel", () => {
   it("props로 전달한 값을 렌더링합니다.", () => {
     render(<StockChangeLabel changePercentage={5} data-testid="stock-change-label" />);
 
-    const changePercentage = screen.getAllByText("+5.0%");
+    const changePercentage = screen.getByText("+5.0%");
 
     // 전달한 값이 렌더링되었는지 확인
     expect(changePercentage).toBeInTheDocument();
