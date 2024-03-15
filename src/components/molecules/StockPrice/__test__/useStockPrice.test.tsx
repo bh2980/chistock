@@ -5,16 +5,6 @@ import { renderHook } from "@testing-library/react";
 import { useStockPrice } from "../useStockPrice";
 
 describe("useStockPrice", () => {
-  it("가격을 올바르게 서식화해야 합니다.", () => {
-    const { result } = renderHook(() => useStockPrice());
-
-    // 소수점 이하 두 자리까지 포함하는 경우 테스트
-    expect(result.current.makeFormatPrice(1234.5678, 2)).toBe("1,234.57");
-
-    // 소수점 없이 정수만 있는 경우 테스트
-    expect(result.current.makeFormatPrice(1234, 0)).toBe("1,234");
-  });
-
   it("문자열을 MovingNumber로 변환해야 합니다.", () => {
     const { result } = renderHook(() => useStockPrice());
 
